@@ -8,7 +8,7 @@ This is the durable course record for tutoring, review, and resuming work. The l
 
 - Preserve existing numbered lesson records and their text. Add a new numbered Markdown file for each subsequent lesson, review, correction, or checkpoint. Do not rewrite or delete earlier lesson entries. This README is the maintained index and remaining curriculum; update it in place.
 - Continue numbering after the highest existing numbered record. Whenever a lesson Markdown file is added, update the appropriate Record/Purpose table in this README with its link and a concise, non-empty purpose as part of the same change.
-- Keep Stage/Coverage limited to material still to teach. Remove each covered topic as the lesson records document it. For a partly covered topic, retain only its untaught portions. Keep a stage while any coverage remains; remove the stage row when its final coverage item is removed.
+- Treat Stage/Coverage as a growing, non-exhaustive outline of material still to teach. Add relevant topics within each stage as they are identified. Remove each covered topic as the lesson records document it. For a partly covered topic, retain only its untaught portions. Keep a stage while any listed coverage remains; remove the stage row when its final listed coverage item is removed. Restore a stage if additional topics in that area need teaching.
 - Record corrections in a new entry that identifies the earlier entry and explicitly explains what is superseded. Historical observations remain historical observations.
 - Before tutoring, inspect the latest records and any linked unresolved work. Before a repository write, check current files and branch state so concurrent learner work is preserved.
 - Every new record should identify its evidence, topics taught, assignment, submission/review status, demonstrated strengths, difficulties or uncertainties, next action, and sources used.
@@ -47,7 +47,7 @@ Verify technical guidance against official documentation and the actual Python v
 
 # Course Direction
 
-Only material still to teach is listed below. Removal means a topic has been taught; the numbered records retain the exercise status, evidence, and any practice still needed. Covered skills continue to be used and revisited.
+This table is a growing, non-exhaustive outline of material still to teach. Each stage can include additional topics beyond those currently listed; expand it as the course develops. Remove a listed topic after it has been taught, while keeping exercise status, evidence, and further practice in the numbered records. Remove a stage when its listed coverage is empty, and add it back if further topics in that area are identified. Covered skills continue to be used and revisited.
 
 | Stage | Coverage |
 | --- | --- |
