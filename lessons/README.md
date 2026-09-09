@@ -25,8 +25,9 @@ Use consistent practice with variation and later revisits. Move through basic pr
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Initial records.**
+# Records
 
+**Foundation**
 | Record | Purpose |
 | --- | --- |
 | [0001](0001-foundations-and-first-git-checkpoint.md) | Evidence and assessment for setup, first output, and the first Git commit/push |
@@ -37,8 +38,11 @@ Verify technical guidance against official documentation and the actual Python v
 | [0006](0006-inventory-review-initial-output.md) |  |
 | [0007](0007-inventory-complete-and-first-debugging.md) |  |
 
+**Data and reusable logic**
+| Record | Purpose |
+| --- | --- |
 
-**Initial course direction.**
+# Course Direction
 
 | Stage | Coverage |
 | --- | --- |
