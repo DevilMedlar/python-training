@@ -36,7 +36,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0016](0016-not-complete-and-nested-validation.md) completes the not/reminder extension: the named boolean, separate if, and two-statement block work correctly in both requested runs. The completed_books spelling correction is verified. Two display cleanups remain: workning to working, and a books label in the progress message. The current Phase 1 lesson introduces nested conditionals and rejecting negative integer counts. A reading_goals.py extension will put the existing goal workflow inside an outer valid-data else block. It awaits learner code and five runs, covering each negative field, zero, and valid outcomes.
+**Current checkpoint.** [Record 0017](0017-nested-validation-review.md) reviews the nested-validation submission. All five requested runs have correct output: each negative field produces only the error message, zero is accepted, and valid goal/reminder behavior is preserved. Both display cleanups are complete. One structural requirement from 0016 remains: move the both_goals_reached assignment from above the validation into the outer else, indented four spaces immediately before the classification if. Its current position causes no incorrect output for these integer inputs, but calculates goal status before validation. Await only revised learner code for that move; the five runs remain accepted and need not be repeated. No new topic is assigned in this review. After confirming the move, consult the phase guide and continue with bounded ranges and comparison chaining.
 
 # Records
 
@@ -60,6 +60,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0014](0014-conditionals-complete-and-combined-conditions.md) | Complete first conditionals; explain printing multiple values; introduce and/or and the reading-goals exercise |
 | [0015](0015-reading-goals-complete-and-not.md) | Complete and/or practice; review basic f-strings and naming; teach not, Rename Symbol, and a separate reminder condition |
 | [0016](0016-not-complete-and-nested-validation.md) | Complete not and grouped reminder practice; teach nested conditionals, nonnegative counts, and block indentation |
+| [0017](0017-nested-validation-review.md) | Accept all five validation outputs and display fixes; request moving the boolean assignment into the valid-data block |
 
 **Data and reusable logic**
 
