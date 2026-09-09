@@ -40,6 +40,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0006](0006-inventory-review-initial-output.md) | Review integer updates and identify the missing starting output |
 | [0007](0007-inventory-complete-and-first-debugging.md) | Complete inventory practice; introduce tracebacks, `NameError`, and Go to Line |
 | [0008](0008-debugging-complete-and-arithmetic.md) | Complete the first debugging exercise; introduce multiplication, division, floor division, remainders, and basic numeric types |
+| [0009](0009-packing-review.md) | Review correct packing values; request multiplication and output-order corrections, with the second run pending |
 
 **Data and reusable logic**
 
