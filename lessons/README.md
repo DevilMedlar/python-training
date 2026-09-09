@@ -31,8 +31,12 @@ Verify technical guidance against official documentation and the actual Python v
 | --- | --- |
 | [0001](0001-foundations-and-first-git-checkpoint.md) | Evidence and assessment for setup, first output, and the first Git commit/push |
 | [0002](0002-variables-and-assignment.md) | Next lesson and assignment; awaiting learner work at issue time |
+| [0003](0003-variables-review.md) |  |
+| [0004](0004-spacing-cost-and-readability.md) |  |
+| [0005](0005-assignment-complete-and-integer-updates.md) |  |
+| [0006](0006-inventory-review-initial-output.md) |  |
+| [0007](0007-inventory-complete-and-first-debugging.md) |  |
 
-Browse the directory for later numbered records; this initial list is intentionally not an automatically maintained latest-status index.
 
 **Initial course direction.**
 
