@@ -36,7 +36,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0015](0015-reading-goals-complete-and-not.md) completes the initial and/or reading-goals exercise: all five requested outcomes are correct, and the learner successfully uses a basic f-string in the second prompt. The spelling cleanup from completeed_books to completed_books is pending. The current Phase 1 lesson explains that f-string use, teaches Rename Symbol, and introduces not with a named boolean plus a separate if statement. An extension to reading_goals.py awaits learner code and two runs (days/books: 5/3 and 4/3). That extension will also check two statements grouped in one conditional block; this has been taught but not yet demonstrated.
+**Current checkpoint.** [Record 0016](0016-not-complete-and-nested-validation.md) completes the not/reminder extension: the named boolean, separate if, and two-statement block work correctly in both requested runs. The completed_books spelling correction is verified. Two display cleanups remain: workning to working, and a books label in the progress message. The current Phase 1 lesson introduces nested conditionals and rejecting negative integer counts. A reading_goals.py extension will put the existing goal workflow inside an outer valid-data else block. It awaits learner code and five runs, covering each negative field, zero, and valid outcomes.
 
 # Records
 
@@ -59,6 +59,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0013](0013-comparisons-review-and-conditionals.md) | Review comparisons and operand order; record tracking and prediction preferences; teach if/elif/else and indentation |
 | [0014](0014-conditionals-complete-and-combined-conditions.md) | Complete first conditionals; explain printing multiple values; introduce and/or and the reading-goals exercise |
 | [0015](0015-reading-goals-complete-and-not.md) | Complete and/or practice; review basic f-strings and naming; teach not, Rename Symbol, and a separate reminder condition |
+| [0016](0016-not-complete-and-nested-validation.md) | Complete not and grouped reminder practice; teach nested conditionals, nonnegative counts, and block indentation |
 
 **Data and reusable logic**
 
@@ -71,7 +72,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness, mixed boolean-operator precedence/grouping, and/or with non-boolean operands and practical short-circuit guards, input range checks and repeated prompts, nested conditionals, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness, mixed boolean-operator precedence/grouping, and/or with non-boolean operands and practical short-circuit guards, further input range checks (upper bounds and combined bounds), repeated prompts, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
