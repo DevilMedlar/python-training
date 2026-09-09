@@ -36,7 +36,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0013](0013-comparisons-review-and-conditionals.md) reviews correct runs of all six numeric comparisons for 19, 20, and 21, using the learner's target-first expressions. Operand order differs from the original assignment; its meaning is explained and will be reinforced in the next exercise. Initial comparison practice is sufficient to progress without another six-print rerun. The current Phase 1 lesson introduces if/elif/else and block indentation. The assignment in book_target.py awaits learner code and runs for 18, 20, and 23. Conditional coding has not yet been assessed.
+**Current checkpoint.** [Record 0014](0014-conditionals-complete-and-combined-conditions.md) completes the first if/elif/else exercise: book_target.py selects the correct branch and computes the correct difference for 18, 20, and 23. Books-first comparison meaning is now demonstrated. The tutor accepts the learner's single-line messages and explains print with multiple values. Multi-statement branches still need a practical demonstration later. The current Phase 1 lesson introduces and/or on comparison results and basic short-circuit behavior. The reading_goals.py assignment awaits learner code and five actual runs. Combined-condition skills have been introduced, not assessed.
 
 # Records
 
@@ -57,6 +57,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0011](0011-garden-complete-and-input.md) | Complete garden practice; introduce input(), integer-text conversion, and recognizing invalid input |
 | [0012](0012-input-complete-and-comparisons.md) | Complete input practice; teach Phase 1 boolean values and numeric comparisons |
 | [0013](0013-comparisons-review-and-conditionals.md) | Review comparisons and operand order; record tracking and prediction preferences; teach if/elif/else and indentation |
+| [0014](0014-conditionals-complete-and-combined-conditions.md) | Complete first conditionals; explain printing multiple values; introduce and/or and the reading-goals exercise |
 
 **Data and reusable logic**
 
@@ -69,7 +70,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness and logical operators, input range checks and repeated prompts, nested conditionals and independent if statements, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness and logical not, mixed boolean-operator precedence/grouping, and/or with non-boolean operands and practical short-circuit guards, input range checks and repeated prompts, nested conditionals and independent if statements, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
