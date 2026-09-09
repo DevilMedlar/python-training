@@ -36,7 +36,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0019](0019-ranges-complete-and-boolean-grouping.md) completes the practice_session.py range exercise: all five requested runs correctly handle the negative guard and both inclusive endpoints. One small spacing cleanup remains (practice <=40 to practice <= 40); no separate resubmission or old-case reruns are needed. The new Phase 1 lesson introduces mixed boolean precedence/grouping: comparisons, then not, and, or, with parentheses controlling grouping. Current work is date_night.py: require at least 60 available minutes together with either at least 2 candles or a playlist of at least 30 minutes, stored in one grouped boolean expression. Await code and four runs from 0019. The assigned inputs are nonnegative integers; additional validation is not required. Exclusive/mixed interval endpoints and not applied to a grouped condition remain useful later practice.
+**Current checkpoint.** [Record 0020](0020-grouping-complete-and-truthiness.md) completes date_night.py: all four assigned runs pass, including the time-failure case, and threshold-first comparisons are accepted. The earlier practice_session.py spacing cleanup is verified and closed. No functional correction is pending. The new Phase 1 lesson introduces truthiness of familiar numbers and strings, bool(), and direct value conditions. Current work is flirt_check.py: keep a raw text message, read nonnegative integer available minutes, print both bool results, and use separate direct if/else decisions for text presence and time availability. Await code and the three assigned runs (empty/0, text 0/30, text False/0). String whitespace is meaningful; normalization is not assigned. Collection and custom-object truth testing remain for their later-phase types.
 
 # Records
 
@@ -63,6 +63,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0017](0017-nested-validation-review.md) | Accept all five validation outputs and display fixes; request moving the boolean assignment into the valid-data block |
 | [0018](0018-nesting-complete-and-comparison-chaining.md) | Complete nested validation; teach bounded ranges, comparison chaining, and inclusive/exclusive endpoints; assign practice-session classification |
 | [0019](0019-ranges-complete-and-boolean-grouping.md) | Complete inclusive-range practice; note spacing cleanup; teach mixed boolean precedence and parentheses; assign date-night planning logic |
+| [0020](0020-grouping-complete-and-truthiness.md) | Complete grouped date-night logic and prior spacing fix; teach numeric/string truthiness, bool(), and direct conditions; assign flirt_check.py |
 
 **Data and reusable logic**
 
@@ -75,7 +76,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, truthiness, and/or with non-boolean operands and practical short-circuit guards, repeated prompts, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, and/or with non-boolean operands and practical short-circuit guards, repeated prompts, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
