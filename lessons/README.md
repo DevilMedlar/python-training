@@ -43,6 +43,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0009](0009-packing-review.md) | Review correct packing values; request multiplication and output-order corrections, with the second run pending |
 | [0010](0010-packing-complete-and-powers.md) | Complete packing practice; introduce positive integer powers, arithmetic grouping, and moving editor lines |
 | [0011](0011-garden-complete-and-input.md) | Complete garden practice; introduce input(), integer-text conversion, and recognizing invalid input |
+| [0012](0012-input-complete-and-error-handling.md) | Complete input practice; introduce try/except ValueError/else, indented blocks, and indentation shortcuts |
 
 **Data and reusable logic**
 
@@ -55,9 +56,9 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, booleans, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison and logical operators, input validation and end-of-input handling, conditions, loops, break/continue, exception handling |
+| Foundations | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, booleans, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison and logical operators, input range checks and repeated prompts, end-of-input handling, conditions, loops, break/continue, other exception types and raising exceptions |
 | Data and reusable logic | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, comprehensions, functions, parameters, returns, scope, recursion, lambda |
-| Programs and dependencies | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, exception else/finally, debugger use and breakpoints, automated tests |
+| Programs and dependencies | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, finally and cleanup, debugger use and breakpoints, automated tests |
 | Design and advanced language tools | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, iterators, generators/yield, closures, decorators, partial functions |
 | Deep Python and performance | Data model, descriptors, introspection, metaclasses, method resolution and super(), asyncio, threads, multiprocessing, algorithms, profiling, memory, extension modules |
 | Distribution and collaboration | Architecture, documentation, unittest/pytest and TDD practice, packaging and PyPI, APIs/databases, Git branches/reviews/merges/conflicts/recovery, GitHub Actions, releases and relevant repository settings |
