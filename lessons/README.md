@@ -4,6 +4,12 @@ Created: 2026-09-09. Repository: DevilMedlar/python-training.
 
 This is the durable course record for tutoring, review, and resuming work. The learner has authorized the tutor to maintain Markdown records under lessons/. The learner writes the exercise programs and practices terminal and Git commands.
 
+**Audience and file roles.** These Markdown files are the tutor's working records. Read them before teaching to track what has been introduced, what has been demonstrated, what needs practice, and what comes next. Deliver the complete lesson, explanations, worked examples, review, and assignment in the chat. The learner is not expected to read these files for ordinary lessons; they may inspect them when checking a suspected repeat or a topic introduced too early.
+
+- The [root README](../README.md) is the growing skeleton outline and guide to phase order.
+- This lessons/README.md is the detailed course tracker: the Record/Purpose index points to teaching and review history, the current checkpoint identifies active work, and Stage/Coverage lists material still to teach.
+- Numbered records retain detailed evidence, teaching, assignments, assessments, preferences, and next actions. Read later records for updates that supersede historical status.
+
 **How to maintain this record.**
 
 - Preserve existing numbered lesson records and their text. Add a new numbered Markdown file for each subsequent lesson, review, correction, or checkpoint. Do not rewrite or delete earlier lesson entries. This README is the maintained index and remaining curriculum; update it in place.
@@ -14,7 +20,7 @@ This is the durable course record for tutoring, review, and resuming work. The l
 - Every new record should identify its evidence, topics taught, assignment, submission/review status, demonstrated strengths, difficulties or uncertainties, next action, and sources used.
 - Separate introduced material, successful guided practice, independent demonstrations, and performance across repeated practice. One successful small exercise does not establish broad mastery.
 - Record actual mistakes and remaining uncertainties separately. Do not invent weaknesses or assume an untested skill is a weakness.
-- When documentation is committed directly on GitHub, tell the learner how to bring it into the Codespace. A GitHub update does not automatically update an existing Codespace checkout.
+- Documentation committed directly on GitHub does not automatically update an existing Codespace checkout. The learner need not pull tutor records before each exercise. Explain synchronization at a requested or meaningful Git checkpoint; do not make commit/push/pull a routine prerequisite for each lesson.
 
 **Teaching agreement.**
 
@@ -26,7 +32,11 @@ Explain each new concept and command before assigning work. Use small worked exa
 
 Use consistent practice with variation and later revisits. Move through basic print usage promptly once demonstrated. Increase independence and review depth over time. Commit at meaningful checkpoints, not automatically after every small exercise.
 
+Do not routinely request output predictions, especially for exercises containing multiple line-by-line prints. Ask for a prediction only when it is essential to a specific lesson or diagnosis, explain why, and keep it focused. The default submission is the learner's code and actual runs. This learner clarification supersedes routine prediction requirements in older records, including 0012.
+
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
+
+**Current checkpoint.** [Record 0013](0013-comparisons-review-and-conditionals.md) reviews correct runs of all six numeric comparisons for 19, 20, and 21, using the learner's target-first expressions. Operand order differs from the original assignment; its meaning is explained and will be reinforced in the next exercise. Initial comparison practice is sufficient to progress without another six-print rerun. The current Phase 1 lesson introduces if/elif/else and block indentation. The assignment in book_target.py awaits learner code and runs for 18, 20, and 23. Conditional coding has not yet been assessed.
 
 # Records
 
@@ -46,6 +56,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0010](0010-packing-complete-and-powers.md) | Complete packing practice; introduce positive integer powers, arithmetic grouping, and moving editor lines |
 | [0011](0011-garden-complete-and-input.md) | Complete garden practice; introduce input(), integer-text conversion, and recognizing invalid input |
 | [0012](0012-input-complete-and-comparisons.md) | Complete input practice; teach Phase 1 boolean values and numeric comparisons |
+| [0013](0013-comparisons-review-and-conditionals.md) | Review comparisons and operand order; record tracking and prediction preferences; teach if/elif/else and indentation |
 
 **Data and reusable logic**
 
@@ -58,7 +69,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness and logical operators, input range checks and repeated prompts, if/elif/else and indentation, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness and logical operators, input range checks and repeated prompts, nested conditionals and independent if statements, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
