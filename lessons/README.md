@@ -20,6 +20,8 @@ This is the durable course record for tutoring, review, and resuming work. The l
 
 The goal is deep practical Python fluency and strong command-line, Git, and GitHub skills. Remain in GitHub Codespaces until the learner asks to begin working directly on the PC. Introduce repository settings when they become relevant.
 
+Follow the learner's phase order in the [repository README](../README.md), checking it before issuing a lesson. The current phase is Phase 1, Foundations: data types, basic operators, boolean logic, if/elif/else, and loops with break/continue. Formal exception handling with try/except/else/finally belongs to Phase 2, Data and reusable logic. Complete the foundation prerequisites before assigning that material. An early preview does not complete a later-phase topic.
+
 Explain each new concept and command before assigning work. Use small worked examples, then let the learner implement the exercise. Review correctness, names, spacing, control flow, and readability even when output is correct. Distinguish language requirements, style guidance, and optional conventions.
 
 Use consistent practice with variation and later revisits. Move through basic print usage promptly once demonstrated. Increase independence and review depth over time. Commit at meaningful checkpoints, not automatically after every small exercise.
@@ -43,7 +45,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0009](0009-packing-review.md) | Review correct packing values; request multiplication and output-order corrections, with the second run pending |
 | [0010](0010-packing-complete-and-powers.md) | Complete packing practice; introduce positive integer powers, arithmetic grouping, and moving editor lines |
 | [0011](0011-garden-complete-and-input.md) | Complete garden practice; introduce input(), integer-text conversion, and recognizing invalid input |
-| [0012](0012-input-complete-and-error-handling.md) | Complete input practice; introduce try/except ValueError/else, indented blocks, and indentation shortcuts |
+| [0012](0012-input-complete-and-comparisons.md) | Complete input practice; teach Phase 1 boolean values and numeric comparisons |
 
 **Data and reusable logic**
 
@@ -56,11 +58,11 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, booleans, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison and logical operators, input range checks and repeated prompts, end-of-input handling, conditions, loops, break/continue, other exception types and raising exceptions |
-| Data and reusable logic | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, comprehensions, functions, parameters, returns, scope, recursion, lambda |
-| Programs and dependencies | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, finally and cleanup, debugger use and breakpoints, automated tests |
-| Design and advanced language tools | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, iterators, generators/yield, closures, decorators, partial functions |
-| Deep Python and performance | Data model, descriptors, introspection, metaclasses, method resolution and super(), asyncio, threads, multiprocessing, algorithms, profiling, memory, extension modules |
-| Distribution and collaboration | Architecture, documentation, unittest/pytest and TDD practice, packaging and PyPI, APIs/databases, Git branches/reviews/merges/conflicts/recovery, GitHub Actions, releases and relevant repository settings |
+| Foundations (Phase 1) | String operations and formatting, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, comparison chaining, truthiness and logical operators, input range checks and repeated prompts, if/elif/else and indentation, for/while loops, break/continue |
+| Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
+| Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
+| Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
+| Deep Python and performance (Phase 4) | Data model, descriptors, introspection, metaclasses, method resolution and super(), algorithms, profiling, memory, extension modules |
+| Distribution and collaboration (Phase 4) | Architecture, documentation, unittest/pytest and TDD practice, packaging and PyPI, APIs/databases, Git branches/reviews/merges/conflicts/recovery, GitHub Actions, releases and relevant repository settings |
 
 Style, debugging, testing, terminal use, and editor/GitHub shortcuts are recurring practices throughout the course. Future numbered records expand the curriculum as prerequisites are learned.
