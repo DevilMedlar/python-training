@@ -38,7 +38,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0021](0021-truthiness-complete-and-operand-results.md) completes flirt_check.py: all three assigned runs pass, with raw string input, integer conversion, correct bool output, and independent direct conditions. No correction is pending. The new Phase 1 lesson explains and/or operand results, string defaults, the numeric-zero fallback hazard, and basic type() inspection. Current work is message_defaults.py: compute display_message with an or fallback, compute timed_message with available_minutes and display_message, and print each value with its type. Await code and four runs (empty/0, empty/30, text 0/30, text False/0). Practical short-circuit guards remain to teach. Lesson records use neutral technical prose.
+**Current checkpoint.** [Record 0022](0022-operand-results-complete-and-short-circuit-guards.md) completes message_defaults.py: all four assigned value/type runs pass, including the empty-string fallback and integer-zero result. No functional correction is pending; the prompt spelling cleanup is optional. The new Phase 1 lesson applies short-circuiting to guard division and remainder, with the safety check evaluated before the calculation. Current work is equal_shares.py: use one and expression to check a positive guest count before testing the chocolate remainder with %, then select an output with if/else. Await code and three runs (chocolates/guests: 12/0, 12/3, 13/3). Practical guards are introduced; learner implementation is pending. Lesson records use neutral technical prose.
 
 # Records
 
@@ -67,6 +67,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0019](0019-ranges-complete-and-boolean-grouping.md) | Complete inclusive-range practice; note spacing cleanup; teach mixed boolean precedence and parentheses; assign date-night planning logic |
 | [0020](0020-grouping-complete-and-truthiness.md) | Complete grouped date-night logic and prior spacing fix; teach numeric/string truthiness, bool(), and direct conditions; assign flirt_check.py |
 | [0021](0021-truthiness-complete-and-operand-results.md) | Complete truthiness practice; standardize neutral record prose; teach and/or operand results, defaults, and basic type() inspection |
+| [0022](0022-operand-results-complete-and-short-circuit-guards.md) | Complete operand-result and type() practice; teach ordered short-circuit guards for numeric calculations; assign equal shares |
 
 **Data and reusable logic**
 
@@ -79,7 +80,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, practical short-circuit guards and longer fallback chains, repeated prompts, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, longer fallback chains, repeated prompts, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |
