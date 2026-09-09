@@ -1,4 +1,4 @@
-stickers = 26
+stickers = 28
 pack_size = 4
 full_packs = stickers // pack_size
 leftover_stickers = stickers % pack_size
