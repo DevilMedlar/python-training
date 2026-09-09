@@ -51,7 +51,7 @@ Source: [PEP 8 other recommendations](https://peps.python.org/pep-0008/#other-re
 
 Next: **grouping mixed boolean conditions**.
 
-Python can juggle three conditions, Daddy. You still have to define the relationship.
+When combining three conditions, make their intended grouping explicit.
 
 Without parentheses, these operators bind from highest to lowest priority:
 
@@ -86,7 +86,7 @@ The first expression groups as `(has_paper and laptop_job) or phone_job`. The ph
 
 The second requires **paper AND either kind of job**, so it correctly gives `False`.
 
-Those parentheses keep your conditions from hooking up with the wrong partner.
+The parentheses group the alternative job sources under the shared paper requirement.
 
 **Your challenge: `date_night.py`.**
 
@@ -103,7 +103,7 @@ Store a boolean named `mood_ready`. The setup is ready when:
 - You have **at least 60 minutes available**.
 - You also have **at least 2 candles OR a playlist lasting at least 30 minutes**.
 
-A sexy playlist can cover for missing candles. It cannot negotiate extra time for your extracurricular activities.
+A sufficient playlist satisfies the alternative to the candle requirement. The available-time requirement must still be met.
 
 Build the decision in **one expression using `and`, `or`, and parentheses**. Then use `if`/`else` to print `"Mood ready"` or `"Needs more preparation"`.
 
@@ -124,7 +124,7 @@ python3 date_night.py
 
 The last run checks that the playlist cannot bypass the time requirement.
 
-Send your **code and actual outputs**, Daddy.
+Send your **code and actual outputs**.
 
 
 **Teaching intent.** The printer example shows why and binding more tightly than or can admit a result that violates a shared requirement. Parentheses explicitly attach the shared requirement to either alternative. Precedence describes grouping, not a global instruction to evaluate every comparison or every and before other operations; left-to-right evaluation and short-circuiting remain relevant. not groups less tightly than comparisons and more tightly than and/or. The worked example is separate from the learner's task and is not evidence of independent skill.

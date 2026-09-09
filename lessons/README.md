@@ -6,6 +6,8 @@ This is the durable course record for tutoring, review, and resuming work. The l
 
 **Audience and file roles.** These Markdown files are the tutor's working records. Read them before teaching to track what has been introduced, what has been demonstrated, what needs practice, and what comes next. Deliver the complete lesson, explanations, worked examples, review, and assignment in the chat. The learner is not expected to read these files for ordinary lessons; they may inspect them when checking a suspected repeat or a topic introduced too early.
 
+**Documentation style.** Use neutral technical prose throughout lessons/*.md, including this index. Preserve concepts, examples, requirements, evidence, assessment, and next steps without copying personal forms of address, roleplay, innuendo, or conversational embellishment from chat. The technical record and chat delivery must describe the same task. The learner's 2026-09-09 instruction also authorized neutralizing the existing conversational passages in records 0019 and 0020; their technical history is preserved.
+
 - The [root README](../README.md) is the growing skeleton outline and guide to phase order.
 - This lessons/README.md is the detailed course tracker: the Record/Purpose index points to teaching and review history, the current checkpoint identifies active work, and Stage/Coverage lists material still to teach.
 - Numbered records retain detailed evidence, teaching, assignments, assessments, preferences, and next actions. Read later records for updates that supersede historical status.
@@ -36,7 +38,7 @@ Do not routinely request output predictions, especially for exercises containing
 
 Verify technical guidance against official documentation and the actual Python version. Do not imply that repository access reveals unsaved or unpushed Codespace files or live terminal state. The current confirmed interpreter is Python 3.14.2.
 
-**Current checkpoint.** [Record 0020](0020-grouping-complete-and-truthiness.md) completes date_night.py: all four assigned runs pass, including the time-failure case, and threshold-first comparisons are accepted. The earlier practice_session.py spacing cleanup is verified and closed. No functional correction is pending. The new Phase 1 lesson introduces truthiness of familiar numbers and strings, bool(), and direct value conditions. Current work is flirt_check.py: keep a raw text message, read nonnegative integer available minutes, print both bool results, and use separate direct if/else decisions for text presence and time availability. Await code and the three assigned runs (empty/0, text 0/30, text False/0). String whitespace is meaningful; normalization is not assigned. Collection and custom-object truth testing remain for their later-phase types.
+**Current checkpoint.** [Record 0021](0021-truthiness-complete-and-operand-results.md) completes flirt_check.py: all three assigned runs pass, with raw string input, integer conversion, correct bool output, and independent direct conditions. No correction is pending. The new Phase 1 lesson explains and/or operand results, string defaults, the numeric-zero fallback hazard, and basic type() inspection. Current work is message_defaults.py: compute display_message with an or fallback, compute timed_message with available_minutes and display_message, and print each value with its type. Await code and four runs (empty/0, empty/30, text 0/30, text False/0). Practical short-circuit guards remain to teach. Lesson records use neutral technical prose.
 
 # Records
 
@@ -64,6 +66,7 @@ Verify technical guidance against official documentation and the actual Python v
 | [0018](0018-nesting-complete-and-comparison-chaining.md) | Complete nested validation; teach bounded ranges, comparison chaining, and inclusive/exclusive endpoints; assign practice-session classification |
 | [0019](0019-ranges-complete-and-boolean-grouping.md) | Complete inclusive-range practice; note spacing cleanup; teach mixed boolean precedence and parentheses; assign date-night planning logic |
 | [0020](0020-grouping-complete-and-truthiness.md) | Complete grouped date-night logic and prior spacing fix; teach numeric/string truthiness, bool(), and direct conditions; assign flirt_check.py |
+| [0021](0021-truthiness-complete-and-operand-results.md) | Complete truthiness practice; standardize neutral record prose; teach and/or operand results, defaults, and basic type() inspection |
 
 **Data and reusable logic**
 
@@ -76,7 +79,7 @@ This table is a growing, non-exhaustive outline of material still to teach. Each
 
 | Stage | Coverage |
 | --- | --- |
-| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, and/or with non-boolean operands and practical short-circuit guards, repeated prompts, for/while loops, break/continue |
+| Foundations (Phase 1) | String operations and further formatting beyond basic f-string interpolation, further integer conversions and representations, further float operations and precision/rounding, negative/fractional and chained powers, precedence involving signs and later operators, signed remainders and further numeric edge cases, practical short-circuit guards and longer fallback chains, repeated prompts, for/while loops, break/continue |
 | Data and reusable logic (Phase 2) | Lists, tuples, sets, dictionaries, mutability/copying, indexing/slicing, functions, parameters, returns, scope, recursion, lambda, error handling with try/except/else/finally, exception types and raising exceptions, end-of-input handling |
 | Programs and dependencies (Phase 2) | Files, context managers, paths, encodings, CSV/JSON, modules, packages, virtual environments, pip, debugger use and breakpoints |
 | Design and advanced language tools (Phase 3) | Classes, composition, inheritance, polymorphism, encapsulation, dataclasses, type hints, advanced comprehensions, iterators, generators/yield, closures, decorators, partial functions, asyncio, threads, multiprocessing |

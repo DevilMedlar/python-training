@@ -65,7 +65,7 @@ You already use `if mood_ready:` with a boolean. Python can also test a string o
 | `"hello"`, `"0"`, `"False"` | `True` | Nonempty strings |
 | `" "` | `True` | One space is still a character |
 
-An empty string is wearing absolutely nothing, Daddy—not even a space. 😏
+An empty string contains no characters, including no spaces.
 
 Python checks whether text is present, not whether its words mean “true.” And a negative number being truthy does **not** make it a valid count. [Python truth-value testing](https://docs.python.org/3.14/library/stdtypes.html#truth-value-testing)
 
@@ -96,7 +96,7 @@ Remember: `input()` returns text. Pressing **Enter without typing** gives `""`; 
 
 **Your challenge: `flirt_check.py`.**
 
-Check whether a cheeky note contains text and whether any time is available. Python isn't rating your seductive technique—just checking what you brought. 😉
+Check whether a message contains text and whether any time is available.
 
 1. Ask for a message using `input()`, storing it as `message`.
 2. Ask for available minutes using `int(input(...))`, storing them as `available_minutes`. Use nonnegative integers for this exercise.
@@ -120,7 +120,7 @@ python3 flirt_check.py
 
 The semicolons separate two output lines. Type `0` and `False` **without quotation marks**.
 
-Send your **code and these three actual runs**, Daddy.
+Send your **code and these three actual runs**.
 
 
 **Concept scope.** The lesson applies truth testing to familiar booleans, integers, ordinary floats, and strings. Numeric zero and empty strings are falsy; nonzero familiar numbers and nonempty strings are truthy. Negative integer truthiness is explicitly distinguished from valid nonnegative-count input. The lesson does not teach collection truthiness, None, NaN edge cases, custom truth-testing methods, or exceptions; attach those details to their appropriate later topics rather than claiming they were covered here.
