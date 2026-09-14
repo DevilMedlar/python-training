@@ -55,7 +55,8 @@ def validate_state(state, catalog, *, today=None):
                  "next_task", "notes"}, "record")
     require(type(state["schema_version"]) is int and state["schema_version"] == 1,
             "unsupported schema_version")
-    require(state["catalog_version"] == catalog["catalog_version"], "catalog version mismatch")
+    compatible = [catalog["catalog_version"], *catalog.get("compatible_progress_versions", [])]
+    require(state["catalog_version"] in compatible, "catalog version mismatch")
     updated = iso_date(state["updated_on"], "updated_on", nullable=True)
     require(updated is None or updated <= today, "updated_on cannot be in the future")
     keys(state["environment"], {"os", "python", "command", "execution_available"}, "environment")
@@ -128,7 +129,8 @@ def validate_state(state, catalog, *, today=None):
         require(isinstance(review["reason"], str) and review["reason"].strip(), "review reason required")
     require(isinstance(state["capstones"], dict), "capstones must be an object")
     for phase, record in state["capstones"].items():
-        require(phase in {str(item["id"]) for item in catalog["phases"]}, "unknown capstone phase")
+        capstone_ids = {str(item["id"]) for item in catalog["phases"] + catalog.get("tracks", [])}
+        require(phase in capstone_ids, "unknown capstone phase or track")
         keys(record, {"status", "completed_on", "support", "evidence"}, "capstone")
         require(isinstance(record["status"], str) and
                 record["status"] in {"not_started", "in_progress", "complete"}, "invalid capstone status")
@@ -149,18 +151,56 @@ def validate_state(state, catalog, *, today=None):
     return state
 
 
-def recommend(state, catalog, *, today=None):
+def recommend(state, catalog, *, today=None, track=None):
     today = today or date.today()
     validate_state(state, catalog, today=today)
-    due = [review for review in state["reviews"] if iso_date(review["due_on"], "due_on") <= today]
+    tracks = {item["id"]: item for item in catalog.get("tracks", [])}
+    require(track is None or track in tracks, "unknown track")
+    by_id = {lesson["id"]: lesson for lesson in catalog["lessons"]}
+    statuses = {key: value["status"] for key, value in state["lessons"].items()}
+    ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
+    if track:
+        selected = [lesson for lesson in catalog["lessons"] if lesson.get("track") == track]
+    else:
+        selected = [lesson for lesson in catalog["lessons"] if lesson["phase"] is not None]
+    relevant = {lesson["id"] for lesson in selected}
+    next_lesson = next((lesson["id"] for lesson in selected if lesson["id"] not in ready), None)
+    pending = [next_lesson] if track and next_lesson else ([] if track else list(relevant))
+    visited = set()
+    while pending:
+        ident = pending.pop()
+        if ident in visited:
+            continue
+        visited.add(ident)
+        prerequisites = by_id[ident]["prerequisites"]
+        relevant.update(prerequisites)
+        pending.extend(prerequisites)
+    due = [review for review in state["reviews"] if review["lesson_id"] in relevant
+           and iso_date(review["due_on"], "due_on") <= today]
     if due:
         review = min(due, key=lambda item: (item["due_on"], item["lesson_id"]))
         return {"kind": "review", "lesson_id": review["lesson_id"], "reason": review["reason"]}
-    statuses = {key: value["status"] for key, value in state["lessons"].items()}
     for lesson in catalog["lessons"]:
-        if statuses.get(lesson["id"]) == "review_needed":
+        if lesson["id"] in relevant and statuses.get(lesson["id"]) == "review_needed":
             return {"kind": "repair", "lesson_id": lesson["id"]}
-    ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
+    if track:
+        for lesson in selected:
+            if lesson["id"] in ready:
+                continue
+            missing = [item for item in lesson["prerequisites"] if item not in ready]
+            if missing:
+                prerequisite = missing[0]
+                while True:
+                    earlier = [item for item in by_id[prerequisite]["prerequisites"] if item not in ready]
+                    if not earlier:
+                        break
+                    prerequisite = earlier[0]
+                return {"kind": "prerequisite", "lesson_id": prerequisite, "needed_for": lesson["id"]}
+            return {"kind": "lesson", "lesson_id": lesson["id"]}
+        if state["capstones"].get(track, {}).get("status") != "complete":
+            return {"kind": "capstone", "track": track, "path": tracks[track]["capstone"]}
+        return {"kind": "maintenance", "track": track,
+                "reason": "Continue delayed reviews and a chosen contribution."}
     for phase in catalog["phases"]:
         for lesson in catalog["lessons"]:
             if lesson["phase"] != phase["id"] or not lesson["core"] or lesson["id"] in ready:
@@ -178,12 +218,16 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("record", type=Path)
     parser.add_argument("--next", action="store_true", dest="show_next")
+    parser.add_argument("--track", help="Select a companion track, such as github; default is Python")
     args = parser.parse_args(argv)
     try:
         state = json.loads(args.record.read_text(encoding="utf-8"))
         catalog = json.loads((ROOT / "curriculum/catalog.json").read_text(encoding="utf-8"))
         validate_state(state, catalog)
-        print(json.dumps(recommend(state, catalog), indent=2) if args.show_next else "Progress record is consistent.")
+        if args.track is not None:
+            require(args.track in {item["id"] for item in catalog.get("tracks", [])}, "unknown track")
+        print(json.dumps(recommend(state, catalog, track=args.track), indent=2)
+              if args.show_next else "Progress record is consistent.")
     except (OSError, ValueError) as error:
         print(f"Invalid progress: {error}", file=sys.stderr)
         return 1

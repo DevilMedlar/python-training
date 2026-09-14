@@ -428,6 +428,11 @@ demonstrated with concrete tests.
 
 ## P2-11 Git packaging and reproducible setup
 
+For step-by-step Git practice, use
+[GH-04 through GH-10](github.md#gh-04-understand-working-files-and-staged-snapshots)
+and the [disposable Git labs](../practice/GITHUB_LABS.md). Keep Python packaging
+and GitHub release assets distinct.
+
 **Prerequisites:** P2-10.
 
 **Outcome:** Make a project installable and explain what a version-control change contains.

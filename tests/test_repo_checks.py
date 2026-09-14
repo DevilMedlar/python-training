@@ -23,6 +23,30 @@ class RepositoryCheckTests(unittest.TestCase):
         with self.assertRaisesRegex(CheckError, "cycle"):
             validate_catalog(catalog)
 
+    def test_companion_lessons_cannot_enter_python_route(self):
+        catalog = deepcopy(CATALOG)
+        catalog["lessons"][-1]["core"] = True
+        with self.assertRaisesRegex(CheckError, "default Python route"):
+            validate_catalog(catalog)
+
+    def test_unknown_track_and_wrong_prefix_are_rejected(self):
+        catalog = deepcopy(CATALOG)
+        catalog["lessons"][-1]["track"] = "unknown"
+        with self.assertRaisesRegex(CheckError, "unknown companion track"):
+            validate_catalog(catalog)
+        catalog = deepcopy(CATALOG)
+        catalog["tracks"][0]["prefix"] = "OTHER"
+        with self.assertRaisesRegex(CheckError, "invalid track lesson ID"):
+            validate_catalog(catalog)
+
+    def test_cross_track_cycles_are_rejected(self):
+        catalog = deepcopy(CATALOG)
+        specialist = next(item for item in catalog["lessons"] if item["id"] == "P5-04")
+        specialist["prerequisites"] = ["GH-16"]
+        catalog["lessons"][-1]["prerequisites"].append("P5-04")
+        with self.assertRaisesRegex(CheckError, "cycle"):
+            validate_catalog(catalog)
+
     def test_unknown_and_duplicate_ids_are_rejected(self):
         catalog = deepcopy(CATALOG)
         catalog["lessons"][0]["prerequisites"] = ["P9-99"]

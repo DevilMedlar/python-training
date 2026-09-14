@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "catalog_version": "1.1",
+  "updated_on": null,
+  "environment": {
+    "os": null,
+    "python": null,
+    "command": null,
+    "execution_available": null
+  },
+  "goals": [
+    "Use Git and GitHub to develop and review Python projects."
+  ],
+  "current_lesson": "GH-01",
+  "lessons": {},
+  "reviews": [],
+  "capstones": {},
+  "next_task": "Find this repository's entry point, license, and verification report; explain what each establishes.",
+  "notes": [
+    "Selected companion track: github. Record the actual Git version and available tools when known."
+  ]
+}

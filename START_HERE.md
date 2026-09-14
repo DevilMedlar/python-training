@@ -3,6 +3,16 @@
 You do not need prior programming experience. You need a place to run Python,
 time for a small attempt, and a way to share your code or error message.
 
+## Choose your starting route
+
+For Python, continue with interpreter setup below. For GitHub, use the
+[GitHub launch prompt](tutor/GITHUB_START_PROMPT.md) and
+[GH-01](curriculum/github.md#gh-01-read-a-repository-and-choose-the-right-copy).
+Reading a public repository requires only a browser; making your first practice
+PR requires an account and a repository you can edit. Install local Git when you
+reach `GH-03`. The GitHub track's Python prerequisites begin at `GH-09`.
+You can keep both routes in one private progress record.
+
 ## Get a working interpreter
 
 Use a supported stable Python release compatible with your tools. This course's

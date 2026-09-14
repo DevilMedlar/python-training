@@ -1,12 +1,14 @@
 # Verification record
 
 Review date: 2026-09-14. This file records the scope of the four review passes.
+The original Python rebuild and subsequent GitHub addition have separate observed
+results below. The [GitHub audit](GITHUB_AUDIT.md) records its source-specific checks.
 Observed command results are recorded below after the complete repository checks.
 No combination of these checks proves universal correctness or educational efficacy.
 
 ## Pass 1 Source and factual review
 
-All seven attachments were inventoried and their content extracted, including
+The original seven attachments were inventoried and their content extracted, including
 Word tables and links. The five-phase topics and teaching guidance were mapped
 into the canonical course. Claims retained in the course were checked against
 primary documentation where version-sensitive, subtle, or research-dependent;
@@ -43,17 +45,20 @@ claim that every ChatGPT model will follow the prompt perfectly.
 
 ```sh
 python tools/check_repo.py
-python -m unittest discover -s tests -v
+python tools/run_tests.py
 python tools/progress.py tutor/progress-template.json --next
+python tools/progress.py tutor/github-progress-template.json --next --track github
+python -m examples.git_workflow_lab
 ```
 
 Install `requirements-research.txt` in a separate environment to include the
 optional NumPy/SciPy tests. Without those packages, those tests are explicitly
 skipped. GitHub CI tests the core on Python 3.12–3.14 and several operating
 systems, plus a separate pinned scientific job; configured jobs are not counted
-as successful until their actual results are observed.
+as successful until their actual results are observed. The Git behavior lab
+requires Git 2.28+ and creates disposable local repositories without network access.
 
-## Observed local results
+## Original Python rebuild local results
 
 On 2026-09-14, the completed checks ran on Linux x86-64 with CPython 3.12.14,
 NumPy 2.3.5, and SciPy 1.17.0. These are observations from that environment,
@@ -109,7 +114,45 @@ was a local run; CI's scientific job runs the smaller end-to-end regression case
 Runner labels and installed patch versions can change on future runs. This table
 records the observed run, not every possible Python build or future dependency.
 
-## Limits
+## GitHub addition local results
+
+The added reference was reviewed independently as described in
+[GITHUB_AUDIT.md](GITHUB_AUDIT.md). On Linux with CPython 3.12.14 and Git 2.51.1:
+
+| Check | Observed result |
+|---|---|
+| Original supplied Python example | Four tests passed; deliberate lowercase regression failed; restoration passed; empty discovery rejected |
+| Maintained unit suite | 100 tests passed, including five scientific tests; no skips in the installed local environment |
+| Offline Git lab | Seven invariant groups passed, including a fresh clone from a mirror and restored tracked content |
+| Markdown examples | All 22 runnable Python blocks passed |
+| Catalog | 66 lessons, 48 Python core lessons, 16 optional GitHub lessons, 115 primary source records |
+| Initial routing | Default record starts at P1-01; explicit GitHub route starts at GH-01 |
+
+The runner now rejects zero discovered tests; five intentional scientific skips
+in a core environment are distinct from an empty suite.
+
+## GitHub addition hosted results
+
+[Run 34902607844](https://github.com/DevilMedlar/python-training/actions/runs/34902607844)
+completed successfully for PR head `237548a0aaa9c7c782a9b6992f893438bc6c9986`.
+All ten jobs passed, and all ten job logs were inspected. This is a separate run
+of the GitHub addition, not an extrapolation from the earlier Python rebuild.
+
+| Runner label | Python 3.12 job | Python 3.13 job | Python 3.14 job | Git observed in the lab |
+|---|---|---|---|---|
+| `ubuntu-latest` | 3.12.14 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0 |
+| `windows-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0.windows.5 |
+| `macos-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0 |
+
+Each core job passed the repository checker, seven Git invariant groups, and both
+initial routing checks. Each test report lists 100 tests with five explicit skips:
+95 core tests passed, and the scientific tests were intentionally absent from that
+environment. The separate research job used CPython 3.12.14 and passed those five
+scientific tests with the pinned dependencies. All 22 runnable Markdown examples
+and 393 internal links passed the checker. This table records these observed
+environments; future runner images and patch versions may differ.
+
+## Limits of all checks
 
 External URLs were consulted for the cited topics; an automated link check cannot
 establish a source's truth. Internal links are checked offline. Optional third-party

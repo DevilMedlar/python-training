@@ -59,7 +59,7 @@ def anchors(text):
 
 
 def validate_catalog(catalog):
-    require(catalog.get("catalog_version") == "1.0", "unsupported catalog version")
+    require(catalog.get("catalog_version") == "1.1", "unsupported catalog version")
     require(catalog.get("minimum_python") == "3.12", "review changes to minimum Python explicitly")
     phases = catalog.get("phases")
     lessons = catalog.get("lessons")
@@ -67,13 +67,33 @@ def validate_catalog(catalog):
     require([phase["id"] for phase in phases] == [1, 2, 3, 4, 5], "phase identities or order changed")
     ids = [lesson["id"] for lesson in lessons]
     require(len(set(ids)) == len(ids), "duplicate lesson ID")
-    require(ids == sorted(ids), "lesson order must be stable")
+    require(ids == sorted(ids, key=lambda ident: (not bool(re.fullmatch(r"P[1-5]-\d{2}", ident)), ident)),
+            "lesson order must be stable")
+    tracks = catalog.get("tracks", [])
+    require(isinstance(tracks, list), "tracks must be a list")
+    track_by_id = {track["id"]: track for track in tracks}
+    require(len(track_by_id) == len(tracks), "duplicate track ID")
+    require(len({track["prefix"] for track in tracks}) == len(tracks), "duplicate track prefix")
+    for track in tracks:
+        require(re.fullmatch(r"[a-z][a-z0-9-]*", track["id"]), "invalid track ID")
+        require(re.fullmatch(r"[A-Z]{2,5}", track["prefix"]), "invalid track prefix")
+        require(track["title"].strip() and track["path"].strip() and track["capstone"].strip(),
+                "incomplete track metadata")
     by_id = {lesson["id"]: lesson for lesson in lessons}
     for lesson in lessons:
         ident = lesson["id"]
-        require(re.fullmatch(r"P[1-5]-\d{2}", ident), f"invalid lesson ID: {ident}")
-        require(lesson["phase"] == int(ident[1]), f"phase mismatch: {ident}")
         require(type(lesson["core"]) is bool, f"core must be boolean: {ident}")
+        if lesson["phase"] is None:
+            track = track_by_id.get(lesson.get("track"))
+            require(track is not None, f"unknown companion track: {ident}")
+            require(re.fullmatch(re.escape(track["prefix"]) + r"-\d{2}", ident),
+                    f"invalid track lesson ID: {ident}")
+            require(not lesson["core"], f"companion lesson cannot enter the default Python route: {ident}")
+        else:
+            require(re.fullmatch(r"P[1-5]-\d{2}", ident), f"invalid lesson ID: {ident}")
+            require(type(lesson["phase"]) is int and lesson["phase"] == int(ident[1]),
+                    f"phase mismatch: {ident}")
+            require(lesson.get("track") is None, f"Python lesson has a companion track: {ident}")
         require(lesson["objective"].strip() and lesson["title"].strip(), f"missing objective/title: {ident}")
         require(len(set(lesson["prerequisites"])) == len(lesson["prerequisites"]), f"duplicate prerequisite: {ident}")
         for prerequisite in lesson["prerequisites"]:
@@ -154,14 +174,16 @@ def check_repo(root=ROOT):
             require(f"**{field}:**" in body, f"missing {field} in {lesson['id']}")
         require("```python" in body or "**Worked example:**" in body, f"missing example: {lesson['id']}")
         prerequisites = re.search(r"\*\*Prerequisites:\*\* ([^\n]+)", body).group(1)
-        require(re.findall(r"P\d-\d{2}", prerequisites) == lesson["prerequisites"], f"prerequisite drift: {lesson['id']}")
+        require(re.findall(r"\b[A-Z][A-Z0-9]*-\d{2}\b", prerequisites) == lesson["prerequisites"],
+                f"prerequisite drift: {lesson['id']}")
         actual_sources = re.findall(r"\[([A-Z][A-Z0-9-]+)\]\(\.\./audit/SOURCES", body)
         require(actual_sources == lesson["source_ids"] and actual_sources, f"source mapping drift: {lesson['id']}")
         require(all(ident in sources for ident in actual_sources), f"unknown source: {lesson['id']}")
         require(lesson["anchor"] in anchors(content), f"lesson anchor mismatch: {lesson['id']}")
     require((root / "curriculum/INDEX.md").read_text(encoding="utf-8") == render(catalog),
             "index is stale: run python tools/render_index.py")
-    validate_state(json.loads((root / "tutor/progress-template.json").read_text(encoding="utf-8")), catalog)
+    for template in ("progress-template.json", "github-progress-template.json"):
+        validate_state(json.loads((root / "tutor" / template).read_text(encoding="utf-8")), catalog)
     markdown_files = [path for path in root.rglob("*.md") if not any(
         part in {".git", ".venv", "progress", "__pycache__"} for part in path.relative_to(root).parts)]
     links = sum(check_links(path, root) for path in markdown_files)

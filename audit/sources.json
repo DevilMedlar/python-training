@@ -480,6 +480,446 @@
       "reviewed_on": "2026-09-14",
       "status": "consulted_primary_source",
       "scope": "Insufficient evidence for matching instruction to diagnosed learning styles"
+    },
+    {
+      "id": "GH-CLONE",
+      "title": "Cloning a repository",
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Local history and remote configuration"
+    },
+    {
+      "id": "GH-TEMPLATE",
+      "title": "Creating from a template",
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "New independent project history versus a fork"
+    },
+    {
+      "id": "GH-LICENSE",
+      "title": "Licensing a repository",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Public visibility does not supply an open-source license"
+    },
+    {
+      "id": "GH-PERMALINK",
+      "title": "Permanent file links",
+      "url": "https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Commit-specific links and the y shortcut"
+    },
+    {
+      "id": "GH-HELLO",
+      "title": "GitHub Hello World",
+      "url": "https://docs.github.com/en/get-started/using-github/hello-world",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Browser branch, edit, pull request, and merge"
+    },
+    {
+      "id": "GH-FLOW",
+      "title": "GitHub flow",
+      "url": "https://docs.github.com/en/get-started/using-github/github-flow",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Focused branches, review, merge, and follow-up changes"
+    },
+    {
+      "id": "GH-SETUP",
+      "title": "Set up Git",
+      "url": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Installation, commit identity, and authentication distinction"
+    },
+    {
+      "id": "GH-AUTH",
+      "title": "Authentication to GitHub",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "HTTPS credentials, SSH keys, and account access"
+    },
+    {
+      "id": "GH-TOKENS",
+      "title": "Personal access tokens",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Fine-grained token permissions and documented feature limitations"
+    },
+    {
+      "id": "GH-DEV",
+      "title": "The github.dev editor",
+      "url": "https://docs.github.com/en/codespaces/the-githubdev-web-based-editor",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Browser editing without terminal or compute; Codespaces distinction"
+    },
+    {
+      "id": "GH-CLI-AUTH",
+      "title": "GitHub CLI authentication",
+      "url": "https://cli.github.com/manual/gh_auth_login",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Interactive sign-in, scopes, and credential handling"
+    },
+    {
+      "id": "GH-DESKTOP",
+      "title": "GitHub Desktop supported systems",
+      "url": "https://docs.github.com/en/desktop/overview/supported-operating-systems-for-github-desktop",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Official Windows and macOS support"
+    },
+    {
+      "id": "GIT-RESTORE",
+      "title": "Git restore",
+      "url": "https://git-scm.com/docs/git-restore",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Index versus working-tree destinations and default restoration sources"
+    },
+    {
+      "id": "GIT-PULL",
+      "title": "Git pull",
+      "url": "https://git-scm.com/docs/git-pull",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Fetch followed by integration into the current branch; explicit fast-forward policy"
+    },
+    {
+      "id": "GH-FORK",
+      "title": "Fork a repository",
+      "url": "https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Origin, upstream, access, and contribution workflow"
+    },
+    {
+      "id": "GH-MERGES",
+      "title": "Pull request merges",
+      "url": "https://docs.github.com/en/pull-requests/reference/pull-request-merges",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Merge commit, squash, rebase, and resulting history"
+    },
+    {
+      "id": "GIT-MERGE",
+      "title": "Git merge",
+      "url": "https://git-scm.com/docs/git-merge",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Conflict resolution, clean-start abort, and limits with uncommitted changes"
+    },
+    {
+      "id": "GIT-REVERT",
+      "title": "Git revert",
+      "url": "https://git-scm.com/docs/git-revert",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "New reversal commits, conflicts, and merge-parent requirements"
+    },
+    {
+      "id": "GIT-STASH",
+      "title": "Git stash",
+      "url": "https://git-scm.com/docs/git-stash",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Untracked versus ignored files; apply versus pop"
+    },
+    {
+      "id": "GIT-REFLOG",
+      "title": "Git reflog",
+      "url": "https://git-scm.com/docs/git-reflog",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Local reference history, recovery, and expiration limits"
+    },
+    {
+      "id": "GH-IGNORE",
+      "title": "Ignoring files",
+      "url": "https://docs.github.com/en/get-started/git-basics/ignoring-files",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Ignore patterns do not remove already tracked files"
+    },
+    {
+      "id": "GH-SENSITIVE",
+      "title": "Removing sensitive data",
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Rotate credentials first; history rewriting and distributed copies"
+    },
+    {
+      "id": "GH-PYTHON-CI",
+      "title": "Build and test Python with Actions",
+      "url": "https://docs.github.com/en/actions/tutorials/build-and-test-code/python",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Interpreter setup, test execution, matrices, and job logs"
+    },
+    {
+      "id": "GH-ACTIONS-EVENTS",
+      "title": "Workflow triggering events",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Pull-request base filters and event-specific execution context"
+    },
+    {
+      "id": "GH-ACTIONS-SECURITY",
+      "title": "Secure use of Actions",
+      "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Full commit pins, least privilege, and untrusted workflow input"
+    },
+    {
+      "id": "GH-CODE-SEARCH",
+      "title": "Code search syntax",
+      "url": "https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Repository, path, language, and regular-expression qualifiers"
+    },
+    {
+      "id": "GH-REPO-SEARCH",
+      "title": "Repository search",
+      "url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Repository qualifiers and explicit README search"
+    },
+    {
+      "id": "GH-ISSUE-SEARCH",
+      "title": "Issue and pull request search",
+      "url": "https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Issue/PR distinctions and status/author qualifiers"
+    },
+    {
+      "id": "GH-PROJECTS",
+      "title": "About Projects",
+      "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Issue planning and structured project views"
+    },
+    {
+      "id": "GH-ISSUE-LINKS",
+      "title": "Link a pull request to an issue",
+      "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Closing keywords and default-branch merge behavior"
+    },
+    {
+      "id": "GH-MARKDOWN",
+      "title": "GitHub writing and formatting",
+      "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Links, task lists, code fences, and readable documentation"
+    },
+    {
+      "id": "GH-NOTIFICATIONS",
+      "title": "Configuring notifications",
+      "url": "https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Participation, watching, subscriptions, and notification settings"
+    },
+    {
+      "id": "GH-TWO-FACTOR",
+      "title": "Two-factor authentication",
+      "url": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Authentication methods and recovery-code handling"
+    },
+    {
+      "id": "GH-RULESETS",
+      "title": "About rulesets",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Plan/repository availability and configured review/check requirements"
+    },
+    {
+      "id": "GH-CODEOWNERS",
+      "title": "About code owners",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Ownership patterns, review requests, and separately required approval"
+    },
+    {
+      "id": "GH-DEPENDABOT",
+      "title": "Dependabot alerts",
+      "url": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Known dependency vulnerabilities and coverage limitations"
+    },
+    {
+      "id": "GH-RELEASES",
+      "title": "About releases",
+      "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Tags, release notes, and distributed assets"
+    },
+    {
+      "id": "GH-PAGES",
+      "title": "What is GitHub Pages",
+      "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Static hosting and plan availability"
+    },
+    {
+      "id": "GH-GISTS",
+      "title": "Creating gists",
+      "url": "https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Secret gist discoverability is not access control"
+    },
+    {
+      "id": "GH-PACKAGES",
+      "title": "GitHub Packages",
+      "url": "https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Package hosting and registry-specific authentication"
+    },
+    {
+      "id": "GH-USAGE",
+      "title": "Included product usage",
+      "url": "https://docs.github.com/en/billing/reference/product-usage-included",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Dated Free/Pro Actions and Codespaces allowance snapshot"
+    },
+    {
+      "id": "GH-CODESPACES-BILLING",
+      "title": "Codespaces billing",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-codespaces",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Core-hour computation and retained storage usage"
+    },
+    {
+      "id": "GH-LARGE-FILES",
+      "title": "Large files on GitHub",
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "MiB file thresholds and recommended repository sizes"
+    },
+    {
+      "id": "GH-CLI-API",
+      "title": "GitHub CLI API command",
+      "url": "https://cli.github.com/manual/gh_api",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Explicit GET with fields, POST default with parameters, and pagination"
+    },
+    {
+      "id": "GH-CLI-PR",
+      "title": "GitHub CLI pull requests",
+      "url": "https://cli.github.com/manual/gh_pr",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "CLI pull-request inspection and collaboration commands"
+    },
+    {
+      "id": "GH-REST-LIMITS",
+      "title": "REST API rate limits",
+      "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Authentication-dependent primary limits and secondary limits"
+    },
+    {
+      "id": "GH-REST-ISSUES",
+      "title": "REST issues endpoints",
+      "url": "https://docs.github.com/en/rest/issues/issues",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Issue listings also include pull requests, distinguished by pull_request"
+    },
+    {
+      "id": "OAI-AGENTS",
+      "title": "Codex repository instructions",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "AGENTS.md discovery and instruction scope in Codex; no automatic file access in every chat"
+    },
+    {
+      "id": "OAI-GITHUB-REVIEW",
+      "title": "Codex GitHub integration",
+      "url": "https://learn.chatgpt.com/docs/third-party/github",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Repository connection, review setup, and Codex review invocation"
+    },
+    {
+      "id": "GIT-BISECT",
+      "title": "Git bisect",
+      "url": "https://git-scm.com/docs/git-bisect",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Good/bad classification, skipped commits, and a reliable reproducer"
+    },
+    {
+      "id": "GH-BACKUP",
+      "title": "Backing up a repository",
+      "url": "https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Mirror history, LFS objects, and separate non-Git data"
+    },
+    {
+      "id": "GH-ACTIONS-BILLING",
+      "title": "Actions billing",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Standard public hosted runner free use versus charged larger runners"
+    },
+    {
+      "id": "GH-PAGES-ACCESS",
+      "title": "Pages access control",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Private publication requires eligible Enterprise Cloud organization project sites"
+    },
+    {
+      "id": "GIT-INIT",
+      "title": "Git init in version 2.28",
+      "url": "https://git-scm.com/docs/git-init/2.28.0",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Initial branch selection with -b used by the offline lab"
+    },
+    {
+      "id": "GH-CLI-PR-CREATE",
+      "title": "Create a pull request with the CLI",
+      "url": "https://cli.github.com/manual/gh_pr_create",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Base/head selection and body-file input"
     }
   ]
 }

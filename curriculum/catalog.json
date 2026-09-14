@@ -1,5 +1,5 @@
 {
-  "catalog_version": "1.0",
+  "catalog_version": "1.1",
   "minimum_python": "3.12",
   "core_python_targets": [
     "3.12",
@@ -835,6 +835,322 @@
         "CPYTHON-CONTRIBUTING",
         "RESEARCH-PRACTICE"
       ]
+    },
+    {
+      "id": "GH-01",
+      "phase": null,
+      "track": "github",
+      "title": "Read a repository and choose the right copy",
+      "path": "curriculum/github.md",
+      "anchor": "gh-01-read-a-repository-and-choose-the-right-copy",
+      "prerequisites": [],
+      "core": false,
+      "objective": "Find a project's purpose, license, version, and checks, and distinguish a ZIP, clone, fork, template, and branch.",
+      "source_ids": [
+        "GH-CLONE",
+        "GH-TEMPLATE",
+        "GH-LICENSE",
+        "GH-PERMALINK"
+      ]
+    },
+    {
+      "id": "GH-02",
+      "phase": null,
+      "track": "github",
+      "title": "Complete a browser pull request",
+      "path": "curriculum/github.md",
+      "anchor": "gh-02-complete-a-browser-pull-request",
+      "prerequisites": [
+        "GH-01"
+      ],
+      "core": false,
+      "objective": "Make a small browser edit on a branch and explain its path through a pull request into the default branch.",
+      "source_ids": [
+        "GH-HELLO",
+        "GH-FLOW"
+      ]
+    },
+    {
+      "id": "GH-03",
+      "phase": null,
+      "track": "github",
+      "title": "Set up tools and authenticate",
+      "path": "curriculum/github.md",
+      "anchor": "gh-03-set-up-tools-and-authenticate",
+      "prerequisites": [
+        "GH-02"
+      ],
+      "core": false,
+      "objective": "Choose a working GitHub tool and distinguish commit identity, sign-in, repository access, and execution capability.",
+      "source_ids": [
+        "GH-SETUP",
+        "GH-AUTH",
+        "GH-TOKENS",
+        "GH-DEV",
+        "GH-CLI-AUTH",
+        "GH-DESKTOP"
+      ]
+    },
+    {
+      "id": "GH-04",
+      "phase": null,
+      "track": "github",
+      "title": "Understand working files and staged snapshots",
+      "path": "curriculum/github.md",
+      "anchor": "gh-04-understand-working-files-and-staged-snapshots",
+      "prerequisites": [
+        "GH-03"
+      ],
+      "core": false,
+      "objective": "Predict which exact file content a commit will record after editing and staging.",
+      "source_ids": [
+        "GIT-BOOK",
+        "GIT-RESTORE"
+      ]
+    },
+    {
+      "id": "GH-05",
+      "phase": null,
+      "track": "github",
+      "title": "Synchronize remotes without guessing",
+      "path": "curriculum/github.md",
+      "anchor": "gh-05-synchronize-remotes-without-guessing",
+      "prerequisites": [
+        "GH-04"
+      ],
+      "core": false,
+      "objective": "Use fetch, an explicit fast-forward update, and a targeted push while naming the affected local and remote branches.",
+      "source_ids": [
+        "GIT-PULL",
+        "GH-CLONE",
+        "GIT-BOOK"
+      ]
+    },
+    {
+      "id": "GH-06",
+      "phase": null,
+      "track": "github",
+      "title": "Review contributions and choose a merge method",
+      "path": "curriculum/github.md",
+      "anchor": "gh-06-review-contributions-and-choose-a-merge-method",
+      "prerequisites": [
+        "GH-05"
+      ],
+      "core": false,
+      "objective": "Prepare a focused PR or fork contribution and explain the resulting merge history.",
+      "source_ids": [
+        "GH-FLOW",
+        "GH-FORK",
+        "GH-MERGES"
+      ]
+    },
+    {
+      "id": "GH-07",
+      "phase": null,
+      "track": "github",
+      "title": "Resolve a conflict and verify the combined result",
+      "path": "curriculum/github.md",
+      "anchor": "gh-07-resolve-a-conflict-and-verify-the-combined-result",
+      "prerequisites": [
+        "GH-06"
+      ],
+      "core": false,
+      "objective": "Reproduce a merge conflict, abort it from a clean start, then resolve and test the intended combined content.",
+      "source_ids": [
+        "GIT-MERGE",
+        "GIT-RESTORE"
+      ]
+    },
+    {
+      "id": "GH-08",
+      "phase": null,
+      "track": "github",
+      "title": "Recover deliberately and keep private files out",
+      "path": "curriculum/github.md",
+      "anchor": "gh-08-recover-deliberately-and-keep-private-files-out",
+      "prerequisites": [
+        "GH-07"
+      ],
+      "core": false,
+      "objective": "Select a recovery operation for staged, unstaged, committed, and temporarily saved work without confusing their effects.",
+      "source_ids": [
+        "GIT-RESTORE",
+        "GIT-REVERT",
+        "GIT-STASH",
+        "GIT-REFLOG",
+        "GH-IGNORE",
+        "GH-SENSITIVE"
+      ]
+    },
+    {
+      "id": "GH-09",
+      "phase": null,
+      "track": "github",
+      "title": "Review a small Python change with real tests",
+      "path": "curriculum/github.md",
+      "anchor": "gh-09-review-a-small-python-change-with-real-tests",
+      "prerequisites": [
+        "GH-08",
+        "P1-10",
+        "P1-11"
+      ],
+      "core": false,
+      "objective": "Connect a Python behavior contract to a focused commit and a test that detects a plausible regression.",
+      "source_ids": [
+        "PY-TEXT",
+        "PY-UNITTEST",
+        "GH-PYTHON-CI"
+      ]
+    },
+    {
+      "id": "GH-10",
+      "phase": null,
+      "track": "github",
+      "title": "Understand and inspect GitHub Actions",
+      "path": "curriculum/github.md",
+      "anchor": "gh-10-understand-and-inspect-github-actions",
+      "prerequisites": [
+        "GH-09"
+      ],
+      "core": false,
+      "objective": "Read a workflow's trigger, permissions, jobs, matrix, and logs, and distinguish a passing check from a skipped or absent one.",
+      "source_ids": [
+        "GH-PYTHON-CI",
+        "GH-ACTIONS-EVENTS",
+        "GH-ACTIONS-SECURITY"
+      ]
+    },
+    {
+      "id": "GH-11",
+      "phase": null,
+      "track": "github",
+      "title": "Find work and document it clearly",
+      "path": "curriculum/github.md",
+      "anchor": "gh-11-find-work-and-document-it-clearly",
+      "prerequisites": [
+        "GH-10"
+      ],
+      "core": false,
+      "objective": "Search the right GitHub result type and turn a reproducible learning problem into a bounded issue and reviewable documentation change.",
+      "source_ids": [
+        "GH-CODE-SEARCH",
+        "GH-REPO-SEARCH",
+        "GH-ISSUE-SEARCH",
+        "GH-PROJECTS",
+        "GH-ISSUE-LINKS",
+        "GH-MARKDOWN",
+        "GH-NOTIFICATIONS"
+      ]
+    },
+    {
+      "id": "GH-12",
+      "phase": null,
+      "track": "github",
+      "title": "Protect accounts and review boundaries",
+      "path": "curriculum/github.md",
+      "anchor": "gh-12-protect-accounts-and-review-boundaries",
+      "prerequisites": [
+        "GH-11"
+      ],
+      "core": false,
+      "objective": "Explain an appropriate repository protection proposal and the first response to exposed credentials.",
+      "source_ids": [
+        "GH-TWO-FACTOR",
+        "GH-TOKENS",
+        "GH-RULESETS",
+        "GH-CODEOWNERS",
+        "GH-DEPENDABOT",
+        "GH-SENSITIVE"
+      ]
+    },
+    {
+      "id": "GH-13",
+      "phase": null,
+      "track": "github",
+      "title": "Release useful work and understand usage limits",
+      "path": "curriculum/github.md",
+      "anchor": "gh-13-release-useful-work-and-understand-usage-limits",
+      "prerequisites": [
+        "GH-12"
+      ],
+      "core": false,
+      "objective": "Distinguish tags, releases, Pages, packages, and gists, and verify current storage and compute constraints before choosing a service.",
+      "source_ids": [
+        "GH-RELEASES",
+        "GH-PAGES",
+        "GH-GISTS",
+        "GH-PACKAGES",
+        "GH-USAGE",
+        "GH-CODESPACES-BILLING",
+        "GH-LARGE-FILES"
+      ]
+    },
+    {
+      "id": "GH-14",
+      "phase": null,
+      "track": "github",
+      "title": "Inspect GitHub through the CLI and APIs",
+      "path": "curriculum/github.md",
+      "anchor": "gh-14-inspect-github-through-the-cli-and-apis",
+      "prerequisites": [
+        "GH-13"
+      ],
+      "core": false,
+      "objective": "Use a documented read-only GitHub CLI query and explain permissions, pagination, and rate-limit handling.",
+      "source_ids": [
+        "GH-CLI-API",
+        "GH-CLI-PR",
+        "GH-REST-LIMITS",
+        "GH-REST-ISSUES"
+      ]
+    },
+    {
+      "id": "GH-15",
+      "phase": null,
+      "track": "github",
+      "title": "Collaborate with a tutor or coding agent",
+      "path": "curriculum/github.md",
+      "anchor": "gh-15-collaborate-with-a-tutor-or-coding-agent",
+      "prerequisites": [
+        "GH-14"
+      ],
+      "core": false,
+      "objective": "Give an assistant a bounded repository task and independently assess its access, changes, and verification evidence.",
+      "source_ids": [
+        "OAI-AGENTS",
+        "OAI-GITHUB-REVIEW"
+      ]
+    },
+    {
+      "id": "GH-16",
+      "phase": null,
+      "track": "github",
+      "title": "Maintain history and test a restoration plan",
+      "path": "curriculum/github.md",
+      "anchor": "gh-16-maintain-history-and-test-a-restoration-plan",
+      "prerequisites": [
+        "GH-15"
+      ],
+      "core": false,
+      "objective": "Select an advanced Git tool for a concrete problem and distinguish a Git backup from a complete GitHub project backup.",
+      "source_ids": [
+        "GIT-BOOK",
+        "GIT-BISECT",
+        "GH-BACKUP",
+        "GIT-REFLOG"
+      ]
+    }
+  ],
+  "compatible_progress_versions": [
+    "1.0"
+  ],
+  "tracks": [
+    {
+      "id": "github",
+      "prefix": "GH",
+      "title": "Git and GitHub",
+      "path": "curriculum/github.md",
+      "capstone": "practice/GITHUB_LABS.md#github-capstone-a-reviewable-python-contribution"
     }
   ]
 }

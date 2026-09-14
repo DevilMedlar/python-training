@@ -449,6 +449,10 @@ line before scanning every line of the program.
 
 ## P1-11 Modules environments and standard tools
 
+For a parallel introduction to repository reading and sharing changes, use the
+[GitHub companion](github.md). This Python lesson is a prerequisite for its later
+Python testing work; the initial browser lessons need no Python.
+
 **Prerequisites:** P1-10.
 
 **Outcome:** Import a helper without starting its interactive interface and identify
