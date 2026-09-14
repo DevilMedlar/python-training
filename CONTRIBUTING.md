@@ -6,7 +6,7 @@ Keep the course accurate, usable, and easy for a tutor to navigate. Read
 
 For a lesson change, identify the learner problem, prerequisites, objective,
 worked example, two practice tasks, hints, evidence, and sources. Preserve stable
-lesson IDs. Update `curriculum/catalog.json` and the phase guide together, then
+lesson IDs. Update `curriculum/catalog.json` and the phase or companion guide together, then
 regenerate the index with `python tools/render_index.py`.
 
 For technical changes, state the contract and the relevant failure case. Add
@@ -15,7 +15,9 @@ Consult primary documentation for the supported version. Record consequential
 source corrections in the audit, including whether a behavior was documented,
 executed, or remains an untested extension.
 
-Run the repository checker and unittest suite. Run the optional scientific suite
+Run `python tools/check_repo.py` and `python tools/run_tests.py`; zero discovered
+tests must fail. For Git changes, run `python -m examples.git_workflow_lab` with
+Git 2.28 or later. Run the optional scientific suite
 when changing that lab. Do not label an unrun environment supported by evidence
 merely because a CI matrix contains it. Do not promise that a prompt is flawless
 or that the course confers a degree.

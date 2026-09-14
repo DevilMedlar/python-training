@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def render(catalog):
     lines = ["# Lesson index", "", "Generated from [catalog.json](catalog.json). Stable IDs identify lessons across",
-             "conversations. Read only the current phase and necessary prerequisites.",
-             "The default route uses core lessons; specialist labs are optional.",
+             "conversations. Read only the current phase or companion lesson and necessary prerequisites.",
+             "The default Python route uses core lessons; companion tracks are selected separately.",
              "Each lesson has an objective, two practice tasks, hints, evidence, and sources.", ""]
     for phase in catalog["phases"]:
         lines += [f"## Phase {phase['id']} {phase['title']}", "",
@@ -24,6 +24,18 @@ def render(catalog):
             lines.append(f"| [{lesson['id']}]({path}#{lesson['anchor']}) | {lesson['title']} | "
                          f"{prerequisites} | {'Core' if lesson['core'] else 'Optional specialty'} |")
         lines += ["", f"Phase checkpoint: [capstone](../{phase['capstone']}).", ""]
+    for track in catalog.get("tracks", []):
+        lines += [f"## {track['title']} companion track", "",
+                  f"Choose `{track['id']}` with the tutor or progress tool. Start without Python",
+                  "where no Python prerequisite is listed; cross-track prerequisites still apply.", "",
+                  "| Lesson | Focus | Prerequisites |", "|---|---|---|"]
+        for lesson in catalog["lessons"]:
+            if lesson.get("track") != track["id"]:
+                continue
+            path = Path(lesson["path"]).name
+            prerequisites = ", ".join(lesson["prerequisites"]) or "None"
+            lines.append(f"| [{lesson['id']}]({path}#{lesson['anchor']}) | {lesson['title']} | {prerequisites} |")
+        lines += ["", f"Track checkpoint: [capstone](../{track['capstone']}).", ""]
     return "\n".join(lines)
 
 

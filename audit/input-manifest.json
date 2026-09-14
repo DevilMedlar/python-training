@@ -49,6 +49,13 @@
       "sha256": "b05b3ec9089b3e1df47719ef1d96c2fc9bccee96aec13bc7aa722dbb92cbfeb6",
       "role": "Phase framing",
       "adapted_to": "README; placement; assessment; corrected unsupported trajectory"
+    },
+    {
+      "filename": "GitHub_Practical_Reference(1).md",
+      "bytes": 60185,
+      "sha256": "72a1f3e7b4dce45fc84f8c3fcec66422def0682d8d8251a24b702775b6cf97d2",
+      "role": "Git and GitHub companion curriculum",
+      "adapted_to": "GH-01–GH-16; GitHub labs and reference; topic normalizer; offline Git verifier; tutor routing"
     }
   ]
 }

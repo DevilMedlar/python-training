@@ -1,8 +1,8 @@
 # Lesson index
 
 Generated from [catalog.json](catalog.json). Stable IDs identify lessons across
-conversations. Read only the current phase and necessary prerequisites.
-The default route uses core lessons; specialist labs are optional.
+conversations. Read only the current phase or companion lesson and necessary prerequisites.
+The default Python route uses core lessons; companion tracks are selected separately.
 Each lesson has an objective, two practice tasks, hints, evidence, and sources.
 
 ## Phase 1 Novice
@@ -89,3 +89,29 @@ Phase checkpoint: [capstone](../practice/CAPSTONES.md#capstone-4-reproducible-in
 | [P5-08](phase-5.md#p5-08-maintenance-mentoring-and-the-creator-capstone) | Maintenance mentoring and the creator capstone | P5-07 | Core |
 
 Phase checkpoint: [capstone](../practice/CAPSTONES.md#capstone-5-useful-contribution).
+
+## Git and GitHub companion track
+
+Choose `github` with the tutor or progress tool. Start without Python
+where no Python prerequisite is listed; cross-track prerequisites still apply.
+
+| Lesson | Focus | Prerequisites |
+|---|---|---|
+| [GH-01](github.md#gh-01-read-a-repository-and-choose-the-right-copy) | Read a repository and choose the right copy | None |
+| [GH-02](github.md#gh-02-complete-a-browser-pull-request) | Complete a browser pull request | GH-01 |
+| [GH-03](github.md#gh-03-set-up-tools-and-authenticate) | Set up tools and authenticate | GH-02 |
+| [GH-04](github.md#gh-04-understand-working-files-and-staged-snapshots) | Understand working files and staged snapshots | GH-03 |
+| [GH-05](github.md#gh-05-synchronize-remotes-without-guessing) | Synchronize remotes without guessing | GH-04 |
+| [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method) | Review contributions and choose a merge method | GH-05 |
+| [GH-07](github.md#gh-07-resolve-a-conflict-and-verify-the-combined-result) | Resolve a conflict and verify the combined result | GH-06 |
+| [GH-08](github.md#gh-08-recover-deliberately-and-keep-private-files-out) | Recover deliberately and keep private files out | GH-07 |
+| [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests) | Review a small Python change with real tests | GH-08, P1-10, P1-11 |
+| [GH-10](github.md#gh-10-understand-and-inspect-github-actions) | Understand and inspect GitHub Actions | GH-09 |
+| [GH-11](github.md#gh-11-find-work-and-document-it-clearly) | Find work and document it clearly | GH-10 |
+| [GH-12](github.md#gh-12-protect-accounts-and-review-boundaries) | Protect accounts and review boundaries | GH-11 |
+| [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits) | Release useful work and understand usage limits | GH-12 |
+| [GH-14](github.md#gh-14-inspect-github-through-the-cli-and-apis) | Inspect GitHub through the CLI and APIs | GH-13 |
+| [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent) | Collaborate with a tutor or coding agent | GH-14 |
+| [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan) | Maintain history and test a restoration plan | GH-15 |
+
+Track checkpoint: [capstone](../practice/GITHUB_LABS.md#github-capstone-a-reviewable-python-contribution).

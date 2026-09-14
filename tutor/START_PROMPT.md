@@ -2,6 +2,7 @@
 
 Copy the text below into a conversation that can access this repository, or
 attach the named files. Replace the optional preferences with your own.
+For Git and GitHub, use [the companion launch prompt](GITHUB_START_PROMPT.md).
 
 ```text
 Use DevilMedlar/python-training as my Python curriculum.

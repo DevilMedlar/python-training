@@ -30,6 +30,20 @@ two or three tasks rather than this entire table.
 
 ## Scoring a task
 
+For a learner choosing GitHub, use a small relevant sample from this table.
+Browser beginners begin at `GH-01` without a Python placement requirement.
+
+| GitHub entry point | Practical check | Route if a gap appears |
+|---|---|---|
+| Read and collaborate | Find README/license; explain the base/head of a PR | GH-01–GH-02 |
+| Local snapshots | Predict a commit after staging, then editing the same file again | GH-03–GH-04 |
+| Synchronize and recover | Explain what fetch changes; inspect a disposable conflict before resolving it | GH-05–GH-08 |
+| Python checks | Show a regression test fail for a deliberate defect and pass after restoration | GH-09, with P1-10/P1-11 checked |
+| Review and maintain | Explain a workflow result, review boundary, and recoverable contribution | Relevant GH-10–GH-16 lessons |
+
+Do not perform destructive operations on a learner's real project for placement.
+Prior work can supply evidence only for the objectives actually inspected.
+
 Record `pass` or `retry`, the actual response, and support used. Use `none` for
 independent work, `reference` for allowed documentation/accommodations, `hint`
 for conceptual assistance, and `solution` when the answer or a modeled decisive

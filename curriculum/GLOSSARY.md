@@ -51,3 +51,30 @@ to this course. Relevant primary references appear in each phase and the source 
 | ABI | The binary interface contract between compiled components |
 | Transfer | Applying a learned skill in a changed task or context |
 | Delayed review | An independent check on a later occasion to examine retention |
+
+## Git and GitHub terms
+
+Use these with the [companion lessons](github.md); the
+[command reference](../practice/GITHUB_REFERENCE.md) explains effects and boundaries.
+
+| Term | Working meaning |
+|---|---|
+| Repository | Project history and associated Git data; a working clone also has editable files |
+| Working tree | Files currently checked out for editing |
+| Index or staging area | Proposed next snapshot; later edits do not automatically restage themselves |
+| Commit | Recorded snapshot, metadata, and parent references |
+| HEAD | Reference to the current commit, usually through the checked-out branch |
+| Branch | Movable reference naming a line of work |
+| Remote | Named configuration identifying another repository |
+| Remote-tracking branch | Local reference recording an observed remote branch state |
+| Fetch | Receive objects and update references according to the fetch configuration |
+| Pull | Fetch and integrate into the current branch according to the selected policy |
+| Push | Request updates to references in a remote repository and transfer needed objects |
+| Fork | Related repository under another account for independent work/contribution |
+| Pull request | Proposal to bring a head branch's changes into a base branch |
+| Conflict | Integration that requires an explicit content or structural resolution |
+| Revert | New commit reversing changes from a selected earlier commit |
+| Reflog | Local record of reference movements, subject to expiration |
+| CI | Automated integration checks with a defined trigger, environment, and coverage |
+| Release | Published version information and optional assets associated with a tag |
+| Ruleset | Configured constraints on repository changes, with scope and availability limits |

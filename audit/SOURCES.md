@@ -246,3 +246,223 @@ See [the claim audit](CLAIM_AUDIT.md) and [verification](VERIFICATION.md).
 ## LEARNING-STYLES
 
 [Learning Styles Concepts and Evidence](https://pubmed.ncbi.nlm.nih.gov/26162104/). Insufficient evidence for matching instruction to diagnosed learning styles.
+
+## GH-CLONE
+
+[Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). Local history and remote configuration.
+
+## GH-TEMPLATE
+
+[Creating from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). New independent project history versus a fork.
+
+## GH-LICENSE
+
+[Licensing a repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository). Public visibility does not supply an open-source license.
+
+## GH-PERMALINK
+
+[Permanent file links](https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files). Commit-specific links and the y shortcut.
+
+## GH-HELLO
+
+[GitHub Hello World](https://docs.github.com/en/get-started/using-github/hello-world). Browser branch, edit, pull request, and merge.
+
+## GH-FLOW
+
+[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow). Focused branches, review, merge, and follow-up changes.
+
+## GH-SETUP
+
+[Set up Git](https://docs.github.com/en/get-started/git-basics/set-up-git). Installation, commit identity, and authentication distinction.
+
+## GH-AUTH
+
+[Authentication to GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github). HTTPS credentials, SSH keys, and account access.
+
+## GH-TOKENS
+
+[Personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Fine-grained token permissions and documented feature limitations.
+
+## GH-DEV
+
+[The github.dev editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor). Browser editing without terminal or compute; Codespaces distinction.
+
+## GH-CLI-AUTH
+
+[GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login). Interactive sign-in, scopes, and credential handling.
+
+## GH-DESKTOP
+
+[GitHub Desktop supported systems](https://docs.github.com/en/desktop/overview/supported-operating-systems-for-github-desktop). Official Windows and macOS support.
+
+## GIT-RESTORE
+
+[Git restore](https://git-scm.com/docs/git-restore). Index versus working-tree destinations and default restoration sources.
+
+## GIT-PULL
+
+[Git pull](https://git-scm.com/docs/git-pull). Fetch followed by integration into the current branch; explicit fast-forward policy.
+
+## GH-FORK
+
+[Fork a repository](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo). Origin, upstream, access, and contribution workflow.
+
+## GH-MERGES
+
+[Pull request merges](https://docs.github.com/en/pull-requests/reference/pull-request-merges). Merge commit, squash, rebase, and resulting history.
+
+## GIT-MERGE
+
+[Git merge](https://git-scm.com/docs/git-merge). Conflict resolution, clean-start abort, and limits with uncommitted changes.
+
+## GIT-REVERT
+
+[Git revert](https://git-scm.com/docs/git-revert). New reversal commits, conflicts, and merge-parent requirements.
+
+## GIT-STASH
+
+[Git stash](https://git-scm.com/docs/git-stash). Untracked versus ignored files; apply versus pop.
+
+## GIT-REFLOG
+
+[Git reflog](https://git-scm.com/docs/git-reflog). Local reference history, recovery, and expiration limits.
+
+## GH-IGNORE
+
+[Ignoring files](https://docs.github.com/en/get-started/git-basics/ignoring-files). Ignore patterns do not remove already tracked files.
+
+## GH-SENSITIVE
+
+[Removing sensitive data](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository). Rotate credentials first; history rewriting and distributed copies.
+
+## GH-PYTHON-CI
+
+[Build and test Python with Actions](https://docs.github.com/en/actions/tutorials/build-and-test-code/python). Interpreter setup, test execution, matrices, and job logs.
+
+## GH-ACTIONS-EVENTS
+
+[Workflow triggering events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Pull-request base filters and event-specific execution context.
+
+## GH-ACTIONS-SECURITY
+
+[Secure use of Actions](https://docs.github.com/en/actions/reference/security/secure-use). Full commit pins, least privilege, and untrusted workflow input.
+
+## GH-CODE-SEARCH
+
+[Code search syntax](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax). Repository, path, language, and regular-expression qualifiers.
+
+## GH-REPO-SEARCH
+
+[Repository search](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories). Repository qualifiers and explicit README search.
+
+## GH-ISSUE-SEARCH
+
+[Issue and pull request search](https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests). Issue/PR distinctions and status/author qualifiers.
+
+## GH-PROJECTS
+
+[About Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects). Issue planning and structured project views.
+
+## GH-ISSUE-LINKS
+
+[Link a pull request to an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue). Closing keywords and default-branch merge behavior.
+
+## GH-MARKDOWN
+
+[GitHub writing and formatting](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). Links, task lists, code fences, and readable documentation.
+
+## GH-NOTIFICATIONS
+
+[Configuring notifications](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications). Participation, watching, subscriptions, and notification settings.
+
+## GH-TWO-FACTOR
+
+[Two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication). Authentication methods and recovery-code handling.
+
+## GH-RULESETS
+
+[About rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets). Plan/repository availability and configured review/check requirements.
+
+## GH-CODEOWNERS
+
+[About code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners). Ownership patterns, review requests, and separately required approval.
+
+## GH-DEPENDABOT
+
+[Dependabot alerts](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts). Known dependency vulnerabilities and coverage limitations.
+
+## GH-RELEASES
+
+[About releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases). Tags, release notes, and distributed assets.
+
+## GH-PAGES
+
+[What is GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages). Static hosting and plan availability.
+
+## GH-GISTS
+
+[Creating gists](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists). Secret gist discoverability is not access control.
+
+## GH-PACKAGES
+
+[GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages). Package hosting and registry-specific authentication.
+
+## GH-USAGE
+
+[Included product usage](https://docs.github.com/en/billing/reference/product-usage-included). Dated Free/Pro Actions and Codespaces allowance snapshot.
+
+## GH-CODESPACES-BILLING
+
+[Codespaces billing](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces). Core-hour computation and retained storage usage.
+
+## GH-LARGE-FILES
+
+[Large files on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). MiB file thresholds and recommended repository sizes.
+
+## GH-CLI-API
+
+[GitHub CLI API command](https://cli.github.com/manual/gh_api). Explicit GET with fields, POST default with parameters, and pagination.
+
+## GH-CLI-PR
+
+[GitHub CLI pull requests](https://cli.github.com/manual/gh_pr). CLI pull-request inspection and collaboration commands.
+
+## GH-REST-LIMITS
+
+[REST API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api). Authentication-dependent primary limits and secondary limits.
+
+## GH-REST-ISSUES
+
+[REST issues endpoints](https://docs.github.com/en/rest/issues/issues). Issue listings also include pull requests, distinguished by pull_request.
+
+## OAI-AGENTS
+
+[Codex repository instructions](https://learn.chatgpt.com/docs/agent-configuration/agents-md). AGENTS.md discovery and instruction scope in Codex; no automatic file access in every chat.
+
+## OAI-GITHUB-REVIEW
+
+[Codex GitHub integration](https://learn.chatgpt.com/docs/third-party/github). Repository connection, review setup, and Codex review invocation.
+
+## GIT-BISECT
+
+[Git bisect](https://git-scm.com/docs/git-bisect). Good/bad classification, skipped commits, and a reliable reproducer.
+
+## GH-BACKUP
+
+[Backing up a repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository). Mirror history, LFS objects, and separate non-Git data.
+
+## GH-ACTIONS-BILLING
+
+[Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions). Standard public hosted runner free use versus charged larger runners.
+
+## GH-PAGES-ACCESS
+
+[Pages access control](https://docs.github.com/en/enterprise-cloud@latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site). Private publication requires eligible Enterprise Cloud organization project sites.
+
+## GIT-INIT
+
+[Git init in version 2.28](https://git-scm.com/docs/git-init/2.28.0). Initial branch selection with -b used by the offline lab.
+
+## GH-CLI-PR-CREATE
+
+[Create a pull request with the CLI](https://cli.github.com/manual/gh_pr_create). Base/head selection and body-file input.

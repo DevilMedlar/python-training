@@ -16,6 +16,8 @@ repository root; use your environment's `python`, `python3`, or `py` command.
 | [selection.py](selection.py) | Shared contract and independent algorithm oracle | Read with `tests/test_selection.py` |
 | [benchmark_selection.py](benchmark_selection.py) | Raw timings and measurement scope | `python -m examples.benchmark_selection --size 1000 --k 10 --repeats 6` |
 | [research_optional.py](research_optional.py) | Paired simulation and uncertainty | Optional instructions below |
+| [topic_names.py](topic_names.py) | GH-09 behavior contract and regression practice | `python tools/run_tests.py --pattern test_topic_names.py` |
+| [git_workflow_lab.py](git_workflow_lab.py) | Git snapshots, synchronization, conflicts, recovery, and mirror history | `python -m examples.git_workflow_lab` with Git 2.28+ |
 
 Create `progress/` before the tracker command. That directory is ignored by Git.
 The reporter prints `Python: 60 min` and `Testing: 20 min`, on separate lines.
@@ -30,7 +32,7 @@ not a claim that those are the newest releases or the only compatible environmen
 ```sh
 python -m pip install -r requirements-research.txt
 python -m examples.research_optional > research-result.json
-python -m unittest discover -s tests -p test_research_optional.py -v
+python tools/run_tests.py --pattern test_research_optional.py
 ```
 
 Keep generated results in private/ignored storage when they contain learner work.
@@ -46,6 +48,12 @@ not the validity of every real contamination model. Degenerate intervals are
 reported as an error, not silently replaced by a favorable result.
 
 ## Important boundaries
+
+The optional Git lab creates temporary local repositories and removes them when
+finished. It uses synthetic identity/data and isolated Git configuration, with no
+network or GitHub authentication. Its observations do not complete a learner's
+independent tasks or prove a real GitHub PR, policy, deployment, or account setting.
+See [the hands-on labs](../practice/GITHUB_LABS.md) for learner-controlled practice.
 
 The tracker is a single-writer teaching app and does not guarantee crash durability.
 The reporter loads its records in memory and limits minutes text to nine ASCII
