@@ -1,0 +1,485 @@
+{
+  "review_date": "2026-09-14",
+  "sources": [
+    {
+      "id": "PY-INTRO",
+      "title": "Python introduction",
+      "url": "https://docs.python.org/3.14/tutorial/introduction.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Interpreter and script behavior; introductory values"
+    },
+    {
+      "id": "PY-FUNCTIONS",
+      "title": "Control flow and functions",
+      "url": "https://docs.python.org/3.14/tutorial/controlflow.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Loops, parameters, defaults, returns"
+    },
+    {
+      "id": "PY-COLLECTIONS",
+      "title": "Python data structures",
+      "url": "https://docs.python.org/3.14/tutorial/datastructures.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Lists, sets, dictionaries and iteration"
+    },
+    {
+      "id": "PY-CLASSES",
+      "title": "Python classes tutorial",
+      "url": "https://docs.python.org/3.14/tutorial/classes.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Scopes, aliasing, instances and iterators"
+    },
+    {
+      "id": "PY-ERRORS",
+      "title": "Errors and exceptions",
+      "url": "https://docs.python.org/3.14/tutorial/errors.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Handling, chaining and cleanup"
+    },
+    {
+      "id": "PY-FILES",
+      "title": "Input and output",
+      "url": "https://docs.python.org/3.14/tutorial/inputoutput.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Files, text encoding and serialization"
+    },
+    {
+      "id": "PY-FLOAT",
+      "title": "Floating-point limitations",
+      "url": "https://docs.python.org/3.14/tutorial/floatingpoint.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Approximation and comparison"
+    },
+    {
+      "id": "PY-VENV",
+      "title": "Virtual environments",
+      "url": "https://docs.python.org/3.14/library/venv.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Interpreter/environment isolation and activation"
+    },
+    {
+      "id": "PY-TEXT",
+      "title": "Text sequence operations",
+      "url": "https://docs.python.org/3.14/library/stdtypes.html#text-sequence-type-str",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Strings, Unicode, immutability, methods"
+    },
+    {
+      "id": "PY-TRUTH",
+      "title": "Truth value testing",
+      "url": "https://docs.python.org/3.14/library/stdtypes.html#truth-value-testing",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Truthiness and short-circuit operands"
+    },
+    {
+      "id": "PY-BUILTINS",
+      "title": "Built-in functions",
+      "url": "https://docs.python.org/3.14/library/functions.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "input, int, zip, enumerate, sorted"
+    },
+    {
+      "id": "PY-MODULES",
+      "title": "Modules and packages",
+      "url": "https://docs.python.org/3.14/tutorial/modules.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Import behavior and module execution"
+    },
+    {
+      "id": "PY-JSON",
+      "title": "JSON encoding and decoding",
+      "url": "https://docs.python.org/3.14/library/json.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Syntax versus application schema; serialization limits"
+    },
+    {
+      "id": "PY-ASSERT",
+      "title": "The assert statement",
+      "url": "https://docs.python.org/3.14/reference/simple_stmts.html#the-assert-statement",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Assertions can be omitted under optimization"
+    },
+    {
+      "id": "PY-DATACLASSES",
+      "title": "Dataclasses",
+      "url": "https://docs.python.org/3.14/library/dataclasses.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "default_factory and frozen behavior"
+    },
+    {
+      "id": "PY-TYPING",
+      "title": "Type hints",
+      "url": "https://docs.python.org/3.14/library/typing.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Static contracts do not enforce ordinary runtime validation"
+    },
+    {
+      "id": "PY-CSV",
+      "title": "CSV parsing and writing",
+      "url": "https://docs.python.org/3.14/library/csv.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Quoting, dialects, newline handling and reader behavior"
+    },
+    {
+      "id": "PY-DECIMAL",
+      "title": "Decimal arithmetic",
+      "url": "https://docs.python.org/3.14/library/decimal.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Construction, precision and rounding context"
+    },
+    {
+      "id": "PY-DATETIME",
+      "title": "Dates and times",
+      "url": "https://docs.python.org/3.14/library/datetime.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Naive/aware distinction and calendar operations"
+    },
+    {
+      "id": "PY-URLLIB",
+      "title": "URL request handling",
+      "url": "https://docs.python.org/3.14/library/urllib.request.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Request/response handling and timeout scope"
+    },
+    {
+      "id": "HTTP-SEMANTICS",
+      "title": "HTTP semantics RFC 9110",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Idempotence, retry semantics and uncertain outcomes"
+    },
+    {
+      "id": "PY-SQLITE",
+      "title": "SQLite interface",
+      "url": "https://docs.python.org/3.14/library/sqlite3.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Parameters, transactions, autocommit and connection lifetime"
+    },
+    {
+      "id": "PY-UNITTEST",
+      "title": "unittest",
+      "url": "https://docs.python.org/3.14/library/unittest.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Behavior checks, discovery and fixtures"
+    },
+    {
+      "id": "PY-LOGGING",
+      "title": "Logging",
+      "url": "https://docs.python.org/3.14/library/logging.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Logging events, handlers and library behavior"
+    },
+    {
+      "id": "PY-ARGPARSE",
+      "title": "Command-line parsing",
+      "url": "https://docs.python.org/3.14/library/argparse.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Help, command syntax and error handling"
+    },
+    {
+      "id": "PY-ITERTOOLS",
+      "title": "Iterator tools",
+      "url": "https://docs.python.org/3.14/library/itertools.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Lazy helpers, exhaustion and tee buffering"
+    },
+    {
+      "id": "PY-CONTEXT",
+      "title": "Context management",
+      "url": "https://docs.python.org/3.14/library/contextlib.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "ExitStack, cleanup and exception handling"
+    },
+    {
+      "id": "PY-FUNCTOOLS",
+      "title": "Function tools",
+      "url": "https://docs.python.org/3.14/library/functools.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "wraps, caches and concurrent misses"
+    },
+    {
+      "id": "PY-MODEL",
+      "title": "Python data model",
+      "url": "https://docs.python.org/3.14/reference/datamodel.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Identity, hashing, lifetime, protocols, implementation distinctions"
+    },
+    {
+      "id": "PY-DESCRIPTOR",
+      "title": "Descriptor guide",
+      "url": "https://docs.python.org/3.14/howto/descriptor.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Normal attribute lookup precedence"
+    },
+    {
+      "id": "PY-ANNOTATIONS",
+      "title": "Annotation introspection",
+      "url": "https://docs.python.org/3.14/library/annotationlib.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Deferred evaluation and introspection effects"
+    },
+    {
+      "id": "PY-INSPECTION",
+      "title": "Abstract syntax trees",
+      "url": "https://docs.python.org/3.14/library/ast.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Parsed representation and version-dependent syntax"
+    },
+    {
+      "id": "PY-MEMORY",
+      "title": "Allocation tracing",
+      "url": "https://docs.python.org/3.14/library/tracemalloc.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Scope and limits of Python allocation measurement"
+    },
+    {
+      "id": "PY-HEAPQ",
+      "title": "Heap algorithms",
+      "url": "https://docs.python.org/3.14/library/heapq.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Selection contracts and workload-dependent choices"
+    },
+    {
+      "id": "PY-ASYNC",
+      "title": "Async tasks and cancellation",
+      "url": "https://docs.python.org/3.14/library/asyncio-task.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "TaskGroup failure propagation, cancellation and timeouts"
+    },
+    {
+      "id": "PY-QUEUES",
+      "title": "Async queues",
+      "url": "https://docs.python.org/3.14/library/asyncio-queue.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Bounded queues and task accounting"
+    },
+    {
+      "id": "PY-FREE-THREADING",
+      "title": "Free-threaded Python",
+      "url": "https://docs.python.org/3.14/howto/free-threading-python.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Optional builds, extension compatibility and GIL state"
+    },
+    {
+      "id": "PY-PROCESSES",
+      "title": "Multiprocessing",
+      "url": "https://docs.python.org/3.14/library/multiprocessing.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Start methods, main guards and portability"
+    },
+    {
+      "id": "PY-EXECUTORS",
+      "title": "Concurrent futures",
+      "url": "https://docs.python.org/3.14/library/concurrent.futures.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Thread/process/interpreter pools and transfer constraints"
+    },
+    {
+      "id": "PY-PICKLE",
+      "title": "Pickle serialization",
+      "url": "https://docs.python.org/3.14/library/pickle.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Untrusted unpickling can execute code"
+    },
+    {
+      "id": "PY-SUBPROCESS",
+      "title": "Subprocess handling",
+      "url": "https://docs.python.org/3.14/library/subprocess.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Arguments, shell interpretation and failure handling"
+    },
+    {
+      "id": "PY-EXTENSIONS",
+      "title": "Extending Python",
+      "url": "https://docs.python.org/3.14/extending/index.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Native interfaces and specialist prerequisites"
+    },
+    {
+      "id": "PY-314",
+      "title": "Python 3.14 changes",
+      "url": "https://docs.python.org/3.14/whatsnew/3.14.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Version-specific behavior and experimental implementation features"
+    },
+    {
+      "id": "PY-RELEASES",
+      "title": "Official Python releases",
+      "url": "https://www.python.org/downloads/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Release status at review date"
+    },
+    {
+      "id": "PY-PACKAGING",
+      "title": "Packaging Python projects",
+      "url": "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Build artifacts, metadata and clean installation"
+    },
+    {
+      "id": "GIT-BOOK",
+      "title": "Official Git book",
+      "url": "https://git-scm.com/book/en/v2",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Version control and branching workflows"
+    },
+    {
+      "id": "NUMPY-VIEWS",
+      "title": "NumPy copies and views",
+      "url": "https://numpy.org/doc/stable/user/basics.copies.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Shared buffers and shape/layout behavior"
+    },
+    {
+      "id": "NUMPY-RANDOM",
+      "title": "NumPy parallel random generation",
+      "url": "https://numpy.org/doc/stable/reference/random/parallel.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "SeedSequence, stream identities and probabilistic independence"
+    },
+    {
+      "id": "SCIPY-BOOTSTRAP",
+      "title": "SciPy bootstrap",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Pairing, interval method and degeneracy"
+    },
+    {
+      "id": "SCIPY-LINALG",
+      "title": "SciPy linear algebra",
+      "url": "https://docs.scipy.org/doc/scipy/tutorial/linalg.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Solvers, decompositions and numerical work"
+    },
+    {
+      "id": "SKLEARN-LEAKAGE",
+      "title": "scikit-learn common pitfalls",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Training/test boundaries and preprocessing leakage"
+    },
+    {
+      "id": "NIST-CI",
+      "title": "NIST confidence limits for the mean",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Frequentist coverage interpretation and assumptions"
+    },
+    {
+      "id": "JAX-BENCHMARK",
+      "title": "JAX benchmarking",
+      "url": "https://docs.jax.dev/en/latest/benchmarking.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Compilation, transfer, asynchronous execution and timing"
+    },
+    {
+      "id": "PYPERF",
+      "title": "Running calibrated benchmarks",
+      "url": "https://pyperf.readthedocs.io/en/latest/run_benchmark.html",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Repeated workers, metadata and benchmark controls"
+    },
+    {
+      "id": "HYPOTHESIS",
+      "title": "Hypothesis documentation",
+      "url": "https://hypothesis.readthedocs.io/en/latest/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Generated-input testing and property design"
+    },
+    {
+      "id": "RESEARCH-PRACTICE",
+      "title": "Good enough practices in scientific computing",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Research organization, provenance and reproducible workflows"
+    },
+    {
+      "id": "CPYTHON-CONTRIBUTING",
+      "title": "CPython pull-request lifecycle",
+      "url": "https://devguide.python.org/getting-started/pull-request-lifecycle/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Actual contribution and review process"
+    },
+    {
+      "id": "PEP-PROCESS",
+      "title": "PEP 1 purpose and guidelines",
+      "url": "https://peps.python.org/pep-0001/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Proposal purpose, specification and coordination"
+    },
+    {
+      "id": "LEARNING-IES",
+      "title": "IES organizing instruction and study",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/1",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Retrieval, spacing, worked examples; application is context-sensitive"
+    },
+    {
+      "id": "LEARNING-STYLES",
+      "title": "Learning Styles Concepts and Evidence",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26162104/",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Insufficient evidence for matching instruction to diagnosed learning styles"
+    }
+  ]
+}

@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Private learner state and local experiment outputs
+progress/
+research-result.json
+benchmark-result.json
