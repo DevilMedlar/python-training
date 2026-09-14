@@ -185,3 +185,17 @@ No real learner attempts were fabricated, and the new progress record is empty.
 The source attachments were not rewritten. Browser buttons are documented from
 GitHub's primary documentation; an automated runner test does not claim that an
 interactive browser session or independent learner trial was performed.
+
+### First hosted observations for the browser correction
+
+The [lesson run 34906151900](https://github.com/DevilMedlar/python-training/actions/runs/34906151900)
+passed on GitHub's Ubuntu runner with Python 3.14.7 at commit
+`fec8a6dd6bb5b5d75445311af84bc3019171583f`. Its log printed Ready to learn and 5,
+and explicitly reported that no learner tests had been supplied yet.
+
+The [initial verifier run 34906173227](https://github.com/DevilMedlar/python-training/actions/runs/34906173227)
+passed the six Linux/macOS core jobs and the scientific job. The three Windows
+jobs exposed a new test expectation that assumed LF for printed output. The
+runner correctly preserved Windows CRLF. The fixture now expects the platform's
+line separator; this corrects the test without changing program output. The PR
+checks for the subsequent commit establish the final hosted outcome.

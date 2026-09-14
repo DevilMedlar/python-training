@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import tempfile
 import unittest
@@ -31,7 +32,7 @@ class BrowserLessonTests(unittest.TestCase):
             "learner\n21\n",
         )
         result = run_program(self.root)
-        self.assertEqual((result.exit_code, result.stdout, result.stderr), (0, "learner: 42\n", ""))
+        self.assertEqual((result.exit_code, result.stdout, result.stderr), (0, "learner: 42" + os.linesep, ""))
         self.assertIn("output.json", render_summary(result, self.root))
         self.assertEqual((self.workspace / "results/output.json").read_text(), "42")
 
