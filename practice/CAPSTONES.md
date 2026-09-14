@@ -32,6 +32,11 @@ minutes as 1–9 ASCII digits after trimming; reject signs, fractions, separator
 empty fields, extra fields, and invalid rows. Zero is allowed in this reporting
 format even though Capstone 1 requires positive study sessions.
 
+Preserve line breaks embedded inside quoted topics after trimming their edges.
+LF, CRLF, and CR are supported CSV line endings; do not silently normalize the
+contents of a topic while parsing. A topic containing a line break also occupies
+multiple lines in this simple text report.
+
 Print totals sorted by topic. Header-only input succeeds with empty output;
 malformed later input fails with error output and no partial success summary.
 Successful execution returns exit status 0; application failures return 1;

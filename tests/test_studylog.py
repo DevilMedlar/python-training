@@ -18,7 +18,7 @@ class StudyLogTests(unittest.TestCase):
         self.path = Path(temporary.name) / "sessions.csv"
 
     def write(self, contents):
-        self.path.write_text(contents, encoding="utf-8")
+        self.path.write_text(contents, encoding="utf-8", newline="")
         return self.path
 
     def cli(self, path=None):
@@ -53,8 +53,16 @@ class StudyLogTests(unittest.TestCase):
         self.assertEqual(summarize(records), {"Python": 60, "python": 0})
 
     def test_quoted_commas_newlines_and_unicode(self):
-        self.write('topic,minutes\n" Café, notes ",15\n"line one\nline two",3\n')
-        self.assertEqual(read_sessions(self.path), [Session("Café, notes", 15), Session("line one\nline two", 3)])
+        for newline in ("\n", "\r\n", "\r"):
+            with self.subTest(newline=repr(newline)):
+                self.write(newline.join([
+                    "topic,minutes", '" Café, notes ",15',
+                    f'"line one{newline}line two",3', "",
+                ]))
+                self.assertEqual(read_sessions(self.path), [
+                    Session("Café, notes", 15),
+                    Session(f"line one{newline}line two", 3),
+                ])
 
     def test_header_only_and_blank_lines(self):
         self.write("topic,minutes\n\n")

@@ -80,8 +80,17 @@ populations. They do not establish a universal ranking of estimators. Raw result
 are reproducible with the command above in the recorded environment; generated
 experiment files are deliberately excluded from the source repository.
 
-GitHub matrix results are recorded separately once observed; the configuration
-alone does not establish that those checks passed.
+## GitHub verification history
+
+The first published run, `34893339350`, found a test-fixture defect on all three
+Windows jobs: the fixture writer translated LF to CRLF, while its assertion
+still expected LF inside a quoted CSV field. The application correctly preserved
+the file's embedded line break. The test writer now disables translation, and
+the test covers LF, CRLF, and CR on every platform. This is a correction to the
+new test suite, not a defect attributed to the supplied drafts.
+
+Final matrix results are recorded once observed; the configuration alone does
+not establish that those checks passed.
 
 ## Limits
 
