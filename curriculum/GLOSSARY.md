@@ -54,8 +54,8 @@ to this course. Relevant primary references appear in each phase and the source 
 
 ## Git and GitHub terms
 
-Use these with the [companion lessons](github.md); the
-[command reference](../practice/GITHUB_REFERENCE.md) explains effects and boundaries.
+Use these with the [reference cards inside Python lessons](github.md); the
+[browser reference](../practice/GITHUB_REFERENCE.md) explains effects and boundaries.
 
 | Term | Working meaning |
 |---|---|

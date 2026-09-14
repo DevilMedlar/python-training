@@ -23,28 +23,26 @@ class RepositoryCheckTests(unittest.TestCase):
         with self.assertRaisesRegex(CheckError, "cycle"):
             validate_catalog(catalog)
 
-    def test_companion_lessons_cannot_enter_python_route(self):
+    def test_reference_cannot_become_an_extra_core_lesson(self):
         catalog = deepcopy(CATALOG)
         catalog["lessons"][-1]["core"] = True
-        with self.assertRaisesRegex(CheckError, "default Python route"):
+        with self.assertRaisesRegex(CheckError, "standalone core"):
             validate_catalog(catalog)
 
-    def test_unknown_track_and_wrong_prefix_are_rejected(self):
+    def test_unknown_or_missing_github_practice_is_rejected(self):
         catalog = deepcopy(CATALOG)
-        catalog["lessons"][-1]["track"] = "unknown"
-        with self.assertRaisesRegex(CheckError, "unknown companion track"):
+        catalog["lessons"][0]["github_skills"] = ["GH-99"]
+        with self.assertRaisesRegex(CheckError, "unknown GitHub skill"):
             validate_catalog(catalog)
         catalog = deepcopy(CATALOG)
-        catalog["tracks"][0]["prefix"] = "OTHER"
-        with self.assertRaisesRegex(CheckError, "invalid track lesson ID"):
+        catalog["lessons"][0]["github_task"] = ""
+        with self.assertRaisesRegex(CheckError, "integrated GitHub task"):
             validate_catalog(catalog)
 
-    def test_cross_track_cycles_are_rejected(self):
+    def test_second_github_sequence_is_rejected(self):
         catalog = deepcopy(CATALOG)
-        specialist = next(item for item in catalog["lessons"] if item["id"] == "P5-04")
-        specialist["prerequisites"] = ["GH-16"]
-        catalog["lessons"][-1]["prerequisites"].append("P5-04")
-        with self.assertRaisesRegex(CheckError, "cycle"):
+        catalog["lessons"][-1]["prerequisites"] = ["GH-15"]
+        with self.assertRaisesRegex(CheckError, "second sequence"):
             validate_catalog(catalog)
 
     def test_unknown_and_duplicate_ids_are_rejected(self):

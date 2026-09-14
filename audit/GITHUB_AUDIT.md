@@ -1,5 +1,31 @@
 # GitHub reference audit and integration
 
+## Browser integration correction on 2026-09-14
+
+The user clarified that all learner work belongs on github.com and github.dev,
+and that GitHub must accompany Python instead of being a separate curriculum.
+This instruction supersedes the local-setup and track design recorded below.
+The five Python phases remain; all 50 Python lessons now embed a GitHub action
+and evidence requirement for that same code. The 16 GH IDs are lookup references.
+One progress route preserves earlier records and has no extra GitHub capstone.
+
+The first Python edit runs through the new hosted lesson workflow. Recorded stdin,
+timeouts, errors, small result previews, and learner tests support real browser
+practice. github.dev has no compute; we did not represent it as a Python runtime.
+Local setup, CLI practice, and Codespaces requirements were removed from active
+learner instructions. Deeper environment/build commands are explicitly hosted steps.
+
+Current primary documentation was read for github.dev, Python Actions, manual
+runs, job summaries, browser conflicts, and PR reversal. Simple web conflicts are
+supported; a preserved replacement branch is the browser fallback for other cases.
+Tests and hosted observations for this correction are recorded in VERIFICATION.md.
+
+## Historical review of the earlier GitHub addition
+
+The following records describe the previous implementation. They are retained
+for provenance and do not define the current learner route.
+
+
 Reviewed 2026-09-14. Input: `GitHub_Practical_Reference(1).md`, identified by
 [the input manifest](input-manifest.json). Read all 29 numbered sections, including
 the Python example, workflow, instruction-file template, command tables, and
@@ -7,7 +33,7 @@ author's verification notes. The draft already contains many careful qualificati
 they are retained where supported. We do not label a correct passage an error to
 make this review sound more consequential.
 
-The result is [16 companion lessons](../curriculum/github.md), two tasks per lesson,
+The earlier result was [16 companion lessons](../curriculum/github.md), two tasks per lesson,
 [six hands-on labs and a capstone](../practice/GITHUB_LABS.md), and a
 [compact reference](../practice/GITHUB_REFERENCE.md). The five Python phases remain
 the default route. GitHub is a separately selected practical track, not a sixth

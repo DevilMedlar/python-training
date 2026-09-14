@@ -2,12 +2,14 @@
 
 Use synthetic practice data. Build from the contract before opening the reference
 programs. A reference demonstrates selected mechanisms; the capstone also asks
-for independent extension, explanation, and failure evidence. Work in ignored
-`progress/` or a separate learner repository. Each phase's final Practice B points here.
+for independent extension, explanation, and failure evidence. Work on a browser
+branch under `workspace/`, run through GitHub Actions, and deliver each capstone
+as an inspected Python PR. The GitHub work belongs to that capstone.
+Each phase's final Practice B points here.
 
 ## Capstone 1 Study tracker
 
-Build an interactive tracker that adds positive whole-number study durations,
+Build a tracker using input() that adds positive whole-number study durations,
 reports count/total/average, and saves then quits. Store a JSON list at a documented
 path. Missing data means a new history; malformed, unreadable, wrongly shaped,
 boolean, or nonpositive saved data must be reported without overwriting it.
@@ -15,7 +17,11 @@ boolean, or nonpositive saved data must be reported without overwriting it.
 Acceptance examples: empty history gives count 0, total 0, average 0.0; adding
 20 and 40 gives count 2, total 60, average 30.0; saving and reopening preserves
 the list. Invalid input prompts a correction. An unsuccessful save does not claim
-success. Explain that memory changes are not automatically persisted.
+success. Supply the menu answers through workspace/input.txt, including a final
+quit choice. Demonstrate save and reopen within the same run. For a subsequent
+fresh run, commit the intended synthetic starting JSON under workspace/data/;
+runner files do not automatically persist or become commits. Preview small saved
+files under workspace/results/ on the run summary. Explain both persistence boundaries.
 
 Deliver calculation functions, an interface, error checks, and a short README.
 Independently add one feature such as longest session or removal of the latest

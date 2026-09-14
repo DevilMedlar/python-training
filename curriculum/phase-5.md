@@ -6,7 +6,17 @@ or small fixes much earlier. The full route below assumes an expert foundation
 and research evaluation skills; a narrow engineering project can use a tailored
 route with its prerequisites checked explicitly.
 
+
+Work in github.dev and commit your Python changes; inspect results on github.com
+through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
+includes a GitHub action on the same Python work. Any advanced execution commands
+belong in a hosted workflow step; inputs and files follow the browser guide.
+
 ## P5-01 Contribution value and novelty
+
+**GitHub in this lesson:** Define a bounded contribution in a GitHub document and review the evidence behind the proposed Python change. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
+
+**GitHub evidence:** State the intended benefit, existing alternatives, and the exact contribution scope.
 
 **Prerequisites:** P4-08.
 
@@ -43,6 +53,10 @@ for evidence to change the project direction.
 
 ## P5-02 Public APIs and compatibility
 
+**GitHub in this lesson:** Review compatibility tests and design decisions together in a focused Python PR. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Explain which users or callers are affected using the diff and observed checks.
+
 **Prerequisites:** P5-01.
 
 **Outcome:** Design an interface other people can use and evolve without hidden assumptions.
@@ -77,6 +91,10 @@ that states its cost. Do not promise support for untested builds or platforms.
 
 ## P5-03 Prototypes baselines and decision records
 
+**GitHub in this lesson:** Compare the candidate and baseline at recorded commits using hosted evaluation jobs. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Keep raw evidence, negative results, and limits tied to code versions.
+
 **Prerequisites:** P5-02.
 
 **Outcome:** Use a small prototype to compare alternatives and decide whether to continue.
@@ -109,6 +127,10 @@ limits. A benchmark harness does not establish novelty by itself.
 **Sources:** [PY-HEAPQ](../audit/SOURCES.md#py-heapq), [PYPERF](../audit/SOURCES.md#pyperf).
 
 ## P5-04 Language runtime and tool creation
+
+**GitHub in this lesson:** For an optional interpreter contribution, inspect upstream browser guidance and prepare a scoped change with hosted checks. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
+
+**GitHub evidence:** Distinguish an inspected proposal from an accepted or released upstream feature.
 
 **Prerequisites:** P5-03.
 
@@ -146,6 +168,10 @@ a mechanism-level explanation. This specialty is optional for other creator path
 **Sources:** [PY-INSPECTION](../audit/SOURCES.md#py-inspection), [PY-314](../audit/SOURCES.md#py-314), [CPYTHON-CONTRIBUTING](../audit/SOURCES.md#cpython-contributing).
 
 ## P5-05 Scientific native and systems contributions
+
+**GitHub in this lesson:** For an optional scientific-system change, review bounded hosted integration checks and ownership assumptions. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Link the experiment configuration and observed results to the proposed implementation.
 
 **Prerequisites:** P5-03.
 
@@ -185,13 +211,17 @@ measured value. Optional features remain unverified until their checks actually 
 
 ## P5-06 Independent evaluation and adversarial review
 
+**GitHub in this lesson:** Prepare the useful-contribution release candidate with browser reproduction instructions and linked checks. References: [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Show first-use evidence and clearly distinguish draft, publication, and independent feedback.
+
 **Prerequisites:** P5-03.
 
 **Outcome:** Evaluate a contribution under conditions that can reveal its weaknesses.
 
 Use credible baselines, matched constraints, unseen evaluation cases where relevant,
 and failure tests. Ask an independent person to install or reproduce the work,
-recording the help they needed. A second run on your own machine is a local
+recording the help they needed. A second run by you on GitHub is a self-directed
 repeatability check, not independent external validation.
 
 Separate implementation success, usability, engineering value, and research novelty.
@@ -218,6 +248,10 @@ and a revised contribution claim with precise limits.
 **Sources:** [RESEARCH-PRACTICE](../audit/SOURCES.md#research-practice), [HYPOTHESIS](../audit/SOURCES.md#hypothesis).
 
 ## P5-07 Releases community and governance
+
+**GitHub in this lesson:** Commit maintenance guidance and review a small follow-up Python fix through the same browser workflow. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-12](github.md#gh-12-protect-accounts-and-review-boundaries).
+
+**GitHub evidence:** Explain triage, compatibility, account boundaries, and regression evidence.
 
 **Prerequisites:** P5-06.
 
@@ -252,6 +286,10 @@ Do not fabricate reviewers, approvals, upstream acceptance, or publication.
 **Sources:** [CPYTHON-CONTRIBUTING](../audit/SOURCES.md#cpython-contributing), [PEP-PROCESS](../audit/SOURCES.md#pep-process), [PY-PACKAGING](../audit/SOURCES.md#py-packaging).
 
 ## P5-08 Maintenance mentoring and the creator capstone
+
+**GitHub in this lesson:** Finish the capstone with a reviewed maintenance and recovery plan tied to your Python deliverable. References: [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
+
+**GitHub evidence:** Explain what was demonstrated, what remains unverified, and the next useful contribution.
 
 **Prerequisites:** P5-07.
 

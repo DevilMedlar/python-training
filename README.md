@@ -1,78 +1,67 @@
-# Python Training
+# Python Training on GitHub
 
-A practical Python course, Git and GitHub companion track, and an explicit
-operating guide for a ChatGPT tutor.
-Start from your demonstrated skills, learn through small programs, and progress
-toward reliable applications, research, and useful original contributions.
-
-The curriculum adapts eight supplied AI-generated drafts. Their claims are treated
-as provisional source material. The [claim audit](audit/CLAIM_AUDIT.md) explains
-corrections and qualifications; the [verification report](audit/VERIFICATION.md)
-states exactly what was checked and what remains outside those checks.
-The added GitHub reference has its own [audit and coverage map](audit/GITHUB_AUDIT.md).
+Learn Python while using GitHub to save, run, review, and improve the same Python
+work. All learner work happens through **github.com** and **github.dev**.
+GitHub skills are built into the five Python phases, with one lesson sequence,
+one progress record, and one set of projects.
 
 ## Start learning
 
-1. Open [START_HERE.md](START_HERE.md).
-2. Give your tutor the [launch prompt](tutor/START_PROMPT.md), with access to the
-   repository files. A URL alone does not guarantee the tutor can read them.
-3. Begin the short [placement process](tutor/PLACEMENT.md), or request lesson
-   `P1-01` if you are new to programming.
-4. Keep your [progress record](tutor/PROGRESS.md) between conversations.
+1. Follow [START_HERE.md](START_HERE.md) for your first Python edit and run.
+2. Open [the browser editor](https://github.dev/DevilMedlar/python-training).
+3. Edit [workspace/main.py](workspace/main.py), then **Commit & Push**.
+4. On github.com, open [Actions → Run Python lesson](https://github.com/DevilMedlar/python-training/actions/workflows/learn.yml)
+   and open the run for your commit. Read its **Python lesson result** summary.
+5. Use [one tutor launch prompt](tutor/START_PROMPT.md) and begin at `P1-01`,
+   or resume from [your progress record](tutor/progress.json).
 
-For GitHub, use the [GitHub launch prompt](tutor/GITHUB_START_PROMPT.md) and begin
-at `GH-01`. The first two lessons work in a browser; local Git starts at `GH-03`.
+`github.dev` is the editor. **GitHub Actions runs Python on GitHub-hosted machines**;
+the result comes back to a page on github.com. github.dev itself has no Python
+runtime or terminal. No Python, Git, desktop editor, or command line needs to be
+installed on your laptop. [GitHub's editor documentation](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor)
+and [Python Actions documentation](https://docs.github.com/en/actions/tutorials/build-and-test-code/python)
+explain these roles.
 
-## The learning route
+## One learning route
 
-| Phase | Focus | Evidence for progressing |
+| Python phase | What you build and learn | GitHub used in that work |
 |---|---|---|
-| [1 — Novice](curriculum/phase-1.md) | Values, control flow, collections, functions, files, debugging | Build and explain a small program; handle boundary cases |
-| [2 — Practitioner](curriculum/phase-2.md) | Interfaces, testing, data, APIs, SQL, packaging, Git | Deliver a useful application with repeatable checks |
-| [3 — Expert](curriculum/phase-3.md) | Protocols, architecture, concurrency, performance, reliability | Defend design choices and demonstrate failure handling |
-| [4 — Researcher](curriculum/phase-4.md) | Questions, literature, experimental design, numerical validity | Produce a reproducible, appropriately limited investigation |
-| [5 — Creator](curriculum/phase-5.md) | Original contribution, evaluation, delivery, maintenance | Create something useful that others can inspect and extend |
-| [Git and GitHub — companion](curriculum/github.md) | 16 lessons from browser edits to collaboration, Actions, recovery, releases, APIs, and agents | Explain real repository states and deliver a reviewed Python contribution |
+| [1 — Novice](curriculum/phase-1.md) | Values, decisions, loops, functions, debugging, files; a study tracker | Edit and commit Python; inspect output and diffs; introduce a branch and PR with a function change |
+| [2 — Practitioner](curriculum/phase-2.md) | Tested modules, data, APIs, SQL, packaging; a report application | Tests in Actions, feature PRs, issue descriptions, simple conflicts, a release draft |
+| [3 — Expert](curriculum/phase-3.md) | Architecture, concurrency, profiling, reliable delivery | Review design changes, compare runs, inspect permissions and failure checks |
+| [4 — Researcher](curriculum/phase-4.md) | Reproducible computational investigation | Commit protocols and configurations, link runs to code, review evidence and limitations |
+| [5 — Creator](curriculum/phase-5.md) | Useful original contribution and maintenance | Contribution review, release notes, compatibility evidence, maintenance and recovery |
 
-These are informal, overlapping routes, not academic credentials or a universal
-psychological sequence. Research and creator work are optional directions; you
-can build useful software and contribute to projects much earlier.
+The [lesson index](curriculum/INDEX.md) pairs each Python lesson with a specific
+GitHub action on its code. `GH-` IDs are lookup references used inside those
+lessons; they do not create another course or a second graduation requirement.
+These phases are informal learning directions, not academic credentials.
 
-## What is included
+## During a lesson
 
-- [Lesson index](curriculum/INDEX.md) and a machine-readable prerequisite catalog.
-- A [tutor protocol](tutor/INSTRUCTIONS.md), [teaching playbook](tutor/TEACHING.md),
-  placement tasks, hint rules, assessment criteria, and progress handoff.
-- Two practice tasks per lesson, [five Python capstones](practice/CAPSTONES.md),
-  [GitHub labs and a contribution capstone](practice/GITHUB_LABS.md),
-  [50 additional beginner drills](practice/BEGINNER_DRILLS.md), a
-  [working glossary](curriculum/GLOSSARY.md),
-  [assessment guidance](practice/ASSESSMENT.md), and a
-  [misconception guide](practice/MISCONCEPTIONS.md).
-- Runnable [reference programs](examples/README.md), meaningful tests, and
-  automated checks for the curriculum, internal links, and Python examples.
-- [Primary sources](audit/SOURCES.md), attachment provenance, and a record of
-  review limitations. [Input coverage](audit/INPUTS.md) maps all eight attachments.
-  No guarantee of perfect correctness is made.
+Predict the result, edit a small program, commit it, inspect its Actions run,
+explain what happened, and try a fresh challenge. The tutor introduces only the
+GitHub controls needed for that Python task. YAML and automation internals come
+later; running the first program only requires browser controls.
 
-## Run the checks
+Use [workspace/input.txt](workspace/input.txt) for answers to `input()` prompts.
+Actions reads them in order; it does not accept live typing during a run.
+See [the browser workflow](practice/BROWSER_WORKFLOW.md) for inputs, files,
+dependencies, checks, and troubleshooting.
 
-Use Python 3.12, 3.13, or 3.14. The core examples and checks need only the standard
-library. Run these commands from the repository root:
+## Course material
 
-```sh
-python tools/check_repo.py
-python tools/run_tests.py
-python -m examples.studylog examples/data/sessions.csv
-```
+- [Tutor instructions](tutor/INSTRUCTIONS.md), [teaching playbook](tutor/TEACHING.md),
+  [placement](tutor/PLACEMENT.md), and [progress](tutor/PROGRESS.md).
+- [Python capstones](practice/CAPSTONES.md), [beginner drills](practice/BEGINNER_DRILLS.md),
+  [assessment](practice/ASSESSMENT.md), and [glossary](curriculum/GLOSSARY.md).
+- [GitHub reference](curriculum/github.md) and [browser task cards](practice/GITHUB_LABS.md),
+  consulted from the current Python lesson.
+- [Reference programs](examples/README.md), tests, and [contribution instructions](CONTRIBUTING.md).
+- [Input provenance](audit/INPUTS.md), [primary sources](audit/SOURCES.md),
+  [claim audit](audit/CLAIM_AUDIT.md), and [verification history](audit/VERIFICATION.md).
 
-On Windows, use `py` in place of `python` if that is your working interpreter
-command. On macOS/Linux it may be `python3`; [setup](START_HERE.md) explains this.
-Optional scientific and packaging tools are introduced when a lesson needs them.
-The runner fails if it discovers no tests. To run the optional local Git behavior
-lab, install Git 2.28 or later and run `python -m examples.git_workflow_lab`.
-It creates disposable repositories and needs no GitHub account or network access.
-
-To improve the course, follow [CONTRIBUTING.md](CONTRIBUTING.md). The existing
-[MIT license](LICENSE) applies to repository content; external references retain
-their own terms.
+The executable core targets Python 3.12–3.14. Open
+[Actions → Verify Python tutor](https://github.com/DevilMedlar/python-training/actions/workflows/verify.yml)
+to inspect or manually run course checks on GitHub. Actual run results establish
+what passed. The [MIT license](LICENSE) applies to repository content.

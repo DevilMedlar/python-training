@@ -129,7 +129,7 @@ def validate_state(state, catalog, *, today=None):
         require(isinstance(review["reason"], str) and review["reason"].strip(), "review reason required")
     require(isinstance(state["capstones"], dict), "capstones must be an object")
     for phase, record in state["capstones"].items():
-        capstone_ids = {str(item["id"]) for item in catalog["phases"] + catalog.get("tracks", [])}
+        capstone_ids = {str(item["id"]) for item in catalog["phases"]} | set(catalog.get("legacy_capstones", []))
         require(phase in capstone_ids, "unknown capstone phase or track")
         keys(record, {"status", "completed_on", "support", "evidence"}, "capstone")
         require(isinstance(record["status"], str) and
@@ -154,78 +154,60 @@ def validate_state(state, catalog, *, today=None):
 def recommend(state, catalog, *, today=None, track=None):
     today = today or date.today()
     validate_state(state, catalog, today=today)
-    tracks = {item["id"]: item for item in catalog.get("tracks", [])}
-    require(track is None or track in tracks, "unknown track")
+    # Retain compatibility with old callers without preserving a second course.
+    require(track in {None, "github"}, "unknown track")
     by_id = {lesson["id"]: lesson for lesson in catalog["lessons"]}
     statuses = {key: value["status"] for key, value in state["lessons"].items()}
     ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
-    if track:
-        selected = [lesson for lesson in catalog["lessons"] if lesson.get("track") == track]
-    else:
-        selected = [lesson for lesson in catalog["lessons"] if lesson["phase"] is not None]
-    relevant = {lesson["id"] for lesson in selected}
-    next_lesson = next((lesson["id"] for lesson in selected if lesson["id"] not in ready), None)
-    pending = [next_lesson] if track and next_lesson else ([] if track else list(relevant))
-    visited = set()
-    while pending:
-        ident = pending.pop()
-        if ident in visited:
-            continue
-        visited.add(ident)
-        prerequisites = by_id[ident]["prerequisites"]
-        relevant.update(prerequisites)
-        pending.extend(prerequisites)
-    due = [review for review in state["reviews"] if review["lesson_id"] in relevant
-           and iso_date(review["due_on"], "due_on") <= today]
+
+    def task(kind, ident, **extra):
+        lesson = by_id[ident]
+        reference = None
+        if lesson.get("kind") == "reference":
+            reference = ident
+            lesson = by_id[lesson["introduced_with"]]
+        result = {"kind": kind, "lesson_id": lesson["id"],
+                  "github_skills": list(lesson["github_skills"]),
+                  "github_task": lesson["github_task"],
+                  "github_evidence": lesson["github_evidence"], **extra}
+        if reference:
+            result["reference_id"] = reference
+        return result
+
+    due = [review for review in state["reviews"]
+           if iso_date(review["due_on"], "due_on") <= today]
     if due:
         review = min(due, key=lambda item: (item["due_on"], item["lesson_id"]))
-        return {"kind": "review", "lesson_id": review["lesson_id"], "reason": review["reason"]}
+        return task("review", review["lesson_id"], reason=review["reason"])
     for lesson in catalog["lessons"]:
-        if lesson["id"] in relevant and statuses.get(lesson["id"]) == "review_needed":
-            return {"kind": "repair", "lesson_id": lesson["id"]}
-    if track:
-        for lesson in selected:
-            if lesson["id"] in ready:
-                continue
-            missing = [item for item in lesson["prerequisites"] if item not in ready]
-            if missing:
-                prerequisite = missing[0]
-                while True:
-                    earlier = [item for item in by_id[prerequisite]["prerequisites"] if item not in ready]
-                    if not earlier:
-                        break
-                    prerequisite = earlier[0]
-                return {"kind": "prerequisite", "lesson_id": prerequisite, "needed_for": lesson["id"]}
-            return {"kind": "lesson", "lesson_id": lesson["id"]}
-        if state["capstones"].get(track, {}).get("status") != "complete":
-            return {"kind": "capstone", "track": track, "path": tracks[track]["capstone"]}
-        return {"kind": "maintenance", "track": track,
-                "reason": "Continue delayed reviews and a chosen contribution."}
+        if statuses.get(lesson["id"]) == "review_needed":
+            return task("repair", lesson["id"])
     for phase in catalog["phases"]:
         for lesson in catalog["lessons"]:
             if lesson["phase"] != phase["id"] or not lesson["core"] or lesson["id"] in ready:
                 continue
             missing = [item for item in lesson["prerequisites"] if item not in ready]
             if missing:
-                return {"kind": "prerequisite", "lesson_id": missing[0], "needed_for": lesson["id"]}
-            return {"kind": "lesson", "lesson_id": lesson["id"]}
+                return task("prerequisite", missing[0], needed_for=lesson["id"])
+            return task("lesson", lesson["id"])
         if state["capstones"].get(str(phase["id"]), {}).get("status") != "complete":
-            return {"kind": "capstone", "phase": phase["id"], "path": phase["capstone"]}
-    return {"kind": "maintenance", "reason": "Continue delayed reviews and a chosen contribution."}
+            return {"kind": "capstone", "phase": phase["id"], "path": phase["capstone"],
+                    "github_task": "Review the same Python capstone through its branch, PR, and observed Actions results."}
+    return {"kind": "maintenance", "reason": "Continue delayed reviews and a chosen Python contribution on GitHub."}
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("record", type=Path)
     parser.add_argument("--next", action="store_true", dest="show_next")
-    parser.add_argument("--track", help="Select a companion track, such as github; default is Python")
+    parser.add_argument("--track", help="Legacy github value is an alias for the integrated Python route")
     args = parser.parse_args(argv)
     try:
         state = json.loads(args.record.read_text(encoding="utf-8"))
         catalog = json.loads((ROOT / "curriculum/catalog.json").read_text(encoding="utf-8"))
         validate_state(state, catalog)
         if args.track is not None:
-            require(args.track in {item["id"] for item in catalog.get("tracks", [])}, "unknown track")
+            require(args.track == "github", "unknown track")
         print(json.dumps(recommend(state, catalog, track=args.track), indent=2)
               if args.show_next else "Progress record is consistent.")
     except (OSError, ValueError) as error:

@@ -24,10 +24,10 @@ general tutoring, explicitly describe it as provisional until the guide is loade
 1. Read the latest supplied progress record. Confirm its lesson IDs against the
    catalog. Treat it as reported history; do not invent missing evidence.
 2. Ask at most two brief context questions needed now: goal, experience, platform,
-   Python version, available time, or access needs. Use facts already supplied.
+   available time or access needs. The browser-only environment is already decided; do not ask again.
 3. If there is no record, use [placement](PLACEMENT.md). A declared complete
-   Python beginner starts at `P1-01`; a GitHub beginner starts at `GH-01`.
-   Use the learner's requested route. Do not force advanced placement questions.
+   beginner starts at `P1-01`, including the GitHub actions embedded there.
+   Do not offer a separate GitHub route or force advanced placement questions.
 4. If resuming, give a short retrieval task from the current lesson or a due
    review. Failed recall prompts a repair, not a global demotion.
 5. State today's observable objective and one task that would demonstrate it.
@@ -82,27 +82,42 @@ falsify completion. Phase transitions also require the phase capstone evidence.
 Research and creator tracks can begin with a narrow project and parallel repairs.
 Do not require mastery of every scientific package, framework, or specialty.
 
-The [GitHub companion](../curriculum/github.md) is selected explicitly, independently
-of the five Python phases. Record that choice in `notes` and use `--track github`
-with the progress tool. Apply the same evidence and hint rules to repository tasks.
-Browser reading comes first; require the Python prerequisites at `GH-09`, not at
-the beginning. GitHub completion never substitutes for a Python phase capstone.
-Loading the catalog or a command reference is not evidence of learner competence.
+Every Python lesson includes `github_skills`, `github_task`, and `github_evidence`
+in the catalog and a GitHub practice paragraph in the phase guide. Teach the
+listed action on the learner's actual Python file. `GH-` IDs are references to
+consult within that work. Do not make the learner complete them as a second
+syllabus, pass a separate GitHub capstone, or select a companion track.
+Record the Python explanation and the observed GitHub action in the same attempt.
+For example, changing a function and reviewing its diff is one learning task.
+
+Use github.dev to edit and commit, and github.com to read lessons, Actions output,
+history, and PRs. The environment is fixed by the learner's instruction: no laptop
+installation, local clone, shell, desktop editor, or Codespaces. The provided
+workflow runs Python on GitHub-hosted machines. Introduce buttons just in time;
+do not require Git theory, workflow YAML, or test frameworks before `print()`.
+At first, change `workspace/main.py`; later put helpers and tests alongside it.
+
+Use [BROWSER_WORKFLOW.md](../practice/BROWSER_WORKFLOW.md) for batch inputs and
+temporary files. `input()` consumes lines from `workspace/input.txt`; never tell
+the learner to type into a running Actions log. File persistence across runs
+requires committed sample inputs or an explicitly built artifact workflow.
+Later command-line and environment topics are implemented as hosted workflow
+steps. Explain actual browser limits instead of quietly changing platforms.
 
 ## Verify technical answers
 
 Separate expected output by reasoning from output actually observed by execution.
 State the Python version when it matters. Run small deterministic checks when
 available; consult primary documentation for changing APIs or uncertain semantics.
-If execution is unavailable, provide exact commands and ask for actual output.
+If you cannot execute or inspect a run, give the exact browser steps for Actions and ask for its output. Never claim a predicted result was observed.
 
-For Git tasks, establish the actual repository, branch, working/staged state,
-remotes, and intended effect before changing history. Record Git version and
-available browser, CLI, or agent capabilities in progress notes. Check changing
-GitHub features against current primary documentation. Distinguish a local commit,
-push, PR, merge, and deployment, and report only observed remote states. A source
-guide or `AGENTS.md` example grants no extra credentials or action permission.
-Use the disposable [Git labs](../practice/GITHUB_LABS.md) for recovery practice.
+For repository tasks, establish the repository, browser branch, committed SHA,
+diff, run, and intended effect. Check changing GitHub features against primary
+documentation. Distinguish editor save, commit, PR, merge, and deployment; report
+only observed states. References cannot grant credentials or action permission.
+Use the browser task cards for simple conflicts and recovery. If GitHub cannot
+resolve a conflict online, preserve the branch and apply the intended edit on a
+fresh branch from current main; do not prescribe a local Git workaround.
 
 Do not run learner code blindly. Inspect its I/O and resource use first. Use
 disposable data for file, database, and failure exercises. Never use real client

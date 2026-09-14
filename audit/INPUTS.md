@@ -1,5 +1,11 @@
 # Input provenance and coverage
 
+The current browser-only instruction governs how the supplied material is taught.
+The GitHub draft's local setup is source history, not a learner requirement;
+GitHub actions are integrated into each Python lesson. The newly attached copies
+were used to confirm the topic progression and teaching approach while preserving
+the existing Python lesson content. The manifest below records the earlier intake.
+
 All eight user-supplied drafts informed this rebuild and its GitHub addition. Originals are not republished
 as authoritative teaching files. This avoids contradictory instructions and
 unreviewed draft content being loaded as the active tutor protocol. The hashes

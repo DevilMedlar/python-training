@@ -1,5 +1,8 @@
 # Verification record
 
+The browser integration correction is recorded in the final section. Earlier
+sections are historical observations, not current setup instructions.
+
 Review date: 2026-09-14. This file records the scope of the four review passes.
 The original Python rebuild and subsequent GitHub addition have separate observed
 results below. The [GitHub audit](GITHUB_AUDIT.md) records its source-specific checks.
@@ -41,22 +44,14 @@ instructions, version mismatch, research overclaim, and a tailored creator route
 This is a manual protocol/design review, not a controlled learning study or a
 claim that every ChatGPT model will follow the prompt perfectly.
 
-## Reproduce the checks
+## Reproduce the current checks on GitHub
 
-```sh
-python tools/check_repo.py
-python tools/run_tests.py
-python tools/progress.py tutor/progress-template.json --next
-python tools/progress.py tutor/github-progress-template.json --next --track github
-python -m examples.git_workflow_lab
-```
-
-Install `requirements-research.txt` in a separate environment to include the
-optional NumPy/SciPy tests. Without those packages, those tests are explicitly
-skipped. GitHub CI tests the core on Python 3.12–3.14 and several operating
-systems, plus a separate pinned scientific job; configured jobs are not counted
-as successful until their actual results are observed. The Git behavior lab
-requires Git 2.28+ and creates disposable local repositories without network access.
+Open **Actions → Verify Python tutor → Run workflow** for course integrity,
+reference tests, the hosted Git demonstration, and the integrated progress route.
+Open **Actions → Run Python lesson** for the browser workspace and learner tests.
+The workflow YAML contains the commands GitHub's machines execute; learners do
+not need a terminal or local installation. The historical tables below describe
+earlier versions, including the superseded separate GitHub route.
 
 ## Original Python rebuild local results
 
@@ -161,3 +156,46 @@ installation recipes. Local runs do not prove every platform/build configuration
 No learner trial, independent academic review, exhaustive formal proof, or universal
 research novelty search was performed. See CI and recorded command outcomes for
 the exact verified environments.
+
+## Browser integration correction on 2026-09-14
+
+The learner workflow now uses github.dev for edits and GitHub-hosted Actions for
+Python execution. All 50 Python lessons embed GitHub practice; the 16 GH entries
+are references. One progress route replaces the earlier independent track.
+Historical progress versions 1.0 and 1.1 remain readable without inventing mastery.
+
+Observed in the agent verification environment, Linux x86-64 with CPython 3.12.14:
+
+| Check | Observed result |
+|---|---|
+| Maintained suite | 106 tests passed, including five installed scientific tests |
+| Lesson runner | Starter executed successfully and printed Ready to learn and 5 |
+| Runner failure cases | Recorded stdin, imports, result files, missing inputs/files, syntax failure, explicit nonzero exit, timeout, escaped output, and truncated previews checked |
+| Progress routing | Starts at P1-01 with its GitHub action; legacy track argument selects the same route; GH history cannot skip Python or add a capstone |
+| Repository integrity | 50 Python lessons, 16 GitHub references, 119 sources, 34 Markdown files, 528 internal links, 21 executed Markdown examples, 31 parsed implementation/test files |
+| Workflow syntax | Three YAML workflows parsed with their intended triggers and jobs |
+
+These checks happened in the agent environment, not on the learner's laptop.
+They do not imply that every GitHub-hosted matrix job already passed. The PR and
+Actions runs that introduce this correction provide the hosted check results;
+inspect the commit and job conclusions there. The learner's first-run output and
+course verification are different workflows, and neither proves learner mastery.
+
+No real learner attempts were fabricated, and the new progress record is empty.
+The source attachments were not rewritten. Browser buttons are documented from
+GitHub's primary documentation; an automated runner test does not claim that an
+interactive browser session or independent learner trial was performed.
+
+### First hosted observations for the browser correction
+
+The [lesson run 34906151900](https://github.com/DevilMedlar/python-training/actions/runs/34906151900)
+passed on GitHub's Ubuntu runner with Python 3.14.7 at commit
+`fec8a6dd6bb5b5d75445311af84bc3019171583f`. Its log printed Ready to learn and 5,
+and explicitly reported that no learner tests had been supplied yet.
+
+The [initial verifier run 34906173227](https://github.com/DevilMedlar/python-training/actions/runs/34906173227)
+passed the six Linux/macOS core jobs and the scientific job. The three Windows
+jobs exposed a new test expectation that assumed LF for printed output. The
+runner correctly preserved Windows CRLF. The fixture now expects the platform's
+line separator; this corrects the test without changing program output. The PR
+checks for the subsequent commit establish the final hosted outcome.
