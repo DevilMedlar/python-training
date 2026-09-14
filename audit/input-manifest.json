@@ -1,0 +1,54 @@
+{
+  "received_on": "2026-09-14",
+  "inputs": [
+    {
+      "filename": "Master_Teacher_and_Tutor_Handbook(1).docx",
+      "bytes": 61614,
+      "sha256": "f299e78175ac86eaeb7b58dc4e791743de86070d4fc2e90691ef625dae06c213",
+      "role": "Teaching decisions",
+      "adapted_to": "tutor instructions, teaching, placement, progress, scenarios"
+    },
+    {
+      "filename": "Python_Phase_1_Novice_Guide(1).md",
+      "bytes": 81369,
+      "sha256": "d088424861262279e450cc4d726b6c91310147fb029db65a870dec75f97e7cb5",
+      "role": "Beginner curriculum",
+      "adapted_to": "phase-1; tracker; beginner drills; misconceptions"
+    },
+    {
+      "filename": "Python_Phase_2_Intermediate_Guide(1).md",
+      "bytes": 71933,
+      "sha256": "e2de52971323fe2e1e55fd6083d4e7240d35ac9d5930a9f566ec106f6ccf5c18",
+      "role": "Application practice",
+      "adapted_to": "phase-2; CSV reporter; testing and packaging tasks"
+    },
+    {
+      "filename": "Python_Phase_3_Expert_Study_Guide.md.docx",
+      "bytes": 72212,
+      "sha256": "87e8aa162b6c16db2ac0088a7f28d2c430bc91ead63d1c5a8c19e62e345d06ea",
+      "role": "Advanced mechanisms",
+      "adapted_to": "phase-3; decorators, async pipeline, SQLite, selection"
+    },
+    {
+      "filename": "Python_Phase_4_The_Researcher_Early_PhD(1).md",
+      "bytes": 64637,
+      "sha256": "5ee32eb0924d9f293e18c34630d48ecc41272257a19fd1701689f17ed5acafb8",
+      "role": "Research methods",
+      "adapted_to": "phase-4; protocol; paired numerical experiment"
+    },
+    {
+      "filename": "Python_Phase_5_The_Creator(1).md",
+      "bytes": 69731,
+      "sha256": "727ea08587b999bcc3f4786e4c1761991422c8fca0cbd8d9cc7d7a09b37405f1",
+      "role": "Contribution lifecycle",
+      "adapted_to": "phase-5; evaluation; API contracts; benchmark; maintenance"
+    },
+    {
+      "filename": "learning Phases.txt",
+      "bytes": 4060,
+      "sha256": "b05b3ec9089b3e1df47719ef1d96c2fc9bccee96aec13bc7aa722dbb92cbfeb6",
+      "role": "Phase framing",
+      "adapted_to": "README; placement; assessment; corrected unsupported trajectory"
+    }
+  ]
+}

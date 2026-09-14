@@ -1,0 +1,4 @@
+# Optional recorded reproduction environment, not required by core lessons.
+# Locally checked with Python 3.12.14; other platforms/builds need their own check.
+numpy==2.3.5
+scipy==1.17.0

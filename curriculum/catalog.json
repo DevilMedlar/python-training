@@ -1,0 +1,840 @@
+{
+  "catalog_version": "1.0",
+  "minimum_python": "3.12",
+  "core_python_targets": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "phases": [
+    {
+      "id": 1,
+      "title": "Novice",
+      "path": "curriculum/phase-1.md",
+      "capstone": "practice/CAPSTONES.md#capstone-1-study-tracker"
+    },
+    {
+      "id": 2,
+      "title": "Competent practitioner",
+      "path": "curriculum/phase-2.md",
+      "capstone": "practice/CAPSTONES.md#capstone-2-study-report-application"
+    },
+    {
+      "id": 3,
+      "title": "Expert practice",
+      "path": "curriculum/phase-3.md",
+      "capstone": "practice/CAPSTONES.md#capstone-3-bounded-processing-system"
+    },
+    {
+      "id": 4,
+      "title": "Researcher",
+      "path": "curriculum/phase-4.md",
+      "capstone": "practice/CAPSTONES.md#capstone-4-reproducible-investigation"
+    },
+    {
+      "id": 5,
+      "title": "Creator",
+      "path": "curriculum/phase-5.md",
+      "capstone": "practice/CAPSTONES.md#capstone-5-useful-contribution"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "P1-01",
+      "phase": 1,
+      "title": "Run and inspect a program",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-01-run-and-inspect-a-program",
+      "prerequisites": [],
+      "core": true,
+      "objective": "Save a Python file, run it, and distinguish source code, terminal commands, interpreter prompts, and program output.",
+      "source_ids": [
+        "PY-INTRO"
+      ]
+    },
+    {
+      "id": "P1-02",
+      "phase": 1,
+      "title": "Values names and arithmetic",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-02-values-names-and-arithmetic",
+      "prerequisites": [
+        "P1-01"
+      ],
+      "core": true,
+      "objective": "Trace assignments and use integers, floats, strings, booleans, and `None` for appropriate purposes.",
+      "source_ids": [
+        "PY-INTRO",
+        "PY-FLOAT"
+      ]
+    },
+    {
+      "id": "P1-03",
+      "phase": 1,
+      "title": "Strings and text transformations",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-03-strings-and-text-transformations",
+      "prerequisites": [
+        "P1-02"
+      ],
+      "core": true,
+      "objective": "Index, slice, normalize, combine, and format simple text.",
+      "source_ids": [
+        "PY-TEXT"
+      ]
+    },
+    {
+      "id": "P1-04",
+      "phase": 1,
+      "title": "Input conversion and explicit contracts",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-04-input-conversion-and-explicit-contracts",
+      "prerequisites": [
+        "P1-03"
+      ],
+      "core": true,
+      "objective": "Distinguish text input, conversion, and a program's validity rules.",
+      "source_ids": [
+        "PY-BUILTINS"
+      ]
+    },
+    {
+      "id": "P1-05",
+      "phase": 1,
+      "title": "Booleans decisions and boundaries",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-05-booleans-decisions-and-boundaries",
+      "prerequisites": [
+        "P1-04"
+      ],
+      "core": true,
+      "objective": "Express a decision with comparisons and test all its boundaries.",
+      "source_ids": [
+        "PY-TRUTH",
+        "PY-FUNCTIONS"
+      ]
+    },
+    {
+      "id": "P1-06",
+      "phase": 1,
+      "title": "Loops accumulation and termination",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-06-loops-accumulation-and-termination",
+      "prerequisites": [
+        "P1-05"
+      ],
+      "core": true,
+      "objective": "Trace and write finite repetition, including an empty input.",
+      "source_ids": [
+        "PY-FUNCTIONS"
+      ]
+    },
+    {
+      "id": "P1-07",
+      "phase": 1,
+      "title": "Collections and choosing a representation",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-07-collections-and-choosing-a-representation",
+      "prerequisites": [
+        "P1-06"
+      ],
+      "core": true,
+      "objective": "Choose and use a list, tuple, dictionary, or set for a small task.",
+      "source_ids": [
+        "PY-COLLECTIONS"
+      ]
+    },
+    {
+      "id": "P1-08",
+      "phase": 1,
+      "title": "Functions parameters and return values",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-08-functions-parameters-and-return-values",
+      "prerequisites": [
+        "P1-07"
+      ],
+      "core": true,
+      "objective": "Turn a computation into a reusable function with an explicit contract.",
+      "source_ids": [
+        "PY-FUNCTIONS"
+      ]
+    },
+    {
+      "id": "P1-09",
+      "phase": 1,
+      "title": "References mutation and scope",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-09-references-mutation-and-scope",
+      "prerequisites": [
+        "P1-08"
+      ],
+      "core": true,
+      "objective": "Explain aliasing, a shallow copy, a mutable default, and local rebinding.",
+      "source_ids": [
+        "PY-CLASSES",
+        "PY-MODEL"
+      ]
+    },
+    {
+      "id": "P1-10",
+      "phase": 1,
+      "title": "Errors debugging and tests",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-10-errors-debugging-and-tests",
+      "prerequisites": [
+        "P1-09"
+      ],
+      "core": true,
+      "objective": "Reproduce a failure, read a traceback, repair its cause, and test the repair.",
+      "source_ids": [
+        "PY-ERRORS",
+        "PY-ASSERT"
+      ]
+    },
+    {
+      "id": "P1-11",
+      "phase": 1,
+      "title": "Modules environments and standard tools",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-11-modules-environments-and-standard-tools",
+      "prerequisites": [
+        "P1-10"
+      ],
+      "core": true,
+      "objective": "Import a helper without starting its interactive interface and identify which interpreter owns an installed package.",
+      "source_ids": [
+        "PY-MODULES",
+        "PY-VENV"
+      ]
+    },
+    {
+      "id": "P1-12",
+      "phase": 1,
+      "title": "Files serialization and the first project",
+      "path": "curriculum/phase-1.md",
+      "anchor": "p1-12-files-serialization-and-the-first-project",
+      "prerequisites": [
+        "P1-11"
+      ],
+      "core": true,
+      "objective": "Save and load validated practice data without silently discarding a damaged existing file.",
+      "source_ids": [
+        "PY-FILES",
+        "PY-JSON"
+      ]
+    },
+    {
+      "id": "P2-01",
+      "phase": 2,
+      "title": "Collection patterns and complexity",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-01-collection-patterns-and-complexity",
+      "prerequisites": [
+        "P1-12"
+      ],
+      "core": true,
+      "objective": "Choose clear collection operations and explain their main time and space tradeoffs.",
+      "source_ids": [
+        "PY-COLLECTIONS",
+        "PY-BUILTINS"
+      ]
+    },
+    {
+      "id": "P2-02",
+      "phase": 2,
+      "title": "Iterators generators and streaming",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-02-iterators-generators-and-streaming",
+      "prerequisites": [
+        "P2-01"
+      ],
+      "core": true,
+      "objective": "Consume a stream once and account for its lifetime and storage.",
+      "source_ids": [
+        "PY-ITERTOOLS",
+        "PY-CLASSES"
+      ]
+    },
+    {
+      "id": "P2-03",
+      "phase": 2,
+      "title": "Function interfaces scope and wrappers",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-03-function-interfaces-scope-and-wrappers",
+      "prerequisites": [
+        "P2-02"
+      ],
+      "core": true,
+      "objective": "Design an interface with explicit inputs, defaults, outputs, and mutation.",
+      "source_ids": [
+        "PY-FUNCTIONS",
+        "PY-FUNCTOOLS"
+      ]
+    },
+    {
+      "id": "P2-04",
+      "phase": 2,
+      "title": "Classes dataclasses and composition",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-04-classes-dataclasses-and-composition",
+      "prerequisites": [
+        "P2-03"
+      ],
+      "core": true,
+      "objective": "Model useful state without accidental sharing or unnecessary inheritance.",
+      "source_ids": [
+        "PY-DATACLASSES",
+        "PY-CLASSES"
+      ]
+    },
+    {
+      "id": "P2-05",
+      "phase": 2,
+      "title": "Exceptions and resource ownership",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-05-exceptions-and-resource-ownership",
+      "prerequisites": [
+        "P2-04"
+      ],
+      "core": true,
+      "objective": "Preserve useful error context and release resources on failure.",
+      "source_ids": [
+        "PY-CONTEXT",
+        "PY-ERRORS"
+      ]
+    },
+    {
+      "id": "P2-06",
+      "phase": 2,
+      "title": "Type hints and runtime validation",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-06-type-hints-and-runtime-validation",
+      "prerequisites": [
+        "P2-05"
+      ],
+      "core": true,
+      "objective": "Use annotations to communicate interfaces without mistaking them for checks.",
+      "source_ids": [
+        "PY-TYPING"
+      ]
+    },
+    {
+      "id": "P2-07",
+      "phase": 2,
+      "title": "Testing debugging and logging",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-07-testing-debugging-and-logging",
+      "prerequisites": [
+        "P2-06"
+      ],
+      "core": true,
+      "objective": "Connect requirements to tests and diagnose failures with controlled evidence.",
+      "source_ids": [
+        "PY-UNITTEST",
+        "PY-LOGGING"
+      ]
+    },
+    {
+      "id": "P2-08",
+      "phase": 2,
+      "title": "Structured text numbers and dates",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-08-structured-text-numbers-and-dates",
+      "prerequisites": [
+        "P2-07"
+      ],
+      "core": true,
+      "objective": "Preserve a data format's meaning through parsing, validation, and output.",
+      "source_ids": [
+        "PY-CSV",
+        "PY-DECIMAL",
+        "PY-DATETIME"
+      ]
+    },
+    {
+      "id": "P2-09",
+      "phase": 2,
+      "title": "HTTP APIs and external failures",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-09-http-apis-and-external-failures",
+      "prerequisites": [
+        "P2-08"
+      ],
+      "core": true,
+      "objective": "Design a small external-service adapter with bounded failure behavior.",
+      "source_ids": [
+        "PY-URLLIB",
+        "HTTP-SEMANTICS"
+      ]
+    },
+    {
+      "id": "P2-10",
+      "phase": 2,
+      "title": "SQLite queries and transactions",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-10-sqlite-queries-and-transactions",
+      "prerequisites": [
+        "P2-09"
+      ],
+      "core": true,
+      "objective": "Store records with parameterized queries and demonstrate transaction behavior.",
+      "source_ids": [
+        "PY-SQLITE"
+      ]
+    },
+    {
+      "id": "P2-11",
+      "phase": 2,
+      "title": "Git packaging and reproducible setup",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-11-git-packaging-and-reproducible-setup",
+      "prerequisites": [
+        "P2-10"
+      ],
+      "core": true,
+      "objective": "Make a project installable and explain what a version-control change contains.",
+      "source_ids": [
+        "PY-PACKAGING",
+        "GIT-BOOK"
+      ]
+    },
+    {
+      "id": "P2-12",
+      "phase": 2,
+      "title": "Algorithms command lines and application delivery",
+      "path": "curriculum/phase-2.md",
+      "anchor": "p2-12-algorithms-command-lines-and-application-delivery",
+      "prerequisites": [
+        "P2-11"
+      ],
+      "core": true,
+      "objective": "Deliver a complete small application with a justified algorithm and usable failures.",
+      "source_ids": [
+        "PY-ARGPARSE",
+        "PY-HEAPQ"
+      ]
+    },
+    {
+      "id": "P3-01",
+      "phase": 3,
+      "title": "Protocols descriptors and object behavior",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-01-protocols-descriptors-and-object-behavior",
+      "prerequisites": [
+        "P2-12"
+      ],
+      "core": true,
+      "objective": "Explain attribute lookup and implement a small, lawful Python protocol.",
+      "source_ids": [
+        "PY-MODEL",
+        "PY-DESCRIPTOR"
+      ]
+    },
+    {
+      "id": "P3-02",
+      "phase": 3,
+      "title": "Closures decorators and caches",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-02-closures-decorators-and-caches",
+      "prerequisites": [
+        "P3-01"
+      ],
+      "core": true,
+      "objective": "Preserve a callable's contract and justify any retained state.",
+      "source_ids": [
+        "PY-FUNCTOOLS",
+        "PY-ASYNC"
+      ]
+    },
+    {
+      "id": "P3-03",
+      "phase": 3,
+      "title": "Advanced typing and API boundaries",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-03-advanced-typing-and-api-boundaries",
+      "prerequisites": [
+        "P3-02"
+      ],
+      "core": true,
+      "objective": "Express meaningful generic relationships without inventing runtime guarantees.",
+      "source_ids": [
+        "PY-TYPING",
+        "PY-ANNOTATIONS"
+      ]
+    },
+    {
+      "id": "P3-04",
+      "phase": 3,
+      "title": "Runtime memory and inspection",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-04-runtime-memory-and-inspection",
+      "prerequisites": [
+        "P3-03"
+      ],
+      "core": true,
+      "objective": "Separate language guarantees from observations about a particular runtime.",
+      "source_ids": [
+        "PY-MODEL",
+        "PY-INSPECTION",
+        "PY-MEMORY"
+      ]
+    },
+    {
+      "id": "P3-05",
+      "phase": 3,
+      "title": "Algorithms profiling and fair benchmarks",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-05-algorithms-profiling-and-fair-benchmarks",
+      "prerequisites": [
+        "P3-04"
+      ],
+      "core": true,
+      "objective": "Identify a limiting cost and evaluate an optimization without changing the contract.",
+      "source_ids": [
+        "PY-HEAPQ",
+        "PYPERF"
+      ]
+    },
+    {
+      "id": "P3-06",
+      "phase": 3,
+      "title": "Threads processes and isolated interpreters",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-06-threads-processes-and-isolated-interpreters",
+      "prerequisites": [
+        "P3-05"
+      ],
+      "core": true,
+      "objective": "Choose a concurrency mechanism based on work, ownership, and transfer costs.",
+      "source_ids": [
+        "PY-FREE-THREADING",
+        "PY-EXECUTORS",
+        "PY-PROCESSES"
+      ]
+    },
+    {
+      "id": "P3-07",
+      "phase": 3,
+      "title": "Async work bounds and cancellation",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-07-async-work-bounds-and-cancellation",
+      "prerequisites": [
+        "P3-06"
+      ],
+      "core": true,
+      "objective": "Bound a pipeline's tasks, queue, and retained results and prove cleanup.",
+      "source_ids": [
+        "PY-ASYNC",
+        "PY-QUEUES"
+      ]
+    },
+    {
+      "id": "P3-08",
+      "phase": 3,
+      "title": "Transactions retries and distributed uncertainty",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-08-transactions-retries-and-distributed-uncertainty",
+      "prerequisites": [
+        "P3-07"
+      ],
+      "core": true,
+      "objective": "Protect an invariant across failures and identify uncertain remote outcomes.",
+      "source_ids": [
+        "PY-SQLITE",
+        "HTTP-SEMANTICS"
+      ]
+    },
+    {
+      "id": "P3-09",
+      "phase": 3,
+      "title": "Architecture security and operations",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-09-architecture-security-and-operations",
+      "prerequisites": [
+        "P3-08"
+      ],
+      "core": true,
+      "objective": "Make a system's rules, dependencies, and failure signals understandable.",
+      "source_ids": [
+        "PY-PICKLE",
+        "PY-SUBPROCESS",
+        "PY-LOGGING"
+      ]
+    },
+    {
+      "id": "P3-10",
+      "phase": 3,
+      "title": "Reliable delivery and specialization",
+      "path": "curriculum/phase-3.md",
+      "anchor": "p3-10-reliable-delivery-and-specialization",
+      "prerequisites": [
+        "P3-09"
+      ],
+      "core": true,
+      "objective": "Deliver an expert-level project with independent evidence and a clear specialty route.",
+      "source_ids": [
+        "PY-PACKAGING",
+        "PY-UNITTEST"
+      ]
+    },
+    {
+      "id": "P4-01",
+      "phase": 4,
+      "title": "Questions literature and scope",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-01-questions-literature-and-scope",
+      "prerequisites": [
+        "P3-10"
+      ],
+      "core": true,
+      "objective": "Form a tractable question and distinguish evidence gaps from unfamiliarity.",
+      "source_ids": [
+        "RESEARCH-PRACTICE"
+      ]
+    },
+    {
+      "id": "P4-02",
+      "phase": 4,
+      "title": "Mathematical and numerical validity",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-02-mathematical-and-numerical-validity",
+      "prerequisites": [
+        "P4-01"
+      ],
+      "core": true,
+      "objective": "Identify the mathematical assumptions and numerical errors relevant to a result.",
+      "source_ids": [
+        "PY-FLOAT",
+        "NUMPY-VIEWS",
+        "SCIPY-LINALG"
+      ]
+    },
+    {
+      "id": "P4-03",
+      "phase": 4,
+      "title": "Experimental units baselines and uncertainty",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-03-experimental-units-baselines-and-uncertainty",
+      "prerequisites": [
+        "P4-02"
+      ],
+      "core": true,
+      "objective": "Design a comparison whose uncertainty analysis matches its sampling units.",
+      "source_ids": [
+        "NIST-CI",
+        "SCIPY-BOOTSTRAP",
+        "SKLEARN-LEAKAGE"
+      ]
+    },
+    {
+      "id": "P4-04",
+      "phase": 4,
+      "title": "Reproducibility provenance and randomness",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-04-reproducibility-provenance-and-randomness",
+      "prerequisites": [
+        "P4-03"
+      ],
+      "core": true,
+      "objective": "Regenerate a result from recorded inputs, code, configuration, and environment.",
+      "source_ids": [
+        "NUMPY-RANDOM",
+        "RESEARCH-PRACTICE"
+      ]
+    },
+    {
+      "id": "P4-05",
+      "phase": 4,
+      "title": "Verification validation and scientific tests",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-05-verification-validation-and-scientific-tests",
+      "prerequisites": [
+        "P4-04"
+      ],
+      "core": true,
+      "objective": "Test whether the implementation follows its specification and whether the specification supports the intended investigation.",
+      "source_ids": [
+        "HYPOTHESIS",
+        "NUMPY-VIEWS"
+      ]
+    },
+    {
+      "id": "P4-06",
+      "phase": 4,
+      "title": "Performance scaling and computational budgets",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-06-performance-scaling-and-computational-budgets",
+      "prerequisites": [
+        "P4-05"
+      ],
+      "core": true,
+      "objective": "Evaluate computational cost under equivalent accuracy and workload conditions.",
+      "source_ids": [
+        "JAX-BENCHMARK",
+        "PYPERF"
+      ]
+    },
+    {
+      "id": "P4-07",
+      "phase": 4,
+      "title": "Scientific communication and critique",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-07-scientific-communication-and-critique",
+      "prerequisites": [
+        "P4-06"
+      ],
+      "core": true,
+      "objective": "Write a report in which claims, methods, results, and limits can be inspected.",
+      "source_ids": [
+        "RESEARCH-PRACTICE",
+        "NIST-CI"
+      ]
+    },
+    {
+      "id": "P4-08",
+      "phase": 4,
+      "title": "Replication and the research capstone",
+      "path": "curriculum/phase-4.md",
+      "anchor": "p4-08-replication-and-the-research-capstone",
+      "prerequisites": [
+        "P4-07"
+      ],
+      "core": true,
+      "objective": "Complete one bounded investigation with reproducible evidence and an honest conclusion.",
+      "source_ids": [
+        "RESEARCH-PRACTICE"
+      ]
+    },
+    {
+      "id": "P5-01",
+      "phase": 5,
+      "title": "Contribution value and novelty",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-01-contribution-value-and-novelty",
+      "prerequisites": [
+        "P4-08"
+      ],
+      "core": true,
+      "objective": "Define a worthwhile contribution without confusing novelty, complexity, and usefulness.",
+      "source_ids": [
+        "RESEARCH-PRACTICE",
+        "PEP-PROCESS"
+      ]
+    },
+    {
+      "id": "P5-02",
+      "phase": 5,
+      "title": "Public APIs and compatibility",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-02-public-apis-and-compatibility",
+      "prerequisites": [
+        "P5-01"
+      ],
+      "core": true,
+      "objective": "Design an interface other people can use and evolve without hidden assumptions.",
+      "source_ids": [
+        "PY-TYPING",
+        "PY-PACKAGING"
+      ]
+    },
+    {
+      "id": "P5-03",
+      "phase": 5,
+      "title": "Prototypes baselines and decision records",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-03-prototypes-baselines-and-decision-records",
+      "prerequisites": [
+        "P5-02"
+      ],
+      "core": true,
+      "objective": "Use a small prototype to compare alternatives and decide whether to continue.",
+      "source_ids": [
+        "PY-HEAPQ",
+        "PYPERF"
+      ]
+    },
+    {
+      "id": "P5-04",
+      "phase": 5,
+      "title": "Language runtime and tool creation",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-04-language-runtime-and-tool-creation",
+      "prerequisites": [
+        "P5-03"
+      ],
+      "core": false,
+      "objective": "Investigate one language/tooling problem with a defined supported subset.",
+      "source_ids": [
+        "PY-INSPECTION",
+        "PY-314",
+        "CPYTHON-CONTRIBUTING"
+      ]
+    },
+    {
+      "id": "P5-05",
+      "phase": 5,
+      "title": "Scientific native and systems contributions",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-05-scientific-native-and-systems-contributions",
+      "prerequisites": [
+        "P5-03"
+      ],
+      "core": false,
+      "objective": "Define the extra domain and interoperability evidence needed by a chosen specialty.",
+      "source_ids": [
+        "PY-EXTENSIONS",
+        "JAX-BENCHMARK",
+        "SCIPY-LINALG"
+      ]
+    },
+    {
+      "id": "P5-06",
+      "phase": 5,
+      "title": "Independent evaluation and adversarial review",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-06-independent-evaluation-and-adversarial-review",
+      "prerequisites": [
+        "P5-03"
+      ],
+      "core": true,
+      "objective": "Evaluate a contribution under conditions that can reveal its weaknesses.",
+      "source_ids": [
+        "RESEARCH-PRACTICE",
+        "HYPOTHESIS"
+      ]
+    },
+    {
+      "id": "P5-07",
+      "phase": 5,
+      "title": "Releases community and governance",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-07-releases-community-and-governance",
+      "prerequisites": [
+        "P5-06"
+      ],
+      "core": true,
+      "objective": "Prepare a reviewable release or upstream change that respects its destination.",
+      "source_ids": [
+        "CPYTHON-CONTRIBUTING",
+        "PEP-PROCESS",
+        "PY-PACKAGING"
+      ]
+    },
+    {
+      "id": "P5-08",
+      "phase": 5,
+      "title": "Maintenance mentoring and the creator capstone",
+      "path": "curriculum/phase-5.md",
+      "anchor": "p5-08-maintenance-mentoring-and-the-creator-capstone",
+      "prerequisites": [
+        "P5-07"
+      ],
+      "core": true,
+      "objective": "Make a useful contribution understandable and maintainable beyond its creator.",
+      "source_ids": [
+        "CPYTHON-CONTRIBUTING",
+        "RESEARCH-PRACTICE"
+      ]
+    }
+  ]
+}

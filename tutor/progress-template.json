@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "catalog_version": "1.0",
+  "updated_on": null,
+  "environment": {
+    "os": null,
+    "python": null,
+    "command": null,
+    "execution_available": null
+  },
+  "goals": [],
+  "current_lesson": "P1-01",
+  "lessons": {},
+  "reviews": [],
+  "capstones": {},
+  "next_task": "Run hello.py and share the command and exact output.",
+  "notes": []
+}
