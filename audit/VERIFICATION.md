@@ -128,10 +128,29 @@ The added reference was reviewed independently as described in
 | Catalog | 66 lessons, 48 Python core lessons, 16 optional GitHub lessons, 115 primary source records |
 | Initial routing | Default record starts at P1-01; explicit GitHub route starts at GH-01 |
 
-The addition has not changed the earlier recorded results into tests of its new
-code. Its own hosted CI results are recorded separately when observed. The runner
-now rejects zero discovered tests; five intentional scientific skips in a core
-environment are distinct from an empty suite.
+The runner now rejects zero discovered tests; five intentional scientific skips
+in a core environment are distinct from an empty suite.
+
+## GitHub addition hosted results
+
+[Run 34902607844](https://github.com/DevilMedlar/python-training/actions/runs/34902607844)
+completed successfully for PR head `237548a0aaa9c7c782a9b6992f893438bc6c9986`.
+All ten jobs passed, and all ten job logs were inspected. This is a separate run
+of the GitHub addition, not an extrapolation from the earlier Python rebuild.
+
+| Runner label | Python 3.12 job | Python 3.13 job | Python 3.14 job | Git observed in the lab |
+|---|---|---|---|---|
+| `ubuntu-latest` | 3.12.14 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0 |
+| `windows-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0.windows.5 |
+| `macos-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed | 2.55.0 |
+
+Each core job passed the repository checker, seven Git invariant groups, and both
+initial routing checks. Each test report lists 100 tests with five explicit skips:
+95 core tests passed, and the scientific tests were intentionally absent from that
+environment. The separate research job used CPython 3.12.14 and passed those five
+scientific tests with the pinned dependencies. All 22 runnable Markdown examples
+and 393 internal links passed the checker. This table records these observed
+environments; future runner images and patch versions may differ.
 
 ## Limits of all checks
 
