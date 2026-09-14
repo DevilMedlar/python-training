@@ -920,6 +920,38 @@
       "reviewed_on": "2026-09-14",
       "status": "consulted_primary_source",
       "scope": "Base/head selection and body-file input"
+    },
+    {
+      "id": "GH-WEB-CONFLICTS",
+      "title": "Resolve simple conflicts on GitHub",
+      "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-on-github",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Web editor supports simple competing-line conflicts and merges base into head."
+    },
+    {
+      "id": "GH-WEB-REVERT",
+      "title": "Revert a pull request on GitHub",
+      "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/reverting-a-pull-request",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Revert creates a new inverse PR; permissions and conflicts constrain the operation."
+    },
+    {
+      "id": "GH-ACTIONS-MANUAL",
+      "title": "Run a workflow through the browser",
+      "url": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "Workflow dispatch requires the workflow on default branch; browser branch selection and run steps."
+    },
+    {
+      "id": "GH-ACTIONS-SUMMARY",
+      "title": "Write GitHub Actions job summaries",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary",
+      "reviewed_on": "2026-09-14",
+      "status": "consulted_primary_source",
+      "scope": "GITHUB_STEP_SUMMARY provides Markdown content on the workflow summary page."
     }
   ]
 }

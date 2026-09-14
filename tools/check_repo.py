@@ -59,7 +59,7 @@ def anchors(text):
 
 
 def validate_catalog(catalog):
-    require(catalog.get("catalog_version") == "1.1", "unsupported catalog version")
+    require(catalog.get("catalog_version") == "1.2", "unsupported catalog version")
     require(catalog.get("minimum_python") == "3.12", "review changes to minimum Python explicitly")
     phases = catalog.get("phases")
     lessons = catalog.get("lessons")
@@ -69,31 +69,33 @@ def validate_catalog(catalog):
     require(len(set(ids)) == len(ids), "duplicate lesson ID")
     require(ids == sorted(ids, key=lambda ident: (not bool(re.fullmatch(r"P[1-5]-\d{2}", ident)), ident)),
             "lesson order must be stable")
-    tracks = catalog.get("tracks", [])
-    require(isinstance(tracks, list), "tracks must be a list")
-    track_by_id = {track["id"]: track for track in tracks}
-    require(len(track_by_id) == len(tracks), "duplicate track ID")
-    require(len({track["prefix"] for track in tracks}) == len(tracks), "duplicate track prefix")
-    for track in tracks:
-        require(re.fullmatch(r"[a-z][a-z0-9-]*", track["id"]), "invalid track ID")
-        require(re.fullmatch(r"[A-Z]{2,5}", track["prefix"]), "invalid track prefix")
-        require(track["title"].strip() and track["path"].strip() and track["capstone"].strip(),
-                "incomplete track metadata")
+    require(not catalog.get("tracks"), "separate curriculum tracks are not supported")
     by_id = {lesson["id"]: lesson for lesson in lessons}
     for lesson in lessons:
         ident = lesson["id"]
         require(type(lesson["core"]) is bool, f"core must be boolean: {ident}")
         if lesson["phase"] is None:
-            track = track_by_id.get(lesson.get("track"))
-            require(track is not None, f"unknown companion track: {ident}")
-            require(re.fullmatch(re.escape(track["prefix"]) + r"-\d{2}", ident),
-                    f"invalid track lesson ID: {ident}")
-            require(not lesson["core"], f"companion lesson cannot enter the default Python route: {ident}")
+            require(lesson.get("kind") == "reference", f"unknown reference kind: {ident}")
+            require(re.fullmatch(r"GH-\d{2}", ident), f"invalid GitHub reference ID: {ident}")
+            require(not lesson["core"], f"reference cannot be a standalone core lesson: {ident}")
+            require(not lesson["prerequisites"], f"reference must not create a second sequence: {ident}")
+            expected_hosts = [item["id"] for item in lessons if ident in item.get("github_skills", [])]
+            require(lesson.get("used_in") == expected_hosts and expected_hosts,
+                    f"reference host mapping mismatch: {ident}")
+            require(lesson.get("introduced_with") == expected_hosts[0], f"invalid first use: {ident}")
         else:
             require(re.fullmatch(r"P[1-5]-\d{2}", ident), f"invalid lesson ID: {ident}")
             require(type(lesson["phase"]) is int and lesson["phase"] == int(ident[1]),
                     f"phase mismatch: {ident}")
-            require(lesson.get("track") is None, f"Python lesson has a companion track: {ident}")
+            require(lesson.get("track") is None, f"Python lesson has a separate track: {ident}")
+            skills = lesson.get("github_skills")
+            require(isinstance(skills, list) and skills and len(skills) == len(set(skills)),
+                    f"missing or duplicate integrated GitHub skills: {ident}")
+            require(all(item in by_id and by_id[item].get("kind") == "reference" for item in skills),
+                    f"unknown GitHub skill: {ident}")
+            require(all(isinstance(lesson.get(key), str) and lesson[key].strip()
+                        for key in ("github_task", "github_evidence")),
+                    f"missing integrated GitHub task or evidence: {ident}")
         require(lesson["objective"].strip() and lesson["title"].strip(), f"missing objective/title: {ident}")
         require(len(set(lesson["prerequisites"])) == len(lesson["prerequisites"]), f"duplicate prerequisite: {ident}")
         for prerequisite in lesson["prerequisites"]:
@@ -170,6 +172,9 @@ def check_repo(root=ROOT):
         heading = f"## {lesson['id']} {lesson['title']}"
         require(heading + "\n" in content, f"lesson heading mismatch: {lesson['id']}")
         body = content.split(heading + "\n", 1)[1].split("\n## ", 1)[0]
+        if lesson["phase"] is not None:
+            require(lesson["github_task"] in body and lesson["github_evidence"] in body,
+                    f"integrated GitHub practice drift: {lesson['id']}")
         for field in ("Prerequisites", "Outcome", "Practice A", "Practice B", "Hints", "Evidence", "Sources"):
             require(f"**{field}:**" in body, f"missing {field} in {lesson['id']}")
         require("```python" in body or "**Worked example:**" in body, f"missing example: {lesson['id']}")
@@ -182,7 +187,7 @@ def check_repo(root=ROOT):
         require(lesson["anchor"] in anchors(content), f"lesson anchor mismatch: {lesson['id']}")
     require((root / "curriculum/INDEX.md").read_text(encoding="utf-8") == render(catalog),
             "index is stale: run python tools/render_index.py")
-    for template in ("progress-template.json", "github-progress-template.json"):
+    for template in ("progress-template.json", "github-progress-template.json", "progress.json"):
         validate_state(json.loads((root / "tutor" / template).read_text(encoding="utf-8")), catalog)
     markdown_files = [path for path in root.rglob("*.md") if not any(
         part in {".git", ".venv", "progress", "__pycache__"} for part in path.relative_to(root).parts)]
@@ -191,7 +196,8 @@ def check_repo(root=ROOT):
     python_files = [path for folder in ("examples", "tests", "tools") for path in (root / folder).rglob("*.py")]
     for path in python_files:
         ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
-    return {"lessons": len(catalog["lessons"]), "core_lessons": sum(item["core"] for item in catalog["lessons"]),
+    return {"python_lessons": sum(item["phase"] is not None for item in catalog["lessons"]),
+            "github_references": sum(item.get("kind") == "reference" for item in catalog["lessons"]), "core_lessons": sum(item["core"] for item in catalog["lessons"]),
             "source_records": len(sources), "markdown_files": len(markdown_files),
             "internal_links": links, "executed_markdown_examples": snippets,
             "parsed_python_files": len(python_files)}

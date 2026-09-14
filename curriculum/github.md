@@ -1,650 +1,488 @@
-# Git and GitHub companion track
+# GitHub reference for Python lessons
 
-Learn to understand a repository, share a small change, review evidence, and
-recover deliberately. Start with `GH-01` or ask the tutor to check the skills you
-already use. The browser lessons require no Python. `GH-09` introduces a Python
-project and lists the Python prerequisites explicitly.
+Use these cards when the current Python lesson links to them. They explain the
+GitHub action you are performing on that same Python code. There is no separate
+GH lesson sequence, track choice, or GitHub capstone. Follow the [Python index](INDEX.md).
 
-This track adapts the supplied GitHub Practical Reference after a separate
-[audit](../audit/GITHUB_AUDIT.md). Use the [lesson index](INDEX.md),
-[hands-on labs](../practice/GITHUB_LABS.md), and
-[command and troubleshooting reference](../practice/GITHUB_REFERENCE.md).
-Track progress with `python tools/progress.py progress/progress.json --next --track github`.
-The track is optional alongside the five Python phases, not a sixth rank.
+The learner works through github.com and github.dev. Python execution and any
+advanced commands run in hosted workflows. See the [browser workflow](../practice/BROWSER_WORKFLOW.md).
 
-Commands assume the intended repository and branch. Replace uppercase
-placeholders, read `git status`, and explain a command's target before changing
-files or history. `main` is an example default branch; inspect the actual one.
+## GH-01 Read your Python repository
 
-## GH-01 Read a repository and choose the right copy
+**Used within Python:** First introduced with P1-01; return here only for the action linked by your current lesson.
 
-**Prerequisites:** None.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-**Outcome:** Find a project's purpose, license, version, and checks, and distinguish a ZIP, clone, fork, template, and branch.
+**Outcome:** Locate the current Python lesson, practice file, branch, history, and run on GitHub.
 
-Git records file history. GitHub hosts Git repositories and collaboration tools.
-A commit records a snapshot; a branch names a moving line of work. A pull request
-proposes a change between branches. Downloading files neither installs a program
-nor grants permission to push changes back to their source.
+The Code page holds committed files. The branch selector determines which version
+you see. Open README, the current phase guide, and workspace/main.py. Commit history
+records changes; Actions records executions. A permanent file link identifies a
+specific commit, while a branch link follows later changes.
 
-| Choice | Result | Typical reason |
-|---|---|---|
-| ZIP | Selected files without a working Git history | Read a snapshot |
-| Clone | Local repository and remote configuration | Develop with history |
-| Fork | Related repository under another owner | Propose an upstream contribution |
-| Template | New project with independent history | Reuse an intended starting structure |
-| Branch | Another reference in one repository | Develop a focused change |
+A fork is a repository under another owner and is useful when you cannot write to
+an upstream project. This learning repository is already your destination; you do
+not need to download or clone it. Read a project's license before reusing its code.
 
-Inspect README, license, supported versions, examples, tests, recent PRs, and
-release notes. Stars or a green badge alone cannot establish quality. Public
-visibility is not an open-source license. For repeatable evidence, use a
-commit-specific file link; GitHub's `y` shortcut can create one from a file view.
+**Worked example:** Find workspace/main.py in the Code page, then open its latest commit and the matching Actions run.
 
-**Worked example:** A ZIP lets you read this guide. A clone lets you run checks and
-commit locally. A fork supplies a destination you can push to when you lack
-upstream write access. None of those operations means your change was merged.
+**Practice A:** Open the current Python lesson and its practice file in github.dev.
 
-**Practice A:** Locate this repository's entry point, license, verification report,
-and one lesson's primary source. Explain what each establishes.
+**Practice B:** Explain which page contains source text and which contains the observed program output.
 
-**Practice B:** Choose a copy method for reading offline, contributing a fix, and
-starting an independent project. Explain one limit of each choice.
+**Hints:** Check the repository name and branch before interpreting a result.
 
-**Hints:** Ask whether you need history, write access, or a new independent origin.
+**Evidence:** A source link, a run link, and an explanation of their different roles.
 
-**Evidence:** Correct choices and a commit-specific reference, with a distinction
-between an observed check and a project's unsupported claim.
-
-**Sources:** [GH-CLONE](../audit/SOURCES.md#gh-clone), [GH-TEMPLATE](../audit/SOURCES.md#gh-template), [GH-LICENSE](../audit/SOURCES.md#gh-license), [GH-PERMALINK](../audit/SOURCES.md#gh-permalink).
+**Sources:** [GH-DEV](../audit/SOURCES.md#gh-dev), [GH-PERMALINK](../audit/SOURCES.md#gh-permalink), [GH-LICENSE](../audit/SOURCES.md#gh-license).
 
 ## GH-02 Complete a browser pull request
 
-**Prerequisites:** GH-01.
+**Used within Python:** First introduced with P1-08; return here only for the action linked by your current lesson.
 
-**Outcome:** Make a small browser edit on a branch and explain its path through a pull request into the default branch.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Use a practice repository you own. Create it with a README, then create a branch
-such as `practice/first-edit`. Edit one learning goal and commit it to that branch.
-Open a PR whose base is the default branch and whose compare/head is your branch.
-Review Files changed before merging. Merging requires the appropriate permission
-and any configured checks or reviews.
+**Outcome:** Use a branch and pull request to review a change to your current Python function.
 
-Commit, push, and merge are different events. A browser commit is already stored
-on GitHub; a local commit still needs a push to reach a remote. Opening a PR does
-not itself change the base branch. An additional commit on its head branch updates
-the same open PR.
+A branch lets you change the function while keeping main available as a baseline.
+Use the branch selector in github.dev to create a named branch from main. Edit the
+function, inspect the diff, and Commit & Push. On github.com, open Pull requests →
+New pull request, select main as base and your branch as compare, and inspect the
+Python diff before creating the PR. The PR proposes incorporating that change.
 
-**Worked example:** `main` says "Learn loops." Your branch adds "Explain the stop
-condition." The PR proposes that extra sentence. After a successful merge, the
-sentence appears in `main`; verify by opening that branch, not the old edit view.
+Read the Actions checks and the PR's Files changed view. Explain the function's
+contract and results before merging. Creating a PR does not merge it. These controls
+are introduced with P1-08's function change, after ordinary edit/commit/run practice.
 
-**Practice A:** Complete [Lab A](../practice/GITHUB_LABS.md#lab-a-your-first-browser-pr)
-and describe the change before and after merge.
+**Worked example:** A branch changes a repeated calculation into a function; its PR shows that refactor and its run.
 
-**Practice B:** Make a second, different edit. Identify the base and head without
-copying the first task's answers; add a follow-up commit to the same PR.
+**Practice A:** Complete the branch and PR steps for the function you are writing in P1-08.
 
-**Hints:** Read the branch selector and the PR's base/compare fields.
+**Practice B:** Make a fresh function improvement on another branch and explain base versus head.
 
-**Evidence:** Actual branch and PR states plus a correct explanation. If an account
-or permission is unavailable, record the workflow as rehearsed, not executed.
+**Hints:** The base receives changes; the head contains the proposed work.
 
-**Sources:** [GH-HELLO](../audit/SOURCES.md#gh-hello), [GH-FLOW](../audit/SOURCES.md#gh-flow).
+**Evidence:** A reviewed Python diff, observed run, and explanation of the PR state.
 
-## GH-03 Set up tools and authenticate
+**Sources:** [GH-HELLO](../audit/SOURCES.md#gh-hello), [GH-FLOW](../audit/SOURCES.md#gh-flow), [GH-DEV](../audit/SOURCES.md#gh-dev).
 
-**Prerequisites:** GH-02.
+## GH-03 Use github.dev and hosted Python execution
 
-**Outcome:** Choose a working GitHub tool and distinguish commit identity, sign-in, repository access, and execution capability.
+**Used within Python:** First introduced with P1-01; return here only for the action linked by your current lesson.
 
-The website handles reading, small edits, issues, and reviews. Desktop supplies a
-visual local workflow on supported Windows/macOS systems. Git CLI manages history;
-the separate `gh` CLI manages GitHub features. `github.dev` edits files but has no
-terminal or compute runtime. Codespaces supplies compute, with usage limits.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-On Windows, install Git through its official installation resources and check
-`git --version` in a new PowerShell or Git Bash session. Use your chosen editor.
-Set a real author name and chosen email; a GitHub no-reply email is an option.
-Repository-local `git config user.name` and `user.email` settings affect that
-repository; `--global` affects your user configuration. Neither authenticates you.
+**Outcome:** Distinguish browser editing, GitHub sign-in, repository access, and hosted execution.
 
-For HTTPS, use a supported credential manager or `gh auth login --web`, then
-`gh auth setup-git` if Git needs that CLI-managed credential integration. Follow
-sign-in yourself. `gh auth status` inspects the connection without printing a token.
-SSH uses an authorized key. An ordinary account password is not a Git-over-HTTPS
-password. Token permissions, organization policy, and repository rights still apply.
+Open github.dev while signed in to the GitHub account that can edit this repository.
+Use Source Control to commit. The editor has no terminal or compute runtime;
+GitHub Actions supplies Python on a hosted runner. A saved editor buffer is not
+yet a GitHub commit, and a successful commit is not yet a successful Python run.
 
-**Worked example:** A commit can show your name while `git push` fails with an
-authentication error. The author metadata succeeded; remote authentication did not.
+In the modules lesson, inspect the workflow's Python setup and the hosted virtual
+environment exercise. Interpreter and dependency ownership remain Python concepts,
+but their installation and execution happen on GitHub's machines. Do not create
+a Codespace or install local tools for this course.
 
-**Practice A:** Record your chosen tool, Git version, and working sign-in method
-without including credentials. Explain which actions that connection permits.
+**Worked example:** main.py is edited in github.dev; its committed code runs in the Run program step on github.com.
 
-**Practice B:** Diagnose "I can read the repo, but cannot push" and "I opened
-github.dev, but cannot run Python" as two different capability questions.
+**Practice A:** Identify the current branch, edit a Python expression, and confirm it appears on github.com after committing.
 
-**Hints:** Separate identity, access, and compute. Read a token's supported use case
-before choosing it; fine-grained tokens still have documented feature gaps.
+**Practice B:** At P1-11, inspect the hosted interpreter and pip version and explain their environment boundary.
 
-**Evidence:** A sanitized capability record and an explanation of the actual failure
-boundary; no secret, key, recovery code, or token in the progress record.
+**Hints:** An access failure, a commit failure, and a Python exception need different repairs.
 
-**Sources:** [GH-SETUP](../audit/SOURCES.md#gh-setup), [GH-AUTH](../audit/SOURCES.md#gh-auth), [GH-TOKENS](../audit/SOURCES.md#gh-tokens), [GH-DEV](../audit/SOURCES.md#gh-dev), [GH-CLI-AUTH](../audit/SOURCES.md#gh-cli-auth), [GH-DESKTOP](../audit/SOURCES.md#gh-desktop).
+**Evidence:** The relevant committed file and runner observation, with unknown settings left unclaimed.
 
-## GH-04 Understand working files and staged snapshots
+**Sources:** [GH-DEV](../audit/SOURCES.md#gh-dev), [GH-AUTH](../audit/SOURCES.md#gh-auth), [GH-PYTHON-CI](../audit/SOURCES.md#gh-python-ci).
 
-**Prerequisites:** GH-03.
+## GH-04 Review and commit Python snapshots
 
-**Outcome:** Predict which exact file content a commit will record after editing and staging.
+**Used within Python:** First introduced with P1-02; return here only for the action linked by your current lesson.
 
-The working tree is the file content you can edit. The index, also called the
-staging area, holds the proposed next snapshot. `HEAD` usually refers through
-your current branch to its latest commit. Staging copies content at that moment;
-later edits do not silently update the staged copy.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Run `git status`, `git diff`, and `git diff --staged`. The first reports state;
-the second shows unstaged tracked changes; the third shows staged changes.
-Untracked files require separate inspection. Stage named files while learning.
-A branch name is a reference, not a second permanent copy of your folder.
+**Outcome:** Explain which Python edits are included in a commit by inspecting the browser diff.
 
-**Worked example:** Commit a file containing `one`. Edit it to `two` and stage it.
-Edit it again to `three`. A commit now records `two`; `three` remains an unstaged
-working-tree change. [Lab B](../practice/GITHUB_LABS.md#lab-b-see-what-staging-records)
-makes this visible before any remote operation.
+Open Source Control in github.dev. Select a changed file to compare its old and
+new contents. Stage intended files with +, write a message about the behavior,
+and use Commit & Push. Confirm the committed source on github.com.
 
-**Practice A:** Perform the three-version experiment, predicting both diffs before
-reading them. Unstage the change and verify that the working file survives.
+Staging selects a snapshot; a later edit can leave a file with both staged and
+unstaged changes. Inspect both views before committing, or deliberately stage the
+latest intended content again. A commit can contain the Python implementation,
+its sample input, and its test when they belong to one change.
 
-**Practice B:** Create two files but stage only one. Explain the resulting commit
-and show how you verified the second file was not included.
+**Worked example:** Changing 2 + 3 to 8 + 4 changes one expression; the diff explains the result in the next Actions run.
 
-**Hints:** Compare working tree to index, then index to `HEAD`.
+**Practice A:** Inspect and commit the arithmetic or string change from the current Python lesson.
 
-**Evidence:** Correct predictions, actual command output, and a commit containing
-exactly the intended staged content.
+**Practice B:** After staging a change, edit it again and predict which version is staged; inspect before committing.
 
-**Sources:** [GIT-BOOK](../audit/SOURCES.md#git-book), [GIT-RESTORE](../audit/SOURCES.md#git-restore).
+**Hints:** Read the diff rather than assuming every visible editor change is included.
 
-## GH-05 Synchronize remotes without guessing
+**Evidence:** A correct prediction about the committed Python and a link to that snapshot.
 
-**Prerequisites:** GH-04.
+**Sources:** [GH-DEV](../audit/SOURCES.md#gh-dev), [GIT-BOOK](../audit/SOURCES.md#git-book).
 
-**Outcome:** Use fetch, an explicit fast-forward update, and a targeted push while naming the affected local and remote branches.
+## GH-05 Keep browser branches current
 
-`origin` is a conventional remote name, not a special GitHub permission. Fetch
-downloads objects and updates remote-tracking references; it does not automatically
-replace your working files. Pull fetches and integrates into the branch currently
-checked out. `git pull --ff-only origin main` does not switch you to `main`.
+**Used within Python:** First introduced with P2-11; return here only for the action linked by your current lesson.
 
-Start clean. To update local `main`, switch to it, then use the explicit fast-forward
-pull. Create a feature branch, make and verify a focused commit, then push that
-branch with `git push -u origin BRANCH`. The `-u` records its upstream tracking
-relationship. If a push is rejected, fetch and inspect the histories.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-For an existing local folder without Git history, create an empty GitHub repo,
-initialize locally, review and commit named files, add its clone URL as a remote,
-then push. If GitHub already contains commits, cloning it and copying your intended
-files into that clone is often easier. Preserve any existing local history.
+**Outcome:** Identify the branch versions used by a Python change and prepare a current browser branch.
 
-**Worked example:** Your local `main` and `origin/main` point to commit A. A peer
-pushes B. Fetch updates `origin/main` to B; local `main` remains A until you
-integrate. If you independently made C, a fast-forward-only update refuses.
+Start new work from current main. Existing feature branches can fall behind main
+when another PR is merged. Inspect the PR comparison and, if GitHub offers Update
+branch, read its effect and check the resulting tests. The main branch does not
+change merely because you view or edit a feature branch.
 
-**Practice A:** Use [Lab C](../practice/GITHUB_LABS.md#lab-c-synchronize-a-local-remote)
-or the offline demonstrator to observe the references before and after fetch.
+When you cannot update a complex branch through the available browser controls,
+preserve it, make a new branch from current main, and reapply the small intended
+Python edit in github.dev. Review the complete replacement diff and link the older
+PR. Close the superseded PR after confirming the replacement; do not erase history.
 
-**Practice B:** Explain how you would upload an existing project when the GitHub
-repo is empty versus when it already has a README commit.
+**Worked example:** An old package branch lacks a newer parser fix. A fresh branch from main includes that fix before the package change is reapplied.
 
-**Hints:** Inspect `git branch -vv` and the recent graph. A tree-view URL is not a
-repository clone URL. Never treat a force push as an authentication repair.
+**Practice A:** Before the P2-11 package change, inspect main and the branch used for its hosted build.
 
-**Evidence:** Correct target branches, actual synchronization results, and an
-explanation of why the fast-forward refusal preserves a decision for the learner.
+**Practice B:** Explain how a run on the wrong branch could test the wrong package version.
 
-**Sources:** [GIT-PULL](../audit/SOURCES.md#git-pull), [GH-CLONE](../audit/SOURCES.md#gh-clone), [GIT-BOOK](../audit/SOURCES.md#git-book).
+**Hints:** Match the branch, commit, PR comparison, and run before diagnosing the Python code.
+
+**Evidence:** A current branch and an observed hosted run for its exact Python change.
+
+**Sources:** [GH-FLOW](../audit/SOURCES.md#gh-flow), [GH-DEV](../audit/SOURCES.md#gh-dev), [GH-MERGES](../audit/SOURCES.md#gh-merges).
 
 ## GH-06 Review contributions and choose a merge method
 
-**Prerequisites:** GH-05.
+**Used within Python:** First introduced with P1-09; return here only for the action linked by your current lesson.
 
-**Outcome:** Prepare a focused PR or fork contribution and explain the resulting merge history.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Review the diff, relevant tests, supported versions, and the problem the change
-claims to solve. State what actually ran. A green workflow is evidence about its
-commands, not a proof of all behavior. A draft PR is useful for work still in progress.
+**Outcome:** Review the Python contract, diff, and observed checks before incorporating a contribution.
 
-Without upstream write access, fork and clone your fork. Name the original remote
-`upstream`, fetch it, and start a feature branch from its intended base. Push to
-your fork. The PR's base repository is upstream; its head is your fork and branch.
-Follow the project's contribution instructions before proposing changes.
+A useful PR describes the problem, changed behavior, and relevant test evidence.
+Review Files changed and each required check. A green badge only describes checks
+that actually ran; inspect failures, skips, and the code version they tested.
 
-| Method | Typical result |
-|---|---|
-| Merge commit | Retains branch commits and records a merge point |
-| Squash | Creates one combined base-branch commit |
-| Rebase and merge | Replays commits in a linear base-branch history |
+Merge commit, squash, and rebase can produce different histories even when their
+final files match. Use the repository's available method and inspect the result.
+After merging, main must contain the intended Python behavior. For an upstream
+project without write access, use a browser fork and target the upstream base;
+follow that project's contribution guidance.
 
-Repository settings determine available methods. Squash/rebase changes commit
-identity or ancestry; a local `git branch -d` may subsequently refuse. Confirm
-content preservation instead of escalating blindly to forced deletion.
+**Worked example:** The tracker PR includes a longest-session function, its empty case, and a run showing both.
 
-**Worked example:** A PR contains an implementation commit and two fixes. A squash
-merge puts their combined result in one new base commit. Those original three
-commits need not become ancestors of the base branch.
+**Practice A:** Review the current Python PR against its stated contract and tests.
 
-**Practice A:** Write a PR description with problem, change, checks, and limits;
-identify its exact head and base. Inspect a follow-up commit in the same PR.
+**Practice B:** Find an omission or explain why a different correct implementation still meets the contract.
 
-**Practice B:** Explain a fork contribution and choose a merge method for a second
-scenario. Predict what happens to the individual commit IDs.
+**Hints:** Review behavior and evidence rather than requiring source text identical to the tutor answer.
 
-**Hints:** A remote branch with your commits is not evidence that a PR was merged.
-
-**Evidence:** Review notes tied to actual changed lines and a correct account of
-ownership, branch direction, and the chosen history.
+**Evidence:** An explained Python review and accurate observed PR/merge state.
 
 **Sources:** [GH-FLOW](../audit/SOURCES.md#gh-flow), [GH-FORK](../audit/SOURCES.md#gh-fork), [GH-MERGES](../audit/SOURCES.md#gh-merges).
 
 ## GH-07 Resolve a conflict and verify the combined result
 
-**Prerequisites:** GH-06.
+**Used within Python:** First introduced with P2-11; return here only for the action linked by your current lesson.
 
-**Outcome:** Reproduce a merge conflict, abort it from a clean start, then resolve and test the intended combined content.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-A conflict asks you to choose a coherent final result. It does not mean Git lost
-the project. Start with committed work before a practice merge. Inspect the named
-files, reconcile the content, remove markers, run relevant checks, stage the
-resolved files, and finish the merge.
+**Outcome:** Resolve a simple competing-line Python conflict through GitHub and test the intended result.
 
-For a merge from that clean start, `git merge --abort` restores the pre-merge
-situation. With pre-existing uncommitted changes, reconstruction is not always
-possible. A rebase has its own continue/abort commands; "ours" and "theirs" can
-be misleading during rebasing. Do not mechanically accept one side.
+Use a disposable pair of practice branches. Make competing edits to the same
+Python line. After one change reaches main, open the other PR. When GitHub offers
+Resolve conflicts, decide the intended Python behavior, edit the conflicting text,
+remove markers, mark it resolved, and commit the merge. GitHub merges the entire
+base branch into the head branch during this resolution, so inspect all changes.
 
-**Worked example:** One branch changes the same learning-goal line to "loops" and
-another to "functions." The intended resolution is "loops and functions," which
-requires an explicit content decision. The offline lab checks that both branch
-histories are retained in the merge commit.
+The web conflict editor supports simple competing-line conflicts. If it is unavailable
+for your case, preserve the old branch and use a fresh branch from main to reapply
+the intended small change in github.dev. This is a replacement contribution, not
+a claim that GitHub resolved the original conflict. Run tests before merging.
 
-**Practice A:** Follow [Lab D](../practice/GITHUB_LABS.md#lab-d-conflict-abort-and-reconcile).
-Abort once, confirm the original file, then resolve and inspect the result.
+**Worked example:** Two branches change the report title. Choose the specified final title and verify the Python output after resolution.
 
-**Practice B:** Given different requirements on each branch, write the combined
-acceptance criteria before editing conflict markers. Explain a test that could
-fail even after all markers are removed.
+**Practice A:** Use the conflict task card with a disposable Python display line during P2-11.
 
-**Hints:** Git can detect overlapping text; it cannot establish the application's
-intended behavior. A clean merge can still introduce a logical defect.
+**Practice B:** Explain why syntactically resolved text could still calculate the wrong result.
 
-**Evidence:** A clean-start abort, a deliberate resolution, a reviewed merge diff,
-and relevant checks on the combined behavior.
+**Hints:** Write the expected final behavior before choosing either side.
 
-**Sources:** [GIT-MERGE](../audit/SOURCES.md#git-merge), [GIT-RESTORE](../audit/SOURCES.md#git-restore).
+**Evidence:** The combined diff, correct output, and an honest description of the resolution method.
 
-## GH-08 Recover deliberately and keep private files out
+**Sources:** [GH-WEB-CONFLICTS](../audit/SOURCES.md#gh-web-conflicts), [GH-FLOW](../audit/SOURCES.md#gh-flow).
 
-**Prerequisites:** GH-07.
+## GH-08 Recover a Python change in the browser
 
-**Outcome:** Select a recovery operation for staged, unstaged, committed, and temporarily saved work without confusing their effects.
+**Used within Python:** First introduced with P1-10; return here only for the action linked by your current lesson.
 
-`git restore --staged -- FILE` normally restores the index from `HEAD`, leaving
-working edits. `git restore -- FILE` normally replaces working content from the
-index and discards its unstaged edits. `--source=COMMIT` selects a different source.
-Use disposable files while learning these differences.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-`git revert COMMIT` records a new inverse commit; it does not erase the original.
-Reverting a merge needs a considered mainline parent. `git stash push -u` includes
-untracked files but not ignored files; `stash apply` retains the stash and can
-conflict. Stashes and reflogs are local, not ordinary pushed backups. Reflogs can
-help locate recorded commits but expire and cannot recover arbitrary unsaved work.
+**Outcome:** Restore intended Python behavior with a reviewable new change and preserve useful history.
 
-Ignore virtual environments, caches, generated output, and private progress.
-Ignore rules do not remove tracked files or earlier commits. Review any deliberate
-`git rm --cached FILE` change; it stops tracking while keeping the local file.
-Credential exposure requires revocation/rotation first, not just deleting a file.
+For a recent mistake, inspect the previous version of the file on github.com.
+Copy the needed small correction into a new browser edit, commit it, and rerun
+the failing Python case. This adds a fix without rewriting published history.
 
-**Worked example:** Staging a private placeholder by accident calls for unstaging
-before committing. A real leaked token calls for credential response even if its
-file has since disappeared. These are different states and different remedies.
+For an eligible merged PR, GitHub's Revert action creates a new PR with the inverse
+change. Inspect its scope and tests before merging it. If reverting conflicts or
+the control is unavailable, use a targeted fix PR from current main. A file ignore
+rule does not remove already committed data. Exposed credentials require revocation
+or rotation; changing a file alone does not remove the exposure.
 
-**Practice A:** Use [Lab E](../practice/GITHUB_LABS.md#lab-e-recovery-and-ignore-rules)
-with synthetic content to unstage, restore, stash/apply, and revert.
+**Worked example:** A string transformation regression is repaired in a new commit; the previous failure remains inspectable.
 
-**Practice B:** Diagnose four supplied states and name both the source and destination
-of the proposed recovery. Explain what evidence would be lost by the wrong choice.
+**Practice A:** Restore the intended Python behavior and rerun the regression case from P1-10.
 
-**Hints:** Inspect both diffs first. `reset --hard`, `clean -fd`, and force pushes
-are destructive tools, not routine setup repairs.
+**Practice B:** Explain what a new fix commit preserves and what a PR revert would change.
 
-**Evidence:** Preserved intended content, correct inverse history, and a clean
-distinction between ignored, untracked, staged, and previously committed files.
+**Hints:** Inspect the old function and current requirements before restoring text blindly.
 
-**Sources:** [GIT-RESTORE](../audit/SOURCES.md#git-restore), [GIT-REVERT](../audit/SOURCES.md#git-revert), [GIT-STASH](../audit/SOURCES.md#git-stash), [GIT-REFLOG](../audit/SOURCES.md#git-reflog), [GH-IGNORE](../audit/SOURCES.md#gh-ignore), [GH-SENSITIVE](../audit/SOURCES.md#gh-sensitive).
+**Evidence:** A failing case, a focused recovery diff, and the succeeding run.
+
+**Sources:** [GH-WEB-REVERT](../audit/SOURCES.md#gh-web-revert), [GH-IGNORE](../audit/SOURCES.md#gh-ignore), [GH-SENSITIVE](../audit/SOURCES.md#gh-sensitive).
 
 ## GH-09 Review a small Python change with real tests
 
-**Prerequisites:** GH-08, P1-10, P1-11.
+**Used within Python:** First introduced with P1-10; return here only for the action linked by your current lesson.
 
-**Outcome:** Connect a Python behavior contract to a focused commit and a test that detects a plausible regression.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Keep the established repository layout: explanations in `curriculum/`, practice
-in `practice/`, maintained programs in `examples/`, and tests in `tests/`. Read
-the actual test command instead of installing a copied template with nonexistent
-folders. Create a virtual environment when dependencies need isolation.
+**Outcome:** Connect a Python behavior contract to a regression test that actually executes.
 
-The supplied reference's topic-normalization example is deliberately small:
-lowercase text and join whitespace-separated words with hyphens. Punctuation
-remains and empty input yields empty output. It is not a URL or filename sanitizer.
+Keep tests under workspace/test_*.py when testing learner code. The lesson
+workflow runs these files after the program and rejects empty discovery when test
+files exist. Standard course tests under tests/ check maintained reference code.
+Read the count and assertions instead of treating an unrelated green check as proof.
 
-```python
-def normalize_topic(topic):
-    return "-".join(topic.lower().split())
+For string normalization, define exactly what to trim, lowercase, preserve, and
+reject. The reference examples/topic_names.py and tests/test_topic_names.py provide
+one contract to inspect after your attempt. It is not a general security sanitizer.
 
-print(normalize_topic("  Python\tBasics  "))
-print(repr(normalize_topic("")))
-```
+**Worked example:** A test expects learn-python; removing lowercasing makes the relevant test fail, and repairing it passes.
 
-```output
-python-basics
-''
-```
+**Practice A:** Write a regression test for the current Python bug and observe failure before the repair.
 
-The maintained implementation is [topic_names.py](../examples/topic_names.py).
-Its tests cover the stated contract. The repository's test runner explicitly
-rejects discovering zero tests; successful discovery alone still says nothing
-about whether the tests are relevant or sufficient.
+**Practice B:** Add an unfamiliar boundary case and explain which requirement it covers.
 
-**Practice A:** Run the normalizer tests, remove lowercasing in a disposable copy,
-observe the failing assertion, and restore the implementation.
+**Hints:** Make sure the test imports the function you changed and runs on the same commit.
 
-**Practice B:** Propose a small new naming requirement. State its effect on punctuation,
-Unicode, and empty input before changing code; add a meaningful example and test.
-
-**Hints:** Type hints do not validate inputs. Do not turn an example's convenient
-output into a broader security or naming guarantee.
-
-**Evidence:** A focused diff, an observed failing regression, a restored passing
-run, and an independent explanation of the contract.
+**Evidence:** Actual failure and success logs, discovery count, and a requirement-based explanation.
 
 **Sources:** [PY-TEXT](../audit/SOURCES.md#py-text), [PY-UNITTEST](../audit/SOURCES.md#py-unittest), [GH-PYTHON-CI](../audit/SOURCES.md#gh-python-ci).
 
 ## GH-10 Understand and inspect GitHub Actions
 
-**Prerequisites:** GH-09.
+**Used within Python:** First introduced with P1-01; return here only for the action linked by your current lesson.
 
-**Outcome:** Read a workflow's trigger, permissions, jobs, matrix, and logs, and distinguish a passing check from a skipped or absent one.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Workflows live in `.github/workflows/`. Events trigger workflows; jobs contain
-steps and run on runners. Read this repository's
-[workflow](../.github/workflows/verify.yml): it checks three Python versions on
-three operating systems and uses a separate scientific job. Its pinned action
-versions are unrelated to the Python versions being installed.
+**Outcome:** Read the output and status of a hosted run for the current Python commit.
 
-Core jobs use standard-library tests and an isolated Git lab. The optional
-scientific tests are explicitly skipped there and run in the dependency job.
-Inspect the discovered counts and result, not just a green icon. A workflow can
-be absent because of filters, fork approval, policy, or its file location.
+At P1-01, use Actions only to run and read output. Choose Run Python lesson and
+open your commit. The result summary distinguishes stdout, stderr, and exit status.
+Inputs come from the committed input.txt file. Re-run jobs uses the old run's
+commit; Run workflow uses the chosen branch's latest committed version.
 
-Use minimal token permissions, verified action commits, and reviewed updates.
-Full commit pins avoid movable tag references; they do not make arbitrary code
-safe. Untrusted PR text must not be interpolated directly into shell scripts.
-Do not check out and execute untrusted PR code with privileged triggers such as
-`pull_request_target`. A workflow approval is not code review by itself.
+At later lessons, inspect YAML triggers, steps, Python setup, dependencies, tests,
+permissions, and timeout. The course verifier checks Python 3.12–3.14 on multiple
+hosted systems; its optional scientific job has its own dependencies. Queued,
+skipped, failed, and successful jobs are different outcomes. Inspect actual results.
 
-**Worked example:** A core report says "tests run, five skipped." Inspecting the
-skip reasons and the separate five-test scientific job explains the intended
-coverage. "Zero tests, OK" would not establish that the code was checked.
+**Worked example:** The first Python file prints two lines; a missing quote produces a failed Run program step with SyntaxError.
 
-**Practice A:** Trace a real run from PR head through matrix jobs and log output.
-Record actual interpreter versions, counts, skips, and conclusions.
+**Practice A:** Inspect the matching output or error for your current Python edit.
 
-**Practice B:** In a disposable project, introduce the normalizer regression and
-observe a failing check. Restore it and compare both runs without disabling the test.
+**Practice B:** When learning tests, explain which tests ran and why a skipped job provides no passing evidence.
 
-**Hints:** `pull_request` branch filters refer to the base branch. Check the exact
-event and commit. A required check omitted by filters can leave merging blocked.
+**Hints:** Read workflow name, branch, commit, step, and output in that order.
 
-**Evidence:** Logs tied to the intended change, a demonstrated useful failure,
-and correct interpretation of optional skips and missing checks.
+**Evidence:** An observed run and an explanation appropriate to the current Python objective.
 
-**Sources:** [GH-PYTHON-CI](../audit/SOURCES.md#gh-python-ci), [GH-ACTIONS-EVENTS](../audit/SOURCES.md#gh-actions-events), [GH-ACTIONS-SECURITY](../audit/SOURCES.md#gh-actions-security).
+**Sources:** [GH-PYTHON-CI](../audit/SOURCES.md#gh-python-ci), [GH-ACTIONS-MANUAL](../audit/SOURCES.md#gh-actions-manual), [GH-ACTIONS-EVENTS](../audit/SOURCES.md#gh-actions-events), [GH-ACTIONS-SECURITY](../audit/SOURCES.md#gh-actions-security).
 
 ## GH-11 Find work and document it clearly
 
-**Prerequisites:** GH-10.
+**Used within Python:** First introduced with P1-12; return here only for the action linked by your current lesson.
 
-**Outcome:** Search the right GitHub result type and turn a reproducible learning problem into a bounded issue and reviewable documentation change.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Repository search, code search, and issue/PR search have different qualifiers.
-In code search, use `repo:OWNER/REPO path:examples/ "normalize_topic"`. For work
-tracking, use `repo:OWNER/REPO is:issue is:open`. In repository search,
-`language:Python in:readme tutorial` serves a different purpose. An external
-connector's search syntax may differ from GitHub's own interface.
+**Outcome:** Use GitHub search and Markdown to make a Python task or result understandable.
 
-Write an issue with a reproducible problem, expected and actual behavior, versions,
-and a small sanitized example. Use Projects for tables/boards/roadmaps, milestones
-for a target, and Discussions for open-ended conversation where enabled. Suggested
-labels and a study schedule are organizing choices, not mastery measurements.
+Search the relevant result type: code for an implementation, issues for a
+reported behavior, repositories for a project. Use relative Markdown links inside
+the course and permanent code links when a report depends on an exact version.
 
-Use descriptive Markdown headings, relative file links, code fences, and concrete
-run instructions. Link a resolving PR with a closing keyword only when the work
-fully resolves the issue; automatic closure depends on the default-branch rules.
-Choose notification scope consciously so important feedback remains visible.
+A small Python bug report states the input, expected result, actual result, and
+the failing run. A project README describes its contract and browser run steps.
+For research, commit the protocol before the final analysis and connect conclusions
+to code and results. Draft content in the repository; posting to another project's
+discussion is a separate collaboration action.
 
-**Worked example:** "Python broken" becomes "The example says five items, but
-running the shown loop prints four on the recorded Python version." Its issue
-includes the exact code, output, and the documentation line under review.
+**Worked example:** A CSV parser note links a quoted-field fixture, its failing test, and the repaired implementation.
 
-**Practice A:** Find an existing issue or prepare a local draft without posting.
-Rewrite it into a reproducible, bounded learning task.
+**Practice A:** Document one assumption or failure from the current Python lesson beside its code.
 
-**Practice B:** Improve a README section, validate its links and commands, and
-choose a tracking item and completion criterion for a different change.
+**Practice B:** Use GitHub search to locate the relevant implementation or existing report and explain the match.
 
-**Hints:** Separate questions from reproducible defects. Describe evidence without
-putting secrets or real care/client records in issues, examples, or screenshots.
+**Hints:** A useful report lets somebody reproduce the behavior from the stated input.
 
-**Evidence:** Correct search scope, useful acceptance criteria, and documentation
-that matches the maintained files and commands.
+**Evidence:** A bounded, source-linked Python task or result note.
 
-**Sources:** [GH-CODE-SEARCH](../audit/SOURCES.md#gh-code-search), [GH-REPO-SEARCH](../audit/SOURCES.md#gh-repo-search), [GH-ISSUE-SEARCH](../audit/SOURCES.md#gh-issue-search), [GH-PROJECTS](../audit/SOURCES.md#gh-projects), [GH-ISSUE-LINKS](../audit/SOURCES.md#gh-issue-links), [GH-MARKDOWN](../audit/SOURCES.md#gh-markdown), [GH-NOTIFICATIONS](../audit/SOURCES.md#gh-notifications).
+**Sources:** [GH-CODE-SEARCH](../audit/SOURCES.md#gh-code-search), [GH-ISSUE-SEARCH](../audit/SOURCES.md#gh-issue-search), [GH-MARKDOWN](../audit/SOURCES.md#gh-markdown), [GH-PERMALINK](../audit/SOURCES.md#gh-permalink).
 
 ## GH-12 Protect accounts and review boundaries
 
-**Prerequisites:** GH-11.
+**Used within Python:** First introduced with P3-09; return here only for the action linked by your current lesson.
 
-**Outcome:** Explain an appropriate repository protection proposal and the first response to exposed credentials.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Account authentication, repository permissions, code ownership, and branch rules
-are separate controls. Configure appropriate account recovery and multifactor
-authentication. A fine-grained token is limited by both its owner and its granted
-permissions, and has documented feature limitations. Prefer supported sign-in
-flows over copying tokens into commands or prompts.
+**Outcome:** Relate repository access and workflow permissions to the Python code being executed.
 
-Rulesets and branch protection can require checks/reviews and restrict changes;
-availability depends on plan, visibility, and the kind of rule. `CODEOWNERS`
-identifies responsible reviewers; it does not grant write access or require
-approval by itself. Propose rules that can actually be satisfied by the project.
+Inspect the actual repository settings and workflow permissions before describing
+them. Account authentication, collaborator roles, branch controls, code ownership,
+and Actions permissions govern different things. Do not infer configured controls
+from a template or a public repository badge.
 
-Dependabot alerts, security-update PRs, and routine version-update PRs differ.
-Review updates and tests. An alert system does not cover every vulnerability.
-If a credential leaks, revoke or rotate it first, then coordinate cleanup. Removing
-the current file or changing a repository's visibility does not recall copies.
+The lesson workflow needs read access to source and has no repository write step.
+Use synthetic data and no credentials in public practice files or logs. For a
+future Python integration, explain the minimal access needed before adding it.
+Do not treat an agent-authored PR as automatically trusted.
 
-**Worked example:** Requiring a second person's approval in a solo project may
-block every PR. A useful proposal names existing checks, their triggering events,
-the available reviewers, and the account's actual supported controls.
+**Worked example:** An architecture review distinguishes the parser validation boundary from the workflow token permission.
 
-**Practice A:** Draft a protection proposal for a practice repository using current
-documentation. Identify each permission needed; do not claim settings changed.
+**Practice A:** Inspect permissions alongside the P3-09 Python trust-boundary review.
 
-**Practice B:** Respond to a synthetic "token committed yesterday" scenario.
-Prioritize credential invalidation, preservation of useful work, and coordinated
-history cleanup, explaining why a deletion commit is insufficient.
+**Practice B:** Explain the effect and limits of one proposed protection without claiming it is already enabled.
 
-**Hints:** Never use a real secret in an exercise. Approval requirements and access
-must come from the real project and user, not a copied template.
+**Hints:** Name the resource and operation each permission governs.
 
-**Evidence:** An actionable, supported proposal and correct incident ordering.
-If settings were only inspected, record inspection rather than execution.
+**Evidence:** A documented boundary and accurate observation of the relevant configuration.
 
-**Sources:** [GH-TWO-FACTOR](../audit/SOURCES.md#gh-two-factor), [GH-TOKENS](../audit/SOURCES.md#gh-tokens), [GH-RULESETS](../audit/SOURCES.md#gh-rulesets), [GH-CODEOWNERS](../audit/SOURCES.md#gh-codeowners), [GH-DEPENDABOT](../audit/SOURCES.md#gh-dependabot), [GH-SENSITIVE](../audit/SOURCES.md#gh-sensitive).
+**Sources:** [GH-TWO-FACTOR](../audit/SOURCES.md#gh-two-factor), [GH-TOKENS](../audit/SOURCES.md#gh-tokens), [GH-RULESETS](../audit/SOURCES.md#gh-rulesets), [GH-CODEOWNERS](../audit/SOURCES.md#gh-codeowners), [GH-SENSITIVE](../audit/SOURCES.md#gh-sensitive).
 
 ## GH-13 Release useful work and understand usage limits
 
-**Prerequisites:** GH-12.
+**Used within Python:** First introduced with P2-12; return here only for the action linked by your current lesson.
 
-**Outcome:** Distinguish tags, releases, Pages, packages, and gists, and verify current storage and compute constraints before choosing a service.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-A tag names a history point. A release adds notes and assets around a version.
-Source archives differ from packaged applications. Pages hosts static output;
-it does not run a Python web backend. A private source repository alone does not
-make a Pages site private. A secret gist is unlisted, not private access control.
-Packages supports specified registries, not every language's package format.
+**Outcome:** Tie a release candidate to tested Python behavior and a bounded hosted workflow.
 
-The [dated usage reference](../practice/GITHUB_REFERENCE.md#usage-and-size-snapshot)
-records verified personal-account allowances and file limits. Recheck the linked
-official pages before enabling paid usage. Codespaces measures compute in core
-hours; stopped environments still consume retained storage. Budgets can alert
-without stopping usage, depending on their settings.
+A tag identifies a code version. A GitHub release adds release information and
+optional assets. Prepare a draft on github.com with usage, compatibility, changes,
+checks, and limits. Publishing a release is a later explicit action; creating a
+draft or a passing workflow does not publish one.
 
-Ordinary Git file limits, LFS limits, release-asset limits, and repository-size
-recommendations are different. Deleting a large working file does not remove
-its object from commits still being pushed. Avoid choosing history rewriting
-before identifying the actual oversized object and preserving needed work.
+Package installation and builds happen in hosted workflow steps. Keep experiments
+finite and inspect current Actions usage rules if the workload changes. Ordinary
+hosted runners, larger runners, and different repository plans can have different
+conditions. Do not promise unlimited compute or configure paid resources as a
+hidden lesson prerequisite.
 
-**Worked example:** A 2-core codespace running for 10 hours consumes about 20 core
-hours of compute. The retained environment also has storage usage. A Python lesson
-site can publish generated HTML on Pages, but its Flask server needs other hosting.
+**Worked example:** The report application draft points to the reviewed commit and hosted command-interface checks.
 
-**Practice A:** Draft release notes for one verified lesson change with supported
-versions, evidence, known gaps, and a precise source commit.
+**Practice A:** Prepare release notes for the current Python deliverable with its actual evidence.
 
-**Practice B:** Compare a static lesson site, a Python web server, and a large data
-download. Choose an appropriate delivery mechanism and verify its relevant limits.
+**Practice B:** Identify the code version and one compatibility or workload limit a user needs to know.
 
-**Hints:** Distinguish GitHub Pro from any ChatGPT subscription. Check the actual
-account plan instead of inferring one service's allowance from another.
+**Hints:** A draft, a tag, a package build, and a public release are distinct states.
 
-**Evidence:** A versioned release proposal and correct service/usage reasoning.
-Publication is a separate action that must match the user's requested scope.
+**Evidence:** An inspectable release candidate and correctly described publication state.
 
-**Sources:** [GH-RELEASES](../audit/SOURCES.md#gh-releases), [GH-PAGES](../audit/SOURCES.md#gh-pages), [GH-GISTS](../audit/SOURCES.md#gh-gists), [GH-PACKAGES](../audit/SOURCES.md#gh-packages), [GH-USAGE](../audit/SOURCES.md#gh-usage), [GH-CODESPACES-BILLING](../audit/SOURCES.md#gh-codespaces-billing), [GH-LARGE-FILES](../audit/SOURCES.md#gh-large-files).
+**Sources:** [GH-RELEASES](../audit/SOURCES.md#gh-releases), [GH-PACKAGES](../audit/SOURCES.md#gh-packages), [GH-USAGE](../audit/SOURCES.md#gh-usage), [GH-ACTIONS-BILLING](../audit/SOURCES.md#gh-actions-billing).
 
-## GH-14 Inspect GitHub through the CLI and APIs
+## GH-14 Read GitHub APIs from Python
 
-**Prerequisites:** GH-13.
+**Used within Python:** First introduced with P2-09; return here only for the action linked by your current lesson.
 
-**Outcome:** Use a documented read-only GitHub CLI query and explain permissions, pagination, and rate-limit handling.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Git handles version history. `gh` handles GitHub resources: `gh pr list`,
-`gh pr diff NUMBER`, `gh pr checks NUMBER`, and `gh run view RUN-ID --log-failed`
-are useful inspection commands. Check the selected repository and command help.
-REST and GraphQL are separate API styles with different pagination and limits.
+**Outcome:** Apply Python HTTP and JSON skills to a bounded read-only GitHub API example.
 
-For REST, ordinary authenticated requests generally have a 5,000/hour primary
-limit; unauthenticated public requests generally have 60/hour per originating IP.
-Search, app installations, enterprise contexts, and secondary limits have different
-rules. Inspect response headers, follow pagination, honor retry guidance, and stop
-rapid retry loops. A successful response for one page is not proof of a complete list.
+In P2-09, start with a small recorded response and a fake transport so failure
+tests are deterministic. Then, if the exercise needs a live observation, run a
+bounded GET request in GitHub Actions. Parse JSON, validate the expected fields,
+and handle HTTP errors and timeouts.
 
-**Worked example:** `gh api --method GET repos/DevilMedlar/python-training`
-requests repository metadata. `gh api --method GET --paginate
-repos/DevilMedlar/python-training/issues` follows issue-list pages; that endpoint
-also includes pull requests, so identify them before counting issues. Run commands
-on one line. Adding body fields to an API call can change the default method;
-specify GET when read-only behavior is intended.
+Repository issue endpoints can include pull requests; identify the documented
+pull_request marker when the task wants only issues. Pagination means one response
+may not contain all results. Rate limits differ by authentication and endpoint.
+No GitHub CLI installation is required, and practice code should not make write
+requests or embed credentials to demonstrate an HTTP lesson.
 
-**Practice A:** Inspect one repo or PR with `gh`, if available. Record the command,
-repository, returned identifiers, and access limit without printing credentials.
+**Worked example:** The Python adapter reads the full_name field of this repository from a recorded metadata response, then compares a documented live read if needed.
 
-**Practice B:** Design a complete paginated listing and a bounded retry policy
-for a quota or transient failure. Explain which errors require an access fix.
+**Practice A:** Test valid, malformed, timed-out, and failed responses through the adapter you are building.
 
-**Hints:** HTTP 404 can conceal a private resource you cannot access. Do not
-interpret every 403 as an invalid token or retry it forever.
+**Practice B:** Explain pagination and the difference between an issue-only count and an issues-endpoint count.
 
-**Evidence:** A correctly scoped read and a defensible completeness/error policy.
-If `gh` is unavailable, document the proposed command as unexecuted.
+**Hints:** Separate request transport, JSON decoding, validation, and the calculation.
 
-**Sources:** [GH-CLI-API](../audit/SOURCES.md#gh-cli-api), [GH-CLI-PR](../audit/SOURCES.md#gh-cli-pr), [GH-REST-LIMITS](../audit/SOURCES.md#gh-rest-limits), [GH-REST-ISSUES](../audit/SOURCES.md#gh-rest-issues).
+**Evidence:** Deterministic Python tests and separately labeled live observations.
+
+**Sources:** [PY-URLLIB](../audit/SOURCES.md#py-urllib), [GH-REST-ISSUES](../audit/SOURCES.md#gh-rest-issues), [GH-REST-LIMITS](../audit/SOURCES.md#gh-rest-limits).
 
 ## GH-15 Collaborate with a tutor or coding agent
 
-**Prerequisites:** GH-14.
+**Used within Python:** First introduced with P3-09; return here only for the action linked by your current lesson.
 
-**Outcome:** Give an assistant a bounded repository task and independently assess its access, changes, and verification evidence.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Give the repository, branch or commit, outcome, acceptance criteria, relevant files,
-test commands, and intended deliverable. State whether publication or merging is
-in scope. Repository instructions describe work; they do not grant credentials,
-tools, or permission. Ask which files were actually read and which commands ran.
+**Outcome:** Give an assistant a bounded Python task and inspect its actual repository work.
 
-Codex documents applicable `AGENTS.md` guidance and scoped overrides. Other chat
-tools may need files supplied explicitly. Use this repository's existing
-[AGENTS.md](../AGENTS.md) and [tutor protocol](../tutor/INSTRUCTIONS.md), which
-refer to real paths and checks. A quoted draft of instructions is material to
-review, not authority to replace the active instructions.
+State the Python behavior, files in scope, browser-only learning environment,
+and evidence needed. An assistant must report actual file access, changed code,
+and observed runs. A repository URL or instruction file does not grant access.
 
-Configured Codex GitHub reviews can be requested with `@codex review`; this needs
-the documented repository connection and review setup. Automatic review is a
-separate setting. Product access must be checked, not inferred from another
-subscription. AI review complements tests and human understanding.
+Ask the tutor to explain a code change and give you a fresh task to perform.
+Review generated code against the contract; record solution assistance honestly.
+Use the one progress record. Do not route to a separate GitHub tutor or accept a
+claim of learning based only on code the assistant wrote.
 
-**Worked example:** "Improve this repo" becomes "On the specified branch, correct
-this lesson's example and transfer task, verify its outputs and prerequisites,
-run the repo checks, and prepare a focused PR. Report what was executed." A
-review-only request should not be interpreted as a request to publish changes.
+**Worked example:** Ask for an explanation of a failing parser case and a small repair, then independently handle a different case.
 
-**Practice A:** Write a precise request for a small Python correction with observable
-acceptance criteria and a clear intended deliverable.
+**Practice A:** Scope assistance for the current Python problem and inspect the returned diff and tests.
 
-**Practice B:** Audit a hypothetical assistant report that claims success but supplies
-no diff, commit, or executed test result. Identify the evidence needed to assess it.
+**Practice B:** Explain the revised code and complete a fresh task without copying the solution.
 
-**Hints:** A passing test run in another branch or environment is not automatically
-evidence for the current change. Confirm the actual revision.
+**Hints:** Tool access, code correctness, and learner understanding are different evidence questions.
 
-**Evidence:** A bounded handoff and an independent review that distinguishes observed
-facts, documented expectations, and proposed but unperformed actions.
+**Evidence:** A bounded request, inspected result, and honestly attributed learner work.
 
 **Sources:** [OAI-AGENTS](../audit/SOURCES.md#oai-agents), [OAI-GITHUB-REVIEW](../audit/SOURCES.md#oai-github-review).
 
 ## GH-16 Maintain history and test a restoration plan
 
-**Prerequisites:** GH-15.
+**Used within Python:** First introduced with P4-04; return here only for the action linked by your current lesson.
 
-**Outcome:** Select an advanced Git tool for a concrete problem and distinguish a Git backup from a complete GitHub project backup.
+**Prerequisites:** none. Consult the current Python lesson for its Python prerequisites.
 
-Use history inspection before rewriting history. `log`, `show`, and `blame` help
-find context; blame identifies a change's attribution, not moral responsibility.
-Bisect narrows a reproducible regression between known revisions. Cherry-pick
-applies selected changes. Worktrees support separate working directories.
-Interactive rebase changes history and needs coordination if work was shared.
-Submodules and LFS have separate content-fetching needs. Signing authenticates a
-signature under its trust model, not the program's correctness.
+**Outcome:** Use GitHub history and hosted reproduction to preserve an inspectable Python result.
 
-A mirror clone is a bare copy of Git refs and objects, not an editing folder or
-a complete GitHub-service backup. Issues, PR discussions, settings, release assets,
-LFS objects, and a separate wiki need explicit consideration. Back up needed data
-and rehearse a restoration; creating an archive is only the first step.
+Record the code commit, inputs, configuration, dependencies, and observed run.
+Git history preserves tracked files; it does not automatically preserve all Actions
+outputs, issue discussions, settings, or external data. Retention and permissions
+must be part of a research or maintenance plan.
 
-**Worked example:** A fresh clone successfully restores tracked Python source and
-tests. That result does not establish that issue discussions, release binaries,
-or an ignored local progress file were restored. List each asset separately.
+Practice a small restoration by opening an earlier committed Python file and
+reapplying the intended content on a new browser branch, then running its checks.
+The verifier also runs an isolated Git-history demonstration on GitHub's runner.
+Inspecting that demonstration teaches boundaries; it does not prove a complete
+project backup or replace your own Python reproduction evidence.
 
-**Practice A:** Explain one reproducible regression and how bisect would select a
-candidate commit. State the test and what to do with an untestable revision.
+**Worked example:** A protocol and script can be retrieved at a known commit, but a temporary uncommitted result requires a separate preservation method.
 
-**Practice B:** Create a restoration checklist for a small teaching project. Use the
-offline lab to inspect a mirror's refs, then identify assets outside that mirror.
+**Practice A:** Reproduce a small result from the recorded Python commit and committed inputs in Actions.
 
-**Hints:** Prefer a demonstrated restore over a backup file whose contents have
-never been checked. Reflogs are local and expire.
+**Practice B:** List the project assets that this reproduction did not restore or verify.
 
-**Evidence:** Correct tool selection, a tested Git-history restoration claim, and
-an honest inventory of untested or separately stored project data. Finish the
-[GitHub capstone](../practice/GITHUB_LABS.md#github-capstone-a-reviewable-python-contribution).
+**Hints:** Specify what must survive and test its retrieval instead of assuming history stores everything.
 
-**Sources:** [GIT-BOOK](../audit/SOURCES.md#git-book), [GIT-BISECT](../audit/SOURCES.md#git-bisect), [GH-BACKUP](../audit/SOURCES.md#gh-backup), [GIT-REFLOG](../audit/SOURCES.md#git-reflog).
+**Evidence:** A demonstrated hosted reproduction and an explicit inventory of remaining gaps.
+
+**Sources:** [GH-PERMALINK](../audit/SOURCES.md#gh-permalink), [GH-BACKUP](../audit/SOURCES.md#gh-backup), [GH-ACTIONS-MANUAL](../audit/SOURCES.md#gh-actions-manual).

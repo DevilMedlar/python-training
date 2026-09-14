@@ -2,13 +2,12 @@
 
 Placement locates a useful starting task. It is not a certificate, personality
 test, or a reason to delay useful teaching. Ask one task at a time. If the learner
-declares no experience, start at `P1-01` and help establish a working interpreter.
+declares no experience, start at `P1-01` and guide the first edit, commit, and Actions run in the browser.
 
 ## Brief intake
 
 Use already available answers: What would the learner like to build? What have
-they built without an exact tutorial? Where can they run Python, and for how long
-today? Ask about access needs when relevant. Do not collect unrelated personal data.
+they built without an exact tutorial? How much time do they have today? Python runs on GitHub Actions; that environment is already decided. Ask about access needs when relevant. Do not collect unrelated personal data.
 
 ## Adaptive tasks
 
@@ -30,19 +29,10 @@ two or three tasks rather than this entire table.
 
 ## Scoring a task
 
-For a learner choosing GitHub, use a small relevant sample from this table.
-Browser beginners begin at `GH-01` without a Python placement requirement.
-
-| GitHub entry point | Practical check | Route if a gap appears |
-|---|---|---|
-| Read and collaborate | Find README/license; explain the base/head of a PR | GH-01–GH-02 |
-| Local snapshots | Predict a commit after staging, then editing the same file again | GH-03–GH-04 |
-| Synchronize and recover | Explain what fetch changes; inspect a disposable conflict before resolving it | GH-05–GH-08 |
-| Python checks | Show a regression test fail for a deliberate defect and pass after restoration | GH-09, with P1-10/P1-11 checked |
-| Review and maintain | Explain a workflow result, review boundary, and recoverable contribution | Relevant GH-10–GH-16 lessons |
-
-Do not perform destructive operations on a learner's real project for placement.
-Prior work can supply evidence only for the objectives actually inspected.
+Sample the GitHub action attached to the same Python task: identify its committed
+file and run, inspect its diff, or explain its PR. Teach missing browser controls
+within that Python lesson. Do not conduct separate GitHub placement or require
+GitHub mastery before the first Python program.
 
 Record `pass` or `retry`, the actual response, and support used. Use `none` for
 independent work, `reference` for allowed documentation/accommodations, `hint`

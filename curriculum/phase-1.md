@@ -6,21 +6,30 @@ several sessions. The tutor follows [the teaching protocol](../tutor/INSTRUCTION
 Practice A is guided work; Practice B is a separate transfer check. A tutor should
 not reveal a transfer solution before the learner attempts it, unless asked.
 
+
+Work in github.dev and commit your Python changes; inspect results on github.com
+through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
+includes a GitHub action on the same Python work. Any advanced execution commands
+belong in a hosted workflow step; inputs and files follow the browser guide.
+
 ## P1-01 Run and inspect a program
+
+**GitHub in this lesson:** Edit workspace/main.py in github.dev, Commit & Push, and open the matching Run Python lesson result. References: [GH-01](github.md#gh-01-read-your-python-repository), [GH-03](github.md#gh-03-use-githubdev-and-hosted-python-execution), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain the printed result and identify the source file, commit, and Actions output.
 
 **Prerequisites:** none.
 
-**Outcome:** Save a Python file, run it, and distinguish source code, terminal
-commands, interpreter prompts, and program output.
+**Outcome:** Edit and commit a Python file in github.dev, inspect its GitHub Actions output, and distinguish source from execution.
 
-A program is a set of instructions expressed as source text. The interpreter
-executes that program; an editor changes its text. A terminal can launch the
-interpreter. These are different jobs, even when an application puts them in
-neighboring panels. Use [setup](../START_HERE.md) and record the working command.
+A program is a set of instructions expressed as source text. github.dev changes
+that text. A commit saves a version to GitHub. GitHub Actions starts a Python
+interpreter on a hosted machine and displays the program's output on github.com.
+Follow [the first edit and run](../START_HERE.md). These are different jobs.
 
-Run a saved file after each change. Python's interactive prompt displays the
-value of many expressions, but a script needs an explicit operation such as
-`print` to display a result. Indentation groups statements; it is meaningful.
+Commit and run after each small change. A script uses an operation such as `print`
+to display a result. Indentation groups statements; it is meaningful. The workflow
+is already prepared, so you can focus on Python before learning its configuration.
 
 ```python
 print("Ready to learn")
@@ -33,21 +42,25 @@ Ready to learn
 ```
 
 **Practice A:** Save and run a two-line program displaying a chosen project name
-and the result of adding two whole numbers. Show the command and output.
+and the result of adding two whole numbers. Show the commit and Actions output.
 
 **Practice B:** Make a different three-line program. Deliberately remove a quote,
 observe the error, restore it, and explain which file you actually ran.
 
-**Hints:** Find the saved file's directory first. Then compare the terminal's
-working directory and filename with the editor's tab.
+**Hints:** Check workspace/main.py, confirm Commit & Push, and match the Actions
+run to that commit and branch.
 
-**Evidence:** A successful run plus an explanation of why `python hello.py`
-belongs in a terminal rather than inside a Python source file. Do not assess
-memory of an editor's buttons as knowledge of Python.
+**Evidence:** A successful run and an explanation of the difference between
+Python source, a commit, and program output. Clicking the buttons alone does not
+demonstrate that you understand the Python expression.
 
 **Sources:** [PY-INTRO](../audit/SOURCES.md#py-intro).
 
 ## P1-02 Values names and arithmetic
+
+**GitHub in this lesson:** Change the arithmetic in your Python file, inspect the old and new lines in Source Control, and commit the change. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
+
+**GitHub evidence:** Show the arithmetic prediction, the diff, and the result for that commit.
 
 **Prerequisites:** P1-01.
 
@@ -95,6 +108,10 @@ why rebinding `minutes` did not recalculate `hours`.
 
 ## P1-03 Strings and text transformations
 
+**GitHub in this lesson:** Commit one string-cleaning change with a message explaining its behavior, and inspect its Actions output. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
+
+**GitHub evidence:** Connect the changed expression with the output and the commit message.
+
 **Prerequisites:** P1-02.
 
 **Outcome:** Index, slice, normalize, combine, and format simple text.
@@ -141,6 +158,10 @@ one empty-input case. A tutor can use two fixed parts before loops are available
 
 ## P1-04 Input conversion and explicit contracts
 
+**GitHub in this lesson:** Commit the program and one answer per prompt in workspace/input.txt, then inspect the same run. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain which input line was converted and show the observed conversion result or error.
+
 **Prerequisites:** P1-03.
 
 **Outcome:** Distinguish text input, conversion, and a program's validity rules.
@@ -167,8 +188,10 @@ print(minutes + 5)
 30
 ```
 
-**Practice A:** In your own interactive file, ask for a name and a whole number,
-then display the number plus one. Explain why adding to the raw text fails.
+**Practice A:** In workspace/main.py, ask for a name and a whole number using
+`input()`, then display the number plus one. Put the two answers in
+workspace/input.txt, commit both files, and inspect the run. Explain why adding
+to the raw text fails. Actions supplies recorded input; you cannot type in its log.
 
 **Practice B:** Classify `"0"`, `"-3"`, `"2.5"`, `" 7 "`, and `"hello"`:
 which can `int` convert, and which would satisfy a positive-duration rule?
@@ -182,6 +205,10 @@ the learner can interpret the observed exception without needing to catch it yet
 **Sources:** [PY-BUILTINS](../audit/SOURCES.md#py-builtins).
 
 ## P1-05 Booleans decisions and boundaries
+
+**GitHub in this lesson:** Change sample inputs to exercise the decision boundaries and commit the cases with your Python code. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Link the tested boundary cases to the committed inputs and output.
 
 **Prerequisites:** P1-04.
 
@@ -226,6 +253,10 @@ assignment, and why `if value` is not the same as `if value is not None`.
 
 ## P1-06 Loops accumulation and termination
 
+**GitHub in this lesson:** Run a finite loop in Actions, inspect its output, and locate Cancel workflow before trying termination repairs. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain the stopping condition and distinguish a finished run from a cancelled or timed-out run.
+
 **Prerequisites:** P1-05.
 
 **Outcome:** Trace and write finite repetition, including an empty input.
@@ -268,6 +299,10 @@ inside the loop from printing the final result outside it.
 **Sources:** [PY-FUNCTIONS](../audit/SOURCES.md#py-functions).
 
 ## P1-07 Collections and choosing a representation
+
+**GitHub in this lesson:** Commit a collection change and inspect which list or dictionary entries changed in the diff. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
+
+**GitHub evidence:** Explain both the representation choice and what the commit actually records.
 
 **Prerequisites:** P1-06.
 
@@ -312,6 +347,10 @@ count with a default of zero; for order, maintain an explicit output sequence.
 **Sources:** [PY-COLLECTIONS](../audit/SOURCES.md#py-collections).
 
 ## P1-08 Functions parameters and return values
+
+**GitHub in this lesson:** Create a function-change branch in the browser, refactor your calculation, commit it, and open a PR. References: [GH-02](github.md#gh-02-complete-a-browser-pull-request).
+
+**GitHub evidence:** Show the function result and identify the PR base, head, and Python diff before merging.
 
 **Prerequisites:** P1-07.
 
@@ -358,6 +397,10 @@ not be confused with a legitimate zero. Test the same function with new inputs.
 
 ## P1-09 References mutation and scope
 
+**GitHub in this lesson:** On your practice branch, inspect a mutation-related change and review exactly which lines you stage. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Predict the object behavior and connect the staged diff to the resulting commit.
+
 **Prerequisites:** P1-08.
 
 **Outcome:** Explain aliasing, a shallow copy, a mutable default, and local rebinding.
@@ -402,6 +445,10 @@ list is created and which future calls can still reach it.
 
 ## P1-10 Errors debugging and tests
 
+**GitHub in this lesson:** Use the failing Actions traceback to fix a Python bug, add a regression test in workspace/test_*.py, and inspect a new run. References: [GH-08](github.md#gh-08-recover-a-python-change-in-the-browser), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Link the failing and repaired commits; explain the test that detects the bug.
+
 **Prerequisites:** P1-09.
 
 **Outcome:** Reproduce a failure, read a traceback, repair its cause, and test the repair.
@@ -438,7 +485,7 @@ single-value, and empty inputs. Introduce and then repair an off-by-one bug.
 
 **Practice B:** Write an interactive positive-integer reader with retries for
 invalid text and nonpositive values. Explain why unrelated programming errors
-should remain visible. Use a clean way to stop an unfinished interaction.
+should remain visible. Supply invalid lines and then a valid line in workspace/input.txt; handle end of input explicitly if your contract requires it.
 
 **Hints:** First reproduce a failure without the menu. Read the final exception
 line before scanning every line of the program.
@@ -449,9 +496,9 @@ line before scanning every line of the program.
 
 ## P1-11 Modules environments and standard tools
 
-For a parallel introduction to repository reading and sharing changes, use the
-[GitHub companion](github.md). This Python lesson is a prerequisite for its later
-Python testing work; the initial browser lessons need no Python.
+**GitHub in this lesson:** Commit a helper and its import together; use the hosted environment exercise in the browser workflow guide. References: [GH-03](github.md#gh-03-use-githubdev-and-hosted-python-execution), [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
+
+**GitHub evidence:** Show the import result and identify the interpreter reported by the workflow.
 
 **Prerequisites:** P1-10.
 
@@ -486,10 +533,11 @@ True
 **Practice A:** Move a calculation into a helper module, import it, and verify that
 importing does not ask for input or print a menu.
 
-**Practice B:** Create a virtual environment using [setup](../START_HERE.md).
-Show its interpreter version and `-m pip --version`, without installing anything.
+**Practice B:** Add the [hosted environment exercise](../practice/BROWSER_WORKFLOW.md#environment-exercise-for-p1-11)
+to your branch's workflow using github.dev. Inspect its interpreter and pip versions
+in Actions. Explain that this environment exists on the GitHub runner.
 
-**Hints:** Keep both modules in the initial practice directory. When an import
+**Hints:** Keep both modules under workspace and import helpers through workspace.helpers. When an import
 fails, check the interpreter and module location before changing application code.
 
 **Evidence:** An importable helper and an explanation of the main guard and
@@ -498,6 +546,10 @@ environment boundary. Package installation is not needed to complete this phase.
 **Sources:** [PY-MODULES](../audit/SOURCES.md#py-modules), [PY-VENV](../audit/SOURCES.md#py-venv).
 
 ## P1-12 Files serialization and the first project
+
+**GitHub in this lesson:** Deliver the study tracker on a branch with committed sample data, a README, and an inspected PR. References: [GH-02](github.md#gh-02-complete-a-browser-pull-request), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
+
+**GitHub evidence:** Show save-and-reopen behavior, the source/run links, and a PR explanation of the independent feature.
 
 **Prerequisites:** P1-11.
 

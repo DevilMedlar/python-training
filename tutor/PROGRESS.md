@@ -1,91 +1,61 @@
-# Progress records
+# One progress record
 
-Copy [progress-template.json](progress-template.json) to ignored
-`progress/progress.json`, or keep the JSON in a private note. Never commit real
-learner records to this public repository. The template contains no learner history.
-For the companion track, start from [github-progress-template.json](github-progress-template.json).
-Both templates use the same schema and can hold Python and GitHub evidence together.
+Use [tutor/progress.json](progress.json) on GitHub for the Python course and the
+GitHub skills practiced within it. The tutor can update it through authorized
+repository tools; you can edit and commit it in github.dev. Keep only learning
+evidence and code/run links suitable for this public repository.
 
-The tutor may update a record only using observed work or explicitly attributed
-learner reports. Validation checks its structure and consistency, not whether
-the evidence is truthful or sufficient in the real world.
+The [empty template](progress-template.json) uses the same format. The old
+`github-progress-template.json` filename is retained as an identical compatibility
+copy, not a second route. The current catalog is `1.2`; `1.0` and `1.1` records
+remain readable. Retain old evidence and dates rather than inventing a migration.
 
-## Status meanings
+## Evidence and status
 
-| Status | Meaning | Required evidence |
-|---|---|---|
-| `not_started` | No recorded work | No fabricated attempts |
-| `learning` | Introduced or practiced | Record support honestly |
-| `provisional` | Independent transfer and explanation succeeded | Passing `transfer` and `explanation` attempts with `none` or `reference` support |
-| `secure` | The skill was also retained later | Provisional evidence plus a passing independent `delayed` check on a later date than a passing transfer |
-| `review_needed` | A previously introduced skill needs repair | Describe the observed gap and next repair |
+| Status | Evidence required |
+|---|---|
+| not_started | No observed work or fabricated attempts |
+| learning | An observed attempt with the actual support recorded |
+| provisional | Independent transfer and explanation, with none or reference support |
+| secure | Provisional evidence plus an independent passing review on a later date |
+| review_needed | The observed gap and next repair |
 
-These thresholds are course design rules, not standardized psychometrics. Multiple
-observations strengthen a decision. A date field cannot establish learning by itself.
-For ordinary forward progress, provisional prerequisites can be used while their
-reviews remain scheduled. A phase capstone is an additional transition requirement.
+These are course rules, not standardized psychological measurements. A green
+Actions run proves only its checked behavior. It does not show that you understand
+the program or independently performed a GitHub action.
 
-## Record shape
+Each Python attempt's `summary` records what the code demonstrated and the linked
+GitHub action: for example, the function's empty case, the inspected diff, and the
+run URL. The tutor checks both parts before marking that combined task successful.
+Old `GH-` records are preserved as historical evidence; they cannot grant Python
+mastery. Their due reviews are attached to the corresponding Python lesson.
 
-`schema_version` and `catalog_version` identify formats. `environment` records
-known execution facts. `lessons` maps stable lesson IDs to a status and attempts.
-The current catalog is `1.1`. Existing `1.0` records remain readable because
-Python IDs and evidence fields are preserved; save new handoffs as `1.1`.
-Unknown versions require an explicit migration, not silently relabeled evidence.
-Each attempt has `kind`, `performed_on`, `outcome`, `support`, and `summary`.
-Kinds are `guided`, `transfer`, `explanation`, and `delayed`; outcomes are `pass`
-or `retry`. Dates use `YYYY-MM-DD`. Do not fabricate a date for unknown history;
-describe it in `notes` and obtain new evidence before a status requiring dates.
+## Record fields
 
-`reviews` contains `lesson_id`, `due_on`, and `reason`. `capstones` maps phase
-numbers as strings, or the companion key `github`, to `status`, `completed_on`,
-`support`, and `evidence`.
-Capstone statuses are `not_started`, `in_progress`, and `complete`. Completion
-requires an actual date, independent/reference support, and a nonempty evidence list.
-`current_lesson` and `next_task` preserve the immediate context. Use `notes` for
-uncertainty and tailored route decisions.
+`environment` describes the observed GitHub runner, not your laptop. Leave its
+Python patch version unknown until a run reports it. `current_lesson` identifies
+the Python task. `lessons` holds statuses and attempts; each attempt has `kind`,
+`performed_on`, `outcome`, `support`, and `summary`. Kinds are `guided`, `transfer`,
+`explanation`, and `delayed`; outcomes are `pass` or `retry`; support is `none`,
+`reference`, `hint`, or `solution`.
 
-## Validate and route
+Use actual `YYYY-MM-DD` dates. Put undated or unconfirmed history in `notes`.
+`reviews` stores a lesson, due date, and reason. `capstones` uses phase keys `1`
+through `5`; each capstone includes the Python deliverable and its GitHub review
+evidence. A historical `github` capstone record remains readable but creates no
+extra completion requirement. `next_task` says exactly where to continue.
 
-From the repository root, run:
+## Browser validation and routing
 
-```sh
-python tools/progress.py tutor/progress-template.json
-python tools/progress.py progress/progress.json --next
-python tools/progress.py tutor/github-progress-template.json --next --track github
-```
+After committing the record, open **Actions → Verify Python tutor → Run workflow**
+on the appropriate branch. The progress step validates it and prints the next
+Python task with its GitHub skills. Recommendations prioritize due reviews,
+repairs, core lessons, and each phase's capstone. Optional specialties stay optional.
+The tool cannot judge evidence quality or save progress automatically.
 
-The recommendation is a conservative default: due reviews first, then repairs,
-then the first incomplete core lesson whose prerequisites are available. It
-requires a capstone before entering a later phase. Optional specialist lessons
-are chosen by the learner/tutor; the default route does not force them. The tool
-does not schedule reminders, judge code, or write progress automatically.
+For older integrations, the `--track github` parameter is accepted only as a
+compatibility alias for this same integrated route. It never starts a GH sequence.
 
-Use `--track github` for GitHub recommendations. The default remains Python even
-if `current_lesson` names a GitHub lesson; the flag makes the selected route explicit.
-GitHub routing checks due reviews and repairs in that track and the next lesson's
-transitive prerequisites. It starts at `GH-01` without Python, requests missing
-Python prerequisites when reaching `GH-09`, and ends at the separate GitHub capstone.
-Unrelated Python reviews do not block early browser tasks. After all track lessons
-are ready, keep any further Python review schedule through the Python route.
-
-Record the chosen route, Git version, repository/branch context, and tool access in
-`notes`. Do not add undocumented fields or store tokens. A simulated PR, copied
-solution, or automated lab run must not be recorded as an independent real contribution.
-
-For a deliberately tailored route, record the decision and use the catalog to
-check the needed prerequisites. The default recommendation may differ from that
-tailored plan; do not invent completion records merely to change its output.
-
-## Session handoff
-
-Provide a short human-readable summary alongside the updated record:
-
-- Current goal, environment, and lesson.
-- What the learner actually demonstrated, including assistance.
-- One misconception or uncertainty still to address.
-- The next concrete task and the next review date.
-- Files the next tutor needs to load.
-
-Say whether the record was actually saved or only printed for the learner to save.
-Keep credentials, employer/client records, and unrelated personal details out of it.
+At session end, summarize the demonstrated skill, help used, remaining gap, next
+task, due review, and needed files. State whether the record was actually committed
+to GitHub or whether the supplied text still needs to be saved there.

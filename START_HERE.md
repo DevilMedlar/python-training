@@ -1,97 +1,76 @@
-# Start here
+# Start here with Python and GitHub
 
-You do not need prior programming experience. You need a place to run Python,
-time for a small attempt, and a way to share your code or error message.
+Your first task is to change a Python program and see its result, entirely in
+your browser. You need your signed-in GitHub account and access to this repository.
 
-## Choose your starting route
+## Your first edit and run
 
-For Python, continue with interpreter setup below. For GitHub, use the
-[GitHub launch prompt](tutor/GITHUB_START_PROMPT.md) and
-[GH-01](curriculum/github.md#gh-01-read-a-repository-and-choose-the-right-copy).
-Reading a public repository requires only a browser; making your first practice
-PR requires an account and a repository you can edit. Install local Git when you
-reach `GH-03`. The GitHub track's Python prerequisites begin at `GH-09`.
-You can keep both routes in one private progress record.
-
-## Get a working interpreter
-
-Use a supported stable Python release compatible with your tools. This course's
-executable core targets **Python 3.12–3.14**. Python 3.14 is the stable feature
-series at the 2026-09-14 review; do not install a prerelease merely because its
-number is larger. Use the [official download page](https://www.python.org/downloads/)
-and check your actual version, not a screenshot in an old tutorial.
-
-Choose one editor you already have, or Python's included IDLE when your
-installation supplies it. A browser-based interpreter is enough for early
-lessons; file persistence, networking, package installation, and processes may
-be restricted there. Record those limits instead of treating them as Python bugs.
-
-In a **terminal**, try the appropriate command:
-
-| Platform | First command | If it is unavailable |
-|---|---|---|
-| Windows | `py --version` | Try `python --version`; check the installed interpreter |
-| macOS or Linux | `python3 --version` | Check your installation instructions; do not replace system Python |
-
-Do not type terminal commands at Python's `>>>` prompt. `exit()` leaves that
-prompt. The rest of the course writes `python` for your chosen interpreter
-command; substitute `py` or `python3` consistently.
-
-Save the following as `hello.py` in a practice directory:
+1. Open [python-training in github.dev](https://github.dev/DevilMedlar/python-training).
+   You can also press `.` while viewing the repository on github.com.
+2. In the file explorer, open `workspace/main.py`. It starts with:
 
 ```python
-name = "Python learner"
-print(f"Hello, {name}!")
+print("Ready to learn")
+print(2 + 3)
 ```
 
 ```output
-Hello, Python learner!
+Ready to learn
+5
 ```
 
-Run `python hello.py` in the terminal **from that directory**. Expected output:
-`Hello, Python learner!`. If the file is missing, check the directory and that
-the editor did not save it as `hello.py.txt`. Keep the exact error message.
+3. Predict what changing `2 + 3` to `8 + 4` will print. Make that change.
+4. Open **Source Control** in the left sidebar. Click the changed file to inspect
+   its diff: the old and new lines. Stage that file with **+**, enter a message
+   such as `Change my first Python calculation`, and choose **Commit & Push**.
+   For this first exercise, use the current `main` branch. Branches are introduced
+   when you change a function in `P1-08`; there is no GitHub course to finish first.
+5. Open [Run Python lesson](https://github.com/DevilMedlar/python-training/actions/workflows/learn.yml)
+   on github.com. A workspace commit starts it automatically. Open the run whose
+   branch and commit match your change. Queued or running means it is still working.
+6. Read **Python lesson result** on the run's summary page. You should see
+   `Ready to learn` and `12`. The **Run program** step also contains the output.
+7. Explain which Python expression changed and why the answer changed. Your commit
+   saved the source; Actions executed that saved version on a GitHub-hosted machine.
 
-## Use the repository locally
+To run again without another edit, choose **Run workflow**, select the branch
+containing your work, then **Run workflow** again. That runs the branch's latest
+committed code. **Re-run jobs** on an older run repeats that older commit.
 
-Download the repository through GitHub's Code menu, or, when Git is installed:
+Saving an editor tab alone does not commit it to GitHub. Confirm your edited file
+on github.com before closing the editor; uncommitted edits remain in browser
+storage. [Editor help](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor).
 
-```sh
-git clone https://github.com/DevilMedlar/python-training.git
-cd python-training
-```
+## What each page does
 
-Early lessons do not require installing packages. When you reach isolated
-environments, create `.venv` in the repository. Activation is optional:
+| Where | Your task |
+|---|---|
+| github.dev | Write Python, edit sample inputs, inspect and commit changes |
+| github.com → Actions | Run Python on GitHub's machines and read output, errors, and tests |
+| github.com → Code, commits, pull requests | Read lessons and review the history of your Python work |
 
-| Platform | Create | Use its Python directly |
-|---|---|---|
-| Windows | `py -m venv .venv` | `.venv\Scripts\python.exe --version` |
-| macOS/Linux | `python3 -m venv .venv` | `.venv/bin/python --version` |
+There is no terminal or Python runtime in github.dev. This course uses GitHub
+Actions for execution throughout. It does not require laptop installations,
+repository downloads, GitHub Desktop, or Codespaces.
 
-Use that interpreter's `-m pip` when a lesson explicitly needs a package.
-Do not change security policy just to activate an environment. See
-[venv documentation](https://docs.python.org/3.14/library/venv.html).
+## When your code asks for input
+
+At `P1-04`, put one answer per line in `workspace/input.txt` and commit it with
+your program. Each `input()` consumes the next line. If the answers run out,
+Python raises `EOFError`; add the missing answer and make a new commit. You cannot
+type responses into an Actions log. See [the worked input example](practice/BROWSER_WORKFLOW.md#inputs-for-input).
 
 ## Start the tutor
 
-Use [the launch prompt](tutor/START_PROMPT.md). Tell the tutor your current goal,
-available time, and what can run Python. If you do not know your level, the tutor
-should check a small sample and start teaching, not administer a long exam.
+Use [the launch prompt](tutor/START_PROMPT.md). A complete beginner starts at
+`P1-01`; otherwise the tutor checks a small sample and starts where it is useful.
+Every lesson combines a Python objective with a GitHub action on that same work.
+Say `hint`, `explain`, `show solution`, `harder`, `slower`, `review`, or `save progress`.
 
-The tutor should give one manageable task, wait for your attempt, and respond to
-what you actually did. Say `hint`, `explain`, `show solution`, `harder`, `slower`,
-`review`, or `save progress` in ordinary language. These are convenience phrases,
-not special product commands.
+The tutor gives a manageable task, waits for your attempt, and responds to what
+you actually did. Use [tutor/progress.json](tutor/progress.json) for the same
+Python-and-GitHub session history. Keep it focused on code and learning evidence;
+this repository is public.
 
-## Pick a sustainable session
-
-For 25 minutes: retrieve an earlier idea, study one example, attempt one task,
-and record the next step. For 60 minutes: add a second independent task and a
-short project improvement. For a 2–3 hour block: use two or three shorter working
-periods with breaks, ending with a fresh task and a handoff. These are adaptable
-planning suggestions, not scientifically optimal intervals.
-
-Progress comes from what you can explain, build, debug, and later use again.
-Using documentation is normal. If the tutor supplies a solution, study it and
-then try a different task before claiming independent success.
+For a 2–3 hour session, use shorter periods with breaks, a fresh independent task,
+and a saved next step. Pace follows your understanding and energy, not a timer.

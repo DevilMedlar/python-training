@@ -5,7 +5,17 @@ Enter after the Phase 1 capstone, or use [placement](../tutor/PLACEMENT.md) to
 demonstrate equivalent skills. Improve one continuing project while studying these
 lessons. Reference tools are allowed; generated solutions do not prove independence.
 
+
+Work in github.dev and commit your Python changes; inspect results on github.com
+through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
+includes a GitHub action on the same Python work. Any advanced execution commands
+belong in a hosted workflow step; inputs and files follow the browser guide.
+
 ## P2-01 Collection patterns and complexity
+
+**GitHub in this lesson:** Review a collection refactor as one focused Python diff with tests before and after. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Explain unchanged behavior, relevant complexity, and the observed check result.
 
 **Prerequisites:** P1-12.
 
@@ -47,6 +57,10 @@ argument naming what `n` counts and what assumptions it requires.
 **Sources:** [PY-COLLECTIONS](../audit/SOURCES.md#py-collections), [PY-BUILTINS](../audit/SOURCES.md#py-builtins).
 
 ## P2-02 Iterators generators and streaming
+
+**GitHub in this lesson:** Commit a generator and tests for empty and single-use input, then inspect the learner-test log. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Connect streaming behavior and lifetime checks with the run for that commit.
 
 **Prerequisites:** P2-01.
 
@@ -95,6 +109,10 @@ includes the aggregation map, not only the input reader.
 
 ## P2-03 Function interfaces scope and wrappers
 
+**GitHub in this lesson:** Open a PR for an interface change and explain its caller impact in the description. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Review a caller diff and demonstrate the revised contract.
+
 **Prerequisites:** P2-02.
 
 **Outcome:** Design an interface with explicit inputs, defaults, outputs, and mutation.
@@ -138,6 +156,10 @@ explanation of one rejected interface design.
 **Sources:** [PY-FUNCTIONS](../audit/SOURCES.md#py-functions), [PY-FUNCTOOLS](../audit/SOURCES.md#py-functools).
 
 ## P2-04 Classes dataclasses and composition
+
+**GitHub in this lesson:** Review the class or composition change together with tests for independent instance state. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Use the PR diff and test output to explain ownership and accidental sharing.
 
 **Prerequisites:** P2-03.
 
@@ -186,6 +208,10 @@ among a plain function, dataclass, and custom class.
 
 ## P2-05 Exceptions and resource ownership
 
+**GitHub in this lesson:** Commit a resource-failure test and inspect its error context and cleanup result in Actions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain the failure boundary using the test and run, not only a success-path example.
+
 **Prerequisites:** P2-04.
 
 **Outcome:** Preserve useful error context and release resources on failure.
@@ -232,6 +258,10 @@ which exceptions propagate or are transformed.
 
 ## P2-06 Type hints and runtime validation
 
+**GitHub in this lesson:** Add the chosen type checker as a hosted workflow step when needed; compare it with runtime validation tests. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Identify the distinct static and runtime results for the same Python interface.
+
 **Prerequisites:** P2-05.
 
 **Outcome:** Use annotations to communicate interfaces without mistaking them for checks.
@@ -275,6 +305,10 @@ still requires a runtime check. Report actual checker execution separately.
 
 ## P2-07 Testing debugging and logging
 
+**GitHub in this lesson:** Add meaningful workspace tests and inspect their discovery count, failure messages, and result in Actions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Show a test failing for the intended defect and passing after its fix.
+
 **Prerequisites:** P2-06.
 
 **Outcome:** Connect requirements to tests and diagnose failures with controlled evidence.
@@ -291,7 +325,7 @@ reports show executed code, not the adequacy of assertions or absence of defects
 The included suite uses `unittest` to keep the core dependency-free; pytest is an
 optional later tool, not a prerequisite for learning to test.
 
-**Worked example:** Run `python -m unittest discover -s tests -v` from the root.
+**Worked example:** Open the hosted learner-test step after committing your tests; read the discovered count and failure output.
 Read one test in [test_studylog.py](../tests/test_studylog.py). Identify its
 requirement, setup, action, and observation before reading the implementation.
 
@@ -310,6 +344,10 @@ or a coverage percentage as a substitute for these observations.
 **Sources:** [PY-UNITTEST](../audit/SOURCES.md#py-unittest), [PY-LOGGING](../audit/SOURCES.md#py-logging).
 
 ## P2-08 Structured text numbers and dates
+
+**GitHub in this lesson:** Commit a small data fixture and document its schema beside the Python parser. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Review the fixture diff and explain a quoting, date, or numeric boundary test.
 
 **Prerequisites:** P2-07.
 
@@ -354,6 +392,10 @@ display formatting as a substitute for numeric validation.
 
 ## P2-09 HTTP APIs and external failures
 
+**GitHub in this lesson:** Use a recorded GitHub API response to test your Python adapter; run any bounded live read from Actions. References: [GH-14](github.md#gh-14-read-github-apis-from-python).
+
+**GitHub evidence:** Distinguish fixture checks from live observations and explain pagination or failure handling.
+
 **Prerequisites:** P2-08.
 
 **Outcome:** Design a small external-service adapter with bounded failure behavior.
@@ -390,6 +432,10 @@ unverified about a real service. Live integration is an optional extension.
 **Sources:** [PY-URLLIB](../audit/SOURCES.md#py-urllib), [HTTP-SEMANTICS](../audit/SOURCES.md#http-semantics).
 
 ## P2-10 SQLite queries and transactions
+
+**GitHub in this lesson:** Commit SQLite transaction tests using temporary runner files and inspect rollback evidence. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain the database invariant and link the test run for that code.
 
 **Prerequisites:** P2-09.
 
@@ -428,16 +474,15 @@ demonstrated with concrete tests.
 
 ## P2-11 Git packaging and reproducible setup
 
-For step-by-step Git practice, use
-[GH-04 through GH-10](github.md#gh-04-understand-working-files-and-staged-snapshots)
-and the [disposable Git labs](../practice/GITHUB_LABS.md). Keep Python packaging
-and GitHub release assets distinct.
+**GitHub in this lesson:** Build your package in a hosted workflow and use a simple competing-line PR to practice browser conflict resolution. References: [GH-05](github.md#gh-05-keep-browser-branches-current), [GH-07](github.md#gh-07-resolve-a-conflict-and-verify-the-combined-result).
+
+**GitHub evidence:** Show a fresh runner installation and verify the resolved Python behavior.
 
 **Prerequisites:** P2-10.
 
 **Outcome:** Make a project installable and explain what a version-control change contains.
 
-Use Git status and diff before committing; keep related changes together. Branches
+Inspect Source Control and the PR diff before committing; keep related changes together. Branches
 allow isolated work, and a merge conflict requires understanding both edits. Keep
 virtual environments, secrets, generated results, and private learner records out
 of commits. A license defines reuse terms; do not infer an external project's
@@ -450,14 +495,15 @@ contains the required files. Compatibility ranges and an exact experiment
 environment solve different problems; neither guarantees every platform works.
 
 **Worked example:** Follow the [PyPA packaging tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-using a disposable package. Build it, install the wheel in a fresh environment,
+using a disposable package. In GitHub Actions, build it and install the wheel in a fresh runner environment,
 and run from outside the source checkout. Publishing is a separate optional action.
 
 **Practice A:** Refactor the study reporter into a package with a command entry
 point and documented installation. Inspect the resulting artifact's contents.
 
-**Practice B:** Reproduce setup using only the README, then resolve a small local
-merge conflict and explain the final behavior with a test.
+**Practice B:** Reproduce setup in a fresh hosted job using only the README, then
+resolve a simple competing-line PR conflict through github.com and verify the
+final Python behavior with a test. Use the browser task card for exact steps.
 
 **Hints:** Separate runtime dependencies, developer tools, and build requirements.
 When a clean install fails, inspect the wheel rather than adding random path hacks.
@@ -467,6 +513,10 @@ When a clean install fails, inspect the wheel rather than adding random path hac
 **Sources:** [PY-PACKAGING](../audit/SOURCES.md#py-packaging), [GIT-BOOK](../audit/SOURCES.md#git-book).
 
 ## P2-12 Algorithms command lines and application delivery
+
+**GitHub in this lesson:** Finish the report application PR and prepare a GitHub release draft describing its tested command interface. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
+
+**GitHub evidence:** Link the reviewed commit, hosted command results, and release notes; a draft is not a publication.
 
 **Prerequisites:** P2-11.
 

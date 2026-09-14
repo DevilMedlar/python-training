@@ -5,7 +5,17 @@ training route, not a PhD qualification. Research **with** Python and research
 **on** Python require different specialist knowledge. Strengthen mathematical and
 domain prerequisites alongside a narrow project rather than collecting tools.
 
+
+Work in github.dev and commit your Python changes; inspect results on github.com
+through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
+includes a GitHub action on the same Python work. Any advanced execution commands
+belong in a hosted workflow step; inputs and files follow the browser guide.
+
 ## P4-01 Questions literature and scope
+
+**GitHub in this lesson:** Commit a research question and protocol beside the planned Python experiment before collecting final results. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
+
+**GitHub evidence:** Point to the protocol commit and distinguish hypotheses from established findings.
 
 **Prerequisites:** P3-10.
 
@@ -40,6 +50,10 @@ matrix, and a clear distinction between established knowledge and a proposed tes
 **Sources:** [RESEARCH-PRACTICE](../audit/SOURCES.md#research-practice).
 
 ## P4-02 Mathematical and numerical validity
+
+**GitHub in this lesson:** Run small numerical checks in the recorded hosted environment and commit their assumptions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Explain tolerances using observed residuals and reference cases.
 
 **Prerequisites:** P4-01.
 
@@ -78,6 +92,10 @@ and a reasoned tolerance rather than one chosen merely to make a test pass.
 
 ## P4-03 Experimental units baselines and uncertainty
 
+**GitHub in this lesson:** Review the experiment design and paired-data checks in the same PR as the Python analysis. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Identify experimental units, baseline, uncertainty method, and code evidence.
+
 **Prerequisites:** P4-02.
 
 **Outcome:** Design a comparison whose uncertainty analysis matches its sampling units.
@@ -113,6 +131,10 @@ what the design cannot establish, including causal or population-level claims.
 **Sources:** [NIST-CI](../audit/SOURCES.md#nist-ci), [SCIPY-BOOTSTRAP](../audit/SOURCES.md#scipy-bootstrap), [SKLEARN-LEAKAGE](../audit/SOURCES.md#sklearn-leakage).
 
 ## P4-04 Reproducibility provenance and randomness
+
+**GitHub in this lesson:** Record exact commit, seed, dependencies, configuration, and result-retention method for a hosted rerun. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan).
+
+**GitHub evidence:** Demonstrate reproducibility within the stated environment and identify missing evidence.
 
 **Prerequisites:** P4-03.
 
@@ -152,6 +174,10 @@ cross-platform limits. Do not claim independent reproduction from one local reru
 
 ## P4-05 Verification validation and scientific tests
 
+**GitHub in this lesson:** Review scientific invariants and validation assumptions with the experiment code and CI result. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Explain which checks test implementation and which address the scientific model.
+
 **Prerequisites:** P4-04.
 
 **Outcome:** Test whether the implementation follows its specification and whether
@@ -187,6 +213,10 @@ distance between implementation correctness and domain validity.
 
 ## P4-06 Performance scaling and computational budgets
 
+**GitHub in this lesson:** Record a bounded hosted workload and compute budget before running a scaling comparison. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
+
+**GitHub evidence:** Compare equivalent workloads and report shared-runner measurement limits.
+
 **Prerequisites:** P4-05.
 
 **Outcome:** Evaluate computational cost under equivalent accuracy and workload conditions.
@@ -220,6 +250,10 @@ conclusion. The curriculum does not require buying accelerator hardware.
 **Sources:** [JAX-BENCHMARK](../audit/SOURCES.md#jax-benchmark), [PYPERF](../audit/SOURCES.md#pyperf).
 
 ## P4-07 Scientific communication and critique
+
+**GitHub in this lesson:** Commit the methods and results report with permanent links to code and observed runs. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Make each key claim traceable to data, method, and a stated limitation.
 
 **Prerequisites:** P4-06.
 
@@ -255,6 +289,10 @@ private instructions. Teach back a limitation without overstating certainty.
 **Sources:** [RESEARCH-PRACTICE](../audit/SOURCES.md#research-practice), [NIST-CI](../audit/SOURCES.md#nist-ci).
 
 ## P4-08 Replication and the research capstone
+
+**GitHub in this lesson:** Deliver the investigation through a reviewed PR with reproduction instructions using GitHub Actions. References: [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Record an independent rerun if observed; label a self-rerun accurately.
 
 **Prerequisites:** P4-07.
 

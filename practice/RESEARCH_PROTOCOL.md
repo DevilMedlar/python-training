@@ -15,7 +15,7 @@ evidence of a completed research step.
 | Primary outcome | Definition, units, desired direction, aggregation |
 | Uncertainty | Method, assumptions, pairing/clustering, multiplicity policy |
 | Randomness | Generator, seed, task identities, stream mapping |
-| Execution | Commands, code commit/dirty state, resolved configuration |
+| Execution | Hosted workflow, code commit, run URL, resolved configuration |
 | Environment | Interpreter/build, dependencies, native libraries, hardware |
 | Timing scope | Setup, compilation, transfer, synchronization, measurement |
 | Verification | Known answers, invariants, independent comparisons, tolerances |

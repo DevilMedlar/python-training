@@ -6,7 +6,17 @@ continuing package or service and produce evidence as you improve it. Each lesso
 includes both an investigation and a transfer task; do not turn the course into
 memorization of advanced vocabulary.
 
+
+Work in github.dev and commit your Python changes; inspect results on github.com
+through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
+includes a GitHub action on the same Python work. Any advanced execution commands
+belong in a hosted workflow step; inputs and files follow the browser guide.
+
 ## P3-01 Protocols descriptors and object behavior
+
+**GitHub in this lesson:** Review a protocol implementation with contract tests as one focused PR. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Explain protocol behavior using its diff and the Actions test evidence.
 
 **Prerequisites:** P2-12.
 
@@ -55,6 +65,10 @@ lookup contract without relying on implementation accidents.
 
 ## P3-02 Closures decorators and caches
 
+**GitHub in this lesson:** Commit decorator or cache changes with tests for preserved interfaces and retained state. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Review the callable contract and invalidation behavior alongside the run.
+
 **Prerequisites:** P3-01.
 
 **Outcome:** Preserve a callable's contract and justify any retained state.
@@ -90,6 +104,10 @@ bound a cache. Document whether the reporting sink is allowed to fail.
 **Sources:** [PY-FUNCTOOLS](../audit/SOURCES.md#py-functools), [PY-ASYNC](../audit/SOURCES.md#py-async).
 
 ## P3-03 Advanced typing and API boundaries
+
+**GitHub in this lesson:** Inspect type-checking and runtime-test jobs for the same API change. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
+
+**GitHub evidence:** Explain what each check can establish and review the public API diff.
 
 **Prerequisites:** P3-02.
 
@@ -127,6 +145,10 @@ boundary tests, and a documented limitation of the type system used.
 
 ## P3-04 Runtime memory and inspection
 
+**GitHub in this lesson:** Record the runner Python version with a small runtime observation in a committed note. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
+
+**GitHub evidence:** Distinguish a version-specific observation from a language guarantee and link the run.
+
 **Prerequisites:** P3-03.
 
 **Outcome:** Separate language guarantees from observations about a particular runtime.
@@ -161,6 +183,10 @@ about what the measurement tool actually observes.
 **Sources:** [PY-MODEL](../audit/SOURCES.md#py-model), [PY-INSPECTION](../audit/SOURCES.md#py-inspection), [PY-MEMORY](../audit/SOURCES.md#py-memory).
 
 ## P3-05 Algorithms profiling and fair benchmarks
+
+**GitHub in this lesson:** Compare bounded profiling runs for two commits and record workload and runner conditions. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
+
+**GitHub evidence:** Report raw measurements and limits without claiming hosted timing proves a universal speedup.
 
 **Prerequisites:** P3-04.
 
@@ -197,6 +223,10 @@ specific limits. Do not turn local timing results into a universal ranking.
 **Sources:** [PY-HEAPQ](../audit/SOURCES.md#py-heapq), [PYPERF](../audit/SOURCES.md#pyperf).
 
 ## P3-06 Threads processes and isolated interpreters
+
+**GitHub in this lesson:** Run bounded concurrency and cleanup tests in Actions and inspect the configured Python version. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
+
+**GitHub evidence:** Connect ownership and failure behavior to actual job results.
 
 **Prerequisites:** P3-05.
 
@@ -235,6 +265,10 @@ limits. A 3.14-only investigation is separate from core 3.12 compatibility tests
 
 ## P3-07 Async work bounds and cancellation
 
+**GitHub in this lesson:** Review async bounds and cancellation tests in the PR and inspect their hosted results. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
+
+**GitHub evidence:** Show worker-failure and cancellation evidence for the reviewed commit.
+
 **Prerequisites:** P3-06.
 
 **Outcome:** Bound a pipeline's tasks, queue, and retained results and prove cleanup.
@@ -271,6 +305,10 @@ and cleanup checks. Do not treat a successful happy-path run as sufficient.
 
 ## P3-08 Transactions retries and distributed uncertainty
 
+**GitHub in this lesson:** Commit a failure scenario and an explanation of uncertain outcomes with the implementation. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
+
+**GitHub evidence:** Link rollback or retry tests to the stated invariant and documented limits.
+
 **Prerequisites:** P3-07.
 
 **Outcome:** Protect an invariant across failures and identify uncertain remote outcomes.
@@ -305,6 +343,10 @@ boundary around what the implementation guarantees.
 **Sources:** [PY-SQLITE](../audit/SOURCES.md#py-sqlite), [HTTP-SEMANTICS](../audit/SOURCES.md#http-semantics).
 
 ## P3-09 Architecture security and operations
+
+**GitHub in this lesson:** Review workflow permissions and an architecture change alongside its Python trust boundaries. References: [GH-12](github.md#gh-12-protect-accounts-and-review-boundaries), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
+
+**GitHub evidence:** Explain which code and tools can access which resources without claiming an unverified setting.
 
 **Prerequisites:** P3-08.
 
@@ -341,6 +383,10 @@ runbook that identifies limits rather than promising universal security.
 
 ## P3-10 Reliable delivery and specialization
 
+**GitHub in this lesson:** Deliver the bounded-system capstone with a reviewed release candidate and hosted clean-build checks. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
+
+**GitHub evidence:** Connect the release candidate to its code, failure tests, and runbook.
+
 **Prerequisites:** P3-09.
 
 **Outcome:** Deliver an expert-level project with independent evidence and a clear specialty route.
@@ -361,7 +407,7 @@ them, processes work under memory limits, and either commits or reports failure
 under a documented policy. Its evidence includes a corrupted record, worker
 failure, interruption, and clean installation.
 
-**Practice A:** Build and install your continuing project in a clean environment
+**Practice A:** Build and install your continuing project in a clean GitHub-hosted job
 outside the source directory and execute its documented first task.
 
 **Practice B:** Complete [Capstone 3](../practice/CAPSTONES.md#capstone-3-bounded-processing-system),

@@ -60,7 +60,7 @@ for display or interaction. Use disposable data for file exercises.
 | D46 | P1-12 | Write and then read a short UTF-8 practice note | Use a named practice file and verify the text |
 | D47 | P1-12 | Save and reload a dictionary using JSON | Compare the loaded values with the original |
 | D48 | P1-12 | Write a CSV with topic and minutes columns; read its total | 15, 25, 40 → 80 |
-| D49 | P1-12 | Specify a terminal task manager before writing it | State inputs, outputs, five rules, and five checks |
+| D49 | P1-12 | Specify a text-menu task manager with recorded Actions input before writing it | State inputs, outputs, five rules, and five checks |
 | D50 | P1-12 | Add CSV export to the study tracker | Export columns `session` and `minutes`, preserving order |
 
 For D12, define initials using whitespace-separated nonempty parts; an empty

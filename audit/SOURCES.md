@@ -466,3 +466,19 @@ See [the claim audit](CLAIM_AUDIT.md) and [verification](VERIFICATION.md).
 ## GH-CLI-PR-CREATE
 
 [Create a pull request with the CLI](https://cli.github.com/manual/gh_pr_create). Base/head selection and body-file input.
+
+## GH-WEB-CONFLICTS
+
+[Resolve simple conflicts on GitHub](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-on-github). Web editor supports simple competing-line conflicts and merges base into head.
+
+## GH-WEB-REVERT
+
+[Revert a pull request on GitHub](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/reverting-a-pull-request). Revert creates a new inverse PR; permissions and conflicts constrain the operation.
+
+## GH-ACTIONS-MANUAL
+
+[Run a workflow through the browser](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow). Workflow dispatch requires the workflow on default branch; browser branch selection and run steps.
+
+## GH-ACTIONS-SUMMARY
+
+[Write GitHub Actions job summaries](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary). GITHUB_STEP_SUMMARY provides Markdown content on the workflow summary page.

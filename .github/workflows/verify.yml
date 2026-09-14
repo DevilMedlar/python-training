@@ -30,7 +30,7 @@ jobs:
       - run: python tools/run_tests.py
       - run: python -m examples.git_workflow_lab
       - run: python tools/progress.py tutor/progress-template.json --next
-      - run: python tools/progress.py tutor/github-progress-template.json --next --track github
+      - run: python tools/progress.py tutor/progress.json --next
   research:
     name: Optional pinned research environment
     runs-on: ubuntu-latest

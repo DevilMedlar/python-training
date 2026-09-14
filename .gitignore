@@ -221,3 +221,6 @@ __marimo__/
 progress/
 research-result.json
 benchmark-result.json
+
+# Outputs on a disposable GitHub Actions lesson runner
+workspace/results/

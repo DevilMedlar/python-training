@@ -1,18 +1,22 @@
 {
   "schema_version": 1,
-  "catalog_version": "1.1",
+  "catalog_version": "1.2",
   "updated_on": null,
   "environment": {
     "os": null,
     "python": null,
-    "command": null,
+    "command": "GitHub Actions: Run Python lesson",
     "execution_available": null
   },
-  "goals": [],
+  "goals": [
+    "Learn Python and GitHub together through github.com and github.dev."
+  ],
   "current_lesson": "P1-01",
   "lessons": {},
   "reviews": [],
   "capstones": {},
-  "next_task": "Run hello.py and share the command and exact output.",
-  "notes": []
+  "next_task": "Edit workspace/main.py in github.dev, commit it, and inspect its GitHub Actions output.",
+  "notes": [
+    "Execution uses GitHub-hosted Actions. No learner laptop setup. No learning attempts have been recorded."
+  ]
 }
