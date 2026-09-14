@@ -89,8 +89,25 @@ the file's embedded line break. The test writer now disables translation, and
 the test covers LF, CRLF, and CR on every platform. This is a correction to the
 new test suite, not a defect attributed to the supplied drafts.
 
-Final matrix results are recorded once observed; the configuration alone does
-not establish that those checks passed.
+After that correction, [run 34893558086](https://github.com/DevilMedlar/python-training/actions/runs/34893558086)
+completed successfully for PR head `7e52d4d87450ea74faf839a58b13f4d3aa93cf89`.
+All ten jobs passed. The setup logs reported these exact CPython versions:
+
+| Runner label | Python 3.12 job | Python 3.13 job | Python 3.14 job |
+|---|---|---|---|
+| `ubuntu-latest` | 3.12.14 — passed | 3.13.15 — passed | 3.14.7 — passed |
+| `windows-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed |
+| `macos-latest` | 3.12.10 — passed | 3.13.15 — passed | 3.14.7 — passed |
+
+Each core job passed the repository checker, all 77 core tests, and initial
+progress routing. Its unittest report lists 82 tests with five explicit skips
+because scientific dependencies are intentionally absent. The separate Ubuntu
+research job used CPython 3.12.14, installed the pinned requirements, and passed
+all five scientific tests without skips. The full 1,000-dataset experiment above
+was a local run; CI's scientific job runs the smaller end-to-end regression case.
+
+Runner labels and installed patch versions can change on future runs. This table
+records the observed run, not every possible Python build or future dependency.
 
 ## Limits
 
