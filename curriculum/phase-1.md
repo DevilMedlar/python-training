@@ -1,60 +1,77 @@
 # Phase 1 Novice
 
 Learn to write and run useful Python, starting with no programming experience.
-Work through one lesson at a time. The tutor explains each new tool, shows working
-code, and helps you apply it. Practice A is guided; Practice B gives you another
-small program to make. Ask for a complete example whenever it helps.
+Work through every lesson in order. After detailed teaching, write the whole
+program for Practice A. Practice B provides further application; the tutor varies
+additional practice according to placement and later assessment findings.
 There are no output-prediction drills, hand-tracing gates, or fixed hour quotas.
 
 
 Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
-Open a Python file, save, run it in the workspace Terminal, and use the result to
-make the next change. Type answers to `input()` directly in that Terminal.
-The tutor shows the technique and a working example before asking you to apply it.
+The tutor explains every objective, concept, syntax rule, and common error in the
+lesson before giving program requirements. The learner writes the entire program
+from a blank file, or all new code in their own project. Reference snippets illustrate
+concepts; they are not prefilled assignment answers. Run learner-authored code and
+type `input()` answers in the workspace Terminal.
+Placement adjusts teaching depth and practice without skipping lessons. Occasional
+quizzes and cumulative reviews revisit taught topics. Complete a phase-end test
+using [the assessment plan](../practice/ASSESSMENT.md#tests-at-the-end-of-each-phase).
 Each lesson includes one short workspace control; repository administration is
 optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P1-01 Run and inspect a program
 
-**Workspace shortcut:** Open workspace/lesson_01.py in Explorer, save with Ctrl+S, then use Run Python File in Terminal (the triangle or editor right-click menu when available). The terminal fallback is in START_HERE.md.
+**Workspace shortcut:** Explorer → New File: create a blank .py file under workspace/; Save → Run Python File in Terminal.
 
 **Prerequisites:** none.
 
 **Outcome:** Write, save, and run a Python file in your Codespaces workspace.
 
-A program is a file containing instructions for Python. Open
-`workspace/lesson_01.py` in [your workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
-Type or change the code, save with **Ctrl+S**, and use **Run Python File in Terminal**
-from the triangle button or editor right-click menu when the Python extension is
-available. If that control is missing, open **Terminal → New Terminal** and run
-`python workspace/lesson_01.py` from the repository folder. All of this happens in
-the browser workspace. [START_HERE.md](../START_HERE.md) shows the first run.
+A Python program is a text file containing instructions, saved with a `.py`
+extension. **Saving** writes your editor changes to the file; **running** asks the
+Python interpreter to execute those instructions. Output appears in the Terminal.
+A Git commit stores a version of a file and is separate from running it.
 
-`print(...)` displays text in the Terminal. Put the text between quotes inside
-the parentheses. Python runs one line and then the next. Start with this program:
+`print` is a built-in function that displays values. Parentheses contain the values
+passed to it. To display literal text, enclose the text in matching single or double
+quotes. The quotes mark where the string begins and ends; they are not part of the
+displayed text. Punctuation inside the quotes belongs to the text. Keep the spelling
+and case of `print` correct. A closing quote and closing parenthesis are required.
+
+Each `print` call normally ends with a newline. Putting another call on the next
+source line displays another line. Use a `.py` file, rather than typing the program
+at the shell prompt. Save before running so the interpreter sees the current code.
+This separate one-line illustration shows the syntax:
 
 ```python
-print("Hello, Python!")
-print("I am learning in my workspace.")
+print("Library open.")
 ```
 
 ```output
-Hello, Python!
-I am learning in my workspace.
+Library open.
 ```
 
-**Practice A:** Change only the sentence inside the second pair of quotes to
-something you want to say. Save with **Ctrl+S**, run the file, and see your sentence
-in the Terminal.
+The tutor explains the function name, parentheses, string delimiters, text, source
+line, and terminal output before practice. Missing a quote or parenthesis can produce
+a syntax error. The error includes a location and message; read those, correct your
+own file, save, and run again. Do not guess the output or execute the code by hand.
 
-**Practice B:** Optional variation: add a third `print(...)` with another sentence,
-save, and run again.
+**Practice A:** Create a new blank Python file under `workspace/`. Write the entire
+program yourself to display a two-line introduction: a program title and a sentence
+about its purpose. Save and run it in the Codespace. No supplied program is the
+starting answer.
 
-**Hints:** Save `workspace/lesson_01.py` before running. If you see an old result,
-check the file name in the Terminal command and run the current file again.
+**Practice B:** Write a separate complete program displaying a three-line notice
+for a fictional event. Use what was taught about text, quotes, parentheses, and
+newlines. The tutor may add practice if these ideas still need work.
 
-**Evidence:** Your saved file runs and displays your changed sentence. That is
-enough to finish this first lesson.
+**Hints:** Review the syntax explanation and identify which part you need. The
+tutor explains that part without completing your program. Save the file you wrote
+and confirm its name in the Terminal command when running.
+
+**Evidence:** Learner-authored complete code, actual terminal output meeting the
+requirements, and demonstrated understanding of the syntax and save/run distinction.
+Any help is recorded. Editing a supplied sentence alone does not complete the task.
 
 **Sources:** [PY-INTRO](../audit/SOURCES.md#py-intro).
 
@@ -418,9 +435,10 @@ print(len(copy))
 2
 ```
 
-**Practice A:** Run the shallow-copy example, then use two separate outer lists
-and compare the results. Print both lists after each change. Repair a version
-that accidentally shares a list between two records.
+**Practice A:** Write a complete program that creates two records sharing a nested
+list and another pair with independent nested lists. Change one record in each
+pair and print both records to inspect the actual results. Write the program
+yourself after the tutor explains references, shallow copies, and independent lists.
 
 **Practice B:** Write `add_topic(topic, topics=None)` that makes a fresh list when
 omitted and appends to a supplied list when provided. Explain that mutation policy.

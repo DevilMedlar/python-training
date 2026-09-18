@@ -1,11 +1,12 @@
 # Your practice files
 
 Use [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/) to edit and run these files.
-Start with [lesson_01.py](lesson_01.py) and [the first task](../START_HERE.md).
+Use a new blank `.py` file for an assignment after the tutor explains the lesson.
+Existing files are preserved; they are not prefilled answers you must modify.
 
 | File or folder | Purpose |
 |---|---|
-| lesson_01.py | Fresh first lesson: print your own sentence |
+| lesson_01.py | Existing setup demonstration; not an assignment starter |
 | main.py | Earlier practice, preserved for you |
 | input_example.py | A live question you answer in the terminal at P1-04 |
 | data/ | Small sample data files |

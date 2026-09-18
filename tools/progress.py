@@ -51,9 +51,12 @@ def iso_date(value, where, *, nullable=False):
 def validate_state(state, catalog, *, today=None):
     today = today or date.today()
     lessons = {lesson["id"]: lesson for lesson in catalog["lessons"]}
-    keys(state, {"schema_version", "catalog_version", "updated_on", "environment",
-                 "goals", "current_lesson", "lessons", "reviews", "capstones",
-                 "next_task", "notes"}, "record")
+    expected = {"schema_version", "catalog_version", "updated_on", "environment",
+                "goals", "current_lesson", "lessons", "reviews", "capstones",
+                "next_task", "notes"}
+    if isinstance(state, dict) and "assessments" in state:
+        expected.add("assessments")
+    keys(state, expected, "record")
     require(type(state["schema_version"]) is int and state["schema_version"] == 1,
             "unsupported schema_version")
     compatible = [catalog["catalog_version"], *catalog.get("compatible_progress_versions", [])]
@@ -115,6 +118,9 @@ def validate_state(state, catalog, *, today=None):
             latest_check = max(checks, key=lambda pair: (pair[1]["performed_on"], pair[0]))[1]
             require(latest_check["outcome"] == "pass",
                     f"{lesson_id}: latest applied attempt requires repair")
+            if "assessments" in state:
+                require(latest_check["support"] != "solution",
+                        f"{lesson_id}: supplied solution needs fresh learner-authored work")
             if status == "secure":
                 require(latest_check["support"] in INDEPENDENT,
                         f"{lesson_id}: secure requires applied work with none/reference support")
@@ -166,6 +172,38 @@ def validate_state(state, catalog, *, today=None):
             evidence_dates.append(completed)
         else:
             require(completed is None, "unfinished capstone cannot have a completion date")
+    assessments = state.get("assessments", [])
+    require(isinstance(assessments, list), "assessments must be a list")
+    for assessment in assessments:
+        keys(assessment, {"kind", "performed_on", "phase", "topics", "needs_practice",
+                          "support", "summary"}, "assessment")
+        require(isinstance(assessment["kind"], str) and
+                assessment["kind"] in {"placement", "quiz", "phase_test", "review"},
+                "unknown assessment kind")
+        phase = assessment["phase"]
+        require(phase is None or type(phase) is int and 1 <= phase <= 5,
+                "invalid assessment phase")
+        require(assessment["kind"] != "phase_test" or phase is not None,
+                "phase test requires a phase")
+        text_list(assessment["topics"], "assessment topics")
+        text_list(assessment["needs_practice"], "assessment practice needs")
+        topics = assessment["topics"]
+        require(topics and len(topics) == len(set(topics)) and
+                all(ident in lessons for ident in topics), "invalid assessment topics")
+        needs = assessment["needs_practice"]
+        require(len(needs) == len(set(needs)) and set(needs) <= set(topics),
+                "assessment practice needs must be assessed topics")
+        if assessment["kind"] == "phase_test":
+            require(any(lessons[ident]["phase"] == phase for ident in topics),
+                    "phase test must assess its phase")
+        require(isinstance(assessment["support"], str) and
+                assessment["support"] in INDEPENDENT | {"hint", "solution"},
+                "invalid assessment support")
+        require(isinstance(assessment["summary"], str) and assessment["summary"].strip(),
+                "assessment summary is required")
+        performed = iso_date(assessment["performed_on"], "assessment performed_on")
+        require(performed <= today, "assessment cannot occur in the future")
+        evidence_dates.append(performed)
     if evidence_dates:
         require(updated is not None and updated >= max(evidence_dates),
                 "updated_on must include the latest recorded evidence")
@@ -180,12 +218,16 @@ def recommend(state, catalog, *, today=None, track=None):
     if state["current_lesson"] is None:
         return {"kind": "idle", "workspace_url": catalog["workspace_url"],
                 "reason": "No lesson is active."}
+    classroom = "assessments" in state
+    assessments = state.get("assessments", [])
+    if classroom and not any(item["kind"] == "placement" for item in assessments):
+        return {"kind": "placement", "workspace_url": catalog["workspace_url"],
+                "reason": "Identify strengths and practice needs without skipping lessons."}
     by_id = {lesson["id"]: lesson for lesson in catalog["lessons"]}
     statuses = {key: value["status"] for key, value in state["lessons"].items()}
     ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
 
-    # Reviews are optional suggestions. Old GitHub review records remain readable
-    # but cannot introduce a second course or block this Python route.
+    # Due reviews accompany the teaching plan; historical GitHub reviews stay outside Python.
     reviews = [{"lesson_id": review["lesson_id"], "reason": review["reason"]}
                for review in state["reviews"]
                if review["lesson_id"] in by_id and iso_date(review["due_on"], "due_on") <= today]
@@ -193,7 +235,7 @@ def recommend(state, catalog, *, today=None, track=None):
 
     def suggestions(result):
         if reviews:
-            result["optional_reviews"] = reviews
+            result["scheduled_reviews"] = reviews
         if capstones:
             result["suggested_capstones"] = list(capstones)
         return result
@@ -216,6 +258,19 @@ def recommend(state, catalog, *, today=None, track=None):
             if missing:
                 return task("prerequisite", missing[0], needed_for=lesson["id"])
             return task("lesson", lesson["id"])
+        if classroom:
+            tests = [(index, item) for index, item in enumerate(assessments)
+                     if item["kind"] == "phase_test" and item["phase"] == phase["id"]]
+            latest = max(tests, key=lambda pair: (pair[1]["performed_on"], pair[0]))[1] if tests else None
+            if latest is None:
+                return suggestions({"kind": "phase_test", "phase": phase["id"],
+                                    "workspace_url": catalog["workspace_url"],
+                                    "reason": "Assess the phase before continuing."})
+            if latest["needs_practice"] or latest["support"] not in INDEPENDENT:
+                return suggestions({"kind": "phase_review", "phase": phase["id"],
+                                    "workspace_url": catalog["workspace_url"],
+                                    "needs_practice": latest["needs_practice"],
+                                    "reason": "Reteach, practice, and reassess the phase's identified gaps or assisted work."})
         if state["capstones"].get(str(phase["id"]), {}).get("status") != "complete":
             capstones.append({"phase": phase["id"], "path": phase["capstone"]})
     return suggestions({"kind": "maintenance", "workspace_url": catalog["workspace_url"],

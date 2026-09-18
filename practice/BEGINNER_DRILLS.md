@@ -1,8 +1,8 @@
 # Fifty beginner drills
 
-Adapted from the supplied Phase 1 guide. Pick a drill when you want extra practice
-after the listed prerequisite. These are optional choices, not fifty additional
-gates. Write and run them in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Adapted from the supplied Phase 1 guide. The tutor selects additional practice from these drills
+after teaching the prerequisite, using placement, quiz, test, and review findings.
+The learner writes the complete solution; the list is not fifty extra examinations. Write and run them in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
 The original numbering is retained; the order is not a second syllabus. Tasks involving retry loops wait until exception
 handling, and initials wait until iteration has been taught.
 

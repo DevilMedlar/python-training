@@ -51,7 +51,7 @@
       "source_ids": [
         "PY-INTRO"
       ],
-      "workspace_shortcut": "Open workspace/lesson_01.py in Explorer, save with Ctrl+S, then use Run Python File in Terminal (the triangle or editor right-click menu when available). The terminal fallback is in START_HERE.md."
+      "workspace_shortcut": "Explorer \u2192 New File: create a blank .py file under workspace/; Save \u2192 Run Python File in Terminal."
     },
     {
       "id": "P1-02",

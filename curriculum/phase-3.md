@@ -8,9 +8,14 @@ memorization of advanced vocabulary.
 
 
 Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
-Open a Python file, save, run it in the workspace Terminal, and use the result to
-make the next change. Type answers to `input()` directly in that Terminal.
-The tutor shows the technique and a working example before asking you to apply it.
+The tutor explains every objective, concept, syntax rule, and common error in the
+lesson before giving program requirements. The learner writes the entire program
+from a blank file, or all new code in their own project. Reference snippets illustrate
+concepts; they are not prefilled assignment answers. Run learner-authored code and
+type `input()` answers in the workspace Terminal.
+Placement adjusts teaching depth and practice without skipping lessons. Occasional
+quizzes and cumulative reviews revisit taught topics. Complete a phase-end test
+using [the assessment plan](../practice/ASSESSMENT.md#tests-at-the-end-of-each-phase).
 Each lesson includes one short workspace control; repository administration is
 optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 

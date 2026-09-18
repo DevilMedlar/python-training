@@ -1,37 +1,42 @@
-# Starting and continuing
+# Diagnostic placement
 
-Use this guide only for an explicitly requested learning session in
-[the Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
-For a new learning session, the first lesson is **P1-01** with
-`workspace/lesson_01.py`. Setup corrections do not start or resume a lesson.
+Placement is a knowledge check for planning teaching. It does not select lessons
+to skip. Administer it only after the user explicitly starts a learning session,
+never while correcting the setup.
 
-## Continue from useful work
+## What to check
 
-After a request to continue learning, read [progress.json](progress.json).
-Paired null `current_lesson` and `next_task` fields mean no lesson is active.
-Otherwise continue the saved `next_task`. If the record
-is unavailable, ask what file the learner was editing or request the relevant
-code. Distinguish reported history from work actually inspected.
+Ask about prior experience, then sample the concepts the learner may have met:
+program structure and running code; values and names; strings and input; conditions
+and loops; collections; functions; errors; and files. Where relevant experience is
+reported, include later topics from the phase catalog. Do not force a beginner to
+attempt the entire advanced syllabus. “I have not learned that” is a valid finding.
 
-When a learner asks to skip ahead, inspect a relevant existing program or offer
-one practical task at the desired level. Let them run it and use references.
-Teach any missing technique during that work. Stop once there is enough evidence
-to choose a useful lesson; do not administer the whole curriculum as a test.
+Use a mix of short conceptual questions and small programs the learner writes
+from a blank file. Let them run code in the existing Codespace. Establish whether
+references are allowed and record help honestly. Do not use guessed outputs,
+manual tracing, or tutor-written answers as evidence of learner knowledge.
 
-| Existing work or goal | Useful starting area |
+## Use the findings
+
+Record results by topic: what they demonstrated, what is uncertain or unfamiliar,
+and what needs more teaching/practice. A few correct answers do not establish that
+all aspects of a topic are secure. Explain the findings without ranking the learner.
+
+| Finding | Effect on the lesson |
 |---|---|
-| New to Python | P1-01: first working program |
-| Comfortable with basic scripts, needs reusable code | P1 functions and modules |
-| Wants to process files or produce reports | P1 files, then P2 data processing |
-| Has working code, needs reliability | P2 testing and error handling |
-| Has a larger application to improve | Relevant P3 design or performance lesson |
-| Has a specific investigation or contribution | Relevant P4 or P5 project with targeted support |
+| Strong prior understanding | Teach all objectives, connect them to known ideas, and use less repetitive practice. |
+| Partial understanding | Explain the missing pieces in greater detail and provide additional practice. |
+| Misconception | Teach the correct concept explicitly, then check a fresh application. |
+| Unfamiliar topic | Teach from the beginning with clear definitions and examples. |
 
-This table suggests starting areas; it does not grant completion for unseen work.
-Record the task actually performed and the help used. Documentation and necessary
-accessibility tools count as allowed references. Conceptual guidance is `hint`;
-a supplied implementation or decisive modeled step is `solution`.
+Keep every lesson in its sequence. Placement does not grant lesson credit, jump
+phases, or remove topics. Later quizzes, phase tests, and reviews update the support
+plan as new evidence arrives. The learner still writes each lesson's program.
 
-After a break, reopen the last file and continue with a useful change. Offer a
-brief refresher when needed. Recall questions and delayed reviews are optional;
-they do not block resumption or erase unrelated progress.
+## Resume learning
+
+Read the actual progress, assessment findings, and review plan. Continue the saved
+lesson sequence with the appropriate support. Reuse existing diagnostic evidence
+instead of repeating placement every session. Include review of previous topics
+at appropriate intervals; preserve unrelated achievements when a gap appears.

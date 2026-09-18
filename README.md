@@ -2,21 +2,21 @@
 
 [**Open your Python workspace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
 
-Learn by seeing how to do something, changing a small program, and running it
-in your Codespace. The tutor helps with the code and errors you actually get.
+The tutor explains each lesson in detail, then the learner writes the entire
+program and runs it in the Codespace. Examples explain concepts without supplying
+the assignment's answer. The learner makes their own edits and corrections.
+
 [Workspace guide](START_HERE.md) · [Python lesson index](curriculum/INDEX.md)
 
-## Your lesson routine
+## Teaching and assessment
 
-1. Read one short example and its explanation.
-2. Make one useful change in a Python file.
-3. **Save → Run Python File in Terminal**. Type answers directly into the terminal when asked.
-4. Use the result or error to make the next change.
-
-Each Python lesson includes one brief **Workspace shortcut** for the button or
-command you need. You can ask for a complete example or solution at any point.
-There are no required output predictions, manual execution traces, fixed study-hour
-quotas, or delayed-recall gates. Progress follows what you can do with Python.
+- Diagnostic placement identifies strengths and gaps without skipping lessons.
+- Every lesson covers its concepts, purpose, syntax, and common mistakes before practice.
+- The learner writes complete programs; teaching depth and practice vary by need.
+- Occasional quizzes, end-of-phase tests, and reviews of older topics guide
+  additional teaching, practice, and reassessment.
+- Workspace controls stay brief. Python executes programs and accepts live input;
+  output-guessing and hand-tracing drills are not required.
 
 ## Choose what to learn
 

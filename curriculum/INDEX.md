@@ -4,13 +4,13 @@ Generated from [catalog.json](catalog.json). Follow one Python sequence.
 Write and run Python in [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
 Use the small workspace control hint when you need it.
 
-Start with [your first edit and run](../START_HERE.md).
+[Workspace guide](../START_HERE.md). Lessons begin only when learning is requested.
 
 ## Phase 1 Novice
 
 | Lesson | Python focus | Workspace control | Route |
 |---|---|---|---|
-| [P1-01](phase-1.md#p1-01-run-and-inspect-a-program) | Run and inspect a program | Open workspace/lesson_01.py in Explorer, save with Ctrl+S, then use Run Python File in Terminal (the triangle or editor right-click menu when available). The terminal fallback is in START_HERE.md. | Core |
+| [P1-01](phase-1.md#p1-01-run-and-inspect-a-program) | Run and inspect a program | Explorer → New File: create a blank .py file under workspace/; Save → Run Python File in Terminal. | Core |
 | [P1-02](phase-1.md#p1-02-values-names-and-arithmetic) | Values names and arithmetic | Use Ctrl+S to save, then run the current Python file again to see the calculation. | Core |
 | [P1-03](phase-1.md#p1-03-strings-and-text-transformations) | Strings and text transformations | Use Ctrl+F to find a string in the open file; save and run after changing it. | Core |
 | [P1-04](phase-1.md#p1-04-input-conversion-and-explicit-contracts) | Input conversion and explicit contracts | Run the file, click its Terminal panel, type each answer at its prompt, and press Enter. | Core |

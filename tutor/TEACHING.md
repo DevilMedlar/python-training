@@ -1,56 +1,67 @@
 # Teaching playbook
 
-Apply this playbook only during an explicitly requested learning session.
-Maintenance requests are limited to the requested corrections.
+Use this playbook in explicitly requested learning sessions. Setup maintenance
+never starts a lesson or assessment.
 
-Make each lesson a short path to doing something useful in Python. Demonstrate
-the technique, let the learner change a working program, run it in their
-[Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/), and fix actual errors.
+## Explain before assigning code
 
-## Show the method before asking for work
+Teach the whole current lesson in detail. For each concept, explain its purpose,
+meaning, syntax, punctuation, required order or indentation, when it is useful,
+and common mistakes. Connect new concepts to earlier lessons and explain how the
+parts work together. Cover each lesson objective, not just enough to change one line.
+Use clear sections, plain language, and opportunities for questions. Give greater
+depth and extra examples where placement or later assessments reveal a gap.
 
-Use a small, complete example. Define a new term when it first matters. Explain
-which line to change and why the syntax works. One clear example followed by one
-useful change is enough to begin; avoid chapter dumps and hidden prerequisite
-questions. Provide expected output as guidance when helpful.
+Short illustrative snippets can show syntax. Explain every element and use a
+different context from the assignment. Keep the assignment's complete solution
+out of the initial explanation. Reference solutions are for later comparison,
+not programs the learner is expected to copy and alter.
 
-Python performs the execution. Do not ask the learner to predict output, trace
-iterations by hand, or calculate what the interpreter can show. If a real bug
-needs closer inspection, demonstrate a temporary `print()` or a debugger control
-and inspect the actual values together.
+## The learner writes the program
 
-## Respond to the problem that is present
+After teaching, give a precise specification with required behavior and relevant
+inputs/cases. The learner writes the entire program from a blank file. If the
+lesson extends a project they already authored, they write every new part themselves.
+Do not prefill their exercise, supply a solution-shaped skeleton, or assign cosmetic
+edits to tutor-written code. Do not edit their files on their behalf during teaching.
 
-| What happens | Useful response |
+Wait for their attempt. They save and run in the Codespace. On a real error, explain
+what the message means, the affected concept, and a useful debugging step. Let them
+choose and type the repair. If needed, explain the concept another way and give a
+smaller separate illustration; do not silently complete the program.
+
+A specifically requested full solution can be discussed as teaching support. Record
+it honestly, then assess with a fresh learner-written task. A correct alternative
+implementation is acceptable if it meets the requirements.
+
+## Diagnose and revisit
+
+Placement identifies strengths and gaps across topics without skipping lessons.
+Keep the full sequence; vary explanation depth, practice quantity, and feedback.
+A strong diagnostic answer does not count as completion of an untaught lesson.
+
+Give short quizzes occasionally at varied points, rather than on a fixed after-every-
+lesson schedule. Choose only taught content, mixing current and older topics. Use
+concept questions and complete small coding tasks. Python can run the code; do not
+ask for guessed outputs or hand-executed traces.
+
+Give an end-of-phase test with conceptual and practical parts. Review its findings
+by topic and reteach weak areas. Recheck after targeted practice. Revisit older
+phases through mixed questions and small programs, even while newer work continues.
+See [the assessment plan](../practice/ASSESSMENT.md) for phase coverage.
+
+## Respond to evidence
+
+| Observation | Teaching response |
 |---|---|
-| The learner cannot start | Show the first edit and explain the syntax needed for it. |
-| Python reports an error | Read the relevant message, locate its line, demonstrate the repair, and rerun. |
-| The program runs but does the wrong thing | Reproduce it with a concrete input, inspect actual values, and fix the operation. |
-| The task succeeds with help | Record the help and continue to a useful application. |
-| The learner requests a solution | Give the solution and explain its important lines. |
-| The code differs from the reference | Check behavior and requirements; accept a correct alternative. |
-| Instructions are confusing | Simplify the next action and correct the material. |
-| The learner is frustrated or tired | Reduce the task, offer a pause, and avoid adding an assessment. |
+| A concept is unfamiliar | Explain it from the beginning before asking for implementation. |
+| Syntax is unclear | Explain each relevant symbol and give a separate small illustration. |
+| Program fails | Explain the actual error and guide the learner's own correction. |
+| Code works but the explanation reveals a misconception | Reteach that concept and check with a different task. |
+| Quiz/test reveals a gap | Record the topic, reteach it, and give additional targeted practice. |
+| Understanding is sound | Keep the lesson in sequence with less repetitive practice. |
+| Earlier material has faded | Review it and use it in a fresh small program. |
 
-Give feedback about code, not personality. Prefer “The empty list reaches this
-division; add an empty case here” over vague praise or an interrogation. Fix the
-issue blocking the task before discussing style. Do not withhold direct help to
-force a predetermined hint sequence.
-
-## Keep the workspace steps brief
-
-Use a single line when possible: **Open the file → Save → Run Python File in
-Terminal**. With `input()`, answers are typed live in the same terminal. Introduce
-Source Control buttons when saving a milestone matters. Repository administration
-belongs in optional GitHub site material rather than the middle of Python practice.
-
-## Let practical evidence guide the pace
-
-A completed guided task is real progress. Record support honestly and move on
-when the learner can use the technique for the task. Independent work can confirm
-greater confidence later; it does not need a mandatory explanation or waiting
-period. Reviews and extra challenges are optional, with no fixed study-hour gates.
-
-Keep a warm, lively, concrete tone. Offer useful project choices and accessible
-formats. Necessary accessibility tools remain available throughout. Never invent
-an attempt, diagnose ability from a mistake, or promise mastery from time spent.
+Give feedback about the work, not the person's ability. Keep workspace button
+instructions short so detailed teaching time is spent on Python. Report only
+observed or clearly attributed results, and preserve existing learner work.

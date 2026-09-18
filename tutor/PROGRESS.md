@@ -1,61 +1,67 @@
-# Progress without extra homework
+# Progress and assessment records
 
-[progress.json](progress.json) records the Python work actually completed, help
-used, and an agreed next task. No lesson is active until the learner asks to
-begin. [Historical records](history/README.md) do not assign current work.
+[progress.json](progress.json) records actual learner work and assessment evidence.
+An inactive session has `current_lesson` and `next_task` both null. Maintenance
+leaves those fields inactive and creates no learner attempts or assessment results.
+[Historical records](history/README.md) preserve earlier evidence without assigning work.
 
-[progress-template.json](progress-template.json) and
-[github-progress-template.json](github-progress-template.json) are identical
-empty progress templates. The compatibility filename does not create a second track.
-The schema remains `1`; the current catalog is `1.3`. Earlier compatible records
-remain readable without inventing evidence.
-
-## What statuses mean
+## Lesson evidence
 
 | Status | Meaning |
 |---|---|
-| not_started | No attempt has been recorded. |
-| learning | The learner is working on the task with help or still fixing it. |
-| provisional | The learner successfully applied the technique; guided help counts when recorded. |
-| secure | Successful application used no assistance beyond allowed references. |
-| review_needed | An observed gap needs a specific repair. |
+| not_started | The lesson has not been attempted. |
+| learning | The learner is writing the program or still needs teaching/practice. |
+| provisional | The learner authored a successful program with conceptual hints or references. |
+| secure | The learner demonstrated independent/reference application. |
+| review_needed | New evidence identifies a particular gap needing further teaching/practice. |
 
-Both `provisional` and `secure` permit forward progress. A copied solution is not
-independent work; record `solution` support. An explanation alone does not prove a
-working program. Predictions, recitations, delayed reviews, and hours studied are
-not advancement requirements. Optional reviews must not take over the next lesson.
+Record code actually written, observed behavior, explanations where relevant, and
+help used. `solution` means a supplied implementation; use a fresh complete task
+before treating it as learner-authored success. Preserve historical evidence
+honestly rather than relabeling old assistance. Placement is not lesson evidence
+and does not mark lessons complete or skip them.
 
-## What to record
+## Assessments
 
-Use one attempt for one observed application: its date, outcome, help used, and
-a short description of what the program did. Include a file or commit link when
-available. Describe terminal output accurately; distinguish tutor-observed work
-from the learner's report. Repository checks do not count as learner attempts.
-Python work does not require a GitHub administration action to count as successful.
+The `assessments` list records placement, occasional quizzes, phase tests, and
+reviews. Each entry contains `kind` (`placement`, `quiz`, `phase_test`, or `review`),
+`performed_on`, `phase` (1–5 or null for mixed/placement work), `topics` (lesson IDs),
+`needs_practice` (the subset needing further work), `support`, and `summary`.
+A phase test has a phase number. Describe the actual questions/tasks, topic findings,
+feedback, and follow-up in the summary. Empty `needs_practice` means no gap was found
+in this sample, not that every related skill is mastered. For phase tests, include
+all topic IDs covered by the test; do not substitute an unrelated question for the
+phase's objectives. Record new assessments after they happen, never in advance.
 
-- `environment` describes the Codespace. Keep OS, Python version, and execution
-  availability `null` until observed. `command` names the intended Run control.
-- `current_lesson` and `next_task` are both `null` when no lesson is active.
-  Set them for an explicitly requested learning session, not for setup maintenance.
-- `lessons` stores statuses and attempts. Use `applied` for a practical task.
-  Existing `guided`, `transfer`, `explanation`, and `delayed` kinds remain readable;
-  explanations and later reviews are optional evidence.
-- Each attempt uses `pass` or `retry`, and support `none`, `reference`, `hint`, or
-  `solution`. A fresh application can use `transfer`; a worked exercise can use
-  `guided`. Record assistance based on what happened, not the chosen label.
-- `reviews` stores only optional reviews agreed with the learner; it may stay empty.
-- `capstones` holds optional phase projects actually completed, with help recorded.
-  A project suggestion does not block the next phase. Historical GitHub capstones
-  remain readable but add no requirement to the Python course.
+Diagnostic placement changes the teaching/practice plan, not lesson order. Quiz,
+test, and review findings guide reteaching and extra practice. When practical work
+also establishes a lesson attempt, record that separately with the actual help.
+A conceptual answer alone does not become completed coding work.
 
-Use actual `YYYY-MM-DD` dates. Put uncertain or undated reports in `notes` rather
-than inventing dates. Keep public records free of private data and credentials.
+## Planning reviews and tests
 
-The tutor updates the record through authorized repository tools or the Codespace.
-The progress validator checks consistency and suggests Python tasks; it cannot
-judge the quality or truth of evidence, and it does not save progress. Its legacy
-`--track github` option remains an alias for the Python route.
+`reviews` holds planned topic revisits with a lesson ID, due date, and reason.
+Use them to plan spaced practice across topics and phases. Move/remove a due item
+after completing or deliberately rescheduling it; keep completed findings in
+`assessments`. Reviews are part of teaching and do not require separate permission
+on every occasion. Quizzes occur occasionally at varied points, not after every lesson.
 
-End each learning session with what worked, help used, any remaining issue, and
-an agreed next task. Maintenance requests get a correction report without a
-lesson assignment. Say whether the record was saved when relevant.
+The recommender stays idle during maintenance. During an active session it calls
+for initial placement when no placement record exists, follows lesson order, and
+calls for an end-of-phase test after the phase's required lessons. A test showing
+gaps calls for targeted teaching/practice and reassessment. Due reviews accompany
+the teaching plan. Optional project suggestions do not substitute for phase tests.
+The tutor selects quiz timing and questions from taught topics; this is not an
+automatically administered quiz or a fixed lesson-count schedule.
+
+## Other fields and compatibility
+
+`environment` records only observed Codespace facts. `lessons` holds actual attempts;
+`capstones` holds optional completed projects. `goals` and `notes` provide useful
+context without request-history narratives. Keep public records free of private data.
+Use actual dates and do not invent work to populate fields.
+
+The two template files contain empty, inactive records. Schema 1 accepts historical
+records without `assessments`; they remain readable. The validator checks consistency,
+not whether the evidence really happened, and never writes records. The legacy
+`--track github` option remains an alias for the same Python route.

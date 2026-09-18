@@ -249,3 +249,22 @@ does not create a learner task or learning attempt.
 
 Validation: repository integrity checks passed, and all 110 tests passed, including
 paired-null state validation and idle recommendations with historical evidence.
+
+## Classroom teaching protocol
+
+Lesson instructions require detailed explanation of all objectives before the
+learner authors a complete program. Syntax illustrations are separate from the
+assignment solution. Existing workspace files are preserved; practice begins in
+a new blank file or extends the learner's own project.
+
+Diagnostic placement records strengths and teaching needs without awarding lesson
+completion. Occasional quizzes, phase-end tests, and cumulative reviews provide
+feedback and targeted practice. Assessment records are separate from coding attempts;
+phase-test gaps route to further teaching/practice and reassessment. The inactive
+state stays idle, including when no placement assessment exists.
+
+Verification in the agent environment: repository integrity passed for 50 Python
+lessons, 8 repository cards, 298 internal links, and 20 executable examples. All
+117 tests passed, including placement without skipping, phase-test follow-up,
+assessment validation, and no assessment launch during maintenance. No learner
+attempt or assessment was performed or recorded by these checks.

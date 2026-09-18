@@ -25,12 +25,21 @@ def historical_provisional():
     return {"status": "provisional", "attempts": [attempt("transfer"), attempt("explanation")]}
 
 
+
+def assessment(kind="placement", phase=None, needs=None, support="none"):
+    topics = [lesson["id"] for lesson in CATALOG["lessons"] if phase is None or lesson["phase"] == phase]
+    return {"kind": kind, "performed_on": "2026-09-18", "phase": phase,
+            "topics": topics, "needs_practice": needs or [], "support": support,
+            "summary": "Synthetic assessment: sampled understanding and recorded topic findings."}
+
 class ProgressTests(unittest.TestCase):
     def setUp(self):
         self.state = json.loads((ROOT / "tutor/progress-template.json").read_text(encoding="utf-8"))
         # Most fixtures describe a lesson the learner has already chosen to start.
         self.state["current_lesson"] = "P1-01"
         self.state["next_task"] = "Continue the requested Python task."
+        self.state["assessments"] = [assessment()]
+        self.state["updated_on"] = "2026-09-18"
 
     def check(self):
         return validate_state(self.state, CATALOG, today=TODAY)
@@ -60,7 +69,7 @@ class ProgressTests(unittest.TestCase):
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual(result["kind"], "idle")
         self.assertNotIn("lesson_id", result)
-        self.assertNotIn("optional_reviews", result)
+        self.assertNotIn("scheduled_reviews", result)
 
     def test_idle_fields_must_both_be_null(self):
         for field in ("current_lesson", "next_task"):
@@ -111,13 +120,14 @@ class ProgressTests(unittest.TestCase):
         self.state["reviews"] = [{"lesson_id": "GH-04", "due_on": "2026-09-13", "reason": "Old review"}]
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual((result["kind"], result["lesson_id"]), ("lesson", "P1-01"))
-        self.assertNotIn("optional_reviews", result)
+        self.assertNotIn("scheduled_reviews", result)
 
     def test_python_completion_does_not_add_a_github_capstone(self):
         self.state["updated_on"] = "2026-09-18"
         for lesson in CATALOG["lessons"]:
             if lesson["core"]:
                 self.state["lessons"][lesson["id"]] = provisional()
+        self.state["assessments"] += [assessment("phase_test", phase) for phase in range(1, 6)]
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual(result["kind"], "maintenance")
         self.assertEqual([item["phase"] for item in result["suggested_capstones"]], [1, 2, 3, 4, 5])
@@ -128,7 +138,7 @@ class ProgressTests(unittest.TestCase):
 
     def test_applied_success_advances_without_prediction_explanation_or_delayed_review(self):
         for kind in ("applied", "guided", "transfer"):
-            for support in ("none", "reference", "hint", "solution"):
+            for support in ("none", "reference", "hint"):
                 self.add_record({"status": "provisional", "attempts": [attempt(kind, support=support)]})
                 with self.subTest(kind=kind, support=support):
                     self.check()
@@ -147,7 +157,7 @@ class ProgressTests(unittest.TestCase):
     def test_secure_requires_work_without_hint_or_solution_support(self):
         for support in ("hint", "solution"):
             self.add_record({"status": "secure", "attempts": [attempt(support=support)]})
-            with self.subTest(support=support), self.assertRaisesRegex(ProgressError, "none/reference"):
+            with self.subTest(support=support), self.assertRaisesRegex(ProgressError, "none/reference|learner-authored"):
                 self.check()
         for support in ("none", "reference"):
             self.add_record({"status": "secure", "attempts": [attempt(support=support)]})
@@ -219,14 +229,14 @@ class ProgressTests(unittest.TestCase):
         with self.assertRaisesRegex(ProgressError, "unknown fields"):
             self.check()
 
-    def test_due_review_is_optional_and_does_not_block_next_lesson(self):
+    def test_due_review_is_included_in_the_teaching_plan(self):
         self.add_record(provisional())
         self.state["reviews"] = [{"lesson_id": "P1-01", "due_on": "2026-09-18", "reason": "Requested practice"}]
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual((result["kind"], result["lesson_id"]), ("lesson", "P1-02"))
-        self.assertEqual(result["optional_reviews"][0]["lesson_id"], "P1-01")
+        self.assertEqual(result["scheduled_reviews"][0]["lesson_id"], "P1-01")
         self.state["reviews"][0]["due_on"] = "2026-09-19"
-        self.assertNotIn("optional_reviews", recommend(self.state, CATALOG, today=TODAY))
+        self.assertNotIn("scheduled_reviews", recommend(self.state, CATALOG, today=TODAY))
 
     def test_duplicate_review_is_rejected(self):
         review = {"lesson_id": "P1-01", "due_on": "2026-09-19", "reason": "Requested practice"}
@@ -239,6 +249,9 @@ class ProgressTests(unittest.TestCase):
         for lesson in CATALOG["lessons"]:
             if lesson["phase"] == 1:
                 self.state["lessons"][lesson["id"]] = provisional()
+        result = recommend(self.state, CATALOG, today=TODAY)
+        self.assertEqual(result["kind"], "phase_test")
+        self.state["assessments"].append(assessment("phase_test", 1))
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual(result["lesson_id"], "P2-01")
         self.assertEqual(result["suggested_capstones"][0]["phase"], 1)
@@ -258,4 +271,57 @@ class ProgressTests(unittest.TestCase):
             if lesson["phase"] in {1, 2, 3, 4} or lesson["id"] in {"P5-01", "P5-02", "P5-03"}:
                 self.state["lessons"][lesson["id"]] = provisional()
         self.state["lessons"]["P5-04"] = {"status": "review_needed", "attempts": [attempt(outcome="retry")]}
+        self.state["assessments"] += [assessment("phase_test", phase) for phase in range(1, 5)]
         self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P5-06")
+
+    def test_active_initial_session_requires_placement_without_lesson_credit(self):
+        self.state["assessments"] = []
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["kind"], "placement")
+        self.state["assessments"] = [assessment(needs=["P1-04"])]
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P1-01")
+        self.assertEqual(self.state["lessons"], {})
+
+    def test_idle_state_does_not_administer_placement(self):
+        self.state["assessments"] = []
+        self.state["current_lesson"] = self.state["next_task"] = None
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["kind"], "idle")
+
+    def test_quiz_is_evidence_not_lesson_credit(self):
+        self.state["assessments"].append(assessment("quiz", 1))
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P1-01")
+        self.assertEqual(self.state["lessons"], {})
+
+    def test_phase_test_gaps_require_followup_and_reassessment(self):
+        for lesson in CATALOG["lessons"]:
+            if lesson["phase"] == 1:
+                self.state["lessons"][lesson["id"]] = provisional()
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["kind"], "phase_test")
+        self.state["assessments"].append(assessment("phase_test", 1, ["P1-08"]))
+        result = recommend(self.state, CATALOG, today=TODAY)
+        self.assertEqual((result["kind"], result["needs_practice"]), ("phase_review", ["P1-08"]))
+        self.state["assessments"].append(assessment("phase_test", 1))
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P2-01")
+
+    def test_supplied_solution_is_not_learner_authored_completion(self):
+        self.add_record(provisional(support="solution"))
+        with self.assertRaisesRegex(ProgressError, "learner-authored"):
+            self.check()
+        self.state["lessons"]["P1-01"]["status"] = "learning"
+        self.check()
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P1-01")
+
+    def test_assessment_validation_rejects_unobserved_or_unrelated_findings(self):
+        for field, value in [("performed_on", "2027-01-01"), ("phase", True),
+                             ("topics", ["P9-01"]), ("needs_practice", ["P2-01"]),
+                             ("summary", ""), ("support", "unknown")]:
+            state = deepcopy(self.state)
+            item = assessment("phase_test", 1)
+            item[field] = value
+            state["assessments"].append(item)
+            with self.subTest(field=field), self.assertRaises(ProgressError):
+                validate_state(state, CATALOG, today=TODAY)
+
+    def test_legacy_record_without_assessment_field_remains_readable(self):
+        del self.state["assessments"]
+        self.check()
+        self.assertEqual(recommend(self.state, CATALOG, today=TODAY)["lesson_id"], "P1-01")

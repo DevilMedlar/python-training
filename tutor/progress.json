@@ -19,8 +19,9 @@
   "next_task": null,
   "notes": [
     "Workspace: https://cuddly-trout-q767pqw4v79rfpjr.github.dev/",
-    "No learning session is active. Begin or resume lessons only when the learner explicitly asks.",
-    "Use direct Python execution and live input() in the Codespace. Keep workspace controls brief.",
-    "Preserve existing learner files. Setup maintenance does not count as a learning attempt."
-  ]
+    "No learning session is active. Begin or resume teaching and assessments only when learning is explicitly requested.",
+    "Explain the full lesson before the learner writes the entire program. Preserve learner files; do not complete assignments for them.",
+    "Placement identifies teaching needs without skipping lessons. Use occasional quizzes, phase-end tests, and cumulative reviews to guide practice."
+  ],
+  "assessments": []
 }

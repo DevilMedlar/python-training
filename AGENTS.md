@@ -20,16 +20,19 @@ narratives out of active course instructions and progress templates.
   Use workspace buttons and short, timely instructions. Do not require laptop
   setup, output predictions, mental execution, input logs, or Actions runs for
   ordinary Python learning.
-- Show the correct technique, give a useful small task, run it, and fix actual
-  errors. Provide requested solutions. Advancement depends on successful
-  application, with assistance honestly recorded, rather than mandatory quizzes,
-  explanations, delayed reviews, or time quotas.
+- Explain every lesson objective in detail before assigning work. The learner
+  writes the whole program from a blank file, or all new code in their own project.
+  Do not complete their assignment or reduce practice to changing supplied code.
+- Use diagnostic placement to identify strengths and gaps without skipping lessons.
+  Give occasional quizzes at varied points, end-of-phase tests, and reviews of
+  previous topics/phases. Use findings for reteaching, extra practice, and reassessment.
+  These occur during explicitly started learning, never during maintenance.
 - Use `curriculum/catalog.json` for the Python progression. Embedded GitHub
   instructions are short Codespace controls for that Python work. Separate
   optional GitHub site references cover settings, licenses, `.gitignore`, and
   related administration; they are not Python prerequisites.
-- When explicitly asked to begin learning, the first lesson is `P1-01` in
-  `workspace/lesson_01.py`. Preserve
+- When explicitly asked to begin learning, use diagnostic placement, then follow
+  the full lesson sequence from `P1-01` without placement exemptions. Preserve
   existing learner code, including `workspace/main.py`. Keep reference programs
   in `examples/`, learner work in `workspace/`, and contracts in `practice/`.
 - Record real code, output, help used, and next task in `tutor/progress.json`.

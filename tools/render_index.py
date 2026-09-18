@@ -12,7 +12,7 @@ def render(catalog):
              "Generated from [catalog.json](catalog.json). Follow one Python sequence.",
              f"Write and run Python in [your Codespace]({catalog['workspace_url']}).",
              "Use the small workspace control hint when you need it.", "",
-             "Start with [your first edit and run](../START_HERE.md).", ""]
+             "[Workspace guide](../START_HERE.md). Lessons begin only when learning is requested.", ""]
     for phase in catalog["phases"]:
         lines += [f"## Phase {phase['id']} {phase['title']}", "",
                   "| Lesson | Python focus | Workspace control | Route |",
