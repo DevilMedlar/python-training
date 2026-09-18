@@ -1,2 +1,2 @@
-print("I hope your teaching skills are good!")
-print(34 + 35)
+print("Ready to learn")
+print(2 + 3)
