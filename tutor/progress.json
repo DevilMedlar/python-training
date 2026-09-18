@@ -1,22 +1,44 @@
 {
   "schema_version": 1,
   "catalog_version": "1.2",
-  "updated_on": null,
+  "updated_on": "2026-09-17",
   "environment": {
-    "os": null,
-    "python": null,
+    "os": "GitHub Actions hosted runner: Ubuntu 24.04.5 LTS",
+    "python": "3.14.7",
     "command": "GitHub Actions: Run Python lesson",
-    "execution_available": null
+    "execution_available": true
   },
   "goals": [
     "Learn Python and GitHub together through github.com and github.dev."
   ],
   "current_lesson": "P1-01",
-  "lessons": {},
-  "reviews": [],
+  "lessons": {
+    "P1-01": {
+      "status": "learning",
+      "attempts": [
+        {
+          "kind": "guided",
+          "performed_on": "2026-09-17",
+          "outcome": "pass",
+          "support": "hint",
+          "summary": "Guided checkpoint: after explanation of quoted text versus arithmetic, the learner correctly predicted the outputs of print(\"8 + 4\") and print(8 + 4), then authored a two-line program printing a chosen sentence and 34 + 35 and predicted 69. The tutor observed the matching code in the Codespace and copied it to GitHub's web edit draft; the learner reported completing the guided commit. Commit 5808a822ae3e35785d302987baf4a9c20c3c5679 records the exact program: https://github.com/DevilMedlar/python-training/commit/5808a822ae3e35785d302987baf4a9c20c3c5679 . Tutor inspected successful Actions run https://github.com/DevilMedlar/python-training/actions/runs/35299338888 and its job log: both predicted lines printed, exit code 0, no learner tests supplied. This records guided code/prediction and commit evidence only; the learner has not yet demonstrated reading the run or explaining source, commit, and output."
+        }
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "lesson_id": "P1-01",
+      "due_on": "2026-09-19",
+      "reason": "Brief delayed recall of quoted text versus addition and the roles of source code, commit, and program output. No delayed review has yet occurred."
+    }
+  ],
   "capstones": {},
-  "next_task": "Edit workspace/main.py in github.dev, commit it, and inspect its GitHub Actions output.",
+  "next_task": "Open Actions run 35299338888, compare the Python lesson result with the prediction, and explain the difference between saved source and displayed output. Continue editing in the existing Codespace; P1-01 transfer/error-repair practice remains to be attempted.",
   "notes": [
-    "Execution uses GitHub-hosted Actions. No learner laptop setup. No learning attempts have been recorded."
+    "On 2026-09-17 the learner explicitly chose the existing Codespace for editing, superseding the earlier instruction excluding Codespaces. Use its browser editor for subsequent practice; this lesson's execution remains GitHub Actions.",
+    "Tutor supplied conceptual feedback and browser steps and transferred the learner's own code into a GitHub edit draft. Do not count these assisted actions as independent mastery.",
+    "Remaining evidence: learner inspection of the matching Actions output, explanation of source versus commit versus output, a fresh transfer/error-repair task, and a later independent review.",
+    "Learning dates use America/New_York. The code commit at 2026-09-18T02:26:35Z occurred on 2026-09-17 locally."
   ]
 }
