@@ -222,5 +222,5 @@ progress/
 research-result.json
 benchmark-result.json
 
-# Outputs on a disposable GitHub Actions lesson runner
+# Generated outputs in the Codespace
 workspace/results/

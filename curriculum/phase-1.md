@@ -1,70 +1,70 @@
 # Phase 1 Novice
 
-Learn to express, trace, test, and explain a small computation. Start without
-programming experience. Work through one lesson at a time; a lesson may take
-several sessions. The tutor follows [the teaching protocol](../tutor/INSTRUCTIONS.md).
-Practice A is guided work; Practice B is a separate transfer check. A tutor should
-not reveal a transfer solution before the learner attempts it, unless asked.
+Learn to write and run useful Python, starting with no programming experience.
+Work through one lesson at a time. The tutor explains each new tool, shows working
+code, and helps you apply it. Practice A is guided; Practice B gives you another
+small program to make. Ask for a complete example whenever it helps.
+There are no output-prediction drills, hand-tracing gates, or fixed hour quotas.
 
 
-Work in github.dev and commit your Python changes; inspect results on github.com
-through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
-includes a GitHub action on the same Python work. Any advanced execution commands
-belong in a hosted workflow step; inputs and files follow the browser guide.
+Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open a Python file, save, run it in the workspace Terminal, and use the result to
+make the next change. Type answers to `input()` directly in that Terminal.
+The tutor shows the technique and a working example before asking you to apply it.
+Each lesson includes one short workspace control; repository administration is
+optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P1-01 Run and inspect a program
 
-**GitHub in this lesson:** Edit workspace/main.py in github.dev, Commit & Push, and open the matching Run Python lesson result. References: [GH-01](github.md#gh-01-read-your-python-repository), [GH-03](github.md#gh-03-use-githubdev-and-hosted-python-execution), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain the printed result and identify the source file, commit, and Actions output.
+**Workspace shortcut:** Open workspace/lesson_01.py in Explorer, save with Ctrl+S, then use Run Python File in Terminal (the triangle or editor right-click menu when available). The terminal fallback is in START_HERE.md.
 
 **Prerequisites:** none.
 
-**Outcome:** Edit and commit a Python file in github.dev, inspect its GitHub Actions output, and distinguish source from execution.
+**Outcome:** Write, save, and run a Python file in your Codespaces workspace.
 
-A program is a set of instructions expressed as source text. github.dev changes
-that text. A commit saves a version to GitHub. GitHub Actions starts a Python
-interpreter on a hosted machine and displays the program's output on github.com.
-Follow [the first edit and run](../START_HERE.md). These are different jobs.
+A program is a file containing instructions for Python. Open
+`workspace/lesson_01.py` in [your workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Type or change the code, save with **Ctrl+S**, and use **Run Python File in Terminal**
+from the triangle button or editor right-click menu when the Python extension is
+available. If that control is missing, open **Terminal → New Terminal** and run
+`python workspace/lesson_01.py` from the repository folder. All of this happens in
+the browser workspace. [START_HERE.md](../START_HERE.md) shows the first run.
 
-Commit and run after each small change. A script uses an operation such as `print`
-to display a result. Indentation groups statements; it is meaningful. The workflow
-is already prepared, so you can focus on Python before learning its configuration.
+`print(...)` displays text in the Terminal. Put the text between quotes inside
+the parentheses. Python runs one line and then the next. Start with this program:
 
 ```python
-print("Ready to learn")
-print(2 + 3)
+print("Hello, Python!")
+print("I am learning in my workspace.")
 ```
 
 ```output
-Ready to learn
-5
+Hello, Python!
+I am learning in my workspace.
 ```
 
-**Practice A:** Save and run a two-line program displaying a chosen project name
-and the result of adding two whole numbers. Show the commit and Actions output.
+**Practice A:** Change only the sentence inside the second pair of quotes to
+something you want to say. Save with **Ctrl+S**, run the file, and see your sentence
+in the Terminal.
 
-**Practice B:** Make a different three-line program. Deliberately remove a quote,
-observe the error, restore it, and explain which file you actually ran.
+**Practice B:** Optional variation: add a third `print(...)` with another sentence,
+save, and run again.
 
-**Hints:** Check workspace/main.py, confirm Commit & Push, and match the Actions
-run to that commit and branch.
+**Hints:** Save `workspace/lesson_01.py` before running. If you see an old result,
+check the file name in the Terminal command and run the current file again.
 
-**Evidence:** A successful run and an explanation of the difference between
-Python source, a commit, and program output. Clicking the buttons alone does not
-demonstrate that you understand the Python expression.
+**Evidence:** Your saved file runs and displays your changed sentence. That is
+enough to finish this first lesson.
 
 **Sources:** [PY-INTRO](../audit/SOURCES.md#py-intro).
 
 ## P1-02 Values names and arithmetic
 
-**GitHub in this lesson:** Change the arithmetic in your Python file, inspect the old and new lines in Source Control, and commit the change. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
-
-**GitHub evidence:** Show the arithmetic prediction, the diff, and the result for that commit.
+**Workspace shortcut:** Use Ctrl+S to save, then run the current Python file again to see the calculation.
 
 **Prerequisites:** P1-01.
 
-**Outcome:** Trace assignments and use integers, floats, strings, booleans, and
+**Outcome:** Use assignments, integers, floats, strings, booleans, and
 `None` for appropriate purposes.
 
 A name refers to an object. Assignment evaluates the right side and binds the
@@ -83,34 +83,30 @@ results of approximate calculations.
 minutes = 135
 hours = minutes // 60
 remaining = minutes % 60
-minutes = 10
-print(hours, remaining, minutes)
-print(-7 // 3)
+print(hours, "hours", remaining, "minutes")
 ```
 
 ```output
-2 15 10
--3
+2 hours 15 minutes
 ```
 
 **Practice A:** Convert 185 whole minutes into hours and leftover minutes.
 
-**Practice B:** For an initial integer `x`, bind `y = x + 4`, then rebind `x`.
-Predict both values. Also compare `/`, `//`, and `%` on a negative integer.
+**Practice B:** Make a seconds-to-minutes converter with `//` and `%`. Run it
+with 59, 60, and 61 seconds and check that it displays both parts correctly.
+Then print `/`, `//`, and `%` results for a negative integer to inspect the rules.
 
-**Hints:** Evaluate each right side using values at that moment. For division,
-locate the quotient on a number line before choosing its floor.
+**Hints:** Use `//` for complete groups and `%` for what remains. If an input
+changes, run the calculation again to update the stored result.
 
-**Evidence:** Correct traces, a boundary at 60 minutes, and an explanation of
-why rebinding `minutes` did not recalculate `hours`.
+**Evidence:** Working duration converters, including a boundary at 60, with
+clear variable names and the correct arithmetic operations.
 
 **Sources:** [PY-INTRO](../audit/SOURCES.md#py-intro), [PY-FLOAT](../audit/SOURCES.md#py-float).
 
 ## P1-03 Strings and text transformations
 
-**GitHub in this lesson:** Commit one string-cleaning change with a message explaining its behavior, and inspect its Actions output. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
-
-**GitHub evidence:** Connect the changed expression with the output and the commit message.
+**Workspace shortcut:** Use Ctrl+F to find a string in the open file; save and run after changing it.
 
 **Prerequisites:** P1-02.
 
@@ -144,9 +140,9 @@ Length: 12
 **Practice A:** Normalize a topic by trimming outside whitespace and lowercasing
 it. Keep internal spaces unchanged and specify what empty input produces.
 
-**Practice B:** Predict `strip`, `split`, and `len` results for a two-word title,
-the same title with repeated spaces, and whitespace-only text. Rebuild a normalized
-title with `" ".join(...)`. Explain which original whitespace is lost.
+**Practice B:** Build a title cleaner using `strip`, `split`, and `" ".join(...)`.
+Run it on a two-word title, repeated spaces, and whitespace-only text. Print the
+cleaned title and its `len` so Python shows you the result.
 
 **Hints:** Separate cleaning from splitting. Inspect the pieces returned by
 `split` before joining them. This task does not require a loop or condition.
@@ -158,9 +154,7 @@ one empty-input case. A tutor can use two fixed parts before loops are available
 
 ## P1-04 Input conversion and explicit contracts
 
-**GitHub in this lesson:** Commit the program and one answer per prompt in workspace/input.txt, then inspect the same run. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain which input line was converted and show the observed conversion result or error.
+**Workspace shortcut:** Run the file, click its Terminal panel, type each answer at its prompt, and press Enter.
 
 **Prerequisites:** P1-03.
 
@@ -188,16 +182,19 @@ print(minutes + 5)
 30
 ```
 
-**Practice A:** In workspace/main.py, ask for a name and a whole number using
-`input()`, then display the number plus one. Put the two answers in
-workspace/input.txt, commit both files, and inspect the run. Explain why adding
-to the raw text fails. Actions supplies recorded input; you cannot type in its log.
+**Practice A:** In a Python file under `workspace/`, ask for a name and a whole
+number using `input()`, then display the number plus one. Run it, click the
+Terminal, and type an answer at each prompt followed by Enter. Convert the numeric
+answer with `int(...)` before adding.
 
-**Practice B:** Classify `"0"`, `"-3"`, `"2.5"`, `" 7 "`, and `"hello"`:
-which can `int` convert, and which would satisfy a positive-duration rule?
+**Practice B:** Make a minutes-to-seconds converter that asks for minutes using
+`input()` and prints the result. Rerun it with `"0"`, `"-3"`, `"2.5"`, `" 7 "`,
+and `"hello"`; inspect the conversion results or errors. The next lessons teach
+how to reject unwanted values and retry.
 
-**Hints:** First write each value's current type. Then separate “can convert”
-from “allowed after conversion.” Do not add a retry loop before learning loops.
+**Hints:** Use `raw = input("Minutes: ")`, then `minutes = int(raw)` on the next
+line. Keep prompts and answers in the running Terminal. If conversion fails,
+read the exception and rerun with a whole number.
 
 **Evidence:** A correct distinction between parsing and domain validation;
 the learner can interpret the observed exception without needing to catch it yet.
@@ -206,9 +203,7 @@ the learner can interpret the observed exception without needing to catch it yet
 
 ## P1-05 Booleans decisions and boundaries
 
-**GitHub in this lesson:** Change sample inputs to exercise the decision boundaries and commit the cases with your Python code. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Link the tested boundary cases to the committed inputs and output.
+**Workspace shortcut:** Use Ctrl+S and Run Python File in Terminal after changing a boundary input.
 
 **Prerequisites:** P1-04.
 
@@ -253,13 +248,11 @@ assignment, and why `if value` is not the same as `if value is not None`.
 
 ## P1-06 Loops accumulation and termination
 
-**GitHub in this lesson:** Run a finite loop in Actions, inspect its output, and locate Cancel workflow before trying termination repairs. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain the stopping condition and distinguish a finished run from a cancelled or timed-out run.
+**Workspace shortcut:** Click the running Terminal and press Ctrl+C to stop a loop; save the repair and run again.
 
 **Prerequisites:** P1-05.
 
-**Outcome:** Trace and write finite repetition, including an empty input.
+**Outcome:** Write and run finite repetition, including an empty input.
 
 A `for` loop consumes an iterable. `range(start, stop, step)` describes integer
 steps and excludes `stop`; a negative step reverses the direction when endpoints
@@ -269,7 +262,7 @@ or keyboard interrupt before experimenting with open-ended loops.
 
 An accumulator carries information between iterations. Initialize it before the
 loop. `break` exits the innermost loop; `continue` starts its next iteration.
-Before executing, trace an iteration, the current item, and the accumulated value.
+Run the loop to see its result; add a temporary `print` when you need to inspect a value.
 
 ```python
 total = 0
@@ -285,24 +278,23 @@ print(list(range(5, 0, -2)))
 ```
 
 **Practice A:** Count the positive values in `[-2, 0, 5, 7]`, using an explicit
-loop. Predict how the count changes at each iteration.
+loop. Run it and compare the final count with the two positive entries.
 
 **Practice B:** Sum integers from 1 through a supplied nonnegative integer `n`.
 Test `n = 0`, `1`, and `5`. Then explain a loop that incorrectly resets its total.
 
-**Hints:** Ask what must remain true after each processed item. Trace an empty
-input before adding special branches that may be unnecessary.
+**Hints:** Initialize a running total before the loop and update it inside the
+loop. Run an empty list as a second case. Click the Terminal and press **Ctrl+C**
+if a loop does not stop.
 
-**Evidence:** A correct trace and a terminating program. Distinguish printing
-inside the loop from printing the final result outside it.
+**Evidence:** A working counter and sum, correct empty input, and a program that
+stops. Print the final total after the loop when you want one result.
 
 **Sources:** [PY-FUNCTIONS](../audit/SOURCES.md#py-functions).
 
 ## P1-07 Collections and choosing a representation
 
-**GitHub in this lesson:** Commit a collection change and inspect which list or dictionary entries changed in the diff. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
-
-**GitHub evidence:** Explain both the representation choice and what the commit actually records.
+**Workspace shortcut:** Use Explorer → New File to keep this collections exercise in its own .py file.
 
 **Prerequisites:** P1-06.
 
@@ -348,9 +340,7 @@ count with a default of zero; for order, maintain an explicit output sequence.
 
 ## P1-08 Functions parameters and return values
 
-**GitHub in this lesson:** Create a function-change branch in the browser, refactor your calculation, commit it, and open a PR. References: [GH-02](github.md#gh-02-complete-a-browser-pull-request).
-
-**GitHub evidence:** Show the function result and identify the PR base, head, and Python diff before merging.
+**Workspace shortcut:** Use Ctrl+P to reopen your function file quickly, then run its example calls.
 
 **Prerequisites:** P1-07.
 
@@ -397,9 +387,7 @@ not be confused with a legitimate zero. Test the same function with new inputs.
 
 ## P1-09 References mutation and scope
 
-**GitHub in this lesson:** On your practice branch, inspect a mutation-related change and review exactly which lines you stage. References: [GH-04](github.md#gh-04-review-and-commit-python-snapshots), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Predict the object behavior and connect the staged diff to the resulting commit.
+**Workspace shortcut:** Use the Split Editor button to compare two small examples side by side.
 
 **Prerequisites:** P1-08.
 
@@ -430,8 +418,9 @@ print(len(copy))
 2
 ```
 
-**Practice A:** Compare aliasing, a shallow copy, and appending to the outer copy.
-Draw which lists are shared before you run the program.
+**Practice A:** Run the shallow-copy example, then use two separate outer lists
+and compare the results. Print both lists after each change. Repair a version
+that accidentally shares a list between two records.
 
 **Practice B:** Write `add_topic(topic, topics=None)` that makes a fresh list when
 omitted and appends to a supplied list when provided. Explain that mutation policy.
@@ -439,22 +428,20 @@ omitted and appends to a supplied list when provided. Explain that mutation poli
 **Hints:** Count objects separately from names. For the default, ask when the
 list is created and which future calls can still reach it.
 
-**Evidence:** Predict two successive calls and distinguish equality from identity.
+**Evidence:** Two actual calls keep separate default lists, while a supplied list follows the documented mutation policy.
 
 **Sources:** [PY-CLASSES](../audit/SOURCES.md#py-classes), [PY-MODEL](../audit/SOURCES.md#py-model).
 
 ## P1-10 Errors debugging and tests
 
-**GitHub in this lesson:** Use the failing Actions traceback to fix a Python bug, add a regression test in workspace/test_*.py, and inspect a new run. References: [GH-08](github.md#gh-08-recover-a-python-change-in-the-browser), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Link the failing and repaired commits; explain the test that detects the bug.
+**Workspace shortcut:** Ctrl+click a file-and-line link in a Terminal traceback to open the failing line.
 
 **Prerequisites:** P1-09.
 
 **Outcome:** Reproduce a failure, read a traceback, repair its cause, and test the repair.
 
 A syntax error prevents valid parsing; an exception occurs during execution.
-Read the exception type and message, then trace the relevant calls. Reduce the
+Read the exception type and message, then open the linked failing line. Reduce the
 input until the failure is understandable. State expected and observed behavior,
 change one suspected cause, and rerun a case that failed before the fix.
 
@@ -485,7 +472,8 @@ single-value, and empty inputs. Introduce and then repair an off-by-one bug.
 
 **Practice B:** Write an interactive positive-integer reader with retries for
 invalid text and nonpositive values. Explain why unrelated programming errors
-should remain visible. Supply invalid lines and then a valid line in workspace/input.txt; handle end of input explicitly if your contract requires it.
+should remain visible. Type invalid answers and then a valid answer directly into
+the Terminal prompts; confirm that the program keeps asking until it accepts one.
 
 **Hints:** First reproduce a failure without the menu. Read the final exception
 line before scanning every line of the program.
@@ -496,9 +484,7 @@ line before scanning every line of the program.
 
 ## P1-11 Modules environments and standard tools
 
-**GitHub in this lesson:** Commit a helper and its import together; use the hosted environment exercise in the browser workflow guide. References: [GH-03](github.md#gh-03-use-githubdev-and-hosted-python-execution), [GH-04](github.md#gh-04-review-and-commit-python-snapshots).
-
-**GitHub evidence:** Show the import result and identify the interpreter reported by the workflow.
+**Workspace shortcut:** Open the Command Palette (Ctrl+Shift+P) and choose Python: Select Interpreter when the Python extension is available.
 
 **Prerequisites:** P1-10.
 
@@ -533,12 +519,15 @@ True
 **Practice A:** Move a calculation into a helper module, import it, and verify that
 importing does not ask for input or print a menu.
 
-**Practice B:** Add the [hosted environment exercise](../practice/BROWSER_WORKFLOW.md#environment-exercise-for-p1-11)
-to your branch's workflow using github.dev. Inspect its interpreter and pip versions
-in Actions. Explain that this environment exists on the GitHub runner.
+**Practice B:** In the workspace Terminal, run `python --version` and
+`python -m pip --version` to inspect the interpreter and its package installer.
+Use the [environment exercise](../practice/BROWSER_WORKFLOW.md#environment-exercise-for-p1-11)
+when you need a separate project environment. These commands run in Codespaces.
 
-**Hints:** Keep both modules under workspace and import helpers through workspace.helpers. When an import
-fails, check the interpreter and module location before changing application code.
+**Hints:** For a script launched as `python workspace/lesson_11.py`, keep
+`helpers.py` beside it and use `import helpers`. For a module launched from the
+repository root as `python -m workspace.lesson_11`, use
+`from workspace import helpers`. Match the import to how you run the file.
 
 **Evidence:** An importable helper and an explanation of the main guard and
 environment boundary. Package installation is not needed to complete this phase.
@@ -547,9 +536,7 @@ environment boundary. Package installation is not needed to complete this phase.
 
 ## P1-12 Files serialization and the first project
 
-**GitHub in this lesson:** Deliver the study tracker on a branch with committed sample data, a README, and an inspected PR. References: [GH-02](github.md#gh-02-complete-a-browser-pull-request), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
-
-**GitHub evidence:** Show save-and-reopen behavior, the source/run links, and a PR explanation of the independent feature.
+**Workspace shortcut:** Use Explorer to open the JSON file your program saved, then rerun the program in the same workspace.
 
 **Prerequisites:** P1-11.
 
@@ -593,7 +580,8 @@ calculation, validation, load, and save boundaries.
 **Hints:** Test the calculation separately. Then classify each load failure and
 decide whether continuing could overwrite valuable information.
 
-**Evidence:** The capstone acceptance cases, an independent feature change, and
-a later recall task. See [assessment](../practice/ASSESSMENT.md) before advancing.
+**Evidence:** A tracker you can run, use, save, close, and reopen, with the
+acceptance cases and one useful feature change. See [assessment](../practice/ASSESSMENT.md)
+for a short practical check.
 
 **Sources:** [PY-FILES](../audit/SOURCES.md#py-files), [PY-JSON](../audit/SOURCES.md#py-json).

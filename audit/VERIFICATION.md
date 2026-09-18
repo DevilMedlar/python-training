@@ -1,6 +1,6 @@
 # Verification record
 
-The browser integration correction is recorded in the final section. Earlier
+The current Codespaces restart is recorded in the final section. Earlier
 sections are historical observations, not current setup instructions.
 
 Review date: 2026-09-14. This file records the scope of the four review passes.
@@ -44,14 +44,12 @@ instructions, version mismatch, research overclaim, and a tailored creator route
 This is a manual protocol/design review, not a controlled learning study or a
 claim that every ChatGPT model will follow the prompt perfectly.
 
-## Reproduce the current checks on GitHub
+## Reproduce the current maintenance checks
 
-Open **Actions → Verify Python tutor → Run workflow** for course integrity,
-reference tests, the hosted Git demonstration, and the integrated progress route.
-Open **Actions → Run Python lesson** for the browser workspace and learner tests.
-The workflow YAML contains the commands GitHub's machines execute; learners do
-not need a terminal or local installation. The historical tables below describe
-earlier versions, including the superseded separate GitHub route.
+In the Codespace terminal run `python tools/check_repo.py` and
+`python tools/run_tests.py`. The **Verify Python tutor** workflow also checks
+course integrity and examples on GitHub. Learner programs run directly in the
+Codespace. Earlier tables below record superseded implementations.
 
 ## Original Python rebuild local results
 
@@ -199,3 +197,30 @@ jobs exposed a new test expectation that assumed LF for printed output. The
 runner correctly preserved Windows CRLF. The fixture now expects the platform's
 line separator; this corrects the test without changing program output. The PR
 checks for the subsequent commit establish the final hosted outcome.
+
+## Codespaces course restart on 2026-09-18
+
+The learner specified the existing Codespace at
+https://cuddly-trout-q767pqw4v79rfpjr.github.dev/. The previous Actions-based learner
+workflow did not match that requirement. This revision uses direct Python execution,
+live terminal input, and short workspace controls alongside applied Python tasks.
+Repository settings, licenses, ignore rules, and collaboration have eight separate
+non-Python reference lessons. Prediction and recall gates were removed.
+
+The active progress record was reset at P1-01. The immediately preceding record
+is archived byte-for-byte at `tutor/history/progress-before-restart-2026-09-18.json`.
+No new learner completion is inferred from these maintenance checks.
+
+Before publication, the agent workspace checks observed:
+
+| Check | Result |
+|---|---|
+| `python tools/check_repo.py` | Passed: 50 Python lessons, 8 repository lessons, 16 historical GH IDs, 48 core lessons, 124 source records, 35 Markdown files, 294 internal links, 21 executed examples, 29 parsed Python files |
+| `python tools/run_tests.py` | Passed: 107 tests, no skips, including the available scientific dependency tests |
+| Catalog/progress compatibility | Historical 1.0–1.2 records remain readable; 1.3 uses applied work and optional reviews/projects |
+| Preserved learner work | Existing workspace/main.py unchanged; fresh starter created as workspace/lesson_01.py |
+
+These checks verify course content and tools. The browser opened the named Codespace
+and observed a clean main branch, Linux, and Python 3.14.2 before synchronization.
+Actual post-publication workspace runs and the pull request's CI results establish
+their own execution evidence; the earlier observations do not cover this revision.

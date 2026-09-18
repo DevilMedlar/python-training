@@ -1,33 +1,24 @@
-# Improve the Python course
+# Improve this course
 
-Make course changes through github.dev and review them on github.com. Read
-[AGENTS.md](AGENTS.md), [tutor instructions](tutor/INSTRUCTIONS.md), and the
-[verification record](audit/VERIFICATION.md) before changing teaching behavior.
+Edit and test in [the Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Read [AGENTS.md](AGENTS.md) and [tutor instructions](tutor/INSTRUCTIONS.md) before
+changing teaching behavior. Preserve the learner's work and stable lesson IDs.
 
-1. Create a branch from current `main` using the branch selector on github.com
-   or github.dev. Give it a name describing one change.
-2. Edit the relevant Python code, tests, lesson, and catalog fields together.
-   Explain the behavior being fixed. Preserve stable lesson IDs and existing work.
-3. Inspect the diff in Source Control, stage the intended files, and Commit & Push.
-4. Open a pull request on github.com. Describe why the change is needed, what now
-   happens, and what observed checks support it.
-5. Inspect **Verify Python tutor** on that PR. Fix failed checks through github.dev.
-   A merge should use the tested head commit and respect repository controls.
+Python lessons teach a concrete Python skill through example, edit, run, and repair.
+Each has a short workspace control. Repository management has separate brief,
+non-Python lessons in [curriculum/github.md](curriculum/github.md).
 
-Keep GitHub instruction inside the corresponding Python lesson. Every Python
-lesson has a concrete GitHub task on its own code. `GH-` IDs identify browser
-reference cards, not a separately selected syllabus. The learner's tools are
-github.com and github.dev; all Python execution, builds, and checks use hosted
-Actions. Do not add a laptop setup, local clone, CLI curriculum, or Codespaces
-requirement.
+For a maintenance change:
 
-Catalog changes must regenerate `curriculum/INDEX.md`. For browser maintenance,
-use **Actions → Render lesson index** and copy the complete generated Markdown
-from its log into the index in github.dev, then commit. This workflow does not
-write to the repository. The normal verifier rejects a stale index.
+1. Create a branch using the branch selector. Edit the relevant code and documents.
+2. When catalog metadata changes, run `python tools/render_index.py` in the Codespace terminal.
+3. Run `python tools/check_repo.py` and `python tools/run_tests.py` in that terminal.
+4. Review and stage the intended files in Source Control, commit, and push.
+5. Open a pull request. Describe the problem, resulting behavior, and observed checks.
+   Inspect **Verify Python tutor** and merge the tested head while respecting repository controls.
 
-Runnable Markdown Python examples need an adjacent expected `output` block.
-Use `python-template` for incomplete or input-dependent snippets, and explain how
-the learner will run them. Test changed behavior and relevant failures. Preserve
-historical audit results as history; append new observations without claiming an
-unrun environment passed. Sources belong in `audit/sources.json` and `audit/SOURCES.md`.
+These are course-maintenance checks. A beginner starts by running one Python file.
+Runnable Markdown examples need an adjacent `output` block. Use `python-template`
+for incomplete or interactive snippets, with direct running instructions. Keep
+historical audit results clearly historical and append new observations honestly.
+Sources belong in `audit/sources.json` and `audit/SOURCES.md`.

@@ -1,4 +1,4 @@
-"""Validate an evidence-based progress record and suggest a conservative next task.
+"""Validate recorded practice and suggest the next Python task in Codespaces.
 
 This tool validates consistency. It cannot verify whether a claimed attempt
 actually happened or judge the learner's code. It never writes learner records.
@@ -15,6 +15,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 INDEPENDENT = {"none", "reference"}
 STATUSES = {"not_started", "learning", "provisional", "secure", "review_needed"}
+APPLIED_KINDS = {"applied", "guided", "transfer", "delayed"}
 
 
 class ProgressError(ValueError):
@@ -57,6 +58,8 @@ def validate_state(state, catalog, *, today=None):
             "unsupported schema_version")
     compatible = [catalog["catalog_version"], *catalog.get("compatible_progress_versions", [])]
     require(state["catalog_version"] in compatible, "catalog version mismatch")
+    historical = state["catalog_version"] in {"1.0", "1.1", "1.2"}
+    known_ids = set(lessons) | set(catalog.get("legacy_reference_ids", []))
     updated = iso_date(state["updated_on"], "updated_on", nullable=True)
     require(updated is None or updated <= today, "updated_on cannot be in the future")
     keys(state["environment"], {"os", "python", "command", "execution_available"}, "environment")
@@ -68,18 +71,18 @@ def validate_state(state, catalog, *, today=None):
             "execution_available must be boolean or null")
     text_list(state["goals"], "goals")
     text_list(state["notes"], "notes")
-    require(isinstance(state["current_lesson"], str) and state["current_lesson"] in lessons,
+    require(isinstance(state["current_lesson"], str) and state["current_lesson"] in known_ids,
             "unknown current lesson")
     require(isinstance(state["next_task"], str) and state["next_task"].strip(), "next_task is required")
     require(isinstance(state["lessons"], dict), "lessons must be an object")
     evidence_dates = []
     for lesson_id, record in state["lessons"].items():
-        require(lesson_id in lessons, f"unknown lesson: {lesson_id}")
+        require(lesson_id in known_ids, f"unknown lesson: {lesson_id}")
         keys(record, {"status", "attempts"}, lesson_id)
         require(isinstance(record["status"], str) and record["status"] in STATUSES,
                 f"{lesson_id}: invalid status")
         require(isinstance(record["attempts"], list), f"{lesson_id}: attempts must be a list")
-        passed = {kind: [] for kind in ("guided", "transfer", "explanation", "delayed")}
+        passed = {kind: [] for kind in APPLIED_KINDS | {"explanation"}}
         for attempt in record["attempts"]:
             keys(attempt, {"kind", "performed_on", "outcome", "support", "summary"}, "attempt")
             kind = attempt["kind"]
@@ -100,7 +103,17 @@ def validate_state(state, catalog, *, today=None):
             require(not record["attempts"], f"{lesson_id}: not_started contradicts recorded attempts")
         elif status in {"learning", "review_needed"}:
             require(bool(record["attempts"]), f"{lesson_id}: record an observed attempt or gap")
-        if status in {"provisional", "secure"}:
+        if status in {"provisional", "secure"} and not historical:
+            checks = [(index, attempt) for index, attempt in enumerate(record["attempts"])
+                      if attempt["kind"] in APPLIED_KINDS]
+            require(checks, f"{lesson_id}: successful applied work is required")
+            latest_check = max(checks, key=lambda pair: (pair[1]["performed_on"], pair[0]))[1]
+            require(latest_check["outcome"] == "pass",
+                    f"{lesson_id}: latest applied attempt requires repair")
+            if status == "secure":
+                require(latest_check["support"] in INDEPENDENT,
+                        f"{lesson_id}: secure requires applied work with none/reference support")
+        if status in {"provisional", "secure"} and historical:
             require(passed["transfer"] and passed["explanation"],
                     f"{lesson_id}: independent transfer and explanation evidence required")
             checks = [(index, attempt) for index, attempt in enumerate(record["attempts"])
@@ -108,7 +121,7 @@ def validate_state(state, catalog, *, today=None):
             latest_check = max(checks, key=lambda pair: (pair[1]["performed_on"], pair[0]))[1]
             require(latest_check["outcome"] == "pass" and latest_check["support"] in INDEPENDENT,
                     f"{lesson_id}: latest assessment requires repair or new independent evidence")
-        if status == "secure":
+        if status == "secure" and historical:
             require(any(later > earlier for later in passed["delayed"] for earlier in passed["transfer"]),
                     f"{lesson_id}: secure requires an independent review on a later date")
             # A later unsuccessful independent check must not be hidden by an old success.
@@ -121,7 +134,7 @@ def validate_state(state, catalog, *, today=None):
     seen_reviews = set()
     for review in state["reviews"]:
         keys(review, {"lesson_id", "due_on", "reason"}, "review")
-        require(isinstance(review["lesson_id"], str) and review["lesson_id"] in lessons,
+        require(isinstance(review["lesson_id"], str) and review["lesson_id"] in known_ids,
                 "review references an unknown lesson")
         require(review["lesson_id"] not in seen_reviews, "duplicate scheduled review")
         seen_reviews.add(review["lesson_id"])
@@ -140,8 +153,11 @@ def validate_state(state, catalog, *, today=None):
         completed = iso_date(record["completed_on"], "completed_on", nullable=True)
         require(completed is None or completed <= today, "capstone date cannot be in the future")
         if record["status"] == "complete":
-            require(completed is not None and record["evidence"] and record["support"] in INDEPENDENT,
-                    "completed capstone requires dated independent evidence")
+            require(completed is not None and record["evidence"],
+                    "completed capstone requires dated evidence")
+            if historical:
+                require(record["support"] in INDEPENDENT,
+                        "historical completed capstone requires independent evidence")
             evidence_dates.append(completed)
         else:
             require(completed is None, "unfinished capstone cannot have a completion date")
@@ -160,27 +176,29 @@ def recommend(state, catalog, *, today=None, track=None):
     statuses = {key: value["status"] for key, value in state["lessons"].items()}
     ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
 
-    def task(kind, ident, **extra):
-        lesson = by_id[ident]
-        reference = None
-        if lesson.get("kind") == "reference":
-            reference = ident
-            lesson = by_id[lesson["introduced_with"]]
-        result = {"kind": kind, "lesson_id": lesson["id"],
-                  "github_skills": list(lesson["github_skills"]),
-                  "github_task": lesson["github_task"],
-                  "github_evidence": lesson["github_evidence"], **extra}
-        if reference:
-            result["reference_id"] = reference
+    # Reviews are optional suggestions. Old GitHub review records remain readable
+    # but cannot introduce a second course or block this Python route.
+    reviews = [{"lesson_id": review["lesson_id"], "reason": review["reason"]}
+               for review in state["reviews"]
+               if review["lesson_id"] in by_id and iso_date(review["due_on"], "due_on") <= today]
+    capstones = []
+
+    def suggestions(result):
+        if reviews:
+            result["optional_reviews"] = reviews
+        if capstones:
+            result["suggested_capstones"] = list(capstones)
         return result
 
-    due = [review for review in state["reviews"]
-           if iso_date(review["due_on"], "due_on") <= today]
-    if due:
-        review = min(due, key=lambda item: (item["due_on"], item["lesson_id"]))
-        return task("review", review["lesson_id"], reason=review["reason"])
+    def task(kind, ident, **extra):
+        lesson = by_id[ident]
+        result = {"kind": kind, "lesson_id": lesson["id"],
+                  "workspace_url": catalog["workspace_url"],
+                  "workspace_shortcut": lesson["workspace_shortcut"], **extra}
+        return suggestions(result)
+
     for lesson in catalog["lessons"]:
-        if statuses.get(lesson["id"]) == "review_needed":
+        if lesson["core"] and statuses.get(lesson["id"]) == "review_needed":
             return task("repair", lesson["id"])
     for phase in catalog["phases"]:
         for lesson in catalog["lessons"]:
@@ -191,16 +209,16 @@ def recommend(state, catalog, *, today=None, track=None):
                 return task("prerequisite", missing[0], needed_for=lesson["id"])
             return task("lesson", lesson["id"])
         if state["capstones"].get(str(phase["id"]), {}).get("status") != "complete":
-            return {"kind": "capstone", "phase": phase["id"], "path": phase["capstone"],
-                    "github_task": "Review the same Python capstone through its branch, PR, and observed Actions results."}
-    return {"kind": "maintenance", "reason": "Continue delayed reviews and a chosen Python contribution on GitHub."}
+            capstones.append({"phase": phase["id"], "path": phase["capstone"]})
+    return suggestions({"kind": "maintenance", "workspace_url": catalog["workspace_url"],
+                        "reason": "Choose a Python project or an optional repository lesson."})
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("record", type=Path)
     parser.add_argument("--next", action="store_true", dest="show_next")
-    parser.add_argument("--track", help="Legacy github value is an alias for the integrated Python route")
+    parser.add_argument("--track", help="Deprecated: github remains an alias for the Python route")
     args = parser.parse_args(argv)
     try:
         state = json.loads(args.record.read_text(encoding="utf-8"))
@@ -208,6 +226,8 @@ def main(argv=None):
         validate_state(state, catalog)
         if args.track is not None:
             require(args.track == "github", "unknown track")
+            print("--track github is deprecated; using the Python route. Repository lessons are optional.",
+                  file=sys.stderr)
         print(json.dumps(recommend(state, catalog, track=args.track), indent=2)
               if args.show_next else "Progress record is consistent.")
     except (OSError, ValueError) as error:

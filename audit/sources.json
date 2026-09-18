@@ -1,5 +1,5 @@
 {
-  "review_date": "2026-09-14",
+  "review_date": "2026-09-18",
   "sources": [
     {
       "id": "PY-INTRO",
@@ -952,6 +952,46 @@
       "reviewed_on": "2026-09-14",
       "status": "consulted_primary_source",
       "scope": "GITHUB_STEP_SUMMARY provides Markdown content on the workflow summary page."
+    },
+    {
+      "id": "CODESPACES-WEB",
+      "title": "Developing in a codespace",
+      "url": "https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace",
+      "reviewed_on": "2026-09-18",
+      "status": "consulted_primary_source",
+      "scope": "Browser workspace with remote execution"
+    },
+    {
+      "id": "VSC-PYTHON-RUN",
+      "title": "Python in VS Code",
+      "url": "https://code.visualstudio.com/docs/python/python-tutorial",
+      "reviewed_on": "2026-09-18",
+      "status": "consulted_primary_source",
+      "scope": "Run Python File in Terminal and interpreter selection"
+    },
+    {
+      "id": "VSC-TASKS",
+      "title": "VS Code tasks",
+      "url": "https://code.visualstudio.com/docs/debugtest/tasks",
+      "reviewed_on": "2026-09-18",
+      "status": "consulted_primary_source",
+      "scope": "Process task with integrated terminal"
+    },
+    {
+      "id": "VSC-SOURCECONTROL",
+      "title": "VS Code source control",
+      "url": "https://code.visualstudio.com/docs/sourcecontrol/overview",
+      "reviewed_on": "2026-09-18",
+      "status": "consulted_primary_source",
+      "scope": "Review, stage, commit, push and pull controls"
+    },
+    {
+      "id": "GH-ACCESS",
+      "title": "Repository access management",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository",
+      "reviewed_on": "2026-09-18",
+      "status": "consulted_primary_source",
+      "scope": "Locate repository access controls"
     }
   ]
 }

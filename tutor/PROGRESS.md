@@ -1,61 +1,60 @@
-# One progress record
+# Progress without extra homework
 
-Use [tutor/progress.json](progress.json) on GitHub for the Python course and the
-GitHub skills practiced within it. The tutor can update it through authorized
-repository tools; you can edit and commit it in github.dev. Keep only learning
-evidence and code/run links suitable for this public repository.
+[progress.json](progress.json) records the Python work actually completed, help
+used, and the next useful task. The 2026-09-18 restart begins at `P1-01` with no
+active lesson completions, reviews, or capstones. The prior record is preserved
+unchanged in [history](history/README.md); its old requirements are inactive.
 
-The [empty template](progress-template.json) uses the same format. The old
-`github-progress-template.json` filename is retained as an identical compatibility
-copy, not a second route. The current catalog is `1.2`; `1.0` and `1.1` records
-remain readable. Retain old evidence and dates rather than inventing a migration.
+[progress-template.json](progress-template.json) and
+[github-progress-template.json](github-progress-template.json) are identical
+restart templates. The compatibility filename does not create a second track.
+The schema remains `1`; the current catalog is `1.3`. Earlier compatible records
+remain readable without inventing evidence.
 
-## Evidence and status
+## What statuses mean
 
-| Status | Evidence required |
+| Status | Meaning |
 |---|---|
-| not_started | No observed work or fabricated attempts |
-| learning | An observed attempt with the actual support recorded |
-| provisional | Independent transfer and explanation, with none or reference support |
-| secure | Provisional evidence plus an independent passing review on a later date |
-| review_needed | The observed gap and next repair |
+| not_started | No attempt has been recorded. |
+| learning | The learner is working on the task with help or still fixing it. |
+| provisional | The learner successfully applied the technique; guided help counts when recorded. |
+| secure | Successful application used no assistance beyond allowed references. |
+| review_needed | An observed gap needs a specific repair. |
 
-These are course rules, not standardized psychological measurements. A green
-Actions run proves only its checked behavior. It does not show that you understand
-the program or independently performed a GitHub action.
+Both `provisional` and `secure` permit forward progress. A copied solution is not
+independent work; record `solution` support. An explanation alone does not prove a
+working program. Predictions, recitations, delayed reviews, and hours studied are
+not advancement requirements. Optional reviews must not take over the next lesson.
 
-Each Python attempt's `summary` records what the code demonstrated and the linked
-GitHub action: for example, the function's empty case, the inspected diff, and the
-run URL. The tutor checks both parts before marking that combined task successful.
-Old `GH-` records are preserved as historical evidence; they cannot grant Python
-mastery. Their due reviews are attached to the corresponding Python lesson.
+## What to record
 
-## Record fields
+Use one attempt for one observed application: its date, outcome, help used, and
+a short description of what the program did. Include a file or commit link when
+available. Describe terminal output accurately; distinguish tutor-observed work
+from the learner's report. Repository checks do not count as learner attempts.
+Python work does not require a GitHub administration action to count as successful.
 
-`environment` describes the observed GitHub runner, not your laptop. Leave its
-Python patch version unknown until a run reports it. `current_lesson` identifies
-the Python task. `lessons` holds statuses and attempts; each attempt has `kind`,
-`performed_on`, `outcome`, `support`, and `summary`. Kinds are `guided`, `transfer`,
-`explanation`, and `delayed`; outcomes are `pass` or `retry`; support is `none`,
-`reference`, `hint`, or `solution`.
+- `environment` describes the Codespace. Keep OS, Python version, and execution
+  availability `null` until observed. `command` names the intended Run control.
+- `current_lesson` and `next_task` say where to continue.
+- `lessons` stores statuses and attempts. Use `applied` for a practical task.
+  Existing `guided`, `transfer`, `explanation`, and `delayed` kinds remain readable;
+  explanations and later reviews are optional evidence.
+- Each attempt uses `pass` or `retry`, and support `none`, `reference`, `hint`, or
+  `solution`. A fresh application can use `transfer`; a worked exercise can use
+  `guided`. Record assistance based on what happened, not the chosen label.
+- `reviews` stores only optional reviews agreed with the learner; it may stay empty.
+- `capstones` holds optional phase projects actually completed, with help recorded.
+  A project suggestion does not block the next phase. Historical GitHub capstones
+  remain readable but add no requirement to the Python course.
 
-Use actual `YYYY-MM-DD` dates. Put undated or unconfirmed history in `notes`.
-`reviews` stores a lesson, due date, and reason. `capstones` uses phase keys `1`
-through `5`; each capstone includes the Python deliverable and its GitHub review
-evidence. A historical `github` capstone record remains readable but creates no
-extra completion requirement. `next_task` says exactly where to continue.
+Use actual `YYYY-MM-DD` dates. Put uncertain or undated reports in `notes` rather
+than inventing dates. Keep public records free of private data and credentials.
 
-## Browser validation and routing
+The tutor updates the record through authorized repository tools or the Codespace.
+The progress validator checks consistency and suggests Python tasks; it cannot
+judge the quality or truth of evidence, and it does not save progress. Its legacy
+`--track github` option remains an alias for the Python route.
 
-After committing the record, open **Actions → Verify Python tutor → Run workflow**
-on the appropriate branch. The progress step validates it and prints the next
-Python task with its GitHub skills. Recommendations prioritize due reviews,
-repairs, core lessons, and each phase's capstone. Optional specialties stay optional.
-The tool cannot judge evidence quality or save progress automatically.
-
-For older integrations, the `--track github` parameter is accepted only as a
-compatibility alias for this same integrated route. It never starts a GH sequence.
-
-At session end, summarize the demonstrated skill, help used, remaining gap, next
-task, due review, and needed files. State whether the record was actually committed
-to GitHub or whether the supplied text still needs to be saved there.
+End each session with what worked, help used, any remaining issue, and one next
+task. Say whether the record was saved. Do not turn record keeping into homework.

@@ -1,8 +1,9 @@
 # Fifty beginner drills
 
-Adapted from the supplied Phase 1 guide. Use these for extra practice and delayed
-review after the listed prerequisite. The original numbering is retained; the
-order is not a second syllabus. Tasks involving retry loops wait until exception
+Adapted from the supplied Phase 1 guide. Pick a drill when you want extra practice
+after the listed prerequisite. These are optional choices, not fifty additional
+gates. Write and run them in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+The original numbering is retained; the order is not a second syllabus. Tasks involving retry loops wait until exception
 handling, and initials wait until iteration has been taught.
 
 State input rules, attempt the task, check a normal and boundary case, and explain
@@ -14,7 +15,7 @@ for display or interaction. Use disposable data for file exercises.
 |---|---|---|---|
 | D01 | P1-01 | Print a two-line introduction to your practice program | Exactly two output lines |
 | D02 | P1-03 | Store a topic and a minutes value; print a labeled sentence | `loops`, `25` → `Practiced loops for 25 minutes.` |
-| D03 | P1-02 | Reassign a counter twice and trace its values | Begin at 2, add 3, double it → 10 |
+| D03 | P1-02 | Reassign a counter twice and print its final value | Begin at 2, add 3, double it → 10 |
 | D04 | P1-04 | Convert a numeric string and add 7 | `"18"` → 25 |
 | D05 | P1-02 | Display the types of five different values | Include `"False"`, `False`, and `None` |
 | D06 | P1-02 | Calculate a rectangle's area and perimeter | Width 4, height 7 → area 28, perimeter 22 |
@@ -55,12 +56,12 @@ for display or interaction. Use disposable data for file exercises.
 | D41 | P1-10 | Repair a missing-colon error and a misspelled-variable error | Explain why their exception categories differ |
 | D42 | P1-10 | Read two whole numbers and divide them | Handle invalid integer text and a zero denominator |
 | D43 | P1-10 | Write `read_positive_integer()` | Reject zero, negatives, empty text, and nonintegers |
-| D44 | P1-06 | Trace an accumulator over `[3, 1, 4]` | Show the total after each iteration: 3, 4, 8 |
+| D44 | P1-06 | Write a running-total program for `[3, 1, 4]` | Run it and check the final total is 8 |
 | D45 | P1-10 | Test your function from exercise 38 | Normal, exact threshold, empty, all below, all above |
 | D46 | P1-12 | Write and then read a short UTF-8 practice note | Use a named practice file and verify the text |
 | D47 | P1-12 | Save and reload a dictionary using JSON | Compare the loaded values with the original |
 | D48 | P1-12 | Write a CSV with topic and minutes columns; read its total | 15, 25, 40 → 80 |
-| D49 | P1-12 | Specify a text-menu task manager with recorded Actions input before writing it | State inputs, outputs, five rules, and five checks |
+| D49 | P1-12 | Build a small text-menu task manager with live Terminal input | Add, list, and remove a task; reject an unknown choice; quit cleanly |
 | D50 | P1-12 | Add CSV export to the study tracker | Export columns `session` and `minutes`, preserving order |
 
 For D12, define initials using whitespace-separated nonempty parts; an empty
@@ -70,6 +71,6 @@ with string keys; arbitrary Python objects do not all round-trip unchanged.
 For D50, use the column order `session,minutes`, number rows from 1, and preserve
 duration order. A header-only export is valid for no sessions.
 
-Selected checked implementations: [drills.py](../examples/drills.py). Open them
-after an attempt, then use different inputs for a fresh check. Relevant sources
+Selected checked implementations: [drills.py](../examples/drills.py). Use a worked
+example when you need one, then change it for a fresh task and run it. Relevant sources
 are linked from [Phase 1](../curriculum/phase-1.md).

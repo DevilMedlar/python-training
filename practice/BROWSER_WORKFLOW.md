@@ -1,146 +1,106 @@
-# Run Python through GitHub
+# Workspace buttons for Python
 
-Edit on github.dev, commit to GitHub, and read results on github.com. The provided
-[Run Python lesson workflow](../.github/workflows/learn.yml) executes
-`workspace/main.py` with Python 3.14 on a GitHub-hosted Ubuntu runner.
+[**Open your Codespace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
 
-## Edit commit and inspect
+Use the controls here as you need them during Python lessons.
 
-1. Open [github.dev](https://github.dev/DevilMedlar/python-training) and the desired branch.
-2. Edit `workspace/main.py` and any inputs or helper files needed by the lesson.
-3. Inspect each change in Source Control, stage the intended files, and **Commit & Push**.
-4. Open [Actions](https://github.com/DevilMedlar/python-training/actions/workflows/learn.yml).
-   Workspace changes automatically run the lesson. Select your branch and commit.
-5. Read the result summary and the **Run program** step. Inspect **Learner tests**
-   when tests have been added. A successful script is not proof its logic is correct.
-
-**Run workflow** starts the latest committed version of the branch you select.
-**Re-run jobs** repeats the commit of that existing run. Unsaved or uncommitted
-editor changes are absent from either run. Use the run URL and commit as evidence.
-The manual button requires the workflow to be on the repository's default branch.
-[Manual run documentation](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow).
-
-## Inputs for input
-
-For this program in `workspace/main.py`:
-
-```python-template
-name = input("Name: ")
-minutes = int(input("Minutes: "))
-print(f"{name}: {minutes + 5} minutes")
-```
-
-Put these lines in `workspace/input.txt`, with a line break after each answer:
-
-```text
-Python learner
-25
-```
-
-Commit both files. The supplied answers are read in order; the final message is
-`Python learner: 30 minutes`. Prompts may appear together because redirected input
-is not echoed as if somebody typed it. Invalid text still produces a real Python
-exception. To test a retry loop, supply invalid answers followed by a valid one.
-For a menu, include the final quit choice. End of input raises `EOFError` if the
-program requests another answer. Actions is a batch runner, not a live terminal.
-
-The runner stops an ordinary lesson program after 30 seconds and records a failed
-run. Use **Cancel workflow** for a queued or running job you no longer need.
-Larger experiments need a deliberate, bounded workflow change with the tutor.
-
-## Files and persistence
-
-Execution starts in the repository root. Read committed synthetic input data
-from `workspace/data/`. Write disposable outputs to `workspace/results/`, which
-the runner creates. Small UTF-8 text, JSON, and CSV results are previewed on the
-run summary, with limits clearly marked. A generated file is not a Git commit.
-
-Every run starts from a fresh checkout. To use a small generated JSON result in
-a later run, copy its complete preview into a file under `workspace/data/` in
-github.dev and commit it. Do not copy a truncated preview. Test save-and-reopen
-behavior within one run first; then demonstrate a new run with committed input.
-For larger research outputs, design a workflow that preserves the required
-artifacts on GitHub and presents inspectable summaries before relying on it.
-
-Use made-up practice data. Code, committed data, and Actions logs in this repository
-are public. An ignore rule does not remove an already committed file or its history.
-
-## Modules tests and dependencies
-
-The runner launches the module `workspace.main` from the repository root. Put
-helpers beside it and import them as `from workspace.helpers import ...`. Avoid
-filenames that shadow standard modules, such as `json.py`.
-
-At `P1-10` and `P2-07`, add `workspace/test_*.py` files using `unittest`.
-The **Learner tests** step runs them after a successful program run, rejects empty
-test discovery when such files exist, and reports a real failure as a failed job.
-Before tests are introduced, it explicitly reports that none were supplied.
-
-The beginner code uses the standard library. When a later lesson needs a package,
-edit `workspace/requirements.txt` in the browser and commit its specified versions.
-The workflow installs them on the GitHub runner. Keep dependency choices tied to
-the current Python task. Inspect the **Set up Python** and **Install lesson dependencies**
-steps for environment information.
-
-### Environment exercise for P1-11
-
-In your practice branch, use github.dev to add this step to `learn.yml` before
-**Run program**. These are workflow instructions executed by GitHub's Ubuntu
-runner; you enter them in the YAML file, not in a laptop terminal:
-
-```yaml
-- name: Inspect a fresh Python environment
-  run: |
-    python -m venv /tmp/python-training-environment
-    /tmp/python-training-environment/bin/python --version
-    /tmp/python-training-environment/bin/python -m pip --version
-```
-
-Inspect the log and explain which interpreter owns that pip. This demonstration
-does not switch the later program step into that environment. Remove the teaching
-step after reviewing it, or retain it only if the lesson needs it.
-
-### Advanced commands run in workflows
-
-Later Python lessons include package builds, command-line interfaces, profilers,
-and scientific runs. Put their commands in a named `run:` step of a lesson
-workflow through github.dev; GitHub executes them. Run a short, finite workload
-and read its log. No command in a lesson requires a laptop shell.
-
-For the supplied scientific example, the tutor can add these runner steps on
-the lesson branch. The recorded pins are in `requirements-research.txt`:
-
-```yaml
-- name: Install recorded scientific dependencies
-  run: python -m pip install -r requirements-research.txt
-- name: Run the teaching experiment
-  run: python -m examples.research_optional
-```
-
-The existing **Verify Python tutor** research job tests a smaller experiment;
-it does not claim to have run the full default investigation.
-
-## Read the course checks
-
-Open [Verify Python tutor](https://github.com/DevilMedlar/python-training/actions/workflows/verify.yml)
-and choose **Run workflow**, or inspect its PR checks. It checks the curriculum,
-reference programs, and progress records. **Run Python lesson** executes your
-workspace. Keep their purposes clear when explaining a green or red result.
-
-## If something goes wrong
-
-| What you see | Next browser action |
+| What you want | Control in this workspace |
 |---|---|
-| Output still shows the old code | Confirm Commit & Push completed; open the run for that commit and branch |
-| Workflow is queued | Wait for a runner; queued does not mean failed |
-| No automatic run after a docs-only change | Use Run workflow; automatic lesson runs watch workspace and runner files |
-| Actions disabled or a permission message | Read the repository's Actions notice and use your account's allowed controls; do not switch to laptop setup |
-| `SyntaxError` | Read the file and line in the log, repair the syntax in github.dev, and commit |
-| `EOFError` | Supply enough lines in input.txt, including a menu exit choice |
-| `ModuleNotFoundError` | Check the workspace import path or the lesson's requirements file |
-| Timeout | Inspect loop termination and input size, then commit a bounded attempt |
-| A result file is missing on a later run | Commit required sample input; a previous runner's files are temporary |
+| Open a file | **Explorer** → file; or **Go → Go to File** and type its name |
+| Create a Python file | Explorer's **New File** button → a name ending in `.py` |
+| Save an edit | **File → Save** (`Ctrl+S`, or `Cmd+S` on Mac) |
+| Run the open Python file | **▶ Run Python File**; or right-click → **Run Python → Run Python File in Terminal** |
+| Run without the Python extension button | **Terminal → Run Task → Run current Python file**, with the `.py` tab active |
+| Open the terminal | **Terminal → New Terminal** |
+| Answer a running program | Click its terminal → type your answer → **Enter** |
+| Stop a running program | Click its terminal → **Ctrl+C** |
+| Debug when introduced | **Run and Debug** → **Python: current file in terminal** → **Start Debugging** |
+| Save progress to GitHub | **Source Control** → review file → **+** → message → **Commit** → **Push** |
 
-Sources: [github.dev](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor),
-[Python in Actions](https://docs.github.com/en/actions/tutorials/build-and-test-code/python),
-[job summaries](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary).
+Menu wording can vary slightly with the editor and installed extensions. Use
+**View → Command Palette** to find commands by name. The Python extension provides
+the Python Run button. Install Microsoft's recommended Python extension **in this
+Codespace** if requested; the supplied task and terminal command also run Python.
+
+## Run a program
+
+Save the active `.py` file, then click its Run button. Read the **Terminal** panel.
+If you get a Python error, read the final error line and the file/line above it,
+fix that line, save, and run again. A changed file can run immediately.
+
+Fallback in **Terminal → New Terminal**, from the repository root:
+
+```sh
+python workspace/lesson_01.py
+```
+
+For the supplied task, keep your `.py` file active; it runs whichever file is open.
+The task uses `python` from the Codespace terminal. The extension's Run button uses
+its selected interpreter. If they differ, choose **Python: Select Interpreter**
+in the Command Palette and use the interpreter your lesson needs.
+
+## Live input
+
+At P1-04, open `workspace/input_example.py`, save, and run. When the question
+appears, type directly into the terminal and press **Enter**. Python waits for you.
+If you already see the shell prompt, the program has ended; run it again before answering.
+
+For a menu program, answer each menu prompt the same way and use its quit option
+when finished. **Ctrl+C** interrupts a program that is still running.
+
+## Files and packages
+
+Run commands from the repository root, shown as `python-training` in the terminal
+path. The provided task and debug configuration use that folder. A relative path
+such as `workspace/data/sessions.json` is interpreted from the running program's
+working directory. When file paths are introduced, the tutor will show how to use
+`pathlib` and create any required output directory.
+
+At the packages lesson, use the Codespace terminal:
+
+```sh
+python -m pip install -r workspace/requirements.txt
+```
+
+Only add dependencies when needed. For tests introduced later:
+
+```sh
+python tools/run_tests.py --pattern test_study_tracker.py
+```
+
+Advanced module, packaging, research, and test commands in this course also run
+in this same terminal. The tutor explains the command when it becomes useful.
+
+## Environment exercise for P1-11
+
+When a project needs its own packages, open **View → Command Palette** and use
+**Python: Create Environment → Venv**. Select an available Python interpreter in
+this Codespace. Then use **Python: Select Interpreter** to choose the new environment,
+and open a new terminal so the extension can activate it. Run `python --version`
+and `python -m pip --version` there to inspect the interpreter and package target.
+All environment files and commands stay in the Codespace.
+
+## Save your work to GitHub
+
+**File → Save** writes in the Codespace. To preserve a useful version in the repository:
+
+1. Open **Source Control** and select your changed file to review it.
+2. Select **+** beside the files you want to include.
+3. Enter a short message, such as `Add my greeting`, then **Commit**.
+4. Use **… → Push**. If the branch is new, choose **Publish Branch**.
+
+**Sync Changes** can pull and push together. Use **… → Pull** when you only want
+to bring repository updates into the current branch. Preserve pending work and
+resolve any reported conflict before continuing. Saving, running, and committing
+are different actions; use each when you need it.
+
+## Repository management
+
+For licenses, ignore rules, settings, and collaboration pages, use the short
+[repository lessons](../curriculum/github.md). They use documentation and repository
+metadata as their exercises. They are available independently of your Python progress.
+
+Sources: [Codespaces](https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace),
+[Python controls](https://code.visualstudio.com/docs/python/python-tutorial),
+[tasks](https://code.visualstudio.com/docs/debugtest/tasks),
+[source control](https://code.visualstudio.com/docs/sourcecontrol/overview).

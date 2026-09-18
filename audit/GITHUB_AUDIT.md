@@ -1,6 +1,23 @@
 # GitHub reference audit and integration
 
-## Browser integration correction on 2026-09-14
+## Codespaces restart on 2026-09-18
+
+The previous revision misunderstood the learner's environment. The requested URL,
+https://cuddly-trout-q767pqw4v79rfpjr.github.dev/, is a Codespaces workspace with
+Python execution and live terminal input. Active teaching now uses that workspace.
+The old learner Actions workflow, recorded input file, and runner were removed.
+Automated course verification remains a maintainer check.
+
+All 50 Python lesson IDs are retained with short workspace controls. Eight REPO
+cards teach repository administration using documentation and metadata. GH IDs
+remain readable only for historical progress. Progress was archived before reset.
+The tutor now teaches by explanation, example, application, and actual execution;
+prediction, manual tracing, scheduled recall, and hour quotas are not gates.
+
+The following September 14 sections are historical. Passing their tests did not
+establish that the previous learning workflow matched the user's requirements.
+
+## Historical browser integration correction on 2026-09-14
 
 The user clarified that all learner work belongs on github.com and github.dev,
 and that GitHub must accompany Python instead of being a separate curriculum.

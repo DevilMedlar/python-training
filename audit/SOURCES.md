@@ -1,6 +1,6 @@
 # Primary source map
 
-Sources were consulted for the listed topics on 2026-09-14. A citation supports
+Sources were consulted on the dates recorded in sources.json (2026-09-14 and 2026-09-18). A citation supports
 the stated technical or research point; it does not validate this whole curriculum,
 every source passage, or unexecuted optional workflows. Versionless third-party
 documentation can change. Check the installed version before adopting its APIs.
@@ -482,3 +482,23 @@ See [the claim audit](CLAIM_AUDIT.md) and [verification](VERIFICATION.md).
 ## GH-ACTIONS-SUMMARY
 
 [Write GitHub Actions job summaries](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary). GITHUB_STEP_SUMMARY provides Markdown content on the workflow summary page.
+
+## CODESPACES-WEB
+
+[Developing in a codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace). Browser workspace with remote execution. Reviewed 2026-09-18.
+
+## VSC-PYTHON-RUN
+
+[Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial). Run Python File in Terminal and interpreter selection. Reviewed 2026-09-18.
+
+## VSC-TASKS
+
+[VS Code tasks](https://code.visualstudio.com/docs/debugtest/tasks). Process task with integrated terminal. Reviewed 2026-09-18.
+
+## VSC-SOURCECONTROL
+
+[VS Code source control](https://code.visualstudio.com/docs/sourcecontrol/overview). Review, stage, commit, push and pull controls. Reviewed 2026-09-18.
+
+## GH-ACCESS
+
+[Repository access management](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository). Locate repository access controls. Reviewed 2026-09-18.
