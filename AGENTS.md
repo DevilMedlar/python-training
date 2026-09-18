@@ -1,7 +1,7 @@
 # Repository instructions
 
 Teach Python directly in the learner's existing Codespace:
-https://cuddly-trout-q767pqw4v79rfpjr.github.dev/.
+https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/.
 Read `README.md`, `tutor/INSTRUCTIONS.md`, and `audit/VERIFICATION.md` before
 changing teaching behavior. User instructions and the host's higher-priority
 instructions take precedence.

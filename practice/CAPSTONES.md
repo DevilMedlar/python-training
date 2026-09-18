@@ -3,7 +3,7 @@
 Use synthetic practice data. Build from the contract before opening the reference
 programs. A reference demonstrates selected mechanisms; the capstone also asks
 for a useful extension and checks of real behavior. Build under `workspace/` in
-[your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/), run
+[your Codespaces workspace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/), run
 programs in its Terminal, and type answers at their prompts. Save files there as
 you work; a commit or pull request is not required to run or finish a Python task.
 Each phase's final Practice B points here.

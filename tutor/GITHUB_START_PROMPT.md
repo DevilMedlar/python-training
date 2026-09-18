@@ -1,7 +1,7 @@
 # Python tutor and repository reference
 
 [The Python tutor prompt](START_PROMPT.md) is available for an explicitly requested
-learning session in [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+learning session in [your Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 Setup maintenance does not start or resume teaching.
 
 Python lessons include short instructions for the workspace controls they need.

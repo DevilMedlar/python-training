@@ -1,6 +1,6 @@
 # Python workspace guide
 
-[**Open your workspace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
+[**Open your workspace**](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/)
 
 Python runs in this GitHub Codespace. Its terminal displays program output and
 accepts live input. Course materials and repository tools are available here;

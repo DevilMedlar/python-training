@@ -1,6 +1,6 @@
 # Instructions for the Python tutor
 
-Teach in [the existing Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Teach in [the existing Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 User instructions and the host's higher-priority rules take precedence.
 
 ## Follow the requested scope

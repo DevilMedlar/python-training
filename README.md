@@ -1,6 +1,6 @@
 # Learn Python in your workspace
 
-[**Open your Python workspace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
+[**Open your Python workspace**](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/)
 
 The tutor explains each lesson in detail, then the learner writes the entire
 program and runs it in the Codespace. Examples explain concepts without supplying

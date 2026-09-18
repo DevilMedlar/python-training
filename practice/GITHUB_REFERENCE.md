@@ -2,7 +2,7 @@
 
 | Need | Where to go |
 |---|---|
-| Write and run Python | [Your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/) |
+| Write and run Python | [Your Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/) |
 | Run, input, stop, save, or sync buttons | [Workspace controls](BROWSER_WORKFLOW.md) |
 | Repository settings, license, `.gitignore`, or collaboration | [Short repository lessons](../curriculum/github.md) |
 | Current Python lesson | [Lesson index](../curriculum/INDEX.md) |

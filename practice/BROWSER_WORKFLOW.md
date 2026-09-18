@@ -1,6 +1,6 @@
 # Workspace buttons for Python
 
-[**Open your Codespace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
+[**Open your Codespace**](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/)
 
 Use the controls here as you need them during Python lessons.
 

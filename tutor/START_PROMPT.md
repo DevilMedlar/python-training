@@ -5,7 +5,7 @@ file during maintenance does not start a lesson or assessment.
 
 ```text
 Teach me Python in my existing Codespace:
-https://cuddly-trout-q767pqw4v79rfpjr.github.dev/
+https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/
 Repository: https://github.com/DevilMedlar/python-training
 
 Read tutor/INSTRUCTIONS.md, tutor/TEACHING.md, tutor/PLACEMENT.md,

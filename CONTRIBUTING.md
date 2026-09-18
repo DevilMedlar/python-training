@@ -1,6 +1,6 @@
 # Improve this course
 
-Edit and test in [the Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Edit and test in [the Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 Read [AGENTS.md](AGENTS.md) and [tutor instructions](tutor/INSTRUCTIONS.md) before
 changing teaching behavior. Preserve the learner's work and stable lesson IDs.
 

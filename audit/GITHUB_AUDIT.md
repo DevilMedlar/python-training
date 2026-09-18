@@ -3,7 +3,7 @@
 ## Codespaces implementation on 2026-09-18
 
 The configured environment,
-https://cuddly-trout-q767pqw4v79rfpjr.github.dev/, is a Codespaces workspace with
+https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/, is a Codespaces workspace with
 Python execution and live terminal input. Active teaching now uses that workspace.
 The old learner Actions workflow, recorded input file, and runner were removed.
 Automated course verification remains a maintainer check.

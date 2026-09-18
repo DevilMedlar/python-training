@@ -201,7 +201,7 @@ checks for the subsequent commit establish the final hosted outcome.
 ## Codespaces course implementation on 2026-09-18
 
 The course uses the existing Codespace at
-https://cuddly-trout-q767pqw4v79rfpjr.github.dev/. The previous Actions-based learner
+https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/. The previous Actions-based learner
 workflow did not match that requirement. This revision uses direct Python execution,
 live terminal input, and short workspace controls alongside applied Python tasks.
 Repository settings, licenses, ignore rules, and collaboration have eight separate

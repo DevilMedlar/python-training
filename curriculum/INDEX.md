@@ -1,7 +1,7 @@
 # Python lesson index
 
 Generated from [catalog.json](catalog.json). Follow one Python sequence.
-Write and run Python in [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Write and run Python in [your Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 Use the small workspace control hint when you need it.
 
 [Workspace guide](../START_HERE.md). Lessons begin only when learning is requested.

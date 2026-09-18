@@ -3,7 +3,7 @@
 Try the corresponding lesson or capstone first. These are inspectable reference
 implementations, not hidden answer keys or complete production systems. The
 standard-library examples target Python 3.12–3.14. Run the commands below in
-**Terminal → New Terminal** in [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/),
+**Terminal → New Terminal** in [your Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/),
 from the repository root. The tutor introduces them when their Python topic is useful.
 Start learning with `workspace/lesson_01.py`.
 

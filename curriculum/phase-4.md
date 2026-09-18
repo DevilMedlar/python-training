@@ -6,7 +6,7 @@ training route, not a PhD qualification. Research **with** Python and research
 domain prerequisites alongside a narrow project rather than collecting tools.
 
 
-Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Work in [your Codespaces workspace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 The tutor explains every objective, concept, syntax rule, and common error in the
 lesson before giving program requirements. The learner writes the entire program
 from a blank file, or all new code in their own project. Reference snippets illustrate

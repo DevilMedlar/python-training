@@ -1,6 +1,6 @@
 # Your practice files
 
-Use [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/) to edit and run these files.
+Use [your Codespace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/) to edit and run these files.
 Use a new blank `.py` file for an assignment after the tutor explains the lesson.
 Existing files are preserved; they are not prefilled answers you must modify.
 

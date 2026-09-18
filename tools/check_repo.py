@@ -16,7 +16,7 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WORKSPACE_URL = "https://cuddly-trout-q767pqw4v79rfpjr.github.dev/"
+WORKSPACE_URL = "https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/"
 if __package__ in {None, ""}:
     sys.path.insert(0, str(ROOT))
 from tools.progress import validate_state

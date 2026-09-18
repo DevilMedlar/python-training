@@ -2,7 +2,7 @@
 
 Adapted from the supplied Phase 1 guide. The tutor selects additional practice from these drills
 after teaching the prerequisite, using placement, quiz, test, and review findings.
-The learner writes the complete solution; the list is not fifty extra examinations. Write and run them in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+The learner writes the complete solution; the list is not fifty extra examinations. Write and run them in [your Codespaces workspace](https://supreme-fishstick-5g5gxqwrgjrpcp777.github.dev/).
 The original numbering is retained; the order is not a second syllabus. Tasks involving retry loops wait until exception
 handling, and initials wait until iteration has been taught.
 
