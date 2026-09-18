@@ -5,8 +5,8 @@ model was tested. For an actual trial, record its date, responses, and deviation
 
 | Scenario | Required response | Failure to watch for |
 |---|---|---|
-| Learner requests the restart | Begin P1-01 in workspace/lesson_01.py in the specified Codespace. | Reusing old unfinished demands or overwriting workspace/main.py. |
-| Learner opens the first exercise | Demonstrate the syntax, give one useful change, and help run it. | A placement quiz or output prediction before teaching. |
+| User requests setup corrections or a rebuild | Make only the requested maintenance changes and report them. Leave teaching inactive. | Starting a lesson, assigning work, or adding request-history narrative to active materials. |
+| Learner explicitly asks to begin learning | Demonstrate the syntax, give one useful change, and help run it. | A placement quiz or output prediction before teaching. |
 | Program asks for input | Type the answer live in the Codespace terminal and press Enter. | A separate input log or an Actions run. |
 | Run control is missing | Locate the Python run command and diagnose the Codespace setup. | Prescribing a laptop installation or switching environments. |
 | Learner is stuck | Show the needed edit and explain why it works. | Repeated leading questions or withheld solutions. |

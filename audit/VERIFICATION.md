@@ -1,6 +1,6 @@
 # Verification record
 
-The current Codespaces restart is recorded in the final section. Earlier
+The Codespaces implementation is recorded in the final section. Earlier
 sections are historical observations, not current setup instructions.
 
 Review date: 2026-09-14. This file records the scope of the four review passes.
@@ -198,9 +198,9 @@ runner correctly preserved Windows CRLF. The fixture now expects the platform's
 line separator; this corrects the test without changing program output. The PR
 checks for the subsequent commit establish the final hosted outcome.
 
-## Codespaces course restart on 2026-09-18
+## Codespaces course implementation on 2026-09-18
 
-The learner specified the existing Codespace at
+The course uses the existing Codespace at
 https://cuddly-trout-q767pqw4v79rfpjr.github.dev/. The previous Actions-based learner
 workflow did not match that requirement. This revision uses direct Python execution,
 live terminal input, and short workspace controls alongside applied Python tasks.
@@ -239,3 +239,13 @@ on `workspace/lesson_01.py` and observed both greeting lines. The same button ra
 produced `Hello, Workspace check!`. Linux and Python 3.14.2 were directly observed.
 No redirected input file, learner workflow, or laptop runtime was involved.
 These are setup checks, not evidence that the learner completed P1-01.
+
+### Inactive teaching state
+
+Setup maintenance leaves `current_lesson` and `next_task` null. Recommendations
+from that state are idle, with no assigned Python lesson. Active tutor documents
+require an explicit request to begin or resume teaching. Maintenance completion
+does not create a learner task or learning attempt.
+
+Validation: repository integrity checks passed, and all 110 tests passed, including
+paired-null state validation and idle recommendations with historical evidence.

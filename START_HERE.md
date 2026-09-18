@@ -1,58 +1,32 @@
-# Start with your first Python program
+# Python workspace guide
 
 [**Open your workspace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
 
-This is your GitHub Codespace. Write and run Python here. The terminal is the
-panel inside this same browser window where Python displays results and accepts input.
+Python runs in this GitHub Codespace. Its terminal displays program output and
+accepts live input. Course materials and repository tools are available here;
+lessons begin only when you ask to begin learning.
 
-## First task
+| Resource | Purpose |
+|---|---|
+| [Python lesson index](curriculum/INDEX.md) | Available Python topics and examples |
+| [Workspace controls](practice/BROWSER_WORKFLOW.md) | File, Run, terminal, debugging, and Source Control buttons |
+| [Repository lessons](curriculum/github.md) | Settings, licenses, `.gitignore`, and other GitHub.com topics |
+| [Tutor prompt](tutor/START_PROMPT.md) | Instructions for a learning session you choose to start |
+| [Progress](tutor/progress.json) | Actual learning progress; no assignment while inactive |
 
-1. In **Explorer**, open `workspace/lesson_01.py`.
-2. It contains:
+## Workspace controls
 
-```python
-print("Hello, Python!")
-print("I am learning in my workspace.")
-```
+**File → Save** saves an edited file. **▶ Run Python File** executes the open
+Python file in the terminal. Answers to `input()` are typed directly into that
+terminal, followed by **Enter**.
 
-```output
-Hello, Python!
-I am learning in my workspace.
-```
+If the Python Run button is unavailable, **Terminal → Run Task → Run current
+Python file** is the supplied alternative, with a `.py` file active. The
+[workspace guide](practice/BROWSER_WORKFLOW.md) includes the terminal fallback.
 
-`print(...)` displays something in the terminal. Put text inside matching quotes.
-Each call here displays one line.
+## Repository updates
 
-3. Change the second quoted sentence to a sentence of your own. Keep the quotes and parentheses.
-4. Choose **File → Save**.
-5. Click **▶ Run Python File** at the editor's top right. You can also right-click
-   inside the editor and choose **Run Python → Run Python File in Terminal**.
-6. Read your sentence in the terminal. That is your first task complete.
-
-**Workspace shortcut:** Open file → Save → **Run Python File in Terminal**.
-
-If the Python Run button is missing, use **Terminal → Run Task → Run current Python file**
-with the `.py` file active. That task is supplied by this repository. The
-[workspace guide](practice/BROWSER_WORKFLOW.md) has the direct terminal fallback.
-
-## Continue with the tutor
-
-Use [the start prompt](tutor/START_PROMPT.md), or say:
-
-> Start P1-01 in my Codespace. Show me how, give me one small task, and help me run it.
-
-We will work with the code and output from your actual run. Ask for help or a full
-example whenever you need it. When an `input()` question appears in a later lesson,
-click the terminal, type your answer, and press **Enter**.
-
-## If this Codespace still shows the older course
-
-Updates on GitHub need to be pulled into an existing Codespace. Check the branch
-in the lower-left corner. On `main`, open **Source Control → … → Pull**.
-If there are pending edits or Git reports a conflict, keep them and ask the tutor
-to help preserve them before updating. Your earlier `workspace/main.py` is retained;
-the fresh starter is `workspace/lesson_01.py`.
-
-Saving writes a file in this Codespace. At the end of a useful session, use the
-[save-to-GitHub buttons](practice/BROWSER_WORKFLOW.md#save-your-work-to-github)
-to keep a committed copy in the repository.
+Updates on GitHub can be brought into the current branch through
+**Source Control → … → Pull**. Preserve pending edits and resolve any reported
+conflict before continuing. Source Control can also commit and push selected
+changes to GitHub. See [saving work](practice/BROWSER_WORKFLOW.md#save-your-work-to-github).

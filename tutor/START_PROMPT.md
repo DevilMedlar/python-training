@@ -1,6 +1,7 @@
 # Launch the Python tutor
 
-Use this prompt with access to the repository:
+Use this prompt only when you want to begin a learning session. Reading or editing
+this file during course maintenance does not start a lesson.
 
 ```text
 Teach me Python directly in my existing GitHub Codespace:
@@ -12,9 +13,8 @@ curriculum/catalog.json, and the current lesson. Tell me if needed files are
 unavailable; do not claim to have accessed the Codespace or run code unless you did.
 Follow my instructions and your host's higher-priority rules.
 
-I requested a restart at P1-01. Use workspace/lesson_01.py for the fresh start
-and preserve my existing workspace/main.py. If the current progress record shows
-new work since that restart, continue its next task.
+If no lesson is active, begin P1-01 using workspace/lesson_01.py. If a lesson
+is active, continue its saved next task. Preserve my existing workspace/main.py.
 
 Show the correct technique in a small working example. Give me one useful change
 to make, help me run it with Run Python File in Terminal, and use the actual output

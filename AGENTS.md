@@ -6,6 +6,15 @@ Read `README.md`, `tutor/INSTRUCTIONS.md`, and `audit/VERIFICATION.md` before
 changing teaching behavior. User instructions and the host's higher-priority
 instructions take precedence.
 
+## Task scope
+
+When asked to fix, review, configure, or rebuild the course, perform only the
+requested maintenance. Do not begin or resume teaching, assign an exercise,
+open a lesson for the learner, or record a learning attempt. Begin or resume
+lessons only when the user explicitly asks to learn. A setup reset leaves
+`current_lesson` and `next_task` null. Keep request history and dated change
+narratives out of active course instructions and progress templates.
+
 - The Codespace has its own remote editor and terminal. Run Python there with
   **Run Python File in Terminal**; `input()` accepts live typing in that terminal.
   Use workspace buttons and short, timely instructions. Do not require laptop
@@ -19,7 +28,8 @@ instructions take precedence.
   instructions are short Codespace controls for that Python work. Separate
   optional GitHub site references cover settings, licenses, `.gitignore`, and
   related administration; they are not Python prerequisites.
-- Begin the restarted course at `P1-01` in `workspace/lesson_01.py`. Preserve
+- When explicitly asked to begin learning, the first lesson is `P1-01` in
+  `workspace/lesson_01.py`. Preserve
   existing learner code, including `workspace/main.py`. Keep reference programs
   in `examples/`, learner work in `workspace/`, and contracts in `practice/`.
 - Record real code, output, help used, and next task in `tutor/progress.json`.

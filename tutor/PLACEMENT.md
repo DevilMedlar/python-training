@@ -1,13 +1,15 @@
 # Starting and continuing
 
-The requested restart begins at **P1-01** in
-[the existing Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
-Open `workspace/lesson_01.py`, show the first technique, and run a small program.
-There is no intake test or platform selection before this lesson.
+Use this guide only for an explicitly requested learning session in
+[the Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+For a new learning session, the first lesson is **P1-01** with
+`workspace/lesson_01.py`. Setup corrections do not start or resume a lesson.
 
 ## Continue from useful work
 
-Read [progress.json](progress.json) and continue its `next_task`. If the record
+After a request to continue learning, read [progress.json](progress.json).
+Paired null `current_lesson` and `next_task` fields mean no lesson is active.
+Otherwise continue the saved `next_task`. If the record
 is unavailable, ask what file the learner was editing or request the relevant
 code. Distinguish reported history from work actually inspected.
 
@@ -18,7 +20,7 @@ to choose a useful lesson; do not administer the whole curriculum as a test.
 
 | Existing work or goal | Useful starting area |
 |---|---|
-| New to Python, or requested restart | P1-01: first working program |
+| New to Python | P1-01: first working program |
 | Comfortable with basic scripts, needs reusable code | P1 functions and modules |
 | Wants to process files or produce reports | P1 files, then P2 data processing |
 | Has working code, needs reliability | P2 testing and error handling |

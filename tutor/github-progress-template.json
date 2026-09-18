@@ -12,17 +12,15 @@
     "Learn Python directly in the existing Codespace through useful programs and actual execution.",
     "Use short workspace button instructions during Python lessons; keep optional GitHub site administration separate."
   ],
-  "current_lesson": "P1-01",
+  "current_lesson": null,
   "lessons": {},
   "reviews": [],
   "capstones": {},
-  "next_task": "Open workspace/lesson_01.py in the existing Codespace, follow the P1-01 print() demonstration, change the second message to a sentence of your own, save, and click Run Python File in Terminal.",
+  "next_task": null,
   "notes": [
     "Workspace: https://cuddly-trout-q767pqw4v79rfpjr.github.dev/",
-    "Restart requested on 2026-09-18: begin P1-01 with no active completions, reviews, or capstones. No new learning attempts have been recorded.",
-    "Use direct Python execution and live input() answers in the Codespace terminal. Do not require predictions, mental tracing, mandatory quizzes, delayed reviews, or time quotas.",
-    "Preserve workspace/main.py as existing learner work. The fresh starter is workspace/lesson_01.py.",
-    "Earlier evidence is preserved unchanged in tutor/history/progress-before-restart-2026-09-18.json. Its old assignments and teaching requirements are inactive.",
-    "Codespace OS, Python version, and execution availability have not been independently observed for this restart."
+    "No learning session is active. Begin or resume lessons only when the learner explicitly asks.",
+    "Use direct Python execution and live input() in the Codespace. Keep workspace controls brief.",
+    "Preserve existing learner files. Setup maintenance does not count as a learning attempt."
   ]
 }

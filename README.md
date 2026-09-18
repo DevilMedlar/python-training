@@ -4,7 +4,7 @@
 
 Learn by seeing how to do something, changing a small program, and running it
 in your Codespace. The tutor helps with the code and errors you actually get.
-Start at **[START_HERE.md](START_HERE.md)** with `workspace/lesson_01.py`.
+[Workspace guide](START_HERE.md) · [Python lesson index](curriculum/INDEX.md)
 
 ## Your lesson routine
 
@@ -22,7 +22,7 @@ quotas, or delayed-recall gates. Progress follows what you can do with Python.
 
 | Material | Use it for |
 |---|---|
-| [Start here](START_HERE.md) | Your first edit and run |
+| [Workspace guide](START_HERE.md) | Environment and controls |
 | [Python lessons](curriculum/INDEX.md) | The sequence from basics to advanced work |
 | [Workspace buttons](practice/BROWSER_WORKFLOW.md) | Run, stop, input, debug, save, and sync |
 | [Repository lessons](curriculum/github.md) | Short GitHub.com lessons on settings, README files, licenses, `.gitignore`, and collaboration |
@@ -31,8 +31,8 @@ quotas, or delayed-recall gates. Progress follows what you can do with Python.
 The five Python phases cover basics, practical applications, advanced programming,
 research methods, and original projects. Later phases and projects are available
 when useful; they are not a time commitment you must accept before starting.
-The [active progress record](tutor/progress.json) has been restarted at `P1-01`.
-Earlier history is preserved in [the restart archive](tutor/history/progress-before-restart-2026-09-18.json).
+[Progress](tutor/progress.json) records learning sessions and completed work.
+Course maintenance does not start a lesson or assign an exercise.
 
 ## Course reference
 

@@ -1,8 +1,8 @@
 # GitHub reference audit and integration
 
-## Codespaces restart on 2026-09-18
+## Codespaces implementation on 2026-09-18
 
-The previous revision misunderstood the learner's environment. The requested URL,
+The configured environment,
 https://cuddly-trout-q767pqw4v79rfpjr.github.dev/, is a Codespaces workspace with
 Python execution and live terminal input. Active teaching now uses that workspace.
 The old learner Actions workflow, recorded input file, and runner were removed.

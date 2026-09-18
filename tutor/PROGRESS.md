@@ -1,13 +1,12 @@
 # Progress without extra homework
 
 [progress.json](progress.json) records the Python work actually completed, help
-used, and the next useful task. The 2026-09-18 restart begins at `P1-01` with no
-active lesson completions, reviews, or capstones. The prior record is preserved
-unchanged in [history](history/README.md); its old requirements are inactive.
+used, and an agreed next task. No lesson is active until the learner asks to
+begin. [Historical records](history/README.md) do not assign current work.
 
 [progress-template.json](progress-template.json) and
 [github-progress-template.json](github-progress-template.json) are identical
-restart templates. The compatibility filename does not create a second track.
+empty progress templates. The compatibility filename does not create a second track.
 The schema remains `1`; the current catalog is `1.3`. Earlier compatible records
 remain readable without inventing evidence.
 
@@ -36,7 +35,8 @@ Python work does not require a GitHub administration action to count as successf
 
 - `environment` describes the Codespace. Keep OS, Python version, and execution
   availability `null` until observed. `command` names the intended Run control.
-- `current_lesson` and `next_task` say where to continue.
+- `current_lesson` and `next_task` are both `null` when no lesson is active.
+  Set them for an explicitly requested learning session, not for setup maintenance.
 - `lessons` stores statuses and attempts. Use `applied` for a practical task.
   Existing `guided`, `transfer`, `explanation`, and `delayed` kinds remain readable;
   explanations and later reviews are optional evidence.
@@ -56,5 +56,6 @@ The progress validator checks consistency and suggests Python tasks; it cannot
 judge the quality or truth of evidence, and it does not save progress. Its legacy
 `--track github` option remains an alias for the Python route.
 
-End each session with what worked, help used, any remaining issue, and one next
-task. Say whether the record was saved. Do not turn record keeping into homework.
+End each learning session with what worked, help used, any remaining issue, and
+an agreed next task. Maintenance requests get a correction report without a
+lesson assignment. Say whether the record was saved when relevant.

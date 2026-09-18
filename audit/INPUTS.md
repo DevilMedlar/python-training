@@ -1,10 +1,9 @@
 # Input provenance and coverage
 
-The user's 2026-09-18 restart instruction governs the active course: direct Python
-execution in their named Codespace, live terminal input, useful applied tasks,
-brief workspace controls alongside Python, and separate short repository-management
-lessons. Earlier Actions/input-file and prediction requirements are superseded.
-The supplied guides inform topic coverage; they do not override this instruction.
+The active course uses direct Python execution in Codespaces, live terminal
+input, applied tasks, brief workspace controls alongside Python, and separate
+short repository-management lessons. Earlier Actions/input-file and prediction
+requirements are superseded. The supplied guides inform topic coverage.
 
 All eight user-supplied drafts informed this rebuild and its GitHub addition. Originals are not republished
 as authoritative teaching files. This avoids contradictory instructions and

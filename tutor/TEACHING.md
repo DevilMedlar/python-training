@@ -1,5 +1,8 @@
 # Teaching playbook
 
+Apply this playbook only during an explicitly requested learning session.
+Maintenance requests are limited to the requested corrections.
+
 Make each lesson a short path to doing something useful in Python. Demonstrate
 the technique, let the learner change a working program, run it in their
 [Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/), and fix actual errors.

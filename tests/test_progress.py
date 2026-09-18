@@ -28,6 +28,9 @@ def historical_provisional():
 class ProgressTests(unittest.TestCase):
     def setUp(self):
         self.state = json.loads((ROOT / "tutor/progress-template.json").read_text(encoding="utf-8"))
+        # Most fixtures describe a lesson the learner has already chosen to start.
+        self.state["current_lesson"] = "P1-01"
+        self.state["next_task"] = "Continue the requested Python task."
 
     def check(self):
         return validate_state(self.state, CATALOG, today=TODAY)
@@ -36,7 +39,37 @@ class ProgressTests(unittest.TestCase):
         self.state["updated_on"] = "2026-09-18"
         self.state["lessons"]["P1-01"] = record
 
-    def test_empty_record_starts_at_first_lesson_in_the_codespace(self):
+    def test_idle_record_does_not_start_a_lesson(self):
+        self.state["current_lesson"] = None
+        self.state["next_task"] = None
+        self.check()
+        for track in (None, "github"):
+            result = recommend(self.state, CATALOG, today=TODAY, track=track)
+            self.assertEqual(result["kind"], "idle")
+            self.assertEqual(result["workspace_url"], CATALOG["workspace_url"])
+            self.assertNotIn("lesson_id", result)
+            self.assertNotIn("next_task", result)
+            self.assertNotIn("workspace_shortcut", result)
+
+    def test_idle_record_preserves_existing_work_without_resuming_it(self):
+        self.add_record(provisional())
+        self.state["reviews"] = [{"lesson_id": "P1-01", "due_on": "2026-09-18",
+                                  "reason": "Previously requested practice"}]
+        self.state["current_lesson"] = None
+        self.state["next_task"] = None
+        result = recommend(self.state, CATALOG, today=TODAY)
+        self.assertEqual(result["kind"], "idle")
+        self.assertNotIn("lesson_id", result)
+        self.assertNotIn("optional_reviews", result)
+
+    def test_idle_fields_must_both_be_null(self):
+        for field in ("current_lesson", "next_task"):
+            state = deepcopy(self.state)
+            state[field] = None
+            with self.subTest(field=field), self.assertRaisesRegex(ProgressError, "both"):
+                validate_state(state, CATALOG, today=TODAY)
+
+    def test_requested_first_lesson_uses_the_codespace(self):
         self.check()
         result = recommend(self.state, CATALOG, today=TODAY)
         self.assertEqual((result["kind"], result["lesson_id"]), ("lesson", "P1-01"))

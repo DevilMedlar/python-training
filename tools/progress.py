@@ -71,9 +71,14 @@ def validate_state(state, catalog, *, today=None):
             "execution_available must be boolean or null")
     text_list(state["goals"], "goals")
     text_list(state["notes"], "notes")
-    require(isinstance(state["current_lesson"], str) and state["current_lesson"] in known_ids,
+    require(state["current_lesson"] is None or
+            isinstance(state["current_lesson"], str) and state["current_lesson"] in known_ids,
             "unknown current lesson")
-    require(isinstance(state["next_task"], str) and state["next_task"].strip(), "next_task is required")
+    require(state["next_task"] is None or
+            isinstance(state["next_task"], str) and state["next_task"].strip(),
+            "next_task must be nonempty text or null")
+    require((state["current_lesson"] is None) == (state["next_task"] is None),
+            "current_lesson and next_task must both be set or both be null")
     require(isinstance(state["lessons"], dict), "lessons must be an object")
     evidence_dates = []
     for lesson_id, record in state["lessons"].items():
@@ -172,6 +177,9 @@ def recommend(state, catalog, *, today=None, track=None):
     validate_state(state, catalog, today=today)
     # Retain compatibility with old callers without preserving a second course.
     require(track in {None, "github"}, "unknown track")
+    if state["current_lesson"] is None:
+        return {"kind": "idle", "workspace_url": catalog["workspace_url"],
+                "reason": "No lesson is active."}
     by_id = {lesson["id"]: lesson for lesson in catalog["lessons"]}
     statuses = {key: value["status"] for key, value in state["lessons"].items()}
     ready = {key for key, value in statuses.items() if value in {"provisional", "secure"}}
