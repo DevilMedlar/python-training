@@ -1,22 +1,28 @@
 {
   "schema_version": 1,
-  "catalog_version": "1.2",
-  "updated_on": null,
+  "catalog_version": "1.3",
+  "updated_on": "2026-09-18",
   "environment": {
     "os": null,
     "python": null,
-    "command": "GitHub Actions: Run Python lesson",
+    "command": "Codespaces: Run Python File in Terminal",
     "execution_available": null
   },
   "goals": [
-    "Learn Python and GitHub together through github.com and github.dev."
+    "Learn Python directly in the existing Codespace through useful programs and actual execution.",
+    "Use short workspace button instructions during Python lessons; keep optional GitHub site administration separate."
   ],
   "current_lesson": "P1-01",
   "lessons": {},
   "reviews": [],
   "capstones": {},
-  "next_task": "Edit workspace/main.py in github.dev, commit it, and inspect its GitHub Actions output.",
+  "next_task": "Open workspace/lesson_01.py in the existing Codespace, follow the P1-01 print() demonstration, change the second message to a sentence of your own, save, and click Run Python File in Terminal.",
   "notes": [
-    "Execution uses GitHub-hosted Actions. No learner laptop setup. No learning attempts have been recorded."
+    "Workspace: https://cuddly-trout-q767pqw4v79rfpjr.github.dev/",
+    "Restart requested on 2026-09-18: begin P1-01 with no active completions, reviews, or capstones. No new learning attempts have been recorded.",
+    "Use direct Python execution and live input() answers in the Codespace terminal. Do not require predictions, mental tracing, mandatory quizzes, delayed reviews, or time quotas.",
+    "Preserve workspace/main.py as existing learner work. The fresh starter is workspace/lesson_01.py.",
+    "Earlier evidence is preserved unchanged in tutor/history/progress-before-restart-2026-09-18.json. Its old assignments and teaching requirements are inactive.",
+    "Codespace OS, Python version, and execution availability have not been independently observed for this restart."
   ]
 }

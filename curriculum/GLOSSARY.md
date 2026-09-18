@@ -54,11 +54,16 @@ to this course. Relevant primary references appear in each phase and the source 
 
 ## Git and GitHub terms
 
-Use these with the [reference cards inside Python lessons](github.md); the
-[browser reference](../practice/GITHUB_REFERENCE.md) explains effects and boundaries.
+Use these on demand with the optional [repository lessons](github.md). Python
+lessons use the short [workspace controls](../practice/BROWSER_WORKFLOW.md) instead
+of requiring repository administration.
 
 | Term | Working meaning |
 |---|---|
+| Codespace | A hosted development environment with an editor, Terminal, Python runtime, and saved workspace files |
+| github.dev editor | The lightweight github.dev/owner/repository editor; unlike this named Codespace, it does not supply a runtime |
+| Terminal | The workspace panel where Python runs and where you type answers to input prompts |
+| Save | Write the edited file into the Codespace; separate from recording a Git commit |
 | Repository | Project history and associated Git data; a working clone also has editable files |
 | Working tree | Files currently checked out for editing |
 | Index or staging area | Proposed next snapshot; later edits do not automatically restage themselves |

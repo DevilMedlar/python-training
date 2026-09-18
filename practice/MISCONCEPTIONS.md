@@ -1,17 +1,17 @@
 # Misconception and debugging guide
 
 Use these as hypotheses to investigate. Do not diagnose a learner from one wrong
-answer. Ask for a prediction or trace, teach the relevant distinction, then give
-a fresh task. The source drafts already correctly identified many of these traps.
+answer. Show the correct technique, run a small example, then help the learner
+repair their code and rerun it. The source drafts already correctly identified many of these traps.
 
 | Observed assumption | More accurate rule | Diagnostic or repair |
 |---|---|---|
 | Assignment creates a live formula | The right side is evaluated at assignment time | Rebind an input after computing a result |
 | Input is automatically numeric | `input` returns a string | Compare adding before/after conversion |
-| `//` truncates toward zero | Built-in numeric floor division floors | Trace a negative quotient |
+| `//` truncates toward zero | Built-in numeric floor division floors | Run negative-division examples and inspect Python's results |
 | Strings can be changed at an index | Strings are immutable | Compare a new string with the original |
-| `range` includes its stop | The stop is excluded | Trace zero-length and descending ranges |
-| The accumulator belongs inside the loop | Initialization usually precedes accumulation | Move it and compare traces |
+| `range` includes its stop | The stop is excluded | Print `list(range(...))` for zero-length and descending ranges |
+| The accumulator belongs inside the loop | Initialization usually precedes accumulation | Move the initialization and compare the actual totals |
 | Printing supplies a function result | Printing and returning are different effects | Assign the call's result and inspect it |
 | Assigning or slicing deep-copies a list | Assignment aliases; shallow copies share nested objects | Mutate an inner list through a copy |
 | A tuple/frozen dataclass deeply freezes its contents | Referenced mutable contents can still change | Store a list and mutate that list |

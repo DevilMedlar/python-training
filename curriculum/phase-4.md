@@ -6,16 +6,16 @@ training route, not a PhD qualification. Research **with** Python and research
 domain prerequisites alongside a narrow project rather than collecting tools.
 
 
-Work in github.dev and commit your Python changes; inspect results on github.com
-through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
-includes a GitHub action on the same Python work. Any advanced execution commands
-belong in a hosted workflow step; inputs and files follow the browser guide.
+Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open a Python file, save, run it in the workspace Terminal, and use the result to
+make the next change. Type answers to `input()` directly in that Terminal.
+The tutor shows the technique and a working example before asking you to apply it.
+Each lesson includes one short workspace control; repository administration is
+optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P4-01 Questions literature and scope
 
-**GitHub in this lesson:** Commit a research question and protocol beside the planned Python experiment before collecting final results. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
-
-**GitHub evidence:** Point to the protocol commit and distinguish hypotheses from established findings.
+**Workspace shortcut:** Use Explorer → New File to save a short research protocol beside the experiment.
 
 **Prerequisites:** P3-10.
 
@@ -51,9 +51,7 @@ matrix, and a clear distinction between established knowledge and a proposed tes
 
 ## P4-02 Mathematical and numerical validity
 
-**GitHub in this lesson:** Run small numerical checks in the recorded hosted environment and commit their assumptions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain tolerances using observed residuals and reference cases.
+**Workspace shortcut:** Use the Split Editor button to keep the numerical method and its check visible together.
 
 **Prerequisites:** P4-01.
 
@@ -76,8 +74,9 @@ of standard deviation 10 and otherwise standard deviation 1, variance is
 for the true mean zero is that variance divided by `n`. This gives an analytical
 check of a simulation, under its stated independence assumptions.
 
-**Practice A:** Derive that expectation for `p = 0` and `p = 0.1`, with `n = 100`.
-Explain which assumptions make the calculation valid.
+**Practice A:** Put the supplied formula in a Python function. Run it for
+`p = 0` and `p = 0.1`, with `n = 100`, then use the computed values as checks on
+a simulation. Document the formula's independence and distribution assumptions.
 
 **Practice B:** Use a known-answer numerical problem, vary difficulty and precision,
 and report residual and actual error separately. Choose meaningful tolerances.
@@ -85,16 +84,14 @@ and report residual and actual error separately. Choose meaningful tolerances.
 **Hints:** Write the target quantity before choosing the estimator. A small
 residual does not always imply a small solution error in a sensitive problem.
 
-**Evidence:** A derivation or primary mathematical reference, known-answer checks,
-and a reasoned tolerance rather than one chosen merely to make a test pass.
+**Evidence:** A numerical implementation, a primary mathematical reference or
+supplied analytical rule, observed checks, and a tolerance justified by the task.
 
 **Sources:** [PY-FLOAT](../audit/SOURCES.md#py-float), [NUMPY-VIEWS](../audit/SOURCES.md#numpy-views), [SCIPY-LINALG](../audit/SOURCES.md#scipy-linalg).
 
 ## P4-03 Experimental units baselines and uncertainty
 
-**GitHub in this lesson:** Review the experiment design and paired-data checks in the same PR as the Python analysis. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Identify experimental units, baseline, uncertainty method, and code evidence.
+**Workspace shortcut:** Open the experiment configuration and analysis script in separate editor tabs.
 
 **Prerequisites:** P4-02.
 
@@ -132,9 +129,7 @@ what the design cannot establish, including causal or population-level claims.
 
 ## P4-04 Reproducibility provenance and randomness
 
-**GitHub in this lesson:** Record exact commit, seed, dependencies, configuration, and result-retention method for a hosted rerun. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan).
-
-**GitHub evidence:** Demonstrate reproducibility within the stated environment and identify missing evidence.
+**Workspace shortcut:** Use Explorer to open the saved configuration and raw results from the same experiment run.
 
 **Prerequisites:** P4-03.
 
@@ -161,10 +156,11 @@ until you also capture code identity and the external execution environment.
 **Practice A:** Rerun a small experiment and compare outputs under a declared
 agreement criterion. Then change task order and verify stable task results.
 
-**Practice B:** Ask another environment to reproduce one result using only the
-written procedure. Record missing assumptions instead of fixing them privately.
+**Practice B:** Reproduce one result in a fresh virtual environment inside
+Codespaces using only the written procedure. Record missing assumptions and repair
+the instructions. External independent reproduction is an optional stronger check.
 
-**Hints:** Trace each reported number backward to a raw measurement and an input.
+**Hints:** Keep each reported number linked to its raw measurement and input.
 Record task-to-stream assignment as well as the root seed.
 
 **Evidence:** A fresh rerun, provenance record, discrepancy log, and explicit
@@ -174,9 +170,7 @@ cross-platform limits. Do not claim independent reproduction from one local reru
 
 ## P4-05 Verification validation and scientific tests
 
-**GitHub in this lesson:** Review scientific invariants and validation assumptions with the experiment code and CI result. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Explain which checks test implementation and which address the scientific model.
+**Workspace shortcut:** Ctrl+click the Terminal failure location to open the scientific test that needs repair.
 
 **Prerequisites:** P4-04.
 
@@ -187,7 +181,7 @@ Verification asks whether the implementation meets its stated rules. Validation
 asks whether the model and rules are suitable for their intended use. A correct
 implementation of an unsuitable model can still produce a misleading conclusion.
 
-Use hand-computable cases, independent oracles, invariants, metamorphic relations,
+Use supplied known-answer cases, independent oracles, invariants, metamorphic relations,
 convergence checks, and fault injection when justified. Shared dependencies can
 give two implementations the same bug. A property test is only as meaningful as
 its property and input domain. Do not require every random realization to look
@@ -213,9 +207,7 @@ distance between implementation correctness and domain validity.
 
 ## P4-06 Performance scaling and computational budgets
 
-**GitHub in this lesson:** Record a bounded hosted workload and compute budget before running a scaling comparison. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
-
-**GitHub evidence:** Compare equivalent workloads and report shared-runner measurement limits.
+**Workspace shortcut:** Use the Terminal plus button for a bounded performance run and Explorer for its saved measurements.
 
 **Prerequisites:** P4-05.
 
@@ -251,9 +243,7 @@ conclusion. The curriculum does not require buying accelerator hardware.
 
 ## P4-07 Scientific communication and critique
 
-**GitHub in this lesson:** Commit the methods and results report with permanent links to code and observed runs. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Make each key claim traceable to data, method, and a stated limitation.
+**Workspace shortcut:** Use the Markdown preview button to inspect your report alongside the source text.
 
 **Prerequisites:** P4-06.
 
@@ -290,9 +280,7 @@ private instructions. Teach back a limitation without overstating certainty.
 
 ## P4-08 Replication and the research capstone
 
-**GitHub in this lesson:** Deliver the investigation through a reviewed PR with reproduction instructions using GitHub Actions. References: [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Record an independent rerun if observed; label a self-rerun accurately.
+**Workspace shortcut:** Use Ctrl+P to open the reproduction instructions, then run their commands in the workspace Terminal.
 
 **Prerequisites:** P4-07.
 

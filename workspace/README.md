@@ -1,18 +1,18 @@
-# Your Python workspace
+# Your practice files
 
-Start with [the first edit and run](../START_HERE.md). Write your current exercise
-in [main.py](main.py) using github.dev. Commit & Push, then inspect
-[Run Python lesson](https://github.com/DevilMedlar/python-training/actions/workflows/learn.yml).
+Use [your Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/) to edit and run these files.
+Start with [lesson_01.py](lesson_01.py) and [the first task](../START_HERE.md).
 
 | File or folder | Purpose |
 |---|---|
-| main.py | The Python program Actions runs |
-| input.txt | One recorded answer per input() call; blank until the input lesson |
-| data/ | Small, committed, synthetic inputs preserved between runs |
-| results/ | Temporary outputs created on the runner; small text previews appear in the run summary |
-| requirements.txt | Package versions installed on the runner when a later lesson needs them |
-| test_*.py | Add meaningful tests here when testing is introduced |
+| lesson_01.py | Fresh first lesson: print your own sentence |
+| main.py | Earlier practice, preserved for you |
+| input_example.py | A live question you answer in the terminal at P1-04 |
+| data/ | Small sample data files |
+| results/ | Your generated output files; ignored by Git |
+| requirements.txt | Packages added only when a later lesson needs them |
 
-At the modules lesson, create `workspace/helpers.py` and import it with
-`from workspace.helpers import ...`. Execution starts at the repository root.
-See [inputs, files, dependencies, and checks](../practice/BROWSER_WORKFLOW.md).
+**Save → Run Python File in Terminal.** Programs execute immediately in this
+Codespace. Files you create remain there until you change/remove them or delete
+the Codespace. Commit important source and chosen results to preserve them on GitHub.
+The [workspace guide](../practice/BROWSER_WORKFLOW.md) explains the relevant buttons.

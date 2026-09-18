@@ -1,62 +1,52 @@
-# Assessment and mastery
+# Practical progress
 
-Assess observable work, not confidence, time spent, pages read, typing speed, or
-the polish of an AI-generated answer. The rubric below is an original course
-design, not a validated certification or degree standard.
+The goal is to use Python correctly for useful tasks. Show the technique, let
+the learner apply it, run the program in the
+[Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/), and repair real errors.
+Judge what the code does and record the help used.
 
-## Lesson evidence
+## A completed lesson
 
-Practice A develops the skill with support. Practice B uses a different instance
-or context for transfer. Ask for the explanation after the attempt, not a recitation
-of the reference solution. A later independent task checks retention. Use allowed
-documentation and accessibility tools consistently; record conceptual hints and
-solutions separately. Accept alternative correct code.
+The learner has applied the technique when their program performs the task's
+stated behavior. Use actual runs with relevant inputs. For example, check a normal
+input and an empty case when handling collections; do not require unrelated edge
+cases before a first `print()` exercise. Accept correct alternatives.
 
-The tutor can give an easier repair task, but should not label it equivalent to
-the original objective without explaining the narrower evidence. An assisted
-success never silently becomes an independent pass.
+Guidance, documentation, and complete examples are legitimate teaching tools.
+Record `hint` or `solution` assistance when used. A successful guided application
+can be `provisional`; successful application with no help or allowed references
+can be `secure`. Both statuses allow progress. Merely watching a demonstration
+does not count as the learner applying the skill.
 
-## Common rubric
+| Check | Evidence that matters |
+|---|---|
+| Task completed | The program performs the requested behavior. |
+| Error repaired, when one occurs | The failing case works after the correction and rerun. |
+| Help attributed | The record identifies documentation, hints, or a supplied solution. |
+| Independence claimed | The successful application used only allowed references or no help. |
 
-| Dimension | Needs repair | Ready for this objective |
-|---|---|---|
-| Contract | Inputs, outputs, or edge behavior are unclear | States and implements the relevant behavior |
-| Correctness | Fails a consequential accepted case | Demonstrates normal, boundary, and relevant failure cases |
-| Explanation | Cannot connect code decisions to behavior | Explains the decisive steps and one limitation |
-| Debugging | Repeats changes without checking a hypothesis | Reproduces, narrows, repairs, and checks a failure |
-| Transfer | Needs the original solution or decisive hints | Handles a new case under allowed reference conditions |
-| Retention | Cannot reconstruct the important decisions later | Completes a delayed independent check |
+Do not require predictions, mental execution, recitations, mandatory quizzes,
+delayed reviews, or a fixed number of study hours. Explain code decisions during
+teaching or troubleshooting when useful. A separate verbal explanation is not
+a gate. Offer extra practice or a later review when the learner wants it.
 
-No arithmetic average can compensate for a consequential correctness or safety
-failure in the assessed contract. Mark the specific gap, teach it, and retest with
-a fresh case. “Ready” is scoped to the objective and permitted resources.
+## Larger projects
 
-## Phase transitions
+The optional [phase projects](CAPSTONES.md) bring together skills already
+introduced. They are suggestions, not gates before the next phase.
+Use their relevant acceptance cases and actual output. Offer help while building;
+record it honestly. Reserve an independent completion claim for work demonstrated
+under independent/reference conditions. Neither a GitHub administration task nor
+a separate GitHub examination is needed for a Python lesson to count.
 
-Before a default transition, core lesson evidence should be provisional or secure,
-and the [phase capstone](CAPSTONES.md) should satisfy its acceptance criteria.
-Keep delayed reviews active for provisional skills. Use code, tests, explanations,
-and a tutor-chosen change or failure as evidence of independent work.
+At advanced levels, evaluate the claim the project makes: a performance change
+needs measurements, a research result needs an appropriate comparison, and a
+reusable tool needs usable instructions. These are project requirements, not
+reasons to turn every beginner task into a defense. Optional specialties remain
+optional, and routes may be tailored to a concrete goal.
 
-At advanced levels, additionally require tradeoff analysis. At research levels,
-require justified units, comparison, uncertainty, and reproducibility limits. At
-creator levels, require a supported contribution claim and usable handoff. A
-rejected upstream proposal can still satisfy learning criteria; an accepted one
-does not automatically establish every skill.
-
-P5-04 and P5-05 are optional specialist labs. The default creator core goes from
-P5-03 to P5-06; choose either lab or a relevant domain investigation when needed.
-The tutor may tailor a route for existing experience, recording equivalent
-evidence and remaining gaps rather than pretending the entire syllabus was completed.
-
-## Solutions and integrity
-
-The learner may request a full solution. Explain it, mark the assistance, and
-offer a fresh transfer problem later. Do not give both an assessment problem and
-its answer before the learner's attempt in agreed assessment mode. Answer keys
-are learning aids, not hidden proof that a learner has mastered a skill.
-
-If an answer key and a learner's output disagree, investigate the specification,
-version, hand-worked case, and implementation. Correct a wrong key openly.
-Automated tests check observable cases; human review still judges explanations,
-problem framing, fairness of experiments, and originality claims.
+When a test or reference disagrees with working code, inspect the requirements
+and actual behavior before judging the learner. Correct wrong teaching material.
+Tests verify their covered cases; a green check alone does not establish learner
+independence or broad mastery. Keep uncertainty explicit rather than fabricating
+evidence to satisfy a progress field.

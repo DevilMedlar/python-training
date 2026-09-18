@@ -7,16 +7,16 @@ includes both an investigation and a transfer task; do not turn the course into
 memorization of advanced vocabulary.
 
 
-Work in github.dev and commit your Python changes; inspect results on github.com
-through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
-includes a GitHub action on the same Python work. Any advanced execution commands
-belong in a hosted workflow step; inputs and files follow the browser guide.
+Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open a Python file, save, run it in the workspace Terminal, and use the result to
+make the next change. Type answers to `input()` directly in that Terminal.
+The tutor shows the technique and a working example before asking you to apply it.
+Each lesson includes one short workspace control; repository administration is
+optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P3-01 Protocols descriptors and object behavior
 
-**GitHub in this lesson:** Review a protocol implementation with contract tests as one focused PR. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Explain protocol behavior using its diff and the Actions test evidence.
+**Workspace shortcut:** Use Ctrl+P to switch between the protocol implementation and its contract tests.
 
 **Prerequisites:** P2-12.
 
@@ -49,14 +49,15 @@ print(item.name)
 from property
 ```
 
-**Practice A:** Trace a data descriptor, a non-data descriptor, and an instance
-attribute with the same name in separate examples.
+**Practice A:** Run small examples of a data descriptor, a non-data descriptor,
+and an instance attribute with the same name. Change each example and inspect
+which value Python returns.
 
 **Practice B:** Build a small read-only sequence wrapper and test indexing,
 iteration, empty input, and caller expectations. Explain when a built-in is simpler.
 
-**Hints:** State the lookup path before execution. Separate “cannot reassign this
-field” from “nothing reachable through this object can mutate.”
+**Hints:** Start from the property example above and run each variation. Separate
+“cannot reassign this field” from “nothing reachable through this object can mutate.”
 
 **Evidence:** Correct protocol behavior and an explanation of a broken hash or
 lookup contract without relying on implementation accidents.
@@ -65,9 +66,7 @@ lookup contract without relying on implementation accidents.
 
 ## P3-02 Closures decorators and caches
 
-**GitHub in this lesson:** Commit decorator or cache changes with tests for preserved interfaces and retained state. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Review the callable contract and invalidation behavior alongside the run.
+**Workspace shortcut:** Use Ctrl+Shift+F to find every caller of the wrapper or cache you are changing.
 
 **Prerequisites:** P3-01.
 
@@ -105,9 +104,7 @@ bound a cache. Document whether the reporting sink is allowed to fail.
 
 ## P3-03 Advanced typing and API boundaries
 
-**GitHub in this lesson:** Inspect type-checking and runtime-test jobs for the same API change. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Explain what each check can establish and review the public API diff.
+**Workspace shortcut:** Use View → Problems for static diagnostics and the Terminal for runtime test results.
 
 **Prerequisites:** P3-02.
 
@@ -145,15 +142,13 @@ boundary tests, and a documented limitation of the type system used.
 
 ## P3-04 Runtime memory and inspection
 
-**GitHub in this lesson:** Record the runner Python version with a small runtime observation in a committed note. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
-
-**GitHub evidence:** Distinguish a version-specific observation from a language guarantee and link the run.
+**Workspace shortcut:** Open Terminal → New Terminal for the runtime inspection commands and keep its version output.
 
 **Prerequisites:** P3-03.
 
 **Outcome:** Separate language guarantees from observations about a particular runtime.
 
-Trace source through parsing, code objects, and execution with `ast` and `dis`.
+Use `ast` and `dis` to inspect how Python represents source and compiled code.
 Bytecode is version-dependent; do not ship a cross-version contract based on an
 observed instruction sequence. Reference counting and cyclic collection are
 CPython mechanisms, not a language-wide guarantee of immediate cleanup.
@@ -168,14 +163,15 @@ labeling every rise in memory a runtime leak.
 reference where supported, remove owners, and observe lifetime in your interpreter.
 Report which observation is build-specific and why a file still needs explicit cleanup.
 
-**Practice A:** Trace a small expression using its AST and bytecode. Record the
-interpreter version and explain why an AST transformation could change semantics.
+**Practice A:** Run `ast.dump` and `dis.dis` on a small expression to inspect
+Python's generated representations. Record the interpreter version, change the
+expression, and rerun the tools to compare their output.
 
 **Practice B:** Compare repeated allocation with retained allocation and measure
 both Python allocation data and a clearly labeled process-memory metric if available.
 
-**Hints:** Draw a graph of owners. A variable disappearing does not imply the
-object has no other references.
+**Hints:** Add and remove one retained reference at a time and measure the
+result. A variable disappearing does not imply the object has no other references.
 
 **Evidence:** A minimal reproducer, version/build metadata, and a bounded claim
 about what the measurement tool actually observes.
@@ -184,9 +180,7 @@ about what the measurement tool actually observes.
 
 ## P3-05 Algorithms profiling and fair benchmarks
 
-**GitHub in this lesson:** Compare bounded profiling runs for two commits and record workload and runner conditions. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
-
-**GitHub evidence:** Report raw measurements and limits without claiming hosted timing proves a universal speedup.
+**Workspace shortcut:** Use Explorer to open the saved benchmark results beside your implementation.
 
 **Prerequisites:** P3-04.
 
@@ -224,9 +218,7 @@ specific limits. Do not turn local timing results into a universal ranking.
 
 ## P3-06 Threads processes and isolated interpreters
 
-**GitHub in this lesson:** Run bounded concurrency and cleanup tests in Actions and inspect the configured Python version. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Connect ownership and failure behavior to actual job results.
+**Workspace shortcut:** Use the Terminal plus button for a separate bounded concurrency run; Ctrl+C interrupts it.
 
 **Prerequisites:** P3-05.
 
@@ -265,9 +257,7 @@ limits. A 3.14-only investigation is separate from core 3.12 compatibility tests
 
 ## P3-07 Async work bounds and cancellation
 
-**GitHub in this lesson:** Review async bounds and cancellation tests in the PR and inspect their hosted results. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Show worker-failure and cancellation evidence for the reviewed commit.
+**Workspace shortcut:** Keep the running Terminal visible and use Ctrl+C to exercise the program's interruption handling.
 
 **Prerequisites:** P3-06.
 
@@ -289,8 +279,9 @@ An application timeout does not establish the outcome of a remote side effect.
 fixed consumers, worker subtotals, and a `TaskGroup`. Its arithmetic is deliberately
 simple: the example demonstrates lifecycle and memory structure, not CPU speedup.
 
-**Practice A:** Trace the maximum number of queued items and owned tasks for a
-chosen worker count. Compare with one-task-per-item plus a semaphore.
+**Practice A:** Instrument a bounded pipeline to record its largest queue and
+owned-task count during a small run. Compare those measurements with a
+one-task-per-item implementation using a semaphore, then fix the unbounded design.
 
 **Practice B:** Make one worker fail and cancel another run while production is
 blocked. Verify completion under a deadline and no owned unfinished tasks.
@@ -305,9 +296,7 @@ and cleanup checks. Do not treat a successful happy-path run as sufficient.
 
 ## P3-08 Transactions retries and distributed uncertainty
 
-**GitHub in this lesson:** Commit a failure scenario and an explanation of uncertain outcomes with the implementation. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-11](github.md#gh-11-find-work-and-document-it-clearly).
-
-**GitHub evidence:** Link rollback or retry tests to the stated invariant and documented limits.
+**Workspace shortcut:** Use the Split Editor button to compare the transaction function with its failure tests.
 
 **Prerequisites:** P3-07.
 
@@ -344,9 +333,7 @@ boundary around what the implementation guarantees.
 
 ## P3-09 Architecture security and operations
 
-**GitHub in this lesson:** Review workflow permissions and an architecture change alongside its Python trust boundaries. References: [GH-12](github.md#gh-12-protect-accounts-and-review-boundaries), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
-
-**GitHub evidence:** Explain which code and tools can access which resources without claiming an unverified setting.
+**Workspace shortcut:** Use Ctrl+Shift+F to locate the application boundary named by a diagnostic message.
 
 **Prerequisites:** P3-08.
 
@@ -373,8 +360,8 @@ test becomes simpler. Reject an abstraction that adds no useful flexibility.
 **Practice B:** Inject a storage failure into a synthetic service. Use its signals
 to identify the failure and document graceful shutdown and recovery.
 
-**Hints:** Trace an input across every trust boundary. Ask what the operator can
-observe when your preferred assumption fails.
+**Hints:** Run a small failing input at each trust boundary and inspect the
+available diagnostic. Make the message useful enough to locate the failure.
 
 **Evidence:** A design comparison, failure evidence, useful diagnostics, and a
 runbook that identifies limits rather than promising universal security.
@@ -383,9 +370,7 @@ runbook that identifies limits rather than promising universal security.
 
 ## P3-10 Reliable delivery and specialization
 
-**GitHub in this lesson:** Deliver the bounded-system capstone with a reviewed release candidate and hosted clean-build checks. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
-
-**GitHub evidence:** Connect the release candidate to its code, failure tests, and runbook.
+**Workspace shortcut:** Use Terminal → New Terminal for a clean-environment install and run the documented first task there.
 
 **Prerequisites:** P3-09.
 
@@ -407,8 +392,9 @@ them, processes work under memory limits, and either commits or reports failure
 under a documented policy. Its evidence includes a corrupted record, worker
 failure, interruption, and clean installation.
 
-**Practice A:** Build and install your continuing project in a clean GitHub-hosted job
-outside the source directory and execute its documented first task.
+**Practice A:** Build your project's wheel in Codespaces, install it into a
+fresh virtual environment there, and run its first task from a temporary directory
+outside the source checkout.
 
 **Practice B:** Complete [Capstone 3](../practice/CAPSTONES.md#capstone-3-bounded-processing-system),
 defend two design choices, and demonstrate a new failure chosen by the tutor.

@@ -1,58 +1,35 @@
-# Placement and resumption
+# Starting and continuing
 
-Placement locates a useful starting task. It is not a certificate, personality
-test, or a reason to delay useful teaching. Ask one task at a time. If the learner
-declares no experience, start at `P1-01` and guide the first edit, commit, and Actions run in the browser.
+The requested restart begins at **P1-01** in
+[the existing Codespace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open `workspace/lesson_01.py`, show the first technique, and run a small program.
+There is no intake test or platform selection before this lesson.
 
-## Brief intake
+## Continue from useful work
 
-Use already available answers: What would the learner like to build? What have
-they built without an exact tutorial? How much time do they have today? Python runs on GitHub Actions; that environment is already decided. Ask about access needs when relevant. Do not collect unrelated personal data.
+Read [progress.json](progress.json) and continue its `next_task`. If the record
+is unavailable, ask what file the learner was editing or request the relevant
+code. Distinguish reported history from work actually inspected.
 
-## Adaptive tasks
+When a learner asks to skip ahead, inspect a relevant existing program or offer
+one practical task at the desired level. Let them run it and use references.
+Teach any missing technique during that work. Stop once there is enough evidence
+to choose a useful lesson; do not administer the whole curriculum as a test.
 
-| Entry point | Task | Observe | Route if a gap appears |
-|---|---|---|---|
-| P1 foundations | Trace `x = 3`, `y = x + 2`, `x = 10` | Does `y` remain 5, with a correct explanation? | P1-02 |
-| P1 control/data | Count values at least 10 in `[4, 10, 15]`, then `[]` | Loop, condition, initialization, empty case | P1-05 through P1-07 |
-| P1 functions | Return an average or `None` for empty input | Contract, return versus print, boundary | P1-08 |
-| P1 debugging/files | Explain how to load valid duration JSON without overwriting malformed history | Parse/schema distinction and error handling | P1-10 through P1-12 |
-| P2 readiness | Build a CSV topic aggregator with tests | Quoting, validation, duplicates, no partial success, pure calculation | Relevant P2 lessons |
-| P3 readiness | Explain and repair a growing task list behind a semaphore | Bounds, ownership, cancellation, actual failure checks | P3-06 and P3-07, or earlier prerequisites |
-| P4 readiness | Critique a speed comparison from one dataset and one timing | Units, baseline, uncertainty, scope, reproducibility | P4-01 through P4-04 |
-| P5 readiness | Defend a small contribution against existing alternatives | Value, evidence, compatibility, novelty limits | P5-01 through P5-03 |
+| Existing work or goal | Useful starting area |
+|---|---|
+| New to Python, or requested restart | P1-01: first working program |
+| Comfortable with basic scripts, needs reusable code | P1 functions and modules |
+| Wants to process files or produce reports | P1 files, then P2 data processing |
+| Has working code, needs reliability | P2 testing and error handling |
+| Has a larger application to improve | Relevant P3 design or performance lesson |
+| Has a specific investigation or contribution | Relevant P4 or P5 project with targeted support |
 
-The first row is a short verbal trace, not a demand to copy three statements into
-one line. The advanced rows are only for learners whose previous work supports
-trying them. Stop after enough evidence to choose an immediate lesson, usually
-two or three tasks rather than this entire table.
+This table suggests starting areas; it does not grant completion for unseen work.
+Record the task actually performed and the help used. Documentation and necessary
+accessibility tools count as allowed references. Conceptual guidance is `hint`;
+a supplied implementation or decisive modeled step is `solution`.
 
-## Scoring a task
-
-Sample the GitHub action attached to the same Python task: identify its committed
-file and run, inspect its diff, or explain its PR. Teach missing browser controls
-within that Python lesson. Do not conduct separate GitHub placement or require
-GitHub mastery before the first Python program.
-
-Record `pass` or `retry`, the actual response, and support used. Use `none` for
-independent work, `reference` for allowed documentation/accommodations, `hint`
-for conceptual assistance, and `solution` when the answer or a modeled decisive
-step was supplied. A syntax lookup may be an allowed reference; a generated
-implementation is solution assistance. Ask what help was used when it matters.
-
-Do not infer competence in every preceding lesson from a single successful
-advanced task. Record the objectives actually demonstrated. Equivalent prior
-work can satisfy a prerequisite when its relevant behavior and explanation are
-inspected; otherwise label it unconfirmed and sample it during learning.
-
-Use explicit learning goals to tailor the route. A working developer seeking
-testing help need not start with arithmetic. A research specialist may need a
-targeted gap repair in packaging. Document the tailored prerequisites rather
-than inventing a global “expert” score.
-
-## Resume after a gap
-
-Read the latest record and ask one short retrieval question from the current
-lesson or a due review. If the record is unavailable, request it or reconstruct
-only what the learner reports, with that uncertainty noted. A later failure
-changes that skill to `review_needed`; it does not erase unrelated achievements.
+After a break, reopen the last file and continue with a useful change. Offer a
+brief refresher when needed. Recall questions and delayed reviews are optional;
+they do not block resumption or erase unrelated progress.

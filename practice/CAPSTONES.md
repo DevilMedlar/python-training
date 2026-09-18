@@ -2,9 +2,10 @@
 
 Use synthetic practice data. Build from the contract before opening the reference
 programs. A reference demonstrates selected mechanisms; the capstone also asks
-for independent extension, explanation, and failure evidence. Work on a browser
-branch under `workspace/`, run through GitHub Actions, and deliver each capstone
-as an inspected Python PR. The GitHub work belongs to that capstone.
+for a useful extension and checks of real behavior. Build under `workspace/` in
+[your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/), run
+programs in its Terminal, and type answers at their prompts. Save files there as
+you work; a commit or pull request is not required to run or finish a Python task.
 Each phase's final Practice B points here.
 
 ## Capstone 1 Study tracker
@@ -17,11 +18,11 @@ boolean, or nonpositive saved data must be reported without overwriting it.
 Acceptance examples: empty history gives count 0, total 0, average 0.0; adding
 20 and 40 gives count 2, total 60, average 30.0; saving and reopening preserves
 the list. Invalid input prompts a correction. An unsuccessful save does not claim
-success. Supply the menu answers through workspace/input.txt, including a final
-quit choice. Demonstrate save and reopen within the same run. For a subsequent
-fresh run, commit the intended synthetic starting JSON under workspace/data/;
-runner files do not automatically persist or become commits. Preview small saved
-files under workspace/results/ on the run summary. Explain both persistence boundaries.
+success. Type menu answers directly in the Codespaces Terminal and choose quit
+when finished. Run the program again in the same workspace and confirm that it
+loads the file it saved. Use Explorer to inspect the synthetic JSON file under
+`workspace/data/`. Files saved in this Codespace persist when you stop and restart
+it; save important code to the repository before deleting the Codespace.
 
 Deliver calculation functions, an interface, error checks, and a short README.
 Independently add one feature such as longest session or removal of the latest

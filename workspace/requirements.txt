@@ -1,2 +1,2 @@
 # Add a package version only when the current Python lesson needs it.
-# GitHub Actions installs these packages on its hosted runner.
+# Install in your Codespace terminal with: python -m pip install -r workspace/requirements.txt

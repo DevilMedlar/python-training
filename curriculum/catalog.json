@@ -1,5 +1,5 @@
 {
-  "catalog_version": "1.2",
+  "catalog_version": "1.3",
   "minimum_python": "3.12",
   "core_python_targets": [
     "3.12",
@@ -47,17 +47,11 @@
       "anchor": "p1-01-run-and-inspect-a-program",
       "prerequisites": [],
       "core": true,
-      "objective": "Edit and commit a Python file in github.dev, inspect its GitHub Actions output, and distinguish source from execution.",
+      "objective": "Write, save, and run a Python file in your Codespaces workspace.",
       "source_ids": [
         "PY-INTRO"
       ],
-      "github_skills": [
-        "GH-01",
-        "GH-03",
-        "GH-10"
-      ],
-      "github_task": "Edit workspace/main.py in github.dev, Commit & Push, and open the matching Run Python lesson result.",
-      "github_evidence": "Explain the printed result and identify the source file, commit, and Actions output."
+      "workspace_shortcut": "Open workspace/lesson_01.py in Explorer, save with Ctrl+S, then use Run Python File in Terminal (the triangle or editor right-click menu when available). The terminal fallback is in START_HERE.md."
     },
     {
       "id": "P1-02",
@@ -69,16 +63,12 @@
         "P1-01"
       ],
       "core": true,
-      "objective": "Trace assignments and use integers, floats, strings, booleans, and `None` for appropriate purposes.",
+      "objective": "Use assignments, integers, floats, strings, booleans, and `None` for appropriate purposes.",
       "source_ids": [
         "PY-INTRO",
         "PY-FLOAT"
       ],
-      "github_skills": [
-        "GH-04"
-      ],
-      "github_task": "Change the arithmetic in your Python file, inspect the old and new lines in Source Control, and commit the change.",
-      "github_evidence": "Show the arithmetic prediction, the diff, and the result for that commit."
+      "workspace_shortcut": "Use Ctrl+S to save, then run the current Python file again to see the calculation."
     },
     {
       "id": "P1-03",
@@ -94,11 +84,7 @@
       "source_ids": [
         "PY-TEXT"
       ],
-      "github_skills": [
-        "GH-04"
-      ],
-      "github_task": "Commit one string-cleaning change with a message explaining its behavior, and inspect its Actions output.",
-      "github_evidence": "Connect the changed expression with the output and the commit message."
+      "workspace_shortcut": "Use Ctrl+F to find a string in the open file; save and run after changing it."
     },
     {
       "id": "P1-04",
@@ -114,11 +100,7 @@
       "source_ids": [
         "PY-BUILTINS"
       ],
-      "github_skills": [
-        "GH-10"
-      ],
-      "github_task": "Commit the program and one answer per prompt in workspace/input.txt, then inspect the same run.",
-      "github_evidence": "Explain which input line was converted and show the observed conversion result or error."
+      "workspace_shortcut": "Run the file, click its Terminal panel, type each answer at its prompt, and press Enter."
     },
     {
       "id": "P1-05",
@@ -135,12 +117,7 @@
         "PY-TRUTH",
         "PY-FUNCTIONS"
       ],
-      "github_skills": [
-        "GH-04",
-        "GH-10"
-      ],
-      "github_task": "Change sample inputs to exercise the decision boundaries and commit the cases with your Python code.",
-      "github_evidence": "Link the tested boundary cases to the committed inputs and output."
+      "workspace_shortcut": "Use Ctrl+S and Run Python File in Terminal after changing a boundary input."
     },
     {
       "id": "P1-06",
@@ -152,15 +129,11 @@
         "P1-05"
       ],
       "core": true,
-      "objective": "Trace and write finite repetition, including an empty input.",
+      "objective": "Write and run finite repetition, including an empty input.",
       "source_ids": [
         "PY-FUNCTIONS"
       ],
-      "github_skills": [
-        "GH-10"
-      ],
-      "github_task": "Run a finite loop in Actions, inspect its output, and locate Cancel workflow before trying termination repairs.",
-      "github_evidence": "Explain the stopping condition and distinguish a finished run from a cancelled or timed-out run."
+      "workspace_shortcut": "Click the running Terminal and press Ctrl+C to stop a loop; save the repair and run again."
     },
     {
       "id": "P1-07",
@@ -176,11 +149,7 @@
       "source_ids": [
         "PY-COLLECTIONS"
       ],
-      "github_skills": [
-        "GH-04"
-      ],
-      "github_task": "Commit a collection change and inspect which list or dictionary entries changed in the diff.",
-      "github_evidence": "Explain both the representation choice and what the commit actually records."
+      "workspace_shortcut": "Use Explorer \u2192 New File to keep this collections exercise in its own .py file."
     },
     {
       "id": "P1-08",
@@ -196,11 +165,7 @@
       "source_ids": [
         "PY-FUNCTIONS"
       ],
-      "github_skills": [
-        "GH-02"
-      ],
-      "github_task": "Create a function-change branch in the browser, refactor your calculation, commit it, and open a PR.",
-      "github_evidence": "Show the function result and identify the PR base, head, and Python diff before merging."
+      "workspace_shortcut": "Use Ctrl+P to reopen your function file quickly, then run its example calls."
     },
     {
       "id": "P1-09",
@@ -217,12 +182,7 @@
         "PY-CLASSES",
         "PY-MODEL"
       ],
-      "github_skills": [
-        "GH-04",
-        "GH-06"
-      ],
-      "github_task": "On your practice branch, inspect a mutation-related change and review exactly which lines you stage.",
-      "github_evidence": "Predict the object behavior and connect the staged diff to the resulting commit."
+      "workspace_shortcut": "Use the Split Editor button to compare two small examples side by side."
     },
     {
       "id": "P1-10",
@@ -239,13 +199,7 @@
         "PY-ERRORS",
         "PY-ASSERT"
       ],
-      "github_skills": [
-        "GH-08",
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Use the failing Actions traceback to fix a Python bug, add a regression test in workspace/test_*.py, and inspect a new run.",
-      "github_evidence": "Link the failing and repaired commits; explain the test that detects the bug."
+      "workspace_shortcut": "Ctrl+click a file-and-line link in a Terminal traceback to open the failing line."
     },
     {
       "id": "P1-11",
@@ -262,12 +216,7 @@
         "PY-MODULES",
         "PY-VENV"
       ],
-      "github_skills": [
-        "GH-03",
-        "GH-04"
-      ],
-      "github_task": "Commit a helper and its import together; use the hosted environment exercise in the browser workflow guide.",
-      "github_evidence": "Show the import result and identify the interpreter reported by the workflow."
+      "workspace_shortcut": "Open the Command Palette (Ctrl+Shift+P) and choose Python: Select Interpreter when the Python extension is available."
     },
     {
       "id": "P1-12",
@@ -284,13 +233,7 @@
         "PY-FILES",
         "PY-JSON"
       ],
-      "github_skills": [
-        "GH-02",
-        "GH-06",
-        "GH-11"
-      ],
-      "github_task": "Deliver the study tracker on a branch with committed sample data, a README, and an inspected PR.",
-      "github_evidence": "Show save-and-reopen behavior, the source/run links, and a PR explanation of the independent feature."
+      "workspace_shortcut": "Use Explorer to open the JSON file your program saved, then rerun the program in the same workspace."
     },
     {
       "id": "P2-01",
@@ -307,11 +250,7 @@
         "PY-COLLECTIONS",
         "PY-BUILTINS"
       ],
-      "github_skills": [
-        "GH-09"
-      ],
-      "github_task": "Review a collection refactor as one focused Python diff with tests before and after.",
-      "github_evidence": "Explain unchanged behavior, relevant complexity, and the observed check result."
+      "workspace_shortcut": "Use Ctrl+F to find the collection operation you are replacing; save and rerun its checks."
     },
     {
       "id": "P2-02",
@@ -328,12 +267,7 @@
         "PY-ITERTOOLS",
         "PY-CLASSES"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Commit a generator and tests for empty and single-use input, then inspect the learner-test log.",
-      "github_evidence": "Connect streaming behavior and lifetime checks with the run for that commit."
+      "workspace_shortcut": "Use Terminal \u2192 New Terminal for a fresh run of your streaming example."
     },
     {
       "id": "P2-03",
@@ -350,11 +284,7 @@
         "PY-FUNCTIONS",
         "PY-FUNCTOOLS"
       ],
-      "github_skills": [
-        "GH-06"
-      ],
-      "github_task": "Open a PR for an interface change and explain its caller impact in the description.",
-      "github_evidence": "Review a caller diff and demonstrate the revised contract."
+      "workspace_shortcut": "Use Find All References on a function when Python language support is available, or Ctrl+Shift+F to find its callers."
     },
     {
       "id": "P2-04",
@@ -371,12 +301,7 @@
         "PY-DATACLASSES",
         "PY-CLASSES"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-09"
-      ],
-      "github_task": "Review the class or composition change together with tests for independent instance state.",
-      "github_evidence": "Use the PR diff and test output to explain ownership and accidental sharing."
+      "workspace_shortcut": "Use the Split Editor button to view the class and its tests together."
     },
     {
       "id": "P2-05",
@@ -393,12 +318,7 @@
         "PY-CONTEXT",
         "PY-ERRORS"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Commit a resource-failure test and inspect its error context and cleanup result in Actions.",
-      "github_evidence": "Explain the failure boundary using the test and run, not only a success-path example."
+      "workspace_shortcut": "Ctrl+click a Terminal traceback location to inspect the resource acquisition that failed."
     },
     {
       "id": "P2-06",
@@ -414,11 +334,7 @@
       "source_ids": [
         "PY-TYPING"
       ],
-      "github_skills": [
-        "GH-10"
-      ],
-      "github_task": "Add the chosen type checker as a hosted workflow step when needed; compare it with runtime validation tests.",
-      "github_evidence": "Identify the distinct static and runtime results for the same Python interface."
+      "workspace_shortcut": "Open View \u2192 Problems to inspect editor diagnostics when a type checker is configured."
     },
     {
       "id": "P2-07",
@@ -435,12 +351,7 @@
         "PY-UNITTEST",
         "PY-LOGGING"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Add meaningful workspace tests and inspect their discovery count, failure messages, and result in Actions.",
-      "github_evidence": "Show a test failing for the intended defect and passing after its fix."
+      "workspace_shortcut": "In the workspace Terminal, run python -m unittest discover -s workspace -p \"test_*.py\" -v; read the result there."
     },
     {
       "id": "P2-08",
@@ -458,12 +369,7 @@
         "PY-DECIMAL",
         "PY-DATETIME"
       ],
-      "github_skills": [
-        "GH-11",
-        "GH-09"
-      ],
-      "github_task": "Commit a small data fixture and document its schema beside the Python parser.",
-      "github_evidence": "Review the fixture diff and explain a quoting, date, or numeric boundary test."
+      "workspace_shortcut": "Use Explorer \u2192 New File to add a small CSV fixture beside the parser exercise."
     },
     {
       "id": "P2-09",
@@ -480,11 +386,7 @@
         "PY-URLLIB",
         "HTTP-SEMANTICS"
       ],
-      "github_skills": [
-        "GH-14"
-      ],
-      "github_task": "Use a recorded GitHub API response to test your Python adapter; run any bounded live read from Actions.",
-      "github_evidence": "Distinguish fixture checks from live observations and explain pagination or failure handling."
+      "workspace_shortcut": "Use the Terminal plus button to keep a separate terminal for optional API experiments."
     },
     {
       "id": "P2-10",
@@ -500,34 +402,23 @@
       "source_ids": [
         "PY-SQLITE"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Commit SQLite transaction tests using temporary runner files and inspect rollback evidence.",
-      "github_evidence": "Explain the database invariant and link the test run for that code."
+      "workspace_shortcut": "Use Explorer to locate the disposable database file, and Terminal \u2192 New Terminal for its checks."
     },
     {
       "id": "P2-11",
       "phase": 2,
-      "title": "Git packaging and reproducible setup",
+      "title": "Packaging and reproducible setup",
       "path": "curriculum/phase-2.md",
-      "anchor": "p2-11-git-packaging-and-reproducible-setup",
+      "anchor": "p2-11-packaging-and-reproducible-setup",
       "prerequisites": [
         "P2-10"
       ],
       "core": true,
-      "objective": "Make a project installable and explain what a version-control change contains.",
+      "objective": "Build a Python package and run it from a clean environment in Codespaces.",
       "source_ids": [
-        "PY-PACKAGING",
-        "GIT-BOOK"
+        "PY-PACKAGING"
       ],
-      "github_skills": [
-        "GH-05",
-        "GH-07"
-      ],
-      "github_task": "Build your package in a hosted workflow and use a simple competing-line PR to practice browser conflict resolution.",
-      "github_evidence": "Show a fresh runner installation and verify the resolved Python behavior."
+      "workspace_shortcut": "Open the Command Palette (Ctrl+Shift+P) and choose Python: Create Environment when available, or use the terminal steps in the workspace guide."
     },
     {
       "id": "P2-12",
@@ -544,12 +435,7 @@
         "PY-ARGPARSE",
         "PY-HEAPQ"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-13"
-      ],
-      "github_task": "Finish the report application PR and prepare a GitHub release draft describing its tested command interface.",
-      "github_evidence": "Link the reviewed commit, hosted command results, and release notes; a draft is not a publication."
+      "workspace_shortcut": "Use the workspace Terminal to run your command with --help and then with a sample file."
     },
     {
       "id": "P3-01",
@@ -566,12 +452,7 @@
         "PY-MODEL",
         "PY-DESCRIPTOR"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-09"
-      ],
-      "github_task": "Review a protocol implementation with contract tests as one focused PR.",
-      "github_evidence": "Explain protocol behavior using its diff and the Actions test evidence."
+      "workspace_shortcut": "Use Ctrl+P to switch between the protocol implementation and its contract tests."
     },
     {
       "id": "P3-02",
@@ -588,12 +469,7 @@
         "PY-FUNCTOOLS",
         "PY-ASYNC"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-09"
-      ],
-      "github_task": "Commit decorator or cache changes with tests for preserved interfaces and retained state.",
-      "github_evidence": "Review the callable contract and invalidation behavior alongside the run."
+      "workspace_shortcut": "Use Ctrl+Shift+F to find every caller of the wrapper or cache you are changing."
     },
     {
       "id": "P3-03",
@@ -610,12 +486,7 @@
         "PY-TYPING",
         "PY-ANNOTATIONS"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-06"
-      ],
-      "github_task": "Inspect type-checking and runtime-test jobs for the same API change.",
-      "github_evidence": "Explain what each check can establish and review the public API diff."
+      "workspace_shortcut": "Use View \u2192 Problems for static diagnostics and the Terminal for runtime test results."
     },
     {
       "id": "P3-04",
@@ -633,12 +504,7 @@
         "PY-INSPECTION",
         "PY-MEMORY"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-11"
-      ],
-      "github_task": "Record the runner Python version with a small runtime observation in a committed note.",
-      "github_evidence": "Distinguish a version-specific observation from a language guarantee and link the run."
+      "workspace_shortcut": "Open Terminal \u2192 New Terminal for the runtime inspection commands and keep its version output."
     },
     {
       "id": "P3-05",
@@ -655,12 +521,7 @@
         "PY-HEAPQ",
         "PYPERF"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-11"
-      ],
-      "github_task": "Compare bounded profiling runs for two commits and record workload and runner conditions.",
-      "github_evidence": "Report raw measurements and limits without claiming hosted timing proves a universal speedup."
+      "workspace_shortcut": "Use Explorer to open the saved benchmark results beside your implementation."
     },
     {
       "id": "P3-06",
@@ -678,12 +539,7 @@
         "PY-EXECUTORS",
         "PY-PROCESSES"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-09"
-      ],
-      "github_task": "Run bounded concurrency and cleanup tests in Actions and inspect the configured Python version.",
-      "github_evidence": "Connect ownership and failure behavior to actual job results."
+      "workspace_shortcut": "Use the Terminal plus button for a separate bounded concurrency run; Ctrl+C interrupts it."
     },
     {
       "id": "P3-07",
@@ -700,12 +556,7 @@
         "PY-ASYNC",
         "PY-QUEUES"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Review async bounds and cancellation tests in the PR and inspect their hosted results.",
-      "github_evidence": "Show worker-failure and cancellation evidence for the reviewed commit."
+      "workspace_shortcut": "Keep the running Terminal visible and use Ctrl+C to exercise the program's interruption handling."
     },
     {
       "id": "P3-08",
@@ -722,12 +573,7 @@
         "PY-SQLITE",
         "HTTP-SEMANTICS"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-11"
-      ],
-      "github_task": "Commit a failure scenario and an explanation of uncertain outcomes with the implementation.",
-      "github_evidence": "Link rollback or retry tests to the stated invariant and documented limits."
+      "workspace_shortcut": "Use the Split Editor button to compare the transaction function with its failure tests."
     },
     {
       "id": "P3-09",
@@ -745,12 +591,7 @@
         "PY-SUBPROCESS",
         "PY-LOGGING"
       ],
-      "github_skills": [
-        "GH-12",
-        "GH-15"
-      ],
-      "github_task": "Review workflow permissions and an architecture change alongside its Python trust boundaries.",
-      "github_evidence": "Explain which code and tools can access which resources without claiming an unverified setting."
+      "workspace_shortcut": "Use Ctrl+Shift+F to locate the application boundary named by a diagnostic message."
     },
     {
       "id": "P3-10",
@@ -767,12 +608,7 @@
         "PY-PACKAGING",
         "PY-UNITTEST"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-13"
-      ],
-      "github_task": "Deliver the bounded-system capstone with a reviewed release candidate and hosted clean-build checks.",
-      "github_evidence": "Connect the release candidate to its code, failure tests, and runbook."
+      "workspace_shortcut": "Use Terminal \u2192 New Terminal for a clean-environment install and run the documented first task there."
     },
     {
       "id": "P4-01",
@@ -788,11 +624,7 @@
       "source_ids": [
         "RESEARCH-PRACTICE"
       ],
-      "github_skills": [
-        "GH-11"
-      ],
-      "github_task": "Commit a research question and protocol beside the planned Python experiment before collecting final results.",
-      "github_evidence": "Point to the protocol commit and distinguish hypotheses from established findings."
+      "workspace_shortcut": "Use Explorer \u2192 New File to save a short research protocol beside the experiment."
     },
     {
       "id": "P4-02",
@@ -810,12 +642,7 @@
         "NUMPY-VIEWS",
         "SCIPY-LINALG"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Run small numerical checks in the recorded hosted environment and commit their assumptions.",
-      "github_evidence": "Explain tolerances using observed residuals and reference cases."
+      "workspace_shortcut": "Use the Split Editor button to keep the numerical method and its check visible together."
     },
     {
       "id": "P4-03",
@@ -833,12 +660,7 @@
         "SCIPY-BOOTSTRAP",
         "SKLEARN-LEAKAGE"
       ],
-      "github_skills": [
-        "GH-11",
-        "GH-09"
-      ],
-      "github_task": "Review the experiment design and paired-data checks in the same PR as the Python analysis.",
-      "github_evidence": "Identify experimental units, baseline, uncertainty method, and code evidence."
+      "workspace_shortcut": "Open the experiment configuration and analysis script in separate editor tabs."
     },
     {
       "id": "P4-04",
@@ -855,12 +677,7 @@
         "NUMPY-RANDOM",
         "RESEARCH-PRACTICE"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-16"
-      ],
-      "github_task": "Record exact commit, seed, dependencies, configuration, and result-retention method for a hosted rerun.",
-      "github_evidence": "Demonstrate reproducibility within the stated environment and identify missing evidence."
+      "workspace_shortcut": "Use Explorer to open the saved configuration and raw results from the same experiment run."
     },
     {
       "id": "P4-05",
@@ -877,12 +694,7 @@
         "HYPOTHESIS",
         "NUMPY-VIEWS"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-06"
-      ],
-      "github_task": "Review scientific invariants and validation assumptions with the experiment code and CI result.",
-      "github_evidence": "Explain which checks test implementation and which address the scientific model."
+      "workspace_shortcut": "Ctrl+click the Terminal failure location to open the scientific test that needs repair."
     },
     {
       "id": "P4-06",
@@ -899,12 +711,7 @@
         "JAX-BENCHMARK",
         "PYPERF"
       ],
-      "github_skills": [
-        "GH-10",
-        "GH-13"
-      ],
-      "github_task": "Record a bounded hosted workload and compute budget before running a scaling comparison.",
-      "github_evidence": "Compare equivalent workloads and report shared-runner measurement limits."
+      "workspace_shortcut": "Use the Terminal plus button for a bounded performance run and Explorer for its saved measurements."
     },
     {
       "id": "P4-07",
@@ -921,12 +728,7 @@
         "RESEARCH-PRACTICE",
         "NIST-CI"
       ],
-      "github_skills": [
-        "GH-11",
-        "GH-06"
-      ],
-      "github_task": "Commit the methods and results report with permanent links to code and observed runs.",
-      "github_evidence": "Make each key claim traceable to data, method, and a stated limitation."
+      "workspace_shortcut": "Use the Markdown preview button to inspect your report alongside the source text."
     },
     {
       "id": "P4-08",
@@ -942,12 +744,7 @@
       "source_ids": [
         "RESEARCH-PRACTICE"
       ],
-      "github_skills": [
-        "GH-16",
-        "GH-06"
-      ],
-      "github_task": "Deliver the investigation through a reviewed PR with reproduction instructions using GitHub Actions.",
-      "github_evidence": "Record an independent rerun if observed; label a self-rerun accurately."
+      "workspace_shortcut": "Use Ctrl+P to open the reproduction instructions, then run their commands in the workspace Terminal."
     },
     {
       "id": "P5-01",
@@ -964,12 +761,7 @@
         "RESEARCH-PRACTICE",
         "PEP-PROCESS"
       ],
-      "github_skills": [
-        "GH-11",
-        "GH-15"
-      ],
-      "github_task": "Define a bounded contribution in a GitHub document and review the evidence behind the proposed Python change.",
-      "github_evidence": "State the intended benefit, existing alternatives, and the exact contribution scope."
+      "workspace_shortcut": "Use Explorer \u2192 New File to keep the contribution brief beside the prototype."
     },
     {
       "id": "P5-02",
@@ -986,12 +778,7 @@
         "PY-TYPING",
         "PY-PACKAGING"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-09"
-      ],
-      "github_task": "Review compatibility tests and design decisions together in a focused Python PR.",
-      "github_evidence": "Explain which users or callers are affected using the diff and observed checks."
+      "workspace_shortcut": "Use Ctrl+Shift+F to find callers affected by an interface change."
     },
     {
       "id": "P5-03",
@@ -1008,12 +795,7 @@
         "PY-HEAPQ",
         "PYPERF"
       ],
-      "github_skills": [
-        "GH-09",
-        "GH-10"
-      ],
-      "github_task": "Compare the candidate and baseline at recorded commits using hosted evaluation jobs.",
-      "github_evidence": "Keep raw evidence, negative results, and limits tied to code versions."
+      "workspace_shortcut": "Use the Split Editor button to compare baseline and candidate code while their tests run in Terminal."
     },
     {
       "id": "P5-04",
@@ -1031,12 +813,7 @@
         "PY-314",
         "CPYTHON-CONTRIBUTING"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-15"
-      ],
-      "github_task": "For an optional interpreter contribution, inspect upstream browser guidance and prepare a scoped change with hosted checks.",
-      "github_evidence": "Distinguish an inspected proposal from an accepted or released upstream feature."
+      "workspace_shortcut": "Use Explorer to keep supported and unsupported syntax samples beside the tool you are building."
     },
     {
       "id": "P5-05",
@@ -1054,12 +831,7 @@
         "JAX-BENCHMARK",
         "SCIPY-LINALG"
       ],
-      "github_skills": [
-        "GH-06",
-        "GH-10"
-      ],
-      "github_task": "For an optional scientific-system change, review bounded hosted integration checks and ownership assumptions.",
-      "github_evidence": "Link the experiment configuration and observed results to the proposed implementation."
+      "workspace_shortcut": "Open the compatibility matrix and boundary tests side by side with Split Editor."
     },
     {
       "id": "P5-06",
@@ -1076,35 +848,25 @@
         "RESEARCH-PRACTICE",
         "HYPOTHESIS"
       ],
-      "github_skills": [
-        "GH-13",
-        "GH-06"
-      ],
-      "github_task": "Prepare the useful-contribution release candidate with browser reproduction instructions and linked checks.",
-      "github_evidence": "Show first-use evidence and clearly distinguish draft, publication, and independent feedback."
+      "workspace_shortcut": "Use Terminal \u2192 New Terminal to follow the first-use instructions and record actual failures."
     },
     {
       "id": "P5-07",
       "phase": 5,
-      "title": "Releases community and governance",
+      "title": "Compatibility releases and maintenance",
       "path": "curriculum/phase-5.md",
-      "anchor": "p5-07-releases-community-and-governance",
+      "anchor": "p5-07-compatibility-releases-and-maintenance",
       "prerequisites": [
         "P5-06"
       ],
       "core": true,
-      "objective": "Prepare a reviewable release or upstream change that respects its destination.",
+      "objective": "Prepare a Python package update with compatibility checks and clear migration guidance.",
       "source_ids": [
         "CPYTHON-CONTRIBUTING",
         "PEP-PROCESS",
         "PY-PACKAGING"
       ],
-      "github_skills": [
-        "GH-11",
-        "GH-12"
-      ],
-      "github_task": "Commit maintenance guidance and review a small follow-up Python fix through the same browser workflow.",
-      "github_evidence": "Explain triage, compatibility, account boundaries, and regression evidence."
+      "workspace_shortcut": "Use Ctrl+P to open your compatibility tests, then rerun them in the workspace Terminal."
     },
     {
       "id": "P5-08",
@@ -1121,425 +883,125 @@
         "CPYTHON-CONTRIBUTING",
         "RESEARCH-PRACTICE"
       ],
-      "github_skills": [
-        "GH-16",
-        "GH-15"
-      ],
-      "github_task": "Finish the capstone with a reviewed maintenance and recovery plan tied to your Python deliverable.",
-      "github_evidence": "Explain what was demonstrated, what remains unverified, and the next useful contribution."
-    },
-    {
-      "id": "GH-01",
-      "phase": null,
-      "title": "Read your Python repository",
-      "path": "curriculum/github.md",
-      "anchor": "gh-01-read-your-python-repository",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Locate the current Python lesson, practice file, branch, history, and run on GitHub.",
-      "source_ids": [
-        "GH-DEV",
-        "GH-PERMALINK",
-        "GH-LICENSE"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-01"
-      ],
-      "introduced_with": "P1-01"
-    },
-    {
-      "id": "GH-02",
-      "phase": null,
-      "title": "Complete a browser pull request",
-      "path": "curriculum/github.md",
-      "anchor": "gh-02-complete-a-browser-pull-request",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Use a branch and pull request to review a change to your current Python function.",
-      "source_ids": [
-        "GH-HELLO",
-        "GH-FLOW",
-        "GH-DEV"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-08",
-        "P1-12"
-      ],
-      "introduced_with": "P1-08"
-    },
-    {
-      "id": "GH-03",
-      "phase": null,
-      "title": "Use github.dev and hosted Python execution",
-      "path": "curriculum/github.md",
-      "anchor": "gh-03-use-githubdev-and-hosted-python-execution",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Distinguish browser editing, GitHub sign-in, repository access, and hosted execution.",
-      "source_ids": [
-        "GH-DEV",
-        "GH-AUTH",
-        "GH-PYTHON-CI"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-01",
-        "P1-11"
-      ],
-      "introduced_with": "P1-01"
-    },
-    {
-      "id": "GH-04",
-      "phase": null,
-      "title": "Review and commit Python snapshots",
-      "path": "curriculum/github.md",
-      "anchor": "gh-04-review-and-commit-python-snapshots",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Explain which Python edits are included in a commit by inspecting the browser diff.",
-      "source_ids": [
-        "GH-DEV",
-        "GIT-BOOK"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-02",
-        "P1-03",
-        "P1-05",
-        "P1-07",
-        "P1-09",
-        "P1-11"
-      ],
-      "introduced_with": "P1-02"
-    },
-    {
-      "id": "GH-05",
-      "phase": null,
-      "title": "Keep browser branches current",
-      "path": "curriculum/github.md",
-      "anchor": "gh-05-keep-browser-branches-current",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Identify the branch versions used by a Python change and prepare a current browser branch.",
-      "source_ids": [
-        "GH-FLOW",
-        "GH-DEV",
-        "GH-MERGES"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P2-11"
-      ],
-      "introduced_with": "P2-11"
-    },
-    {
-      "id": "GH-06",
-      "phase": null,
-      "title": "Review contributions and choose a merge method",
-      "path": "curriculum/github.md",
-      "anchor": "gh-06-review-contributions-and-choose-a-merge-method",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Review the Python contract, diff, and observed checks before incorporating a contribution.",
-      "source_ids": [
-        "GH-FLOW",
-        "GH-FORK",
-        "GH-MERGES"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-09",
-        "P1-12",
-        "P2-03",
-        "P2-04",
-        "P2-12",
-        "P3-01",
-        "P3-02",
-        "P3-03",
-        "P3-10",
-        "P4-05",
-        "P4-07",
-        "P4-08",
-        "P5-02",
-        "P5-04",
-        "P5-05",
-        "P5-06"
-      ],
-      "introduced_with": "P1-09"
-    },
-    {
-      "id": "GH-07",
-      "phase": null,
-      "title": "Resolve a conflict and verify the combined result",
-      "path": "curriculum/github.md",
-      "anchor": "gh-07-resolve-a-conflict-and-verify-the-combined-result",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Resolve a simple competing-line Python conflict through GitHub and test the intended result.",
-      "source_ids": [
-        "GH-WEB-CONFLICTS",
-        "GH-FLOW"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P2-11"
-      ],
-      "introduced_with": "P2-11"
-    },
-    {
-      "id": "GH-08",
-      "phase": null,
-      "title": "Recover a Python change in the browser",
-      "path": "curriculum/github.md",
-      "anchor": "gh-08-recover-a-python-change-in-the-browser",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Restore intended Python behavior with a reviewable new change and preserve useful history.",
-      "source_ids": [
-        "GH-WEB-REVERT",
-        "GH-IGNORE",
-        "GH-SENSITIVE"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-10"
-      ],
-      "introduced_with": "P1-10"
-    },
-    {
-      "id": "GH-09",
-      "phase": null,
-      "title": "Review a small Python change with real tests",
-      "path": "curriculum/github.md",
-      "anchor": "gh-09-review-a-small-python-change-with-real-tests",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Connect a Python behavior contract to a regression test that actually executes.",
-      "source_ids": [
-        "PY-TEXT",
-        "PY-UNITTEST",
-        "GH-PYTHON-CI"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-10",
-        "P2-01",
-        "P2-02",
-        "P2-04",
-        "P2-05",
-        "P2-07",
-        "P2-08",
-        "P2-10",
-        "P3-01",
-        "P3-02",
-        "P3-06",
-        "P3-07",
-        "P3-08",
-        "P4-02",
-        "P4-03",
-        "P4-05",
-        "P5-02",
-        "P5-03"
-      ],
-      "introduced_with": "P1-10"
-    },
-    {
-      "id": "GH-10",
-      "phase": null,
-      "title": "Understand and inspect GitHub Actions",
-      "path": "curriculum/github.md",
-      "anchor": "gh-10-understand-and-inspect-github-actions",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Read the output and status of a hosted run for the current Python commit.",
-      "source_ids": [
-        "GH-PYTHON-CI",
-        "GH-ACTIONS-MANUAL",
-        "GH-ACTIONS-EVENTS",
-        "GH-ACTIONS-SECURITY"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-01",
-        "P1-04",
-        "P1-05",
-        "P1-06",
-        "P1-10",
-        "P2-02",
-        "P2-05",
-        "P2-06",
-        "P2-07",
-        "P2-10",
-        "P3-03",
-        "P3-04",
-        "P3-05",
-        "P3-06",
-        "P3-07",
-        "P4-02",
-        "P4-04",
-        "P4-06",
-        "P5-03",
-        "P5-05"
-      ],
-      "introduced_with": "P1-01"
-    },
-    {
-      "id": "GH-11",
-      "phase": null,
-      "title": "Find work and document it clearly",
-      "path": "curriculum/github.md",
-      "anchor": "gh-11-find-work-and-document-it-clearly",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Use GitHub search and Markdown to make a Python task or result understandable.",
-      "source_ids": [
-        "GH-CODE-SEARCH",
-        "GH-ISSUE-SEARCH",
-        "GH-MARKDOWN",
-        "GH-PERMALINK"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P1-12",
-        "P2-08",
-        "P3-04",
-        "P3-05",
-        "P3-08",
-        "P4-01",
-        "P4-03",
-        "P4-07",
-        "P5-01",
-        "P5-07"
-      ],
-      "introduced_with": "P1-12"
-    },
-    {
-      "id": "GH-12",
-      "phase": null,
-      "title": "Protect accounts and review boundaries",
-      "path": "curriculum/github.md",
-      "anchor": "gh-12-protect-accounts-and-review-boundaries",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Relate repository access and workflow permissions to the Python code being executed.",
-      "source_ids": [
-        "GH-TWO-FACTOR",
-        "GH-TOKENS",
-        "GH-RULESETS",
-        "GH-CODEOWNERS",
-        "GH-SENSITIVE"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P3-09",
-        "P5-07"
-      ],
-      "introduced_with": "P3-09"
-    },
-    {
-      "id": "GH-13",
-      "phase": null,
-      "title": "Release useful work and understand usage limits",
-      "path": "curriculum/github.md",
-      "anchor": "gh-13-release-useful-work-and-understand-usage-limits",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Tie a release candidate to tested Python behavior and a bounded hosted workflow.",
-      "source_ids": [
-        "GH-RELEASES",
-        "GH-PACKAGES",
-        "GH-USAGE",
-        "GH-ACTIONS-BILLING"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P2-12",
-        "P3-10",
-        "P4-06",
-        "P5-06"
-      ],
-      "introduced_with": "P2-12"
-    },
-    {
-      "id": "GH-14",
-      "phase": null,
-      "title": "Read GitHub APIs from Python",
-      "path": "curriculum/github.md",
-      "anchor": "gh-14-read-github-apis-from-python",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Apply Python HTTP and JSON skills to a bounded read-only GitHub API example.",
-      "source_ids": [
-        "PY-URLLIB",
-        "GH-REST-ISSUES",
-        "GH-REST-LIMITS"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P2-09"
-      ],
-      "introduced_with": "P2-09"
-    },
-    {
-      "id": "GH-15",
-      "phase": null,
-      "title": "Collaborate with a tutor or coding agent",
-      "path": "curriculum/github.md",
-      "anchor": "gh-15-collaborate-with-a-tutor-or-coding-agent",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Give an assistant a bounded Python task and inspect its actual repository work.",
-      "source_ids": [
-        "OAI-AGENTS",
-        "OAI-GITHUB-REVIEW"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P3-09",
-        "P5-01",
-        "P5-04",
-        "P5-08"
-      ],
-      "introduced_with": "P3-09"
-    },
-    {
-      "id": "GH-16",
-      "phase": null,
-      "title": "Maintain history and test a restoration plan",
-      "path": "curriculum/github.md",
-      "anchor": "gh-16-maintain-history-and-test-a-restoration-plan",
-      "prerequisites": [],
-      "core": false,
-      "objective": "Use GitHub history and hosted reproduction to preserve an inspectable Python result.",
-      "source_ids": [
-        "GH-PERMALINK",
-        "GH-BACKUP",
-        "GH-ACTIONS-MANUAL"
-      ],
-      "kind": "reference",
-      "used_in": [
-        "P4-04",
-        "P4-08",
-        "P5-08"
-      ],
-      "introduced_with": "P4-04"
+      "workspace_shortcut": "Use the Markdown preview button to review the first-use tutorial with its implementation beside it."
     }
   ],
   "compatible_progress_versions": [
     "1.0",
-    "1.1"
+    "1.1",
+    "1.2"
   ],
   "legacy_capstones": [
     "github"
   ],
   "learning_environment": {
-    "editing": [
-      "github.com",
-      "github.dev"
-    ],
-    "execution": "GitHub-hosted Actions",
-    "learner_local_setup": false
-  }
+    "editing": "GitHub Codespaces browser workspace",
+    "execution": "Python in the GitHub Codespaces Terminal",
+    "learner_local_setup": false,
+    "live_input": true
+  },
+  "legacy_reference_ids": [
+    "GH-01",
+    "GH-02",
+    "GH-03",
+    "GH-04",
+    "GH-05",
+    "GH-06",
+    "GH-07",
+    "GH-08",
+    "GH-09",
+    "GH-10",
+    "GH-11",
+    "GH-12",
+    "GH-13",
+    "GH-14",
+    "GH-15",
+    "GH-16"
+  ],
+  "workspace_url": "https://cuddly-trout-q767pqw4v79rfpjr.github.dev/",
+  "repository_lessons": [
+    {
+      "id": "REPO-01",
+      "title": "Repository pages and visibility",
+      "path": "curriculum/github.md",
+      "anchor": "repo-01-repository-pages-and-visibility",
+      "objective": "Find the repository pages and identify its current visibility.",
+      "source_ids": [
+        "GH-HELLO"
+      ]
+    },
+    {
+      "id": "REPO-02",
+      "title": "README files and Markdown",
+      "path": "curriculum/github.md",
+      "anchor": "repo-02-readme-files-and-markdown",
+      "objective": "Format a short repository description using Markdown.",
+      "source_ids": [
+        "GH-MARKDOWN"
+      ]
+    },
+    {
+      "id": "REPO-03",
+      "title": "Licenses and reuse",
+      "path": "curriculum/github.md",
+      "anchor": "repo-03-licenses-and-reuse",
+      "objective": "Find a license and understand what information to check before reuse.",
+      "source_ids": [
+        "GH-LICENSE"
+      ]
+    },
+    {
+      "id": "REPO-04",
+      "title": "Ignore rules with gitignore",
+      "path": "curriculum/github.md",
+      "anchor": "repo-04-ignore-rules-with-gitignore",
+      "objective": "Use a .gitignore rule for generated or personal files.",
+      "source_ids": [
+        "GH-IGNORE"
+      ]
+    },
+    {
+      "id": "REPO-05",
+      "title": "Branches and pull requests",
+      "path": "curriculum/github.md",
+      "anchor": "repo-05-branches-and-pull-requests",
+      "objective": "Propose and review a documentation change.",
+      "source_ids": [
+        "GH-FLOW"
+      ]
+    },
+    {
+      "id": "REPO-06",
+      "title": "Issues and planning",
+      "path": "curriculum/github.md",
+      "anchor": "repo-06-issues-and-planning",
+      "objective": "Write a clear repository task and track its status.",
+      "source_ids": [
+        "GH-PROJECTS",
+        "GH-ISSUE-LINKS"
+      ]
+    },
+    {
+      "id": "REPO-07",
+      "title": "Repository settings and access",
+      "path": "curriculum/github.md",
+      "anchor": "repo-07-repository-settings-and-access",
+      "objective": "Locate settings and understand access roles.",
+      "source_ids": [
+        "GH-ACCESS",
+        "GH-RULESETS"
+      ]
+    },
+    {
+      "id": "REPO-08",
+      "title": "Releases and repository maintenance",
+      "path": "curriculum/github.md",
+      "anchor": "repo-08-releases-and-repository-maintenance",
+      "objective": "Understand a release and draft useful documentation notes.",
+      "source_ids": [
+        "GH-RELEASES",
+        "GH-BACKUP"
+      ]
+    }
+  ]
 }

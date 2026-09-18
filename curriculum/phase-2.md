@@ -6,16 +6,16 @@ demonstrate equivalent skills. Improve one continuing project while studying the
 lessons. Reference tools are allowed; generated solutions do not prove independence.
 
 
-Work in github.dev and commit your Python changes; inspect results on github.com
-through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
-includes a GitHub action on the same Python work. Any advanced execution commands
-belong in a hosted workflow step; inputs and files follow the browser guide.
+Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open a Python file, save, run it in the workspace Terminal, and use the result to
+make the next change. Type answers to `input()` directly in that Terminal.
+The tutor shows the technique and a working example before asking you to apply it.
+Each lesson includes one short workspace control; repository administration is
+optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P2-01 Collection patterns and complexity
 
-**GitHub in this lesson:** Review a collection refactor as one focused Python diff with tests before and after. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Explain unchanged behavior, relevant complexity, and the observed check result.
+**Workspace shortcut:** Use Ctrl+F to find the collection operation you are replacing; save and rerun its checks.
 
 **Prerequisites:** P1-12.
 
@@ -58,9 +58,7 @@ argument naming what `n` counts and what assumptions it requires.
 
 ## P2-02 Iterators generators and streaming
 
-**GitHub in this lesson:** Commit a generator and tests for empty and single-use input, then inspect the learner-test log. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Connect streaming behavior and lifetime checks with the run for that commit.
+**Workspace shortcut:** Use Terminal → New Terminal for a fresh run of your streaming example.
 
 **Prerequisites:** P2-01.
 
@@ -109,9 +107,7 @@ includes the aggregation map, not only the input reader.
 
 ## P2-03 Function interfaces scope and wrappers
 
-**GitHub in this lesson:** Open a PR for an interface change and explain its caller impact in the description. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Review a caller diff and demonstrate the revised contract.
+**Workspace shortcut:** Use Find All References on a function when Python language support is available, or Ctrl+Shift+F to find its callers.
 
 **Prerequisites:** P2-02.
 
@@ -157,9 +153,7 @@ explanation of one rejected interface design.
 
 ## P2-04 Classes dataclasses and composition
 
-**GitHub in this lesson:** Review the class or composition change together with tests for independent instance state. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Use the PR diff and test output to explain ownership and accidental sharing.
+**Workspace shortcut:** Use the Split Editor button to view the class and its tests together.
 
 **Prerequisites:** P2-03.
 
@@ -208,9 +202,7 @@ among a plain function, dataclass, and custom class.
 
 ## P2-05 Exceptions and resource ownership
 
-**GitHub in this lesson:** Commit a resource-failure test and inspect its error context and cleanup result in Actions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain the failure boundary using the test and run, not only a success-path example.
+**Workspace shortcut:** Ctrl+click a Terminal traceback location to inspect the resource acquisition that failed.
 
 **Prerequisites:** P2-04.
 
@@ -258,9 +250,7 @@ which exceptions propagate or are transformed.
 
 ## P2-06 Type hints and runtime validation
 
-**GitHub in this lesson:** Add the chosen type checker as a hosted workflow step when needed; compare it with runtime validation tests. References: [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Identify the distinct static and runtime results for the same Python interface.
+**Workspace shortcut:** Open View → Problems to inspect editor diagnostics when a type checker is configured.
 
 **Prerequisites:** P2-05.
 
@@ -305,9 +295,7 @@ still requires a runtime check. Report actual checker execution separately.
 
 ## P2-07 Testing debugging and logging
 
-**GitHub in this lesson:** Add meaningful workspace tests and inspect their discovery count, failure messages, and result in Actions. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Show a test failing for the intended defect and passing after its fix.
+**Workspace shortcut:** In the workspace Terminal, run python -m unittest discover -s workspace -p "test_*.py" -v; read the result there.
 
 **Prerequisites:** P2-06.
 
@@ -325,7 +313,9 @@ reports show executed code, not the adequacy of assertions or absence of defects
 The included suite uses `unittest` to keep the core dependency-free; pytest is an
 optional later tool, not a prerequisite for learning to test.
 
-**Worked example:** Open the hosted learner-test step after committing your tests; read the discovered count and failure output.
+**Worked example:** In the Codespaces Terminal, run
+`python -m unittest discover -s workspace -p "test_*.py" -v` to run your tests.
+Read the discovered count and any failure output directly there.
 Read one test in [test_studylog.py](../tests/test_studylog.py). Identify its
 requirement, setup, action, and observation before reading the implementation.
 
@@ -335,7 +325,7 @@ Temporarily restore the bug and confirm the test fails for the expected reason.
 **Practice B:** Test a command's success and failure exit statuses, standard output,
 and error output. A bad later record must not produce a partial success report.
 
-**Hints:** Start with a hand-computable case. Make the failure explanation useful
+**Hints:** Start with a small case whose correct result is supplied by the task. Make the failure explanation useful
 enough that someone else can identify the broken requirement.
 
 **Evidence:** A detected defect and a repaired behavior. Do not reward test count
@@ -345,9 +335,7 @@ or a coverage percentage as a substitute for these observations.
 
 ## P2-08 Structured text numbers and dates
 
-**GitHub in this lesson:** Commit a small data fixture and document its schema beside the Python parser. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Review the fixture diff and explain a quoting, date, or numeric boundary test.
+**Workspace shortcut:** Use Explorer → New File to add a small CSV fixture beside the parser exercise.
 
 **Prerequisites:** P2-07.
 
@@ -392,9 +380,7 @@ display formatting as a substitute for numeric validation.
 
 ## P2-09 HTTP APIs and external failures
 
-**GitHub in this lesson:** Use a recorded GitHub API response to test your Python adapter; run any bounded live read from Actions. References: [GH-14](github.md#gh-14-read-github-apis-from-python).
-
-**GitHub evidence:** Distinguish fixture checks from live observations and explain pagination or failure handling.
+**Workspace shortcut:** Use the Terminal plus button to keep a separate terminal for optional API experiments.
 
 **Prerequisites:** P2-08.
 
@@ -433,9 +419,7 @@ unverified about a real service. Live integration is an optional extension.
 
 ## P2-10 SQLite queries and transactions
 
-**GitHub in this lesson:** Commit SQLite transaction tests using temporary runner files and inspect rollback evidence. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Explain the database invariant and link the test run for that code.
+**Workspace shortcut:** Use Explorer to locate the disposable database file, and Terminal → New Terminal for its checks.
 
 **Prerequisites:** P2-09.
 
@@ -472,21 +456,20 @@ demonstrated with concrete tests.
 
 **Sources:** [PY-SQLITE](../audit/SOURCES.md#py-sqlite).
 
-## P2-11 Git packaging and reproducible setup
+<a id="p2-11-git-packaging-and-reproducible-setup"></a>
 
-**GitHub in this lesson:** Build your package in a hosted workflow and use a simple competing-line PR to practice browser conflict resolution. References: [GH-05](github.md#gh-05-keep-browser-branches-current), [GH-07](github.md#gh-07-resolve-a-conflict-and-verify-the-combined-result).
+## P2-11 Packaging and reproducible setup
 
-**GitHub evidence:** Show a fresh runner installation and verify the resolved Python behavior.
+**Workspace shortcut:** Open the Command Palette (Ctrl+Shift+P) and choose Python: Create Environment when available, or use the terminal steps in the workspace guide.
 
 **Prerequisites:** P2-10.
 
-**Outcome:** Make a project installable and explain what a version-control change contains.
+**Outcome:** Build a Python package and run it from a clean environment in Codespaces.
 
-Inspect Source Control and the PR diff before committing; keep related changes together. Branches
-allow isolated work, and a merge conflict requires understanding both edits. Keep
-virtual environments, secrets, generated results, and private learner records out
-of commits. A license defines reuse terms; do not infer an external project's
-license from public availability.
+Packaging makes your Python application installable with its required files and
+command entry points. Start with the smallest package that serves your project.
+Use a fresh virtual environment inside this Codespace to check installation
+without relying on packages already present in your working environment.
 
 For a distributable Python project, learn `pyproject.toml`, build systems, source
 distributions, wheels, and entry points. A distribution name and import name may
@@ -495,28 +478,27 @@ contains the required files. Compatibility ranges and an exact experiment
 environment solve different problems; neither guarantees every platform works.
 
 **Worked example:** Follow the [PyPA packaging tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-using a disposable package. In GitHub Actions, build it and install the wheel in a fresh runner environment,
-and run from outside the source checkout. Publishing is a separate optional action.
+using a disposable package in the Codespaces Terminal. Build its wheel, install
+that wheel in a fresh virtual environment in the workspace, and run from a
+separate temporary directory outside the source checkout. Publishing is optional.
 
 **Practice A:** Refactor the study reporter into a package with a command entry
 point and documented installation. Inspect the resulting artifact's contents.
 
-**Practice B:** Reproduce setup in a fresh hosted job using only the README, then
-resolve a simple competing-line PR conflict through github.com and verify the
-final Python behavior with a test. Use the browser task card for exact steps.
+**Practice B:** Create a fresh virtual environment in the Codespace and follow
+your README to install the built wheel. Run the documented command from outside
+the source directory. Repair any missing file, dependency, or entry point.
 
 **Hints:** Separate runtime dependencies, developer tools, and build requirements.
 When a clean install fails, inspect the wheel rather than adding random path hacks.
 
-**Evidence:** A fresh installation, a working documented command, and a reviewed diff.
+**Evidence:** A clean installation of the wheel and a working documented command in Codespaces.
 
-**Sources:** [PY-PACKAGING](../audit/SOURCES.md#py-packaging), [GIT-BOOK](../audit/SOURCES.md#git-book).
+**Sources:** [PY-PACKAGING](../audit/SOURCES.md#py-packaging).
 
 ## P2-12 Algorithms command lines and application delivery
 
-**GitHub in this lesson:** Finish the report application PR and prepare a GitHub release draft describing its tested command interface. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits).
-
-**GitHub evidence:** Link the reviewed commit, hosted command results, and release notes; a draft is not a publication.
+**Workspace shortcut:** Use the workspace Terminal to run your command with --help and then with a sample file.
 
 **Prerequisites:** P2-11.
 

@@ -1,76 +1,58 @@
-# Start here with Python and GitHub
+# Start with your first Python program
 
-Your first task is to change a Python program and see its result, entirely in
-your browser. You need your signed-in GitHub account and access to this repository.
+[**Open your workspace**](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/)
 
-## Your first edit and run
+This is your GitHub Codespace. Write and run Python here. The terminal is the
+panel inside this same browser window where Python displays results and accepts input.
 
-1. Open [python-training in github.dev](https://github.dev/DevilMedlar/python-training).
-   You can also press `.` while viewing the repository on github.com.
-2. In the file explorer, open `workspace/main.py`. It starts with:
+## First task
+
+1. In **Explorer**, open `workspace/lesson_01.py`.
+2. It contains:
 
 ```python
-print("Ready to learn")
-print(2 + 3)
+print("Hello, Python!")
+print("I am learning in my workspace.")
 ```
 
 ```output
-Ready to learn
-5
+Hello, Python!
+I am learning in my workspace.
 ```
 
-3. Predict what changing `2 + 3` to `8 + 4` will print. Make that change.
-4. Open **Source Control** in the left sidebar. Click the changed file to inspect
-   its diff: the old and new lines. Stage that file with **+**, enter a message
-   such as `Change my first Python calculation`, and choose **Commit & Push**.
-   For this first exercise, use the current `main` branch. Branches are introduced
-   when you change a function in `P1-08`; there is no GitHub course to finish first.
-5. Open [Run Python lesson](https://github.com/DevilMedlar/python-training/actions/workflows/learn.yml)
-   on github.com. A workspace commit starts it automatically. Open the run whose
-   branch and commit match your change. Queued or running means it is still working.
-6. Read **Python lesson result** on the run's summary page. You should see
-   `Ready to learn` and `12`. The **Run program** step also contains the output.
-7. Explain which Python expression changed and why the answer changed. Your commit
-   saved the source; Actions executed that saved version on a GitHub-hosted machine.
+`print(...)` displays something in the terminal. Put text inside matching quotes.
+Each call here displays one line.
 
-To run again without another edit, choose **Run workflow**, select the branch
-containing your work, then **Run workflow** again. That runs the branch's latest
-committed code. **Re-run jobs** on an older run repeats that older commit.
+3. Change the second quoted sentence to a sentence of your own. Keep the quotes and parentheses.
+4. Choose **File → Save**.
+5. Click **▶ Run Python File** at the editor's top right. You can also right-click
+   inside the editor and choose **Run Python → Run Python File in Terminal**.
+6. Read your sentence in the terminal. That is your first task complete.
 
-Saving an editor tab alone does not commit it to GitHub. Confirm your edited file
-on github.com before closing the editor; uncommitted edits remain in browser
-storage. [Editor help](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor).
+**Workspace shortcut:** Open file → Save → **Run Python File in Terminal**.
 
-## What each page does
+If the Python Run button is missing, use **Terminal → Run Task → Run current Python file**
+with the `.py` file active. That task is supplied by this repository. The
+[workspace guide](practice/BROWSER_WORKFLOW.md) has the direct terminal fallback.
 
-| Where | Your task |
-|---|---|
-| github.dev | Write Python, edit sample inputs, inspect and commit changes |
-| github.com → Actions | Run Python on GitHub's machines and read output, errors, and tests |
-| github.com → Code, commits, pull requests | Read lessons and review the history of your Python work |
+## Continue with the tutor
 
-There is no terminal or Python runtime in github.dev. This course uses GitHub
-Actions for execution throughout. It does not require laptop installations,
-repository downloads, GitHub Desktop, or Codespaces.
+Use [the start prompt](tutor/START_PROMPT.md), or say:
 
-## When your code asks for input
+> Start P1-01 in my Codespace. Show me how, give me one small task, and help me run it.
 
-At `P1-04`, put one answer per line in `workspace/input.txt` and commit it with
-your program. Each `input()` consumes the next line. If the answers run out,
-Python raises `EOFError`; add the missing answer and make a new commit. You cannot
-type responses into an Actions log. See [the worked input example](practice/BROWSER_WORKFLOW.md#inputs-for-input).
+We will work with the code and output from your actual run. Ask for help or a full
+example whenever you need it. When an `input()` question appears in a later lesson,
+click the terminal, type your answer, and press **Enter**.
 
-## Start the tutor
+## If this Codespace still shows the older course
 
-Use [the launch prompt](tutor/START_PROMPT.md). A complete beginner starts at
-`P1-01`; otherwise the tutor checks a small sample and starts where it is useful.
-Every lesson combines a Python objective with a GitHub action on that same work.
-Say `hint`, `explain`, `show solution`, `harder`, `slower`, `review`, or `save progress`.
+Updates on GitHub need to be pulled into an existing Codespace. Check the branch
+in the lower-left corner. On `main`, open **Source Control → … → Pull**.
+If there are pending edits or Git reports a conflict, keep them and ask the tutor
+to help preserve them before updating. Your earlier `workspace/main.py` is retained;
+the fresh starter is `workspace/lesson_01.py`.
 
-The tutor gives a manageable task, waits for your attempt, and responds to what
-you actually did. Use [tutor/progress.json](tutor/progress.json) for the same
-Python-and-GitHub session history. Keep it focused on code and learning evidence;
-this repository is public.
-
-For a 2–3 hour session, use shorter periods with breaks, a fresh independent task,
-and a saved next step. Pace follows your understanding and energy, not a timer.
+Saving writes a file in this Codespace. At the end of a useful session, use the
+[save-to-GitHub buttons](practice/BROWSER_WORKFLOW.md#save-your-work-to-github)
+to keep a committed copy in the repository.

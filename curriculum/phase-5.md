@@ -7,16 +7,16 @@ and research evaluation skills; a narrow engineering project can use a tailored
 route with its prerequisites checked explicitly.
 
 
-Work in github.dev and commit your Python changes; inspect results on github.com
-through [Run Python lesson](../practice/BROWSER_WORKFLOW.md). Every lesson below
-includes a GitHub action on the same Python work. Any advanced execution commands
-belong in a hosted workflow step; inputs and files follow the browser guide.
+Work in [your Codespaces workspace](https://cuddly-trout-q767pqw4v79rfpjr.github.dev/).
+Open a Python file, save, run it in the workspace Terminal, and use the result to
+make the next change. Type answers to `input()` directly in that Terminal.
+The tutor shows the technique and a working example before asking you to apply it.
+Each lesson includes one short workspace control; repository administration is
+optional material outside this Python sequence. See [workspace controls](../practice/BROWSER_WORKFLOW.md).
 
 ## P5-01 Contribution value and novelty
 
-**GitHub in this lesson:** Define a bounded contribution in a GitHub document and review the evidence behind the proposed Python change. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
-
-**GitHub evidence:** State the intended benefit, existing alternatives, and the exact contribution scope.
+**Workspace shortcut:** Use Explorer → New File to keep the contribution brief beside the prototype.
 
 **Prerequisites:** P4-08.
 
@@ -53,9 +53,7 @@ for evidence to change the project direction.
 
 ## P5-02 Public APIs and compatibility
 
-**GitHub in this lesson:** Review compatibility tests and design decisions together in a focused Python PR. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests).
-
-**GitHub evidence:** Explain which users or callers are affected using the diff and observed checks.
+**Workspace shortcut:** Use Ctrl+Shift+F to find callers affected by an interface change.
 
 **Prerequisites:** P5-01.
 
@@ -91,9 +89,7 @@ that states its cost. Do not promise support for untested builds or platforms.
 
 ## P5-03 Prototypes baselines and decision records
 
-**GitHub in this lesson:** Compare the candidate and baseline at recorded commits using hosted evaluation jobs. References: [GH-09](github.md#gh-09-review-a-small-python-change-with-real-tests), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Keep raw evidence, negative results, and limits tied to code versions.
+**Workspace shortcut:** Use the Split Editor button to compare baseline and candidate code while their tests run in Terminal.
 
 **Prerequisites:** P5-02.
 
@@ -128,9 +124,7 @@ limits. A benchmark harness does not establish novelty by itself.
 
 ## P5-04 Language runtime and tool creation
 
-**GitHub in this lesson:** For an optional interpreter contribution, inspect upstream browser guidance and prepare a scoped change with hosted checks. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
-
-**GitHub evidence:** Distinguish an inspected proposal from an accepted or released upstream feature.
+**Workspace shortcut:** Use Explorer to keep supported and unsupported syntax samples beside the tool you are building.
 
 **Prerequisites:** P5-03.
 
@@ -169,9 +163,7 @@ a mechanism-level explanation. This specialty is optional for other creator path
 
 ## P5-05 Scientific native and systems contributions
 
-**GitHub in this lesson:** For an optional scientific-system change, review bounded hosted integration checks and ownership assumptions. References: [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method), [GH-10](github.md#gh-10-understand-and-inspect-github-actions).
-
-**GitHub evidence:** Link the experiment configuration and observed results to the proposed implementation.
+**Workspace shortcut:** Open the compatibility matrix and boundary tests side by side with Split Editor.
 
 **Prerequisites:** P5-03.
 
@@ -211,9 +203,7 @@ measured value. Optional features remain unverified until their checks actually 
 
 ## P5-06 Independent evaluation and adversarial review
 
-**GitHub in this lesson:** Prepare the useful-contribution release candidate with browser reproduction instructions and linked checks. References: [GH-13](github.md#gh-13-release-useful-work-and-understand-usage-limits), [GH-06](github.md#gh-06-review-contributions-and-choose-a-merge-method).
-
-**GitHub evidence:** Show first-use evidence and clearly distinguish draft, publication, and independent feedback.
+**Workspace shortcut:** Use Terminal → New Terminal to follow the first-use instructions and record actual failures.
 
 **Prerequisites:** P5-03.
 
@@ -221,7 +211,7 @@ measured value. Optional features remain unverified until their checks actually 
 
 Use credible baselines, matched constraints, unseen evaluation cases where relevant,
 and failure tests. Ask an independent person to install or reproduce the work,
-recording the help they needed. A second run by you on GitHub is a self-directed
+recording the help they needed. A second run by you in Codespaces is a self-directed
 repeatability check, not independent external validation.
 
 Separate implementation success, usability, engineering value, and research novelty.
@@ -247,25 +237,27 @@ and a revised contribution claim with precise limits.
 
 **Sources:** [RESEARCH-PRACTICE](../audit/SOURCES.md#research-practice), [HYPOTHESIS](../audit/SOURCES.md#hypothesis).
 
-## P5-07 Releases community and governance
+<a id="p5-07-releases-community-and-governance"></a>
 
-**GitHub in this lesson:** Commit maintenance guidance and review a small follow-up Python fix through the same browser workflow. References: [GH-11](github.md#gh-11-find-work-and-document-it-clearly), [GH-12](github.md#gh-12-protect-accounts-and-review-boundaries).
+## P5-07 Compatibility releases and maintenance
 
-**GitHub evidence:** Explain triage, compatibility, account boundaries, and regression evidence.
+**Workspace shortcut:** Use Ctrl+P to open your compatibility tests, then rerun them in the workspace Terminal.
 
 **Prerequisites:** P5-06.
 
-**Outcome:** Prepare a reviewable release or upstream change that respects its destination.
+**Outcome:** Prepare a Python package update with compatibility checks and clear migration guidance.
 
-Read a project's current contribution guide, issue discussions, tests, license,
-and review expectations. Submit a focused reproducer or change with a clear reason,
-behavior, validation, and limitations. Maintainers consider long-term compatibility
-and maintenance costs; acceptance is not under the contributor's sole control.
+A useful update keeps existing callers working or clearly documents the change
+they need. Keep representative old calls as tests. Check arguments, return values,
+exceptions, saved-data formats, command options, and supported Python versions.
+Make a focused change and rerun those checks in the workspace Terminal.
 
-A Python Enhancement Proposal records specification, rationale, and coordination
-for relevant changes. Not every bug fix or third-party tool needs a PEP. For your
-own project, define a small support policy, changelog, migration notes, and a
-process for reporting problems. Test release artifacts outside the checkout.
+For a CPython contribution, use the current contributor documentation to understand
+the required technical checks. A Python Enhancement Proposal records relevant
+language changes; an ordinary package fix does not need one. For your package,
+write concise migration notes and test the built wheel outside the source checkout.
+Repository settings, licenses, and publishing controls are optional separate
+[repository lessons](github.md).
 
 **Worked example:** A review description states the observed bug, the input that
 reproduces it, the corrected behavior, the regression check, and compatibility
@@ -274,22 +266,21 @@ effects. It does not declare a patch correct solely because an AI produced it.
 **Practice A:** Prepare a release candidate with installation, first task,
 troubleshooting, known limitations, and tested version/build information.
 
-**Practice B:** Draft a focused upstream proposal and respond to a strong technical
-objection by revising the evidence or design. Publishing is optional and separate.
+**Practice B:** Change one public function or saved-data format. Keep an old
+caller or fixture as a regression check. Either preserve its behavior or provide
+a tested migration path and a clear error for unsupported input.
 
-**Hints:** Keep the reviewer's decision small. Follow the target project's
-process instead of assuming every repository works the same way.
+**Hints:** Start with actual callers and data files. Run them against the updated
+package instead of assuming a version number guarantees compatibility.
 
-**Evidence:** A reviewable artifact, support policy, and contribution rationale.
-Do not fabricate reviewers, approvals, upstream acceptance, or publication.
+**Evidence:** A usable package update, compatibility results, and a working
+migration example when the interface changes. Publishing is optional.
 
 **Sources:** [CPYTHON-CONTRIBUTING](../audit/SOURCES.md#cpython-contributing), [PEP-PROCESS](../audit/SOURCES.md#pep-process), [PY-PACKAGING](../audit/SOURCES.md#py-packaging).
 
 ## P5-08 Maintenance mentoring and the creator capstone
 
-**GitHub in this lesson:** Finish the capstone with a reviewed maintenance and recovery plan tied to your Python deliverable. References: [GH-16](github.md#gh-16-maintain-history-and-test-a-restoration-plan), [GH-15](github.md#gh-15-collaborate-with-a-tutor-or-coding-agent).
-
-**GitHub evidence:** Explain what was demonstrated, what remains unverified, and the next useful contribution.
+**Workspace shortcut:** Use the Markdown preview button to review the first-use tutorial with its implementation beside it.
 
 **Prerequisites:** P5-07.
 

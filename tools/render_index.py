@@ -1,4 +1,4 @@
-"""Render one Python lesson route with its embedded GitHub practice."""
+"""Render Python lessons with small Codespaces controls and optional repo cards."""
 
 import json
 from pathlib import Path
@@ -8,28 +8,26 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def render(catalog):
-    by_id = {lesson["id"]: lesson for lesson in catalog["lessons"]}
-    lines = ["# Python and GitHub lesson index", "",
+    lines = ["# Python lesson index", "",
              "Generated from [catalog.json](catalog.json). Follow one Python sequence.",
-             "Each lesson uses GitHub on that same Python exercise. Open its GitHub",
-             "references only when needed; they are not another curriculum.", "",
-             "Edit in github.dev and inspect execution on github.com through GitHub Actions.",
+             f"Write and run Python in [your Codespace]({catalog['workspace_url']}).",
+             "Use the small workspace control hint when you need it.", "",
              "Start with [your first edit and run](../START_HERE.md).", ""]
     for phase in catalog["phases"]:
         lines += [f"## Phase {phase['id']} {phase['title']}", "",
-                  "| Lesson | Python focus | GitHub practiced in that lesson | Prerequisites | Route |",
-                  "|---|---|---|---|---|"]
+                  "| Lesson | Python focus | Workspace control | Route |",
+                  "|---|---|---|---|"]
         for lesson in catalog["lessons"]:
             if lesson["phase"] != phase["id"]:
                 continue
             path = Path(lesson["path"]).name
-            prerequisites = ", ".join(lesson["prerequisites"]) or "None"
-            skills = ", ".join(f"[{by_id[ident]['title']}](github.md#{by_id[ident]['anchor']})" for ident in lesson["github_skills"])
+            shortcut = lesson["workspace_shortcut"].replace("|", "\\|").replace("\n", " ")
             lines.append(f"| [{lesson['id']}]({path}#{lesson['anchor']}) | {lesson['title']} | "
-                         f"{skills} | {prerequisites} | {'Core' if lesson['core'] else 'Optional specialty'} |")
-        lines += ["", f"Phase checkpoint: [Python capstone with GitHub review evidence](../{phase['capstone']}).", ""]
-    lines += ["Use the [GitHub reference](github.md) and [browser task cards](../practice/GITHUB_LABS.md)",
-              "within the linked Python task. There is one progress record and five phase capstones.", ""]
+                         f"{shortcut} | {'Core' if lesson['core'] else 'Optional specialty'} |")
+        lines += ["", f"Optional phase project: [build with what you learned](../{phase['capstone']}).", ""]
+    lines += ["## Repository lessons", "",
+              "[Optional repository lessons](github.md) cover settings, licenses, `.gitignore`,",
+              "and other repository tasks on github.com. They are independent of Python progress.", ""]
     return "\n".join(lines)
 
 
