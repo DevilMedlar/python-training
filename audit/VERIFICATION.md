@@ -224,3 +224,18 @@ These checks verify course content and tools. The browser opened the named Codes
 and observed a clean main branch, Linux, and Python 3.14.2 before synchronization.
 Actual post-publication workspace runs and the pull request's CI results establish
 their own execution evidence; the earlier observations do not cover this revision.
+
+### Observed publication and Codespace runs
+
+[PR #4](https://github.com/DevilMedlar/python-training/pull/4) merged at
+`a57e7cb867263017a4709bb9784739a9795bbf78`. Its
+[verification run](https://github.com/DevilMedlar/python-training/actions/runs/35301668265)
+passed all ten jobs: the nine OS/Python combinations and the optional research job.
+
+The assistant used the browser to update the learner's existing Codespace from
+a clean main branch with a fast-forward pull. It then clicked **Run Python File**
+on `workspace/lesson_01.py` and observed both greeting lines. The same button ran
+`workspace/input_example.py`; typing `Workspace check` live into the terminal
+produced `Hello, Workspace check!`. Linux and Python 3.14.2 were directly observed.
+No redirected input file, learner workflow, or laptop runtime was involved.
+These are setup checks, not evidence that the learner completed P1-01.

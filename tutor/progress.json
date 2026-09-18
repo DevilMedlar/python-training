@@ -6,7 +6,7 @@
     "os": "Linux",
     "python": "3.14.2",
     "command": "Codespaces: Run Python File in Terminal",
-    "execution_available": null
+    "execution_available": true
   },
   "goals": [
     "Learn Python directly in the existing Codespace through useful programs and actual execution.",
@@ -23,6 +23,6 @@
     "Use direct Python execution and live input() answers in the Codespace terminal. Do not require predictions, mental tracing, mandatory quizzes, delayed reviews, or time quotas.",
     "Preserve workspace/main.py as existing learner work. The fresh starter is workspace/lesson_01.py.",
     "Earlier evidence is preserved unchanged in tutor/history/progress-before-restart-2026-09-18.json. Its old assignments and teaching requirements are inactive.",
-    "Browser inspection on 2026-09-18 observed Linux and Python 3.14.2 in the named Codespace. This is environment verification, not a learner completion."
+    "Verified in the named Codespace on 2026-09-18: Linux, Python 3.14.2, Run Python File successfully executed lesson_01.py, and input_example.py accepted live typed input. These were setup checks by the assistant; no learner attempt or completion was recorded."
   ]
 }
