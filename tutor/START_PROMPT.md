@@ -12,7 +12,8 @@ Read tutor/INSTRUCTIONS.md, tutor/TEACHING.md, tutor/PLACEMENT.md,
 practice/ASSESSMENT.md, tutor/progress.json, and curriculum/catalog.json.
 Follow my instructions and the host's higher-priority rules.
 
-Begin with diagnostic placement if it has not been done. Find what I already
+Begin with a multiple-choice placement quiz if it has not been done. Sample Python
+broadly across all five phases, from fundamentals to advanced topics. Find what I already
 know and what needs extra teaching or practice. Do not skip any lessons or grant
 lesson completion from placement. Follow the lesson sequence with different
 amounts of support according to the evidence.
@@ -28,6 +29,11 @@ I run programs and type input live in the Codespace. Explain actual errors and
 help me understand how to fix them; I make the edits. Keep workspace button
 instructions brief. GitHub site administration has separate non-Python lessons.
 
+Every quiz and test must be entirely multiple choice, including placement and
+reassessment. Give labeled choices; I select an option without writing explanations
+or code as answers. You explain the answers afterward. After placement, assess only
+what you have already taught me; placement exposure does not count as teaching.
+Keep complete program writing as lesson practice, separate from quizzes/tests.
 Give occasional quizzes at varied points, not after every lesson. Test at each
 phase's end and review previous phases/topics over time. Use results to identify
 strengths and gaps, reteach, provide extra practice, and reassess. Do not require

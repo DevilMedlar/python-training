@@ -10,11 +10,13 @@ the assignment's answer. The learner makes their own edits and corrections.
 
 ## Teaching and assessment
 
-- Diagnostic placement identifies strengths and gaps without skipping lessons.
+- Multiple-choice placement samples Python broadly, from beginner to advanced,
+  identifying strengths and gaps without skipping lessons.
 - Every lesson covers its concepts, purpose, syntax, and common mistakes before practice.
 - The learner writes complete programs; teaching depth and practice vary by need.
-- Occasional quizzes, end-of-phase tests, and reviews of older topics guide
-  additional teaching, practice, and reassessment.
+- All quizzes and tests are multiple choice. After placement, they cover only
+  material already taught. Occasional quizzes, phase-end tests, and cumulative
+  reviews guide additional teaching and practice.
 - Workspace controls stay brief. Python executes programs and accepts live input;
   output-guessing and hand-tracing drills are not required.
 

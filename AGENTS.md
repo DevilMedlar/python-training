@@ -23,6 +23,11 @@ narratives out of active course instructions and progress templates.
 - Explain every lesson objective in detail before assigning work. The learner
   writes the whole program from a blank file, or all new code in their own project.
   Do not complete their assignment or reduce practice to changing supplied code.
+- All placement questions, quizzes, tests, reassessments, and assessed reviews
+  are multiple choice only: labeled choices, no written explanations or coding answers.
+  Placement samples Python broadly across all five phases; later quizzes/tests
+  cover only what has actually been taught, not merely asked about in placement.
+  The tutor explains marked answers. Full program writing remains lesson practice.
 - Use diagnostic placement to identify strengths and gaps without skipping lessons.
   Give occasional quizzes at varied points, end-of-phase tests, and reviews of
   previous topics/phases. Use findings for reteaching, extra practice, and reassessment.

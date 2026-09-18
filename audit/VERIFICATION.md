@@ -268,3 +268,16 @@ lessons, 8 repository cards, 298 internal links, and 20 executable examples. All
 117 tests passed, including placement without skipping, phase-test follow-up,
 assessment validation, and no assessment launch during maintenance. No learner
 attempt or assessment was performed or recorded by these checks.
+
+## Multiple-choice assessment protocol
+
+All placement questions, quizzes, phase tests, reassessments, and assessed review
+questions use labeled multiple-choice answers. Placement samples the full five-phase
+Python catalog; later assessments use only actually taught content. Coding remains
+separate lesson practice. Tutor instructions, launch prompt, placement guide,
+assessment plan, progress guidance, and protocol scenarios agree on these rules.
+
+Agent-environment verification: `python tools/check_repo.py` passed (50 Python
+lessons, 8 repository lessons, 298 internal links, 20 executable Markdown examples),
+and `python tools/run_tests.py` passed all 117 tests. These are maintenance checks,
+not learner assessments. No learning session or assessment was started.

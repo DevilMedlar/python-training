@@ -27,8 +27,12 @@ The `assessments` list records placement, occasional quizzes, phase tests, and
 reviews. Each entry contains `kind` (`placement`, `quiz`, `phase_test`, or `review`),
 `performed_on`, `phase` (1–5 or null for mixed/placement work), `topics` (lesson IDs),
 `needs_practice` (the subset needing further work), `support`, and `summary`.
-A phase test has a phase number. Describe the actual questions/tasks, topic findings,
-feedback, and follow-up in the summary. Empty `needs_practice` means no gap was found
+A phase test has a phase number. In the summary, record actual multiple-choice
+questions or identifiers, selected options, correct/incorrect or unfamiliar findings,
+feedback, and follow-up. All quizzes and tests are multiple choice; do not collect
+written explanations or coding answers as assessment responses. Placement samples
+all five phases; subsequent assessments use only actually taught topics. Placement
+exposure is not teaching. Record coding practice separately as lesson evidence. Empty `needs_practice` means no gap was found
 in this sample, not that every related skill is mastered. For phase tests, include
 all topic IDs covered by the test; do not substitute an unrelated question for the
 phase's objectives. Record new assessments after they happen, never in advance.

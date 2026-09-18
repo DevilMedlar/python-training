@@ -6,16 +6,24 @@ never while correcting the setup.
 
 ## What to check
 
-Ask about prior experience, then sample the concepts the learner may have met:
-program structure and running code; values and names; strings and input; conditions
-and loops; collections; functions; errors; and files. Where relevant experience is
-reported, include later topics from the phase catalog. Do not force a beginner to
-attempt the entire advanced syllabus. “I have not learned that” is a valid finding.
+Use only multiple-choice questions about Python. Sample the full breadth of the
+five-phase Python catalog, from beginner fundamentals through advanced programming,
+research, and creating projects. Include values/types, strings, control flow,
+collections, functions, scope, errors, files, modules/packages, classes/protocols,
+typing, testing/debugging, APIs/databases, concurrency, performance, numerical and
+research methods, and design/maintenance. Sample every phase even when the learner
+reports no prior experience; do not narrow placement to the opening lessons.
+This is broad diagnostic coverage, not a claim to exhaust every Python feature.
 
-Use a mix of short conceptual questions and small programs the learner writes
-from a blank file. Let them run code in the existing Codespace. Establish whether
-references are allowed and record help honestly. Do not use guessed outputs,
-manual tracing, or tutor-written answers as evidence of learner knowledge.
+For each question, provide clearly labeled choices and one unambiguous best answer.
+Include an "I don't know yet" choice so unfamiliar topics need no written response.
+The learner selects an option; do not ask them to define terms, explain reasoning,
+write code, or describe prior knowledge in prose. Do not require a written
+justification after a selection. Questions may ask which syntax, technique, or
+correction fits a stated purpose, without output guessing or manual tracing.
+Use manageable batches while retaining coverage across all five phases.
+Keep the answer key hidden until the attempt, then explain the answers yourself.
+Record actual selections and topic-level findings; never invent responses.
 
 ## Use the findings
 

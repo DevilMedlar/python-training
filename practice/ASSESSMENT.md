@@ -1,77 +1,79 @@
 # Assessment and review plan
 
-The tutor teaches; the learner writes the programs. Placement, occasional quizzes,
-end-of-phase tests, and cumulative reviews show what the learner understands and
-where more teaching or practice is needed. These take place during learning sessions,
-not during maintenance. They are not output-prediction or manual-calculation drills.
+Placement, every quiz, every test, and assessed review questions are multiple
+choice only. The learner selects a labeled option. Do not require free-text
+definitions, explanations, essays, code-writing answers, or written justifications.
+Complete learner-written programs remain lesson practice, separate from quizzes
+and tests. Administer assessments only during explicitly started learning.
+
+## Question format
+
+Provide a clear Python question with labeled choices and one unambiguous best
+answer. Use plausible alternatives and an "I don't know yet" option. The learner
+can select a button or give the option label; no prose answer is required.
+Ask about concepts, valid syntax, choosing an appropriate technique, or selecting
+a correction for a described error. Do not require output predictions, mental
+execution traces, or hand calculations. Keep the answer key hidden until the
+attempt. State reference/help rules before the assessment.
+
+The tutor marks selections and explains why answers are correct or incorrect.
+The tutor supplies that explanation; the learner does not have to write one.
+Report strengths and gaps by topic, including unfamiliar topics, rather than
+claiming that one score establishes complete mastery.
 
 ## Placement
 
-Use [diagnostic placement](../tutor/PLACEMENT.md) at the beginning of learning.
-Record topic-level strengths and gaps. Keep the complete lesson sequence; placement
-never supplies lesson completion or exempts the learner from lessons. Adjust the
-amount of explanation and practice instead.
+Use [diagnostic placement](../tutor/PLACEMENT.md) before initial teaching.
+Sample Python broadly across all five phases, from fundamentals through advanced
+topics, regardless of prior experience. Placement is the exception to the
+already-taught-content restriction. It identifies prior knowledge and teaching
+needs; it never skips lessons or grants lesson completion.
 
 ## Occasional quizzes
 
-Give a short quiz at varied points across the course, not after every lesson.
-Choose taught topics, mixing newer material with selected older material. Use
-conceptual questions, selecting and explaining a technique, learner-written small
-programs, or debugging through actual execution. Do not reveal answers before the
-attempt. State whether documentation is allowed. Record any hints or solutions.
-
-Mark each response against the question's stated requirements, explain mistakes,
-and identify the exact topic to revisit. Use more than one relevant item when a
-single answer leaves uncertainty. Assign extra teaching/practice where needed and
-check again with a different question or program. Do not infer general mastery
-from a single score. Normal lesson work is not automatically a quiz.
+Give short multiple-choice quizzes at varied points, not after every lesson.
+Include only concepts and techniques already taught to this learner, mixing recent
+and older material when useful. A topic's appearance on placement does not mean
+it has been taught. Check actual teaching history before choosing questions;
+do not introduce future concepts in the question or require them to distinguish
+the answer choices. Use findings for more explanation and targeted lesson practice.
 
 ## Tests at the end of each phase
 
-After the phase's lessons, give a test combining conceptual understanding with
-complete learner-written programs. Sample the phase's taught objectives broadly,
-including earlier-phase skills used by this phase. Prepare the questions and
-criteria without revealing solutions. Set reference/help rules before the attempt.
-No fixed pass percentage or hour quota is imposed by this plan; report the actual
-criteria met and the specific gaps requiring further work.
+Every end-of-phase test is entirely multiple choice. Sample the phase's taught
+objectives broadly and relevant previously taught material. No coding section,
+essay, oral explanation, project submission, or written defense is part of a test.
+Prepare the answer key before administering it and give feedback afterward.
 
-| Phase | Test coverage and practical work |
+| Phase | Multiple-choice coverage, only where already taught |
 |---|---|
-| 1 — Novice | Values, text/input, conditions, loops, collections, functions, scope, errors, modules, and files; write complete small programs and a file-based application using taught techniques. |
-| 2 — Practitioner | Collection patterns, reusable modules/classes, typed data, files, APIs, SQL, testing, logging, CLI, and packaging; build and test a small data-processing application. |
-| 3 — Expert | Taught protocols, architecture, resource management, concurrency, profiling, and reliability; implement a bounded component and justify its design using actual checks. |
-| 4 — Researcher | Questions, comparisons, numerical methods, uncertainty, reproducibility, and measurement; write and run a small investigation and interpret its limitations. |
-| 5 — Creator | Requirements, design, implementation, evaluation, compatibility, and maintenance; build an original component and defend its claims with actual evidence. |
+| 1 — Novice | Values, text/input, conditions, loops, collections, functions, scope, errors, modules, and files. |
+| 2 — Practitioner | Collection patterns, modules/classes, typed data, files, APIs, SQL, testing, logging, CLI, and packaging. |
+| 3 — Expert | Protocols, architecture, resource management, concurrency, profiling, and reliability. |
+| 4 — Researcher | Research questions, comparisons, numerical methods, uncertainty, reproducibility, and measurement. |
+| 5 — Creator | Requirements, design, implementation choices, evaluation, compatibility, and maintenance. |
 
-Use the catalog's objectives to prepare each actual test. Assess a specialty only
-if it was taught. A project may supply part of the practical evidence, but a finished
-product alone does not replace checking the learner's understanding. Do not count
-an assistant-written program or CI success as a learner test result.
-
-Review results with the learner, reteach weak topics, add targeted practice, and
-reassess those areas before treating the phase as understood. A test result never
-skips untouched lessons. Keep phase tests separate from optional project suggestions.
+Use the catalog and actual teaching history to prepare each test. An optional
+specialty is eligible only if taught. Review mistakes, reteach weak topics, and
+provide separate coding practice as appropriate. Reassessment is also multiple
+choice and uses fresh questions on taught material. Report actual results and
+specific gaps; this plan imposes no arbitrary pass percentage or hour quota.
+Tests never exempt the learner from untouched lessons.
 
 ## Reviews across phases
 
-Plan spaced revisits to earlier topics and previous phases throughout later work.
-Use mixed questions, short explanations, and fresh programs. Include both past weak
-areas and previously strong material to keep it fresh. Adjust intervals from the
-learner's performance and session spacing rather than enforcing an arbitrary timer.
-Reviews are part of teaching; they are not contingent on a separate user request.
-Avoid adding a review or quiz after every lesson by default.
+Revisit previously taught topics and phases to keep them fresh. The tutor can
+explain concepts again, and ordinary lesson practice can reuse earlier skills.
+Any review quiz or test uses only multiple-choice questions on taught content.
+Include both past weak areas and previously strong topics, adjusting intervals
+to the learner's needs. Do not add a quiz after every lesson by default.
 
 ## Evidence and follow-up
 
-| Evidence | Meaning and action |
-|---|---|
-| Learner writes the full solution and explains relevant choices | Record the demonstrated skill and help used. |
-| A topic is partly understood | Reteach that topic and assign more learner-written practice. |
-| A supplied solution was used | Record teaching support; use a fresh task to assess independent application. |
-| A quiz or test reveals a gap | Record the affected topic, feedback, and a targeted follow-up. |
-| A later review succeeds | Update confidence for those sampled topics without inventing other completions. |
-
-Use [progress recording](../tutor/PROGRESS.md). Keep conceptual assessment results
-separate from completed coding work. `provisional` can describe learner-authored
-success with hints; `secure` requires independent/reference application. Merely
-copying or editing a supplied answer does not establish independent competence.
+Record actual question/topic coverage, chosen options, correct/incorrect or
+unfamiliar findings, help used, and targeted follow-up in
+[progress records](../tutor/PROGRESS.md). Assessment results remain separate from
+learner-authored coding practice. Correct choices do not complete coding lessons.
+If gaps appear, explain the topic again, offer targeted lesson practice, and check
+understanding later with fresh multiple-choice questions. Repository automation
+and tutor-written solutions are never learner assessment results.

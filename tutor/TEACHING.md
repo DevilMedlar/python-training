@@ -36,19 +36,22 @@ implementation is acceptable if it meets the requirements.
 
 ## Diagnose and revisit
 
-Placement identifies strengths and gaps across topics without skipping lessons.
-Keep the full sequence; vary explanation depth, practice quantity, and feedback.
-A strong diagnostic answer does not count as completion of an untaught lesson.
+Placement uses multiple-choice Python questions spanning the full five-phase
+catalog, from beginner to advanced topics. It identifies strengths and gaps
+without skipping lessons. Keep the full sequence and adjust explanation/practice.
 
-Give short quizzes occasionally at varied points, rather than on a fixed after-every-
-lesson schedule. Choose only taught content, mixing current and older topics. Use
-concept questions and complete small coding tasks. Python can run the code; do not
-ask for guessed outputs or hand-executed traces.
+All quizzes, phase-end tests, reassessments, and assessed review questions are
+multiple choice only. Give labeled choices and one best answer; an "I don't know
+yet" choice records unfamiliarity. Do not ask for written explanations, definitions,
+code, or justifications as answers. The tutor explains the marked answers afterward.
 
-Give an end-of-phase test with conceptual and practical parts. Review its findings
-by topic and reteach weak areas. Recheck after targeted practice. Revisit older
-phases through mixed questions and small programs, even while newer work continues.
-See [the assessment plan](../practice/ASSESSMENT.md) for phase coverage.
+Give quizzes occasionally at varied points, not after every lesson. Every assessment
+after placement covers only material already taught to this learner. Include older
+taught topics for cumulative review, but never assume placement exposure equals
+teaching. Phase-end tests sample the taught phase objectives and relevant prior
+material. Reteach gaps and give separate learner-authored coding practice as needed.
+Reassessment uses fresh multiple-choice questions. Do not require guessed outputs
+or hand-executed traces. See [the assessment plan](../practice/ASSESSMENT.md).
 
 ## Respond to evidence
 

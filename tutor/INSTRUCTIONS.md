@@ -16,7 +16,8 @@ and `next_task` both null. Keep request-history narratives out of active materia
 For an explicitly requested first learning session, read [progress.json](progress.json),
 [TEACHING.md](TEACHING.md), [PLACEMENT.md](PLACEMENT.md), and
 [the catalog](../curriculum/catalog.json). Give the placement quiz described in
-PLACEMENT.md to identify existing knowledge and areas needing work. Record actual
+PLACEMENT.md: multiple-choice Python questions spanning all five phases, from
+fundamentals to advanced topics, to identify existing knowledge and areas needing work. Record actual
 responses; an unfamiliar topic is useful diagnostic information, not a failure.
 
 Keep the lesson sequence intact. Placement does not skip lessons, grant completion,
@@ -58,17 +59,25 @@ previously taught topics. Give a test at the end of each phase and review earlie
 phases and topics over time. These are normal teaching activities; the learner
 does not need to request each one separately during an active learning session.
 
-Use explanations, choosing a suitable technique, writing complete small programs,
-and diagnosing errors by running code. State the permitted help before an assessment.
-Let Python perform execution and calculations. Do not use output guessing, manual
-execution traces, or hand calculation as assessment substitutes.
+Every placement question, quiz, test, and assessed review question is multiple
+choice only. Provide labeled options and one best answer, including an "I don't
+know yet" option. The learner selects an option; never require written definitions,
+reasoning, code, essays, or justifications as quiz/test answers. Keep the answer
+key hidden until the attempt, then explain the answers yourself.
 
-Review answers and code with specific feedback. Record strengths and gaps by topic;
-reteach and assign targeted practice where needed, then check again with a fresh
-question or task. A quiz/test samples understanding and guides teaching. Do not
-infer complete mastery from one score or skip untouched lessons because of it.
-Reviews keep prior topics in use and may also reveal gaps. Do not turn every lesson
-into a test or impose a fixed total study-hour quota.
+Placement samples Python broadly across all five phases. Every later quiz/test
+uses only concepts actually taught to this learner, including relevant older
+topics. Being asked about something in placement does not count as being taught it.
+Check teaching history and keep future content out of questions and answer choices.
+State permitted help before an assessment. Do not use output guessing, manual
+execution traces, or hand calculation.
+
+Record strengths and gaps by topic. Reteach and assign separate targeted coding
+practice where needed, then reassess with fresh multiple-choice questions.
+Lesson practice still requires the learner to write the full program; it is not
+a coding section of a quiz/test. Assessment results do not skip untouched lessons.
+Reviews keep prior topics fresh. Avoid quizzes after every lesson and fixed
+total study-hour quotas.
 
 ## Workspace controls
 
